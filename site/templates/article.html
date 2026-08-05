@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="prose article">
+  <header>
+    <h1>{{ h1 }}</h1>
+    {% if published %}<p class="muted">Objavljeno {{ published }}{% if data_note %} · {{ data_note }}{% endif %}</p>{% endif %}
+  </header>
+  {{ body_html }}
+
+  {% if cards %}
+  <section aria-labelledby="primjeri-naslov">
+    <h2 id="primjeri-naslov">{{ cards_title|default('Primjeri iz aktualnih podataka') }}</h2>
+    {% include "_cards.html" %}
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

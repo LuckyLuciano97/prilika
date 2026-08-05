@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ meta_description }}">
+<link rel="canonical" href="{{ canonical }}">
+{% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
+
+<meta property="og:type" content="{{ og_type|default('website') }}">
+<meta property="og:site_name" content="{{ site_name }}">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:title" content="{{ og_title|default(page_title) }}">
+<meta property="og:description" content="{{ meta_description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ og_title|default(page_title) }}">
+<meta name="twitter:description" content="{{ meta_description }}">
+
+<link rel="stylesheet" href="{{ rel('/static/style.css') }}">
+{% block head_extra %}{% endblock %}
+{% if jsonld %}
+{% for block in jsonld %}
+<script type="application/ld+json">{{ block|tojson }}</script>
+{% endfor %}
+{% endif %}
+</head>
+<body>
+<a class="skip" href="#glavni">Prijeđi na sadržaj</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ rel('/') }}">
+      <span class="brand-mark">Licita</span>
+      <span class="brand-sub">nekretnine na dražbi</span>
+    </a>
+    <nav aria-label="Glavna navigacija">
+      <ul>
+        <li><a href="{{ rel('/nekretnine/') }}">Sve nekretnine</a></li>
+        <li><a href="{{ rel('/najveci-popusti/') }}">Najveći popusti</a></li>
+        <li><a href="{{ rel('/blog/') }}">Blog</a></li>
+        <li><a href="{{ rel('/kako-sudjelovati/') }}">Kako sudjelovati</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% if breadcrumbs %}
+<nav class="breadcrumbs wrap" aria-label="Putanja">
+  <ol>
+    {% for crumb in breadcrumbs %}
+    <li>{% if not loop.last %}<a href="{{ rel(crumb.url) }}">{{ crumb.name }}</a>{% else %}<span aria-current="page">{{ crumb.name }}</span>{% endif %}</li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}
+
+<main id="glavni" class="wrap">
+{% block content %}{% endblock %}
+</main>
+
+<section class="cta wrap" aria-labelledby="cta-naslov">
+  <h2 id="cta-naslov">Želiš znati čim se pojavi ovakva nekretnina?</h2>
+  <p>Priprema se obavijest e-poštom za nove dražbe po županiji, vrsti nekretnine i visini popusta.</p>
+  <p class="cta-note">Pretplata je u pripremi — javi se na
+    <a href="mailto:{{ contact_email }}?subject=Licita%20obavijesti">{{ contact_email }}</a>
+    i javit ćemo ti kad krene.</p>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Izvor podataka:</strong>
+      <a href="{{ source_url }}" rel="nofollow noopener" target="_blank">{{ source_name }}</a>,
+      službeni javni registar. Licenca:
+      <a href="{{ source_licence_url }}" rel="nofollow noopener" target="_blank">{{ source_licence }}</a>.
+    </p>
+    <p><strong>Zaštita podataka:</strong> Licita ne objavljuje nikakve osobne podatke.
+      Imena, OIB-i, adrese stanovanja, e-mail adrese i telefonski brojevi uklanjaju se
+      iz izvornih podataka prije obrade. Identitet ovršenika i dužnika je zaštićen.
+      <a href="{{ rel('/o-podacima/') }}">Više o podacima</a>.</p>
+    <p class="muted">Podaci su preuzeti {{ snapshot_date }}. Licita nije FINA i nije
+      sudionik u postupku prodaje. Prije bilo kakve odluke provjeri podatke izravno
+      u Očevidniku.</p>
+    <p class="muted">© {{ year }} Licita · <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+  </div>
+</footer>
+</body>
+</html>

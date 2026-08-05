@@ -1,0 +1,26 @@
+# tajne
+.env
+
+# lokalna konfiguracija uređivača/alata
+.claude/
+
+# preuzeti sirovi podaci — ne commitaju se (10 MB dnevno)
+cache/
+*.csv
+
+# generirane stranice
+public/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# alati
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db

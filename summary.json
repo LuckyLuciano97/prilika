@@ -1,0 +1,99 @@
+{
+  "generirano": "2026-08-06",
+  "stanje_na_dan": "2026-08-05",
+  "izvor": {
+    "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
+    "bajtova": 10329500,
+    "sha256": "06013bb9c325f581a8699c6e94986eb1726f966de057e245861998d7f9fa4611",
+    "licenca": "Otvorena dozvola (OD)"
+  },
+  "redaka_u_csv": 11091,
+  "stavki": 11089,
+  "duplikata_spojeno": 2,
+  "aktivnih": 2462,
+  "u_tijeku": 136,
+  "po_statusu": {
+    "zavrseno": 8627,
+    "najavljeno": 551,
+    "u_tijeku": 136,
+    "bez_termina": 1775
+  },
+  "po_zupaniji": {
+    "Nepoznato": 2179,
+    "Primorsko-goranska županija": 583,
+    "Splitsko-dalmatinska županija": 412,
+    "Šibensko-kninska županija": 168,
+    "Zadarska županija": 369,
+    "Karlovačka županija": 207,
+    "Međimurska županija": 357,
+    "Grad Zagreb": 1240,
+    "Vukovarsko-srijemska županija": 385,
+    "Virovitičko-podravska županija": 241,
+    "Istarska županija": 706,
+    "Dubrovačko-neretvanska županija": 218,
+    "Osječko-baranjska županija": 606,
+    "Sisačko-moslavačka županija": 298,
+    "Zagrebačka županija": 727,
+    "Krapinsko-zagorska županija": 389,
+    "Koprivničko-križevačka županija": 388,
+    "Bjelovarsko-bilogorska županija": 378,
+    "Varaždinska županija": 449,
+    "Požeško-slavonska županija": 138,
+    "Brodsko-posavska županija": 461,
+    "Ličko-senjska županija": 190
+  },
+  "po_vrsti": {
+    "kuca": 2514,
+    "stan": 1499,
+    "poljoprivredno-zemljiste": 3412,
+    "zemljiste": 901,
+    "sumsko-zemljiste": 309,
+    "gradevinsko-zemljiste": 166,
+    "poslovni-prostor": 815,
+    "garaza": 387,
+    "ostalo": 341,
+    "pokretnina": 687,
+    "pravo": 58
+  },
+  "prosjecan_popust_pct": 32.22,
+  "sumnjivih_popusta": 240,
+  "lokacija_pouzdanost": {
+    "nema": 2179,
+    "visoka": 4919,
+    "srednja": 3991
+  },
+  "ponovljene_drazbe": {
+    "linked_groups": 95,
+    "items_in_repeats": 261,
+    "max_attempts": 9,
+    "groups_with_ejd_progression": 8,
+    "self_declared_repeats": 4541
+  },
+  "uklonjeni_osobni_podaci": {
+    "person_name_gazetteer": 121,
+    "notary_name": 120,
+    "person_name": 82,
+    "oib_labelled": 81,
+    "person_address": 10,
+    "iban": 2,
+    "oib_bare": 1
+  },
+  "odbacena_polja": {
+    "Napomena uz detalje predmeta prodaje": "54 OIB-a, 68 IBAN-a, kontakti upravitelja; nije nužno za proizvod",
+    "Ostali uvjeti prodaje": "OIB-i, IBAN-i, privatni e-mailovi i telefoni",
+    "Ostali uvjeti za jamčevinu": "292 IBAN-a (računi stečajnih masa i fizičkih osoba)",
+    "Napomena uz uvjete prodaje": "68 OIB-a, 152 IBAN-a, imena založnih vjerovnika s adresom stanovanja",
+    "Rok u kojem je kupac dužan položiti kupovninu": "47 IBAN-a; pravni rok se izvodi zasebno bez broja računa",
+    "Razgledavanje": "1 074 e-mailova i 2 480 telefona osobnih kontakata; zadržava se samo izvedeni obrazac termina, bez kontakt-podataka"
+  },
+  "stranica": {
+    "property_pages": 2462,
+    "county_pages": 22,
+    "city_pages": 196,
+    "category_pages": 15,
+    "blog_posts": 4,
+    "static_pages": 2,
+    "total_pages": 2703
+  },
+  "trajanje_s": 39.5
+}

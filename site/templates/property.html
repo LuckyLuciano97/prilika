@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="property">
+  <header class="property-head">
+    <p class="eyebrow">{{ item.type_label }}{% if item.city %} · {{ item.city }}{% endif %}{% if item.county %} · {{ item.county }}{% endif %}</p>
+    <h1>{{ h1 }}</h1>
+    <p class="status status-{{ item.status }}">{{ item.status_label }}</p>
+  </header>
+
+  <div class="keyfacts">
+    <dl>
+      {% if item.estimated_value_eur %}
+      <div><dt>Procijenjena vrijednost</dt><dd class="big">{{ item.estimated_value_eur|eur }}</dd></div>
+      {% endif %}
+      {% if item.opening_price_eur %}
+      <div><dt>Početna cijena</dt><dd class="big accent">{{ item.opening_price_eur|eur }}</dd></div>
+      {% endif %}
+      {% if item.discount_pct is not none and not item.discount_suspicious %}
+      <div><dt>Popust na procjenu</dt><dd class="big discount">{{ item.discount_pct|pct }}</dd></div>
+      {% endif %}
+      {% if item.area_m2 %}
+      <div><dt>Površina</dt><dd class="big">{{ item.area_m2|area }}</dd></div>
+      {% endif %}
+    </dl>
+    {% if item.discount_suspicious %}
+    <p class="warn">Početna cijena u službenim podacima djeluje kao pogreška u unosu
+      (npr. nominalni iznos od 1 kune = 0,13 €). Popust namjerno nije prikazan da ne
+      bi zavarao. Provjeri izravno u Očevidniku.</p>
+    {% endif %}
+  </div>
+
+  <section aria-labelledby="opis-naslov">
+    <h2 id="opis-naslov">Opis predmeta prodaje</h2>
+    <p class="desc">{{ item.description }}</p>
+    <p class="muted small">Opis je preuzet iz službenog registra. Osobni podaci
+      (imena, OIB, adrese stanovanja, kontakti) uklonjeni su automatski prije objave.</p>
+  </section>
+
+  <section aria-labelledby="detalji-naslov">
+    <h2 id="detalji-naslov">Detalji dražbe</h2>
+    <table class="detail">
+      <tbody>
+        <tr><th scope="row">Poslovni broj spisa</th><td>{{ item.case_ref }}</td></tr>
+        {% if item.auction_id %}<tr><th scope="row">ID nadmetanja</th><td>{{ item.auction_id }}</td></tr>{% endif %}
+        <tr><th scope="row">Vrsta postupka</th><td>{{ item.procedure_label }}</td></tr>
+        <tr><th scope="row">Način prodaje</th><td>{{ item.sale_method }}</td></tr>
+        {% if item.auction_round %}<tr><th scope="row">Redni broj dražbe</th><td>{{ item.auction_round }}{% if item.auction_round_no and item.auction_round_no > 1 %} <span class="tag">ponovljena prodaja</span>{% endif %}</td></tr>{% endif %}
+        <tr><th scope="row">Nadležno tijelo</th><td>{{ item.issuer_name }}</td></tr>
+        {% if item.auction_start %}<tr><th scope="row">Početak nadmetanja</th><td>{{ item.auction_start|dt }}</td></tr>{% endif %}
+        {% if item.auction_end %}<tr><th scope="row">Završetak nadmetanja</th><td>{{ item.auction_end|dt }}</td></tr>{% endif %}
+        {% if item.deposit_eur %}<tr><th scope="row">Jamčevina</th><td>{{ item.deposit_eur|eur }}</td></tr>{% endif %}
+        {% if item.minimum_price_eur %}<tr><th scope="row">Najniža zakonska cijena</th><td>{{ item.minimum_price_eur|eur }}</td></tr>{% endif %}
+        {% if item.bid_step_eur %}<tr><th scope="row">Dražbeni korak</th><td>{{ item.bid_step_eur|eur }}</td></tr>{% endif %}
+        {% if item.viewing_time %}<tr><th scope="row">Razgledavanje</th><td>{{ item.viewing_time }}</td></tr>{% endif %}
+        {% if item.cadastral_municipality %}<tr><th scope="row">Katastarska općina</th><td>{{ item.cadastral_municipality }}</td></tr>{% endif %}
+      </tbody>
+    </table>
+    <p class="muted small">Trenutna ponuda tijekom nadmetanja nije dio službenog CSV
+      izvoza pa se ovdje ne prikazuje — vidljiva je samo u aplikaciji Očevidnika.</p>
+  </section>
+
+  {% if repeats %}
+  <section aria-labelledby="ponovljene-naslov">
+    <h2 id="ponovljene-naslov">Ranije dražbe iste nekretnine</h2>
+    {% if repeats_price_falls %}
+    <p>Ova se nekretnina prodaje više puta, svaki put po nižoj početnoj cijeni —
+      to je signal koji vrijedi pratiti.</p>
+    {% else %}
+    <p>Ova se nekretnina u registru pojavljuje više puta. Početna cijena
+      zasad nije pala; niže je prikazan redoslijed pokušaja prodaje.</p>
+    {% endif %}
+    <table class="detail">
+      <thead><tr><th scope="col">Redoslijed</th><th scope="col">Dražba</th><th scope="col">Početna cijena</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+      {% for r in repeats %}
+        <tr{% if r.item_key == item.item_key %} class="current"{% endif %}>
+          <td>{{ r.repeat_seq }}.</td>
+          <td>{{ r.auction_round or '—' }}</td>
+          <td>{{ r.opening_price_eur|eur if r.opening_price_eur else '—' }}</td>
+          <td>{{ r.status_label }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endif %}
+
+  <section aria-labelledby="lokacija-naslov">
+    <h2 id="lokacija-naslov">Lokacija</h2>
+    {% if item.county %}
+      <p>{% if item.city %}<strong>{{ item.city }}</strong>, {% endif %}{{ item.county }}</p>
+      {% if item.location_confidence == 'srednja' %}
+      <p class="muted small">Županija je izvedena iz nadležnog općinskog suda jer
+        službeni izvoz nema stupac lokacije. Točno naselje nije potvrđeno.</p>
+      {% endif %}
+      {% if item.map_query %}
+      <p><a rel="nofollow noopener" target="_blank"
+            href="https://www.openstreetmap.org/search?query={{ item.map_query }}">
+        Prikaži {{ item.city or item.county }} na karti →</a></p>
+      {% endif %}
+      <p><a href="{{ rel(item.county_url) }}">Sve dražbe u županiji {{ item.county }} →</a></p>
+    {% else %}
+      <p class="muted">Lokacija nije utvrđena iz službenog opisa. Predmet vodi
+        {{ item.issuer_name }}; sjedište tog tijela nije dokaz gdje se nekretnina
+        nalazi, pa se ne pogađa.</p>
+    {% endif %}
+  </section>
+
+  <section aria-labelledby="kako-naslov">
+    <h2 id="kako-naslov">Kako sudjelovati na ovoj dražbi</h2>
+    <p>Prodaja se provodi preko FINA-ine e-Dražbe. Potreban je važeći
+      elektronički identitet, uplaćena jamčevina i prijava u roku.</p>
+    <p><a class="btn" href="{{ rel('/kako-sudjelovati/') }}">Vodič: kupnja nekretnine na e-Dražbi korak po korak →</a></p>
+    <p class="muted small">Provjeri stavku u službenom registru prije prijave:
+      <a href="{{ source_url }}" rel="nofollow noopener" target="_blank">ponip.fina.hr</a>{% if item.auction_id %}
+      (traži ID nadmetanja <strong>{{ item.auction_id }}</strong>){% endif %}.
+      Stabilna izravna poveznica po stavci ne postoji — aplikacija Očevidnika radi
+      sa sesijom, pa se pretraga radi ručno.</p>
+  </section>
+</article>
+
+{% if related %}
+<section class="related" aria-labelledby="slicno-naslov">
+  <h2 id="slicno-naslov">Slične nekretnine{% if item.county %} u županiji {{ item.county }}{% endif %}</h2>
+  {% set cards = related %}{% include "_cards.html" %}
+</section>
+{% endif %}
+{% endblock %}

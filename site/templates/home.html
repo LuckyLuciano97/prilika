@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="hero">
+  <h1>{{ h1 }}</h1>
+  <p class="lede">Sve nekretnine koje se u Hrvatskoj prodaju na sudskoj dražbi,
+    u ovrsi i stečaju — iz službenog registra FINA-e, na jednom mjestu,
+    pretraživo po županiji, gradu i vrsti.</p>
+</header>
+
+<dl class="statbar">
+  <div><dt>Aktivnih predmeta</dt><dd>{{ stats.active }}</dd></div>
+  <div><dt>Županija</dt><dd>{{ stats.counties }}</dd></div>
+  <div><dt>Prosječan popust na procjenu</dt><dd>{{ stats.avg_discount }}</dd></div>
+  <div><dt>Podaci na dan</dt><dd>{{ snapshot_date }}</dd></div>
+</dl>
+
+<section aria-labelledby="istaknuto-naslov">
+  <h2 id="istaknuto-naslov">Najveći popusti na procijenjenu vrijednost</h2>
+  {% set cards = featured %}{% include "_cards.html" %}
+  <p><a class="btn" href="{{ rel('/najveci-popusti/') }}">Svi najveći popusti →</a></p>
+</section>
+
+<section aria-labelledby="zupanije-naslov">
+  <h2 id="zupanije-naslov">Pregled po županijama</h2>
+  <ul class="linklist cols">
+    {% for c in counties %}
+    <li><a href="{{ rel(c.url) }}">{{ c.name }}</a> <span class="muted">({{ c.count }})</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section aria-labelledby="vrste-naslov">
+  <h2 id="vrste-naslov">Pregled po vrsti nekretnine</h2>
+  <ul class="linklist cols">
+    {% for t in types %}
+    <li><a href="{{ rel(t.url) }}">{{ t.name }}</a> <span class="muted">({{ t.count }})</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="prose" aria-labelledby="sto-naslov">
+  <h2 id="sto-naslov">Što je ovdje, a što nije</h2>
+  <p>Licita prikazuje podatke iz <strong>Očevidnika nekretnina i pokretnina</strong>
+    koji vodi FINA — službenog javnog registra imovine koja se prodaje u ovršnom i
+    stečajnom postupku. Registar je javan i besplatan, a podaci se objavljuju pod
+    <a href="{{ source_licence_url }}" rel="nofollow noopener" target="_blank">Otvorenom dozvolom</a>.</p>
+  <p><strong>Ovdje nema nijednog osobnog podatka.</strong> Izvorni registar u
+    slobodnim poljima sadrži imena, OIB-e, adrese stanovanja i kontakte. Sve to se
+    automatski uklanja prije nego što podatak uđe u bazu. Identitet ovršenika je
+    zaštićen i to je namjerno, provjereno pravilo — ne slučajnost.
+    <a href="{{ rel('/o-podacima/') }}">Kako to radi →</a></p>
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="listing-head">
+  <h1>{{ h1 }}</h1>
+  {% if intro %}<p class="lede">{{ intro }}</p>{% endif %}
+</header>
+
+{% if stats_row %}
+<dl class="statbar">
+  {% for s in stats_row %}
+  <div><dt>{{ s.label }}</dt><dd>{{ s.value }}</dd></div>
+  {% endfor %}
+</dl>
+{% endif %}
+
+{% if cards %}
+<section aria-labelledby="popis-naslov">
+  <h2 id="popis-naslov" class="visually-hidden">Popis nekretnina</h2>
+  {% include "_cards.html" %}
+</section>
+{% else %}
+<p class="empty">Trenutno nema aktivnih dražbi u ovoj kategoriji. Podaci se
+  osvježavaju svakodnevno iz službenog registra.</p>
+{% endif %}
+
+{% if children %}
+<section aria-labelledby="podpodrucja-naslov">
+  <h2 id="podpodrucja-naslov">{{ children_title }}</h2>
+  <ul class="linklist">
+    {% for ch in children %}
+    <li><a href="{{ rel(ch.url) }}">{{ ch.name }}</a> <span class="muted">({{ ch.count }})</span></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if body_html %}
+<section class="prose">{{ body_html }}</section>
+{% endif %}
+{% endblock %}
