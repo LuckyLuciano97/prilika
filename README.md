@@ -9,7 +9,7 @@ free-text description field, and a web app behind a reCAPTCHA with a 100-result 
 Licita turns it into something you can actually search: **11,089 sale items**,
 normalised, deduplicated, geocoded to county and town, with discount-vs-appraisal
 computed and repeat auctions linked — regenerated daily into a fast static site of
-**2,703 pages**, all in Croatian, with **zero personal data**.
+**2,699 pages**, all in Croatian, with **zero personal data**.
 
 The public site is in Croatian (`licita.hr`); this README is in English.
 
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 cp .env.example .env          # add your PostgreSQL connection string
 createdb -U postgres licita
 python run.py                 # ingest -> redact -> normalise -> track -> store -> build
-python validate.py            # 13 checks, exits non-zero on failure
+python validate.py            # 12 checks, exits non-zero on failure
 ```
 
 ---
@@ -26,7 +26,7 @@ python validate.py            # 13 checks, exits non-zero on failure
 ## Numbers from the last real run
 
 Source snapshot **2026-08-05**, official CSV export, `sha256 06013bb9c325…`,
-**10,329,500 bytes**, fetched in 0.46 s. Full pipeline: **20.8 s**.
+**10,329,500 bytes**, fetched in 0.46 s. Full pipeline: **17.2 s**.
 
 | | |
 |---|---|
@@ -38,10 +38,10 @@ Source snapshot **2026-08-05**, official CSV export, `sha256 06013bb9c325…`,
 | — no auction window set | 1,775 |
 | Finished (kept for price history) | 8,627 |
 | Counties covered | **21 of 21** |
-| Items with a resolved county | 8,910 (80.4%) |
+| Items with a resolved county | 9,030 (81.4%) |
 | Average discount vs appraisal (all items) | **32.22%** |
 | Repeat-auction groups linked | 95 |
-| Pages generated | **2,703** |
+| Pages generated | **2,699** |
 | Personal data points removed | 417 |
 
 Property mix: 3,412 agricultural land · 2,514 houses · 1,499 apartments ·
@@ -107,7 +107,7 @@ So "zero personal data" is **not a property of the source** — it has to be enf
 
 **The debtor's identity is protected. That is the point, and it is checked
 mechanically on every run:** `validate.py` scans every text column in the database
-*and* the visible text of all 2,703 generated pages, and **hard-fails** on a single hit.
+*and* the visible text of all 2,699 generated pages, and **hard-fails** on a single hit.
 
 Latest run: **0 hits in the database, 0 residual names, 0 hits across all pages.**
 
@@ -119,7 +119,7 @@ Stated plainly, because inventing these would be worse than lacking them:
 
 | Field | Reality |
 |---|---|
-| county / city / settlement | **No such column exists.** Derived from the description text (high confidence, 4,547 items) or the municipal court (medium, 4,363). Unresolved: 2,179, reported by name. |
+| county / city / settlement | **No such column exists.** Derived from four fallible signals and graded by whether two of them agree (see below). High 3,900 · medium 5,013 · **low/conflicting 117** · unresolved 2,059, reported by name. |
 | `area_m2` | No column. Parsed from description text — 9,834 of 11,089 items (88.7%), including `čhv` and `ha` conversion. |
 | `status` | No column. Derived from auction start/end vs snapshot date. |
 | **`current_bid_eur`** | **Not in the export at all** — visible only in the live app. Stored as `NULL`, shown nowhere, never estimated. |
@@ -131,19 +131,47 @@ the court would be invented precision. Those items stay "location not establishe
 and are counted.
 
 **That choice costs more than the headline suggests, so here is the uncomfortable
-number.** Location is unresolved for 19.6% of all items — but for **46.5% of
-*active* ones** (1,145 of 2,462), because active listings skew heavily towards
+number.** Location is unresolved for 18.6% of all items — but for **44.8% of
+*active* ones** (1,103 of 2,462), because active listings skew heavily towards
 bankruptcy sales run by commercial courts. `Lokacija nije utvrđena` is therefore the
 largest bucket on the homepage. Filling it by falling back to the court's seat would
 make the site look complete and be wrong; the honest version is visible instead.
-Closing that gap properly means parsing cadastral municipality codes against the
-official DGU register, which is Phase 3 work, not a regex.
+
+### Location confidence is earned by agreement, not by which rule fired
+
+There are four signals, each fallible: an explicit settlement mention in the prose,
+the cadastral-municipality name, the land-registry department, and the municipal
+court's seat. **Where the k.o. name and the court can both be derived, they
+contradict each other 6.4% of the time** — so trusting whichever fired first
+produced confident errors.
+
+Grading now depends on corroboration: `visoka` for an explicit settlement mention
+or two agreeing signals, `srednja` for a single uncorroborated one, and **`niska`
+when signals actively conflict** — those pages carry a visible warning telling the
+reader to verify against the registry rather than quietly picking a winner.
+
+**Still open:** 879 unresolved items do carry a cadastral municipality that simply
+isn't a settlement name (`Vrapče Novo`, `Klara`, `Strmec Samoborski` — 324 distinct
+names). Closing that needs an authoritative k.o. → county register. DGU publishes
+one under Otvorena dozvola, but only as a geometry-heavy WFS with no county
+attribute; the one ready-made CSV found (City of Zagreb) has `license_id: ""` and
+`isopen: false`, so it was **not** used. A licensed source is the outstanding
+dependency, not a bigger hand-written table.
 
 ---
 
-## Three bugs worth naming
+## Four bugs worth naming
 
-Found by validation, not by luck. All three are the kind a reviewer would spot:
+Found by validation and by looking at the output, not by luck. All four are the kind
+a reviewer would spot:
+
+0. **Confidently wrong counties.** A fallback in the town resolver dropped the last
+   word of a name, so the cadastral municipality `Velika Mlaka` matched the town
+   `Velika` (Požeško-slavonska — it is actually Zagrebačka), `Blato Novo` matched
+   `Blato` on Korčula (it is Zagreb), and `Sesvete Novo` matched `Sesvete`. These
+   were published as **high** confidence. The fallback is gone, only a trailing
+   ordinal may be stripped (`Novalja I` → `Novalja`), and confidence is now earned
+   by agreement between signals rather than by which rule happened to fire.
 
 1. **A 1000× price error.** The `Minimalna zakonska cijena` column is not
    consistently numeric — it mixes `39816.84`, Croatian `32.805,00`, dual-currency
@@ -193,7 +221,7 @@ that legitimately changes. A price change must never look like a new listing.
 
 ## SEO surface
 
-2,703 pages, every one with a unique title and meta description, one `<h1>`,
+2,699 pages, every one with a unique title and meta description, one `<h1>`,
 canonical URL, Open Graph tags, and valid JSON-LD — verified, not asserted.
 
 - `RealEstateListing` + `Offer` per property (price, currency, availability,
@@ -224,7 +252,7 @@ canonical URL, Open Graph tags, and valid JSON-LD — verified, not asserted.
 | 6 | Discount arithmetic | PASS — 9,672 rows, 0 deviations |
 | 7 | Repeat auction linked | PASS — `OVR-12767/2016`, price falls |
 | 8 | No cross-case merging | PASS — 0 groups mix case files |
-| 9 | SEO output | PASS — 2,703 pages, 0 duplicate titles, 0 bad JSON-LD, 0 missing from sitemap |
+| 9 | SEO output | PASS — 2,699 pages, 0 duplicate titles, 0 bad JSON-LD, 0 missing from sitemap |
 | 10 | Diacritics on disk | PASS |
 | 11 | No phantom price changes | PASS — 2 runs, same source, 0 changes |
 | 12 | Price-tracking mechanism | PASS — controlled test |
@@ -243,6 +271,9 @@ search, which this project does not do.
 ---
 
 ## Roadmap
+
+Operational cadence, the staleness limit and the reasoning behind both are in
+[docs/operations.md](docs/operations.md).
 
 - **Phase 2 — alerts and subscriptions.** Email alerts on new items by county, type
   and discount threshold. The hooks are placed on every page; no payment wall,

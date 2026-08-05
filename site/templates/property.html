@@ -90,8 +90,15 @@
     {% if item.county %}
       <p>{% if item.city %}<strong>{{ item.city }}</strong>, {% endif %}{{ item.county }}</p>
       {% if item.location_confidence == 'srednja' %}
-      <p class="muted small">Županija je izvedena iz nadležnog općinskog suda jer
-        službeni izvoz nema stupac lokacije. Točno naselje nije potvrđeno.</p>
+      <p class="muted small">Službeni izvoz nema stupac lokacije, pa je županija
+        izvedena iz jednog pokazatelja u opisu (katastarska općina,
+        zemljišnoknjižni odjel ili nadležni općinski sud) i nije potvrđena drugim.
+        Točno naselje može odstupati.</p>
+      {% elif item.location_confidence == 'niska' %}
+      <p class="warn">Pokazatelji lokacije u službenom opisu <strong>proturječe
+        si</strong> — naziv katastarske općine upućuje na jednu županiju, a
+        zemljišnoknjižni odjel odnosno nadležni sud na drugu. Ovdje je prikazan
+        onaj vezan uz nekretninu, ali lokaciju obavezno provjeri u izvoru.</p>
       {% endif %}
       {% if item.map_query %}
       <p><a rel="nofollow noopener" target="_blank"

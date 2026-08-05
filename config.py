@@ -22,6 +22,12 @@ USER_AGENT = (
 
 HTTP_TIMEOUT = int(os.environ.get("LICITA_HTTP_TIMEOUT", "180"))
 
+# Najveća dopuštena starost snimka pri generiranju stranica.
+# Izvor je DNEVNI snimak, pa je sve preko 48 h zastarjelo: prosječno 15
+# nadmetanja završi svaki dan (13.8.2026. čak 76), a zastarjela stranica ih
+# prikazuje kao otvorena. Radije se ne objavi nego da se laže o rokovima.
+MAX_SNAPSHOT_AGE_HOURS = int(os.environ.get("LICITA_MAX_SNAPSHOT_AGE_H", "48"))
+
 # Sigurnosna granica: ako export naglo padne ispod ovoga, nešto ne valja.
 MIN_EXPECTED_BYTES = int(os.environ.get("LICITA_MIN_BYTES", "1_000_000".replace("_", "")))
 MIN_EXPECTED_ROWS = int(os.environ.get("LICITA_MIN_ROWS", "500"))

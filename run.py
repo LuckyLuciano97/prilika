@@ -12,7 +12,7 @@ import json
 import sys
 import time
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 
 import config
 import ingest
@@ -29,6 +29,11 @@ def main() -> int:
     ap.add_argument("--skip-site", action="store_true", help="samo podaci, bez generiranja stranica")
     ap.add_argument("--no-db", action="store_true",
                     help="preskoči bazu (samo za provjeru obrade i stranica)")
+    ap.add_argument("--rebuild-only", action="store_true",
+                    help="ne dohvaćaj izvor; osvježi status prema sadašnjem "
+                         "trenutku i ponovno generiraj stranice iz cachea")
+    ap.add_argument("--allow-stale", action="store_true",
+                    help="dopusti generiranje i kad je snimak stariji od granice")
     args = ap.parse_args()
 
     config.load_dotenv()
@@ -39,8 +44,13 @@ def main() -> int:
 
     # ---- 1. preuzimanje -------------------------------------------------
     print("\n[1/6] Preuzimanje službenog CSV izvoza")
+    if args.rebuild_only:
+        print("  --rebuild-only: izvor se NE dohvaća, koristi se lokalni cache")
     try:
-        blob, meta = ingest.download(force=args.force)
+        blob, meta = ingest.download(
+            force=args.force,
+            cache_hours=10 ** 6 if args.rebuild_only else 6,
+        )
         rows = ingest.parse(blob)
     except ingest.SourceError as exc:
         print(f"\nGREŠKA IZVORA — pipeline staje:\n  {exc}", file=sys.stderr)
@@ -65,7 +75,9 @@ def main() -> int:
 
     # ---- 3. normalizacija ------------------------------------------------
     print("\n[3/6] Normalizacija (lokacija, površina, popust, status)")
-    items_all = [N.normalise_item(c, c.get("_viewing", "")) for c in cleaned]
+    as_of = datetime.now()
+    items_all = [N.normalise_item(c, c.get("_viewing", ""), as_of=as_of)
+                 for c in cleaned]
     unique: dict[str, dict] = {}
     for it in items_all:
         unique.setdefault(it["item_key"], it)
@@ -117,6 +129,29 @@ def main() -> int:
                 print("   bilježe od sljedećeg pokretanja)")
             db_counts = store.counts(conn)
 
+    # ---- staleness guard --------------------------------------------------
+    # Izvor je dnevni snimak; prosječno 15 nadmetanja završi svaki dan. Ako je
+    # snimak prestar, stranice bi tvrdile da su zatvorene dražbe još otvorene.
+    snap_dt = datetime.strptime(snapshot, "%Y-%m-%d") if snapshot else None
+    age_h = ((datetime.now() - snap_dt).total_seconds() / 3600) if snap_dt else None
+    if age_h is not None:
+        print(f"\n[starost snimka] {age_h:.1f} h "
+              f"(granica {config.MAX_SNAPSHOT_AGE_HOURS} h)")
+        if age_h > config.MAX_SNAPSHOT_AGE_HOURS and not args.skip_site:
+            if args.allow_stale:
+                print("  UPOZORENJE: snimak je prestar, ali --allow-stale je zadan.")
+            else:
+                print(
+                    f"\nGREŠKA: snimak je star {age_h:.1f} h, granica je "
+                    f"{config.MAX_SNAPSHOT_AGE_HOURS} h.\n"
+                    f"  Stranice se NE generiraju — radije nema objave nego "
+                    f"netočni rokovi.\n"
+                    f"  Pokreni bez --rebuild-only da se dohvati svjež izvoz, "
+                    f"ili dodaj --allow-stale.",
+                    file=sys.stderr,
+                )
+                return 3
+
     # ---- 6. stranice ------------------------------------------------------
     pages = {}
     if args.skip_site:
@@ -136,6 +171,7 @@ def main() -> int:
     summary = {
         "generirano": date.today().isoformat(),
         "stanje_na_dan": snapshot,
+        "starost_snimka_h": round(age_h, 1) if age_h is not None else None,
         "izvor": {
             "url": config.CSV_URL,
             "bajtova": meta["bytes"],

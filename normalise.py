@@ -5,12 +5,19 @@ redak — tako slobodni tekst s osobnim podacima ne može zaobići redakciju.
 
 Poštene rezerve
 ---------------
-Očevidnik nema strukturiranu lokaciju (v. docs/source-notes.md §5). Županija
-se izvodi u dva koraka:
+Očevidnik nema strukturiranu lokaciju (v. docs/source-notes.md §5). Postoje
+četiri neovisna pokazatelja, svaki pogrešiv:
 
-  1. iz teksta opisa (naziv grada / katastarske općine)  -> pouzdanost "visoka"
-  2. iz naziva općinskog suda                            -> pouzdanost "srednja"
-  3. iz naziva trgovačkog suda                           -> NE koristi se
+  1. naselje izrijekom navedeno u opisu  ("nalazi se u Rijeci")
+  2. naziv katastarske općine            ("k.o. Blato Novo")
+  3. zemljišnoknjižni odjel              ("Zemljišnoknjižni odjel Pakrac")
+  4. sjedište nadležnog OPĆINSKOG suda
+
+Pouzdanost se ne dodjeljuje po tome koji je pokazatelj proradio, nego po tome
+slažu li se dva neovisna (v. `extract_location`). Razlog je mjeren: naziv k.o.
+i sjedište suda proturječe si u 6,4 % slučajeva, a naziv katastarske općine
+nije isto što i naziv naselja — "Blato Novo" je zagrebačka k.o., dok je Blato
+mjesto na Korčuli.
 
 Trgovački sud i javni bilježnik namjerno se NE koriste kao izvor lokacije:
 stečajna masa može držati nekretnine bilo gdje u RH, pa bi to bila izmišljena
@@ -350,24 +357,51 @@ def _canonical_town(name: str | None) -> str | None:
     return croatia.TOWN_CANONICAL.get(name, name)
 
 
+# Katastarske općine često nose redni nastavak ("Novalja I", "Dugo Selo II").
+# On se smije odbaciti — riječ je o istom naselju.
+_ORDINAL_SUFFIX = re.compile(r"\s+(?:[IVX]{1,4}|\d{1,2})$")
+
+
 def _resolve_town(candidate: str) -> str | None:
-    """Vrati kanonski naziv naselja ako ga prepoznajemo."""
+    """Vrati kanonski naziv naselja ako ga prepoznajemo.
+
+    Namjerno NE odbacuje zadnju riječ naziva. Ranija inačica je to radila
+    kao rezervu i time proizvodila samouvjereno pogrešne županije:
+
+        "Velika Mlaka" -> "Velika"  -> Požeško-slavonska  (a to je Zagrebačka)
+        "Blato Novo"   -> "Blato"   -> Dubrovačko-neretv. (a to je Grad Zagreb)
+        "Sesvete Novo" -> "Sesvete" -> Grad Zagreb        (a to je Zagrebačka)
+
+    Naziv katastarske općine i naziv naselja nisu ista vrsta podatka; podudarnost
+    mora biti potpuna. Jedina dopuštena preinaka je odbacivanje rednog nastavka.
+    """
     if not candidate:
         return None
     c = candidate.strip(" ,.;:-")
-    f = fold(c)
-    if f in _LOCATIVE_FIX:
-        return _canonical_town(_LOCATIVE_FIX[f])
-    if f in _TOWN_LOOKUP:
-        return _canonical_town(_TOWN_LOOKUP[f])
-    # probaj bez zadnje riječi (npr. "Splitu Gradu" -> "Splitu")
-    parts = c.split()
-    if len(parts) > 1:
-        f2 = fold(" ".join(parts[:-1]))
-        if f2 in _LOCATIVE_FIX:
-            return _canonical_town(_LOCATIVE_FIX[f2])
-        if f2 in _TOWN_LOOKUP:
-            return _canonical_town(_TOWN_LOOKUP[f2])
+    for probe in (c, _ORDINAL_SUFFIX.sub("", c)):
+        f = fold(probe)
+        if f in _LOCATIVE_FIX:
+            return _canonical_town(_LOCATIVE_FIX[f])
+        if f in _TOWN_LOOKUP:
+            return _canonical_town(_TOWN_LOOKUP[f])
+    return None
+
+
+# Zemljišnoknjižni odjel prati lokaciju NEKRETNINE (zemljišna knjiga se vodi
+# po katastarskoj općini), pa je bolji pokazatelj od sjedišta suda.
+_ZK_RE = re.compile(
+    r"[Zz]emlji[šs]noknji[žz]n\w*\s+odjel\w*\s+(?:u\s+)?"
+    r"([A-ZČĆĐŠŽ][\wčćđšž\-]+(?:\s+[A-ZČĆĐŠŽ][\wčćđšž\-]+)?)"
+)
+
+
+def _town_from_land_registry(opis: str) -> str | None:
+    m = _ZK_RE.search(opis or "")
+    if not m:
+        return None
+    town = _resolve_town(m.group(1))
+    if town and town not in croatia.AMBIGUOUS_TOWNS and croatia.TOWN_COUNTY.get(town):
+        return town
     return None
 
 
@@ -394,10 +428,20 @@ def _county_from_court(issuer: str, issuer_type: str) -> str | None:
 def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
     """Izvedi (županija, grad/naselje, katastarska općina) + pouzdanost.
 
-    Pouzdanost:
-      visoka  — naselje prepoznato u tekstu opisa
-      srednja — samo iz nadležnog općinskog suda
-      nema    — nije utvrđeno; ostaje 'Nepoznato' i broji se u izvještaju
+    Nijedan pojedinačni pokazatelj nije pouzdan sam za sebe, pa se pouzdanost
+    ne dodjeljuje po tome KOJI je pokazatelj proradio, nego po tome SLAŽU LI SE
+    dva neovisna pokazatelja:
+
+      visoka   — naselje izrijekom navedeno u opisu ("nalazi se u Rijeci"),
+                 ili se naziv k.o. slaže sa zemljišnoknjižnim odjelom / sudom
+      srednja  — samo jedan pokazatelj, bez potvrde
+      niska    — pokazatelji se PROTURJEČE; uzima se zemljišnoknjižni odjel,
+                 odnosno sud, jer prate lokaciju nekretnine
+      nema     — nije utvrđeno; ostaje 'Nepoznato' i broji se u izvještaju
+
+    Mjereno nad 11 091 retkom, naziv k.o. i sjedište općinskog suda proturječe
+    si u 6,4 % slučajeva. Ranija verzija je u takvim slučajevima ipak tvrdila
+    „visoka" — dakle bila je samouvjereno pogrešna. Radije se prizna nesigurnost.
     """
     result = {
         "county": None,
@@ -415,36 +459,69 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         if ko_name and not ko_name.isdigit() and len(ko_name) >= 3:
             result["cadastral_municipality"] = ko_name[:80]
 
-    # 1. grad iz konteksta u opisu
-    candidates: list[str] = []
+    def _county_of(town: str | None) -> str | None:
+        if not town or town in croatia.AMBIGUOUS_TOWNS:
+            return None
+        return croatia.TOWN_COUNTY.get(town)
+
+    # --- četiri neovisna pokazatelja -------------------------------------
+    city_town = None
+    city_raw = ""
     for m in _CITY_CTX_RE.finditer(text):
-        candidates.append(m.group(1))
-    if result["cadastral_municipality"]:
-        candidates.append(result["cadastral_municipality"])
+        t = _resolve_town(m.group(1))
+        if _county_of(t):
+            city_town, city_raw = t, m.group(1).strip()
+            break
 
-    for cand in candidates:
-        town = _resolve_town(cand)
-        if town and town not in croatia.AMBIGUOUS_TOWNS:
-            county = croatia.TOWN_COUNTY.get(town)
-            if county:
-                result.update(
-                    county=county, city=town,
-                    location_confidence="visoka", location_raw=cand.strip(),
-                )
-                return result
+    ko_town = _resolve_town(result["cadastral_municipality"] or "")
+    ko_county = _county_of(ko_town)
 
-    # 2. rezerva: općinski sud
-    county = _county_from_court(issuer, issuer_type)
-    if county:
-        result.update(county=county, location_confidence="srednja", location_raw=issuer)
+    zk_town = _town_from_land_registry(text)
+    zk_county = _county_of(zk_town)
+
+    court_county = _county_from_court(issuer, issuer_type)
+
+    # --- odluka ----------------------------------------------------------
+    # 1. izrijekom navedeno naselje je najjači pokazatelj
+    if city_town:
+        result.update(county=_county_of(city_town), city=city_town,
+                      location_confidence="visoka", location_raw=city_raw)
         return result
 
-    # 3. dvosmisleno naselje bez potvrde — zabilježi sirovo, ne pogađaj županiju
-    for cand in candidates:
-        town = _resolve_town(cand)
-        if town:
-            result.update(city=town, location_raw=cand.strip())
-            break
+    # 2. naziv k.o. potvrđen drugim izvorom
+    if ko_county and ko_county in (zk_county, court_county):
+        result.update(county=ko_county, city=ko_town,
+                      location_confidence="visoka",
+                      location_raw=result["cadastral_municipality"] or "")
+        return result
+
+    # 3. proturječje — priznaj ga i uzmi pokazatelj vezan uz nekretninu
+    if ko_county and (zk_county or court_county) and ko_county not in (zk_county, court_county):
+        result.update(county=zk_county or court_county, city=zk_town,
+                      location_confidence="niska",
+                      location_raw=f"k.o. {result['cadastral_municipality']} "
+                                   f"≠ {zk_town or issuer}")
+        return result
+
+    # 4. jedan pokazatelj bez potvrde
+    if zk_county:
+        result.update(county=zk_county, city=zk_town,
+                      location_confidence="srednja",
+                      location_raw=f"zemljišnoknjižni odjel {zk_town}")
+        return result
+    if ko_county:
+        result.update(county=ko_county, city=ko_town,
+                      location_confidence="srednja",
+                      location_raw=result["cadastral_municipality"] or "")
+        return result
+    if court_county:
+        result.update(county=court_county, location_confidence="srednja",
+                      location_raw=issuer)
+        return result
+
+    # 5. ništa se ne da potvrditi — ne pogađa se
+    if ko_town:
+        result.update(city=ko_town, location_raw=result["cadastral_municipality"] or "")
     return result
 
 
@@ -505,13 +582,22 @@ EJD_ORDER = {"Prva": 1, "Druga": 2, "Treća": 3, "Četvrta": 4}
 # Glavni ulaz
 # ---------------------------------------------------------------------------
 
-def normalise_item(clean_row: dict, viewing: str = "") -> dict:
-    """Pretvori redigirani CSV redak u zapis spreman za bazu."""
+def normalise_item(clean_row: dict, viewing: str = "",
+                   as_of: datetime | None = None) -> dict:
+    """Pretvori redigirani CSV redak u zapis spreman za bazu.
+
+    `as_of` je trenutak u odnosu na koji se računa status. Zadano je "sada",
+    a ne datum snimka: izvor je dnevni snimak, ali status ("najavljeno" ->
+    "u tijeku" -> "završeno") ovisi o satu, pa ponovno generiranje stranica
+    nekoliko sati kasnije daje točniji status i bez novih podataka.
+    `snapshot_date` i dalje bilježi podrijetlo podataka.
+    """
     opis = clean_row.get("Opis", "")
     issuer = clean_row.get("Nadležno tijelo", "")
     issuer_type = clean_row.get("_issuer_type") or normalise_issuer(issuer)[0]
 
     snapshot = parse_dt(clean_row.get("Stanje na dan", "")) or datetime.now()
+    now = as_of or datetime.now()
     start = parse_dt(clean_row.get("Datum i vrijeme početka nadmetanja", ""))
     end = parse_dt(clean_row.get("Datum i vrijeme završetka nadmetanja", ""))
 
@@ -569,7 +655,7 @@ def normalise_item(clean_row: dict, viewing: str = "") -> dict:
             "Mogućnost produljenja nadmetanja (za dodatnih 10 minuta)", "") == "Da",
         "deposit_value_date": parse_dt(clean_row.get("Datum valute jamčevine", "")),
         "viewing_time": viewing,
-        "status": derive_status(start, end, snapshot),
+        "status": derive_status(start, end, now),
         "snapshot_date": snapshot.date(),
     }
     item["item_key"] = build_item_key(item)
