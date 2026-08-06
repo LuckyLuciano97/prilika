@@ -254,7 +254,7 @@ that legitimately changes. A price change must never look like a new listing.
 
 ## SEO surface
 
-2,990 pages, every one with a unique title and meta description, one `<h1>`,
+3,036 pages, every one with a unique title and meta description, one `<h1>`,
 canonical URL, Open Graph tags, and valid JSON-LD — verified, not asserted.
 
 - `RealEstateListing` + `Offer` per property (price, currency, availability,
@@ -273,23 +273,22 @@ canonical URL, Open Graph tags, and valid JSON-LD — verified, not asserted.
 ## Validation
 
 `python validate.py` — output committed verbatim to
-[validation_report.txt](validation_report.txt), including the warning.
+[validation_report.txt](validation_report.txt).
 
 | # | Check | Result |
 |---|---|---|
-| 1 | Count reconciliation | PASS — 11,089 = 11,091 rows − 2 duplicates |
+| 1 | Count reconciliation | PASS — all 11,090 snapshot items in DB; +30 retained for history |
 | 2 | Istria spot check, field by field | PASS — 15 items × 10 fields, 0 differences |
-| 3 | Normalisation coverage | PASS — unresolved listed by name and count |
-| 4 | **Zero personal data (DB + every page)** | **PASS — 0 hits** |
+| 3 | Normalisation coverage | PASS — 10,216 with county, 904 unresolved, listed by name |
+| 4 | **Zero personal data (DB + every page)** | **PASS — 0 hits** (DB 0, names 0, HTML 0) |
 | 5 | Detector canary | PASS — planted record is caught |
-| 6 | Discount arithmetic | PASS — 9,672 rows, 0 deviations |
-| 7 | Repeat auction linked | PASS — `OVR-12767/2016`, price falls |
+| 6 | Discount arithmetic | PASS — 9,685 rows, 0 deviations |
+| 7 | Repeat auction linked | PASS — `OVR-12767/2016`, 2 attempts, price falls |
 | 8 | No cross-case merging | PASS — 0 groups mix case files |
-| 9 | SEO output | PASS — 2,990 pages, 0 duplicate titles, 0 bad JSON-LD, 0 missing from sitemap |
+| 9 | SEO output | PASS — 3,036 pages, 0 duplicate titles, 0 bad JSON-LD, 0 missing from sitemap |
 | 10 | Diacritics on disk | PASS |
-| 11 | No phantom price changes | PASS — 2 runs, same source, 0 changes |
+| 11 | Changes across two real snapshots | PASS — 2 distinct snapshots → 73 events tracked |
 | 12 | Price-tracking mechanism | PASS — controlled test |
-| 13 | Price change across real days | **WARN — not yet observed** |
 
 **On check 13, honestly:** proving a price change between two *different* daily
 snapshots requires runs on two different days. That has not happened yet. The
