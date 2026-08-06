@@ -275,6 +275,14 @@ def classify_property(opis: str, vrsta: str) -> str:
     if v == "pravo":
         return "pravo"
     text = fold(opis or "")
+    # Izvorna vrsta "imovina" zna pokrivati i strojeve, stoku i robu; bez ove
+    # provjere krave iz ST-114/2018 završe na stranici kao "nekretnina".
+    if v == "imovina" and not re.search(
+            r"\bzk\.?\s*ul|\bk\.?\s*[oc]\b|zemlji[sš]t|nekretnin|kč|čest", text):
+        if re.search(r"\b(vozil|automobil|stroj|oprem|plovil|brodic|prikolic|"
+                     r"vilicar|viličar|goved|krav|junic|telad|svinj|roba|zalih|"
+                     r"komada|proizvodnj|marke|udjel|dionic|potrazivanj)", text):
+            return "pokretnina"
     for key, needles in PROPERTY_TYPES:
         for n in needles:
             if len(n.strip()) <= 5 and n.strip().isalpha():
@@ -651,15 +659,19 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         (npr. STARIGRAD kod Paklenice). Točka je poznata, susjedstvo
         presuđuje; preko 12 km se ne pogađa."""
         ko_map2 = croatia.ko_county()
-        best, best_d = None, 12.0
+        near: list[tuple[float, str]] = []
         for code2, (_n2, la2, lo2) in croatia.ko_points()[0].items():
             c2 = ko_map2.get(code2)
             if not c2:
                 continue
             d = _approx_km(lat, lon, la2, lo2)
-            if d < best_d:
-                best, best_d = c2, d
-        return best
+            if d <= 12.0:
+                near.append((d, c2))
+        near.sort()
+        top3 = {c for _, c in near[:3]}
+        # jednoglasnost tri najbliže — pojedinačni najbliži susjed je na
+        # kopnenoj granici bacanje novčića, a preko morskog kanala i gore
+        return next(iter(top3)) if len(near) >= 3 and len(top3) == 1 else None
 
     ko_name = result["cadastral_municipality"] or ""
 
@@ -686,6 +698,9 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         elif ko_name:
             _fk = fold(_ORDINAL_SUFFIX.sub("", ko_name.strip()))
             entries = croatia.ko_points()[1].get(_fk) or []
+            if not entries and "-" in _fk:
+                # "Komarna-Duboka" ↔ registar "KOMARNA DUBOKA"
+                entries = croatia.ko_points()[1].get(_fk.replace("-", " ")) or []
             if not entries and " " in _fk:
                 # obrnuti red riječi: "Bistra Donja" u opisu, "DONJA BISTRA"
                 # u registru — isti tokeni, drugi redoslijed
@@ -696,6 +711,11 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
                         break
             if len(entries) == 1:
                 reg_county = ko_map.get(entries[0][0])
+                if reg_county is None:
+                    # k.o. postoji u registru koordinata, ali uz granicu nije
+                    # dobila jednoglasnu županiju ("Sisak Stari") — točka je
+                    # poznata, najbliža pridružena k.o. presuđuje (≤ 12 km)
+                    reg_county = _nearest_assigned(entries[0][2], entries[0][3])
             elif len(entries) > 1:
                 # istoimene k.o. u više županija ("KRAJ" ×3): županije svih
                 # kandidata iz registra, pa presuda sidrom ili spomenom

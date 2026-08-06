@@ -142,7 +142,15 @@ def city_slug(item) -> str:
     return slugify(item.get("city")) if item.get("city") else UNKNOWN_CITY_SLUG
 
 
+MOVABLE_TYPES = ("pokretnina", "pravo")
+
+
 def property_url(item) -> str:
+    # Pokretnine i prava nemaju lokaciju po prirodi stvari — guranje stroja
+    # pod "nepoznata lokacija" izgleda kao greška podataka, a nije. Zato žive
+    # u vlastitom odjeljku, izvan zemljopisnog stabla.
+    if item.get("property_type") in MOVABLE_TYPES:
+        return f"/pokretnine/{item['slug']}/"
     return f"/nekretnine/{county_slug(item)}/{city_slug(item)}/{item['slug']}/"
 
 
@@ -297,9 +305,11 @@ class SiteBuilder:
                                 repeats=_meaningful_repeats(group))
             counts["property_pages"] += 1
 
-        # 2. županije i gradovi
+        # 2. županije i gradovi — samo nekretnine; pokretnine imaju svoj odjeljak
+        estate = [d for d in active if d["property_type"] not in MOVABLE_TYPES]
+        movables = [d for d in active if d["property_type"] in MOVABLE_TYPES]
         by_county: dict[str | None, list[dict]] = defaultdict(list)
-        for d in active:
+        for d in estate:
             by_county[d.get("county")].append(d)
 
         for county, group in sorted(by_county.items(), key=lambda kv: (kv[0] is None, kv[0] or "")):
@@ -316,6 +326,8 @@ class SiteBuilder:
 
         # 3. kategorije
         counts["category_pages"] += self._category_pages(active, by_county)
+        self._movables_page(movables)
+        counts["category_pages"] += 1
 
         # 4. blog
         counts["blog_posts"] += self._blog(active, by_county, run_stats)
@@ -788,6 +800,32 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
             sitemap_priority=0.4, sitemap_changefreq="daily",
         )
 
+    def _movables_page(self, movables: list[dict]) -> None:
+        """Pokretnine i prava: bez zemljopisa, s poštenim objašnjenjem."""
+        url = "/pokretnine/"
+        items = _sort_for_display(movables)
+        crumbs = [{"name": "Početna", "url": "/"},
+                  {"name": "Pokretnine i prava", "url": url}]
+        meta = (f"{len(items)} pokretnina i prava u ovršnim i stečajnim "
+                f"postupcima: vozila, strojevi, oprema, plovila, udjeli. "
+                f"Službeni podaci FINA Očevidnika.")
+        self._render(
+            "listing.html", url,
+            page_title=f"Pokretnine i prava na dražbi ({len(items)}) | Licita",
+            meta_description=meta,
+            h1="Pokretnine i prava na dražbi",
+            intro=("Vozila, strojevi, stoka, roba i poslovni udjeli iz ovrha i "
+                   "stečajeva. Ovi predmeti nemaju adresu po prirodi stvari, pa "
+                   "ne stoje u zemljopisnom pregledu — tko prodaje i dokle traje "
+                   "nadmetanje piše na svakoj stavci."),
+            cards=items[:200], stats_row=_stats_row(items),
+            breadcrumbs=crumbs,
+            jsonld=[self._jsonld_collection("Pokretnine i prava na dražbi",
+                                            meta, url, items),
+                    self._jsonld_breadcrumbs(crumbs)],
+            sitemap_priority=0.6, sitemap_changefreq="daily",
+        )
+
     # -- najbolja vrijednost (€/m²) ----------------------------------------
     def _best_value(self, active: list[dict]) -> None:
         """Rang po €/m². Zgrade i zemljišta se NE miješaju u istoj ljestvici —
@@ -1036,7 +1074,8 @@ iz ovršnih i stečajnih postupaka.</p>
 
         data: dict = {
             "@context": "https://schema.org",
-            "@type": "RealEstateListing",
+            "@type": ("Product" if item.get("property_type") in MOVABLE_TYPES
+                      else "RealEstateListing"),
             "name": name,
             "description": desc,
             "url": self._abs(url),
