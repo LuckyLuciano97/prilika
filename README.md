@@ -6,10 +6,10 @@ That registry is legally public, free, and machine-readable. It is also close to
 unusable: no location column, no area column, no status, no property type, a
 free-text description field, and a web app behind a reCAPTCHA with a 100-result cap.
 
-Licita turns it into something you can actually search: **11,089 sale items**,
+Licita turns it into something you can actually search: **11,090 sale items**,
 normalised, deduplicated, geocoded to county and town, with discount-vs-appraisal
 computed and repeat auctions linked — regenerated daily into a fast static site of
-**2,990 pages**, all in Croatian, with **zero personal data**.
+**3,036 pages**, all in Croatian, with **zero personal data**.
 
 The public site is in Croatian (`licita.hr`); this README is in English.
 
@@ -25,27 +25,27 @@ python validate.py            # 12 checks, exits non-zero on failure
 
 ## Numbers from the last real run
 
-Source snapshot **2026-08-05**, official CSV export, `sha256 06013bb9c325…`,
-**10,329,500 bytes**, fetched in 0.46 s. Full pipeline: **17.2 s**.
+Source snapshot **2026-08-06**, official CSV export, `sha256 2991d767ce76…`,
+**10,331,632 bytes**. Full pipeline: **57.9 s**.
 
 | | |
 |---|---|
-| Rows in official CSV | 11,091 |
-| Distinct sale items after dedup | **11,089** (2 byte-level duplicates collapsed) |
-| Active (not finished) | **2,462** |
-| — live auctions right now | **136** |
-| — announced | 551 |
+| Rows in official CSV | 11,092 |
+| Distinct sale items after dedup | **11,090** (2 byte-level duplicates collapsed) |
+| Active (not finished) | **2,456** |
+| — live auctions right now | **148** |
+| — announced | 533 |
 | — no auction window set | 1,775 |
-| Finished (kept for price history) | 8,627 |
+| Finished (kept for price history) | 8,634 |
 | Counties covered | **21 of 21** |
-| Items with a resolved county | 10,054 (90.7%) |
-| Average discount vs appraisal (all items) | **32.22%** |
+| Items with a resolved county | 10,206 (92.0%) |
+| Average discount vs appraisal (all items) | **32.23%** |
 | Repeat-auction groups linked | 95 |
-| Pages generated | **2,990** |
+| Pages generated | **3,036** |
 | Personal data points removed | 417 |
 
-Property mix: 3,412 agricultural land · 2,514 houses · 1,499 apartments ·
-901 land · 815 commercial · 687 movables · 387 garages · 341 other ·
+Property mix: 3,411 agricultural land · 2,514 houses · 1,500 apartments ·
+901 land · 810 commercial · 706 movables · 387 garages · 328 other ·
 309 forest land · 166 building land · 58 rights.
 
 ---
