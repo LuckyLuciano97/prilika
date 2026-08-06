@@ -767,6 +767,8 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
                        and not d.get("discount_suspicious") else None),
                 "mn": d.get("price_per_m2"),
                 "ei": _iso(d.get("auction_end"), date_only=True) or "",
+                "lt": float(d["latitude"]) if d.get("latitude") else None,
+                "ln": float(d["longitude"]) if d.get("longitude") else None,
             })
         (self.out / "search-index.json").write_text(
             json.dumps(index, ensure_ascii=False, separators=(",", ":")),
@@ -839,30 +841,12 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
     def _map(self, active: list[dict], by_county: dict) -> None:
         """Karta s pribadačama na razini katastarske općine.
 
-        Koordinate su službene cp:referencePoint točke k.o. (DGU INSPIRE,
-        Otvorena dozvola) — razina susjedstva, ne parcele, i stranica to
-        kaže. Jedina stranica s vanjskim zahtjevima (OSM podloga); Leaflet
-        je lokalno u static/vendor/ (MIT)."""
-        groups: dict[tuple, list[dict]] = defaultdict(list)
-        for d in active:
-            if d.get("latitude") and d.get("longitude"):
-                groups[(round(float(d["latitude"]), 5),
-                        round(float(d["longitude"]), 5))].append(d)
-        map_data = []
-        for (lat, lon), ds in groups.items():
-            ds.sort(key=lambda x: (x.get("discount_pct") is None,
-                                   -(float(x["discount_pct"]) if x.get("discount_pct")
-                                     is not None else 0)))
-            map_data.append({
-                "lat": lat, "lon": lon, "n": len(ds),
-                "name": ds[0].get("cadastral_municipality") or ds[0].get("city")
-                        or ds[0].get("county") or "",
-                "links": [{"n": x["card_title"],
-                           "u": x["url"],
-                           "p": f_eur(x["opening_price_eur"]) if x.get("opening_price_eur") else ""}
-                          for x in ds[:4]],
-                "more": ds[0]["city_url"] if ds[0].get("city") else ds[0]["county_url"],
-            })
+        Markeri se grade u pregledniku iz search-index.json — istog indeksa
+        koji pokreće filtre — pa karta i popis dijele jednu logiku filtriranja.
+        Bez JS-a ostaje popis županija. Koordinate su službene referentne
+        točke k.o. (DGU INSPIRE, Otvorena dozvola); OSM podloga je jedini
+        vanjski zahtjev na stranici."""
+        with_coords = sum(1 for d in active if d.get("latitude"))
         counties = []
         for county, group in sorted(by_county.items(),
                                     key=lambda kv: -len(kv[1])):
@@ -872,10 +856,10 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
         self._render(
             "map.html", "/karta/",
             page_title="Karta dražbi nekretnina po županijama | Licita",
-            meta_description=(f"Interaktivna karta s {sum(d['n'] for d in map_data)} "
-                              f"aktivnih dražbi na {len(map_data)} lokacija — točke "
+            meta_description=(f"Interaktivna karta s {with_coords} aktivnih "
+                              f"dražbi s filtrima po vrsti, cijeni i statusu — točke "
                               f"katastarskih općina iz službenog DGU registra."),
-            map_data=map_data, counties=counties, breadcrumbs=crumbs,
+            counties=counties, with_coords=with_coords, breadcrumbs=crumbs,
             jsonld=[self._jsonld_breadcrumbs(crumbs)],
             sitemap_priority=0.6, sitemap_changefreq="daily",
         )

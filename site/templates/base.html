@@ -36,22 +36,28 @@
       <span class="brand-mark">Licita</span>
       <span class="brand-sub">nekretnine na dražbi</span>
     </a>
-    <nav aria-label="Glavna navigacija">
-      <ul>
-        <li><a href="{{ rel('/nekretnine/') }}">Sve nekretnine</a></li>
-        <li><a href="{{ rel('/karta/') }}">Karta</a></li>
-        <li><a href="{{ rel('/najveci-popusti/') }}">Najveći popusti</a></li>
-        <li><a href="{{ rel('/najbolja-vrijednost/') }}">Najbolja vrijednost</a></li>
-        <li><a href="{{ rel('/uskoro-zavrsavaju/') }}">Uskoro završavaju</a></li>
-        <li><a href="{{ rel('/blog/') }}">Blog</a></li>
-        <li><a href="{{ rel('/kako-sudjelovati/') }}">Kako sudjelovati</a></li>
-      </ul>
-    </nav>
-    <form class="header-search" role="search" action="{{ rel('/trazi/') }}" method="get">
-      <label class="visually-hidden" for="hq">Traži</label>
-      <input id="hq" name="q" type="search" placeholder="Traži: mjesto, k.o., spis…">
-      <button type="submit" aria-label="Traži">⌕</button>
-    </form>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-area"
+            aria-label="Otvori izbornik">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-area" id="nav-area">
+      <nav aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="{{ rel('/nekretnine/') }}">Sve nekretnine</a></li>
+          <li><a href="{{ rel('/karta/') }}">Karta</a></li>
+          <li><a href="{{ rel('/najveci-popusti/') }}">Najveći popusti</a></li>
+          <li><a href="{{ rel('/najbolja-vrijednost/') }}">Najbolja vrijednost</a></li>
+          <li><a href="{{ rel('/uskoro-zavrsavaju/') }}">Uskoro završavaju</a></li>
+          <li><a href="{{ rel('/blog/') }}">Blog</a></li>
+          <li><a href="{{ rel('/kako-sudjelovati/') }}">Kako sudjelovati</a></li>
+        </ul>
+      </nav>
+      <form class="header-search" role="search" action="{{ rel('/trazi/') }}" method="get">
+        <label class="visually-hidden" for="hq">Traži</label>
+        <input id="hq" name="q" type="search" placeholder="Traži: mjesto, k.o., spis…">
+        <button type="submit" aria-label="Traži">⌕</button>
+      </form>
+    </div>
   </div>
 </header>
 
@@ -94,5 +100,17 @@
     <p class="muted">© {{ year }} Licita · <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
   </div>
 </footer>
+<script>
+/* Burger: JS samo prebacuje klasu (stanje); prikaz i animacija su čisti CSS.
+   Bez JS-a izbornik je uvijek vidljiv — nikad slomljen. */
+(function () {
+  var b = document.getElementById("burger");
+  if (!b) return;
+  b.addEventListener("click", function () {
+    var open = document.body.classList.toggle("nav-open");
+    b.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+</script>
 </body>
 </html>

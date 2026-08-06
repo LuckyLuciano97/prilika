@@ -31,6 +31,7 @@
   <span data-ty="pravo">{% with t='pravo' %}{% include "_icons.html" %}{% endwith %}</span>
   <span data-ty="ostalo">{% with t='ostalo' %}{% include "_icons.html" %}{% endwith %}</span>
 </div>
+<script src="{{ rel('/static/filters.js') }}"></script>
 <script>
 (function () {
   "use strict";
@@ -53,33 +54,6 @@
     return d.innerHTML;
   }
 
-  function card(it) {
-    var loc = it.g ? esc(it.g) + (it.z ? ", " + esc(it.z) : "") :
-              (it.z ? esc(it.z) : "Lokacija nije utvrđena");
-    var price = it.p ? "<strong>" + esc(it.p) + "</strong>" :
-                '<span class="muted">Cijena nije objavljena</span>';
-    var chip = it.d ? ' <span class="chip">−' + esc(it.d) + "</span>" : "";
-    var ic = document.querySelector('#ikone [data-ty="' + it.ty + '"]') ||
-             document.querySelector('#ikone [data-ty="ostalo"]');
-    var meta = [];
-    if (it.a) meta.push(esc(it.a));
-    if (it.pm) meta.push(esc(it.pm));
-    var rok = it.dl !== null && it.dl !== undefined
-      ? '<span class="chip chip-rok">još ' + it.dl + " " +
-        (it.dl % 10 === 1 && it.dl % 100 !== 11 ? "dan" : "dana") + "</span>"
-      : (it.e ? "završava " + esc(it.e) : esc(it.s));
-    return '<li class="card"><article>' +
-      '<div class="card-media mb-' + esc(it.ty) + '">' + (ic ? ic.innerHTML : "") +
-      '<span class="status">' + esc(it.s) + "</span></div>" +
-      '<div class="card-body">' +
-      '<p class="card-price">' + price + chip + "</p>" +
-      '<h3><a href="' + esc(it.u) + '">' + esc(it.n) + "</a></h3>" +
-      '<p class="card-loc">' + loc + "</p>" +
-      (meta.length ? '<p class="card-meta">' + meta.join(" · ") + "</p>" : "") +
-      '<p class="card-status">' + rok + "</p>" +
-      "</div></article></li>";
-  }
-
   function render(hits, q) {
     if (!q) {
       counter.textContent = "";
@@ -97,7 +71,7 @@
       return;
     }
     out.innerHTML = '<ul class="cards">' +
-      hits.slice(0, 60).map(card).join("") + "</ul>" +
+      hits.slice(0, 60).map(Licita.card).join("") + "</ul>" +
       (hits.length > 60
         ? '<p class="muted">Prikazano prvih 60 — suzi pretragu.</p>' : "");
   }

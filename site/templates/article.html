@@ -5,7 +5,7 @@
     <h1>{{ h1 }}</h1>
     {% if published %}<p class="muted">Objavljeno {{ published }}{% if data_note %} · {{ data_note }}{% endif %}</p>{% endif %}
   </header>
-  {{ body_html }}
+  {{ body_html|safe }}
 
   {% if cards %}
   <section aria-labelledby="primjeri-naslov">

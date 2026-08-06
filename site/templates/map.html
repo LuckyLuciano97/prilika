@@ -5,19 +5,22 @@
 {% block content %}
 <header class="listing-head">
   <h1>Karta aktivnih dražbi</h1>
-  <p class="lede">Svaka točka je katastarska općina s aktivnim dražbama —
-    veličina raste s brojem predmeta. Klik otvara popis.</p>
+  <p class="lede">{{ with_coords }} predmeta s utvrđenom katastarskom općinom.
+    Filtri vrijede i ovdje — točke se osvježavaju odmah.</p>
 </header>
+
+{% set filter_scope = none %}
+{% include "_filterbar.html" %}
 
 <div id="karta" class="karta" role="application" aria-label="Karta Hrvatske s dražbama po katastarskim općinama"></div>
 
 <p class="muted small">Točke su službene referentne točke katastarskih općina
   (DGU, INSPIRE servis, Otvorena dozvola) — razina susjedstva, ne točna parcela.
-  Predmeti bez utvrđene katastarske općine nisu na karti; njih pokriva
+  Predmeti bez utvrđene k.o. nisu na karti; njih pokriva
   <a href="{{ rel('/nekretnine/') }}">tekstualni pregled</a>.
   Kartografska podloga: <a href="https://www.openstreetmap.org/copyright"
-  rel="noopener" target="_blank">© OpenStreetMap suradnici</a> — jedino mjesto
-  na stranici koje učitava sadržaj s vanjskog poslužitelja.</p>
+  rel="noopener" target="_blank">© OpenStreetMap suradnici</a> — jedini vanjski
+  zahtjev na stranici.</p>
 
 <section aria-labelledby="popis-naslov">
   <h2 id="popis-naslov">Po županijama</h2>
@@ -29,39 +32,69 @@
 </section>
 
 <script src="{{ rel('/static/vendor/leaflet/leaflet.js') }}"></script>
+<script src="{{ rel('/static/filters.js') }}"></script>
 <script>
 (function () {
   "use strict";
-  var DATA = {{ map_data|tojson }};
+  var form = document.getElementById("filteri");
+  var counter = document.getElementById("f-brojac");
+  if (!window.L || !window.Licita || !form) return;
+
   var map = L.map("karta", { scrollWheelZoom: false }).setView([44.6, 16.4], 7);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 12,
+    maxZoom: 15,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-  function esc(s) { var e = document.createElement("div"); e.textContent = s || ""; return e.innerHTML; }
-  var max = Math.max.apply(null, DATA.map(function (d) { return d.n; }));
+  var layer = L.layerGroup().addTo(map);
   var canvas = L.canvas({ padding: 0.3 });
-  DATA.forEach(function (d) {
-    var r = 5 + 11 * Math.sqrt(d.n / max);
-    var html = "<strong>" + esc(d.name) + "</strong> · " + d.n +
-      (d.n === 1 ? " predmet" : " predmeta") + "<ul class=\"popup-list\">";
-    d.links.forEach(function (l) {
-      html += '<li><a href="' + esc(l.u) + '">' + esc(l.n) + "</a>" +
-              (l.p ? " — " + esc(l.p) : "") + "</li>";
+  var data = null, fitted = false;
+
+  function esc(s) { return Licita.esc(s); }
+
+  function render() {
+    if (!data) return;
+    var hits = data.filter(Licita.predicate(form))
+                   .filter(function (it) { return it.lt !== null && it.lt !== undefined; });
+    /* grupiraj po točki k.o. — više predmeta na istoj točki = jedan veći krug,
+       pa karta ostaje čitljiva i bez plugina za clustering */
+    var groups = {};
+    hits.forEach(function (it) {
+      var k = it.lt + "|" + it.ln;
+      (groups[k] = groups[k] || []).push(it);
     });
-    html += "</ul>";
-    if (d.n > d.links.length) {
-      html += '<a href="' + esc(d.more) + '">Svi predmeti ovdje →</a>';
+    layer.clearLayers();
+    var keys = Object.keys(groups);
+    var max = 1;
+    keys.forEach(function (k) { if (groups[k].length > max) max = groups[k].length; });
+    keys.forEach(function (k) {
+      var ds = groups[k];
+      var it0 = ds[0];
+      var r = 5 + 11 * Math.sqrt(ds.length / max);
+      var html = "<strong>" + esc(it0.k || it0.g || it0.z) + "</strong> · " +
+                 ds.length + (ds.length === 1 ? " predmet" : " predmeta") +
+                 '<ul class="popup-list">';
+      ds.slice(0, 4).forEach(function (l) {
+        html += '<li><a href="' + esc(l.u) + '">' + esc(l.n) + "</a>" +
+                (l.p ? " — " + esc(l.p) : "") + "</li>";
+      });
+      html += "</ul>";
+      L.circleMarker([it0.lt, it0.ln], {
+        renderer: canvas, radius: r, weight: 1.5, color: "#0b6b43",
+        fillColor: "#0b6b43", fillOpacity: 0.45
+      }).addTo(layer).bindPopup(html, { maxWidth: 300 });
+    });
+    counter.textContent = hits.length + " predmeta na " + keys.length + " lokacija";
+    if (!fitted && keys.length) {
+      map.fitBounds(keys.map(function (k) {
+        return [groups[k][0].lt, groups[k][0].ln];
+      }), { padding: [24, 24] });
+      fitted = true;
     }
-    L.circleMarker([d.lat, d.lon], {
-      renderer: canvas, radius: r, weight: 1.5, color: "#0b5d3b",
-      fillColor: "#0b5d3b", fillOpacity: 0.45
-    }).addTo(map).bindPopup(html, { maxWidth: 300 });
-  });
-  if (DATA.length) {
-    map.fitBounds(DATA.map(function (d) { return [d.lat, d.lon]; }),
-                  { padding: [24, 24] });
   }
+
+  fetch("/search-index.json").then(function (r) { return r.json(); })
+    .then(function (j) { data = j; render(); });
+  Licita.wireFilterbar(form, render);
 })();
 </script>
 {% endblock %}

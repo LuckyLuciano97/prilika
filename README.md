@@ -9,7 +9,7 @@ free-text description field, and a web app behind a reCAPTCHA with a 100-result 
 Licita turns it into something you can actually search: **11,089 sale items**,
 normalised, deduplicated, geocoded to county and town, with discount-vs-appraisal
 computed and repeat auctions linked — regenerated daily into a fast static site of
-**2,926 pages**, all in Croatian, with **zero personal data**.
+**2,990 pages**, all in Croatian, with **zero personal data**.
 
 The public site is in Croatian (`licita.hr`); this README is in English.
 
@@ -38,10 +38,10 @@ Source snapshot **2026-08-05**, official CSV export, `sha256 06013bb9c325…`,
 | — no auction window set | 1,775 |
 | Finished (kept for price history) | 8,627 |
 | Counties covered | **21 of 21** |
-| Items with a resolved county | 9,727 (87.7%) |
+| Items with a resolved county | 10,054 (90.7%) |
 | Average discount vs appraisal (all items) | **32.22%** |
 | Repeat-auction groups linked | 95 |
-| Pages generated | **2,926** |
+| Pages generated | **2,990** |
 | Personal data points removed | 417 |
 
 Property mix: 3,412 agricultural land · 2,514 houses · 1,499 apartments ·
@@ -107,7 +107,7 @@ So "zero personal data" is **not a property of the source** — it has to be enf
 
 **The debtor's identity is protected. That is the point, and it is checked
 mechanically on every run:** `validate.py` scans every text column in the database
-*and* the visible text of all 2,926 generated pages, and **hard-fails** on a single hit.
+*and* the visible text of all 2,990 generated pages, and **hard-fails** on a single hit.
 
 Latest run: **0 hits in the database, 0 residual names, 0 hits across all pages.**
 
@@ -119,7 +119,7 @@ Stated plainly, because inventing these would be worse than lacking them:
 
 | Field | Reality |
 |---|---|
-| county / city / settlement | **No such column exists.** Derived from four fallible signals and graded by whether two of them agree (see below). High 6,749 · medium 2,724 · **low/conflicting 254** · unresolved 1,362, reported by name. |
+| county / city / settlement | **No such column exists.** Derived from four fallible signals and graded by whether two of them agree (see below). High 7,452 · medium 2,310 · **low/conflicting 292** · unresolved 1,035, reported by name. |
 | `area_m2` | No column. Parsed from description text — 9,834 of 11,089 items (88.7%), including `čhv` and `ha` conversion. |
 | `status` | No column. Derived from auction start/end vs snapshot date. |
 | **`current_bid_eur`** | **Not in the export at all** — visible only in the live app. Stored as `NULL`, shown nowhere, never estimated. |
@@ -131,9 +131,13 @@ the court would be invented precision. Those items stay "location not establishe
 and are counted.
 
 **That choice costs more than the headline suggests, so here is the uncomfortable
-number.** Location is unresolved for 12.3% of all items — but for **36.8% of
-*active* ones** (902 of 2,448), because active listings skew heavily towards
-bankruptcy sales run by commercial courts. `Lokacija nije utvrđena` is therefore the
+number.** Location is unresolved for 9.3% of all items — but for **32.0% of
+*active* ones** (784 of 2,447), because active listings skew heavily towards
+bankruptcy sales run by commercial courts. The k.o.→county register
+(`data/ko_zupanije.csv`, derived from official coordinates with spatial
+validation and unanimous-neighbourhood voting — see `tools/build_ko_zupanije.py`)
+is what pulled this down from 46.5% at first build; the remainder genuinely
+names no cadastral municipality at all. `Lokacija nije utvrđena` is therefore the
 largest bucket on the homepage. Filling it by falling back to the court's seat would
 make the site look complete and be wrong; the honest version is visible instead.
 
@@ -226,7 +230,7 @@ that legitimately changes. A price change must never look like a new listing.
 
 ## SEO surface
 
-2,926 pages, every one with a unique title and meta description, one `<h1>`,
+2,990 pages, every one with a unique title and meta description, one `<h1>`,
 canonical URL, Open Graph tags, and valid JSON-LD — verified, not asserted.
 
 - `RealEstateListing` + `Offer` per property (price, currency, availability,
@@ -257,7 +261,7 @@ canonical URL, Open Graph tags, and valid JSON-LD — verified, not asserted.
 | 6 | Discount arithmetic | PASS — 9,672 rows, 0 deviations |
 | 7 | Repeat auction linked | PASS — `OVR-12767/2016`, price falls |
 | 8 | No cross-case merging | PASS — 0 groups mix case files |
-| 9 | SEO output | PASS — 2,926 pages, 0 duplicate titles, 0 bad JSON-LD, 0 missing from sitemap |
+| 9 | SEO output | PASS — 2,990 pages, 0 duplicate titles, 0 bad JSON-LD, 0 missing from sitemap |
 | 10 | Diacritics on disk | PASS |
 | 11 | No phantom price changes | PASS — 2 runs, same source, 0 changes |
 | 12 | Price-tracking mechanism | PASS — controlled test |

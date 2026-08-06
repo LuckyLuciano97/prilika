@@ -406,6 +406,31 @@ def ko_points() -> tuple[dict[str, tuple[str, float, float]],
     return _KO_POINTS
 
 
+_KO_COUNTY: dict[str, str] | None = None
+
+
+def ko_county() -> dict[str, str]:
+    """maticni_broj k.o. -> županija (iz data/ko_zupanije.csv).
+
+    Izvedeno iz službenih koordinata (DGU) + službenih naselja (DZS) s
+    prostornom provjerom — v. tools/build_ko_zupanije.py. Pokriva 3 331 od
+    3 496 k.o.; rubne bez jednoglasnog susjedstva namjerno nedostaju.
+    """
+    global _KO_COUNTY
+    if _KO_COUNTY is None:
+        import csv
+        from pathlib import Path
+
+        table: dict[str, str] = {}
+        path = Path(__file__).resolve().parent / "data" / "ko_zupanije.csv"
+        if path.exists():
+            with path.open(encoding="utf-8") as fh:
+                for row in csv.DictReader(fh, delimiter=";"):
+                    table[row["maticni_broj"]] = row["zupanija"]
+        _KO_COUNTY = table
+    return _KO_COUNTY
+
+
 # --- Službeni registar naselja (DZS, Popis 2021) ---------------------------
 # data/naselja.csv generira tools/build_naselja.py iz DZS-ove tablice
 # objavljene pod Otvorenom dozvolom (v. zaglavlje te skripte za provenijenciju).

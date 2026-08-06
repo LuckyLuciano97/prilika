@@ -1,0 +1,64 @@
+{# Zajednička traka filtara — ISTA na popisima i na karti, da se logika ne
+   duplicira. JS samo čita ovu formu; izgled je čist CSS (chip = stilizirani
+   label s checkboxom). Na mobitelu se sklapa iza gumba "Filteri". #}
+<form class="filterbar" id="filteri" onsubmit="return false" hidden
+      data-county="{{ filter_scope.county or '' if filter_scope else '' }}"
+      data-city="{{ filter_scope.city or '' if filter_scope else '' }}"
+      data-type="{{ filter_scope.type or '' if filter_scope else '' }}">
+  <div class="f-head">
+    <button type="button" class="f-toggle" aria-expanded="false" aria-controls="f-body">
+      Filteri <span class="f-count" id="f-aktivnih" hidden></span>
+    </button>
+    <span class="muted small" id="f-brojac" aria-live="polite"></span>
+  </div>
+  <div class="f-body" id="f-body">
+    <fieldset class="f-types">
+      <legend>Vrsta</legend>
+      {# građevinsko i poljoprivredno prva — razlika koju kupac zemljišta traži #}
+      <label><input type="checkbox" name="ty" value="gradevinsko-zemljiste"> Građevinsko zemljište</label>
+      <label><input type="checkbox" name="ty" value="poljoprivredno-zemljiste"> Poljoprivredno zemljište</label>
+      <label><input type="checkbox" name="ty" value="stan"> Stan</label>
+      <label><input type="checkbox" name="ty" value="kuca"> Kuća</label>
+      <label><input type="checkbox" name="ty" value="poslovni-prostor"> Poslovni prostor</label>
+      <label><input type="checkbox" name="ty" value="zemljiste"> Zemljište (ostalo)</label>
+      <label><input type="checkbox" name="ty" value="sumsko-zemljiste"> Šumsko</label>
+      <label><input type="checkbox" name="ty" value="garaza"> Garaža</label>
+    </fieldset>
+    <div class="f-row">
+      <label>Status
+        <select name="sk">
+          <option value="">svi</option>
+          <option value="u_tijeku">u tijeku</option>
+          <option value="najavljeno">najavljeno</option>
+          <option value="bez_termina">bez termina</option>
+        </select>
+      </label>
+      <label>Postupak
+        <select name="pk">
+          <option value="">svi</option>
+          <option value="ovrha">ovrha</option>
+          <option value="stecaj">stečaj</option>
+        </select>
+      </label>
+      <label>Cijena od <input type="number" name="pmin" min="0" step="1000" placeholder="€"></label>
+      <label>do <input type="number" name="pmax" min="0" step="1000" placeholder="€"></label>
+      <label>Površina od <input type="number" name="amin" min="0" step="10" placeholder="m²"></label>
+      <label>Sortiraj
+        <select name="sort">
+          <option value="dn">najveći popust</option>
+          <option value="pn_asc">najniža cijena</option>
+          <option value="pn_desc">najviša cijena</option>
+          <option value="mn">najbolji €/m²</option>
+          <option value="an">najveća površina</option>
+          <option value="ei">najbliži rok</option>
+        </select>
+      </label>
+      <button type="button" id="f-reset" class="btn-plain">Poništi</button>
+    </div>
+  </div>
+</form>
+<div hidden id="ikone" aria-hidden="true">
+  {% for tyk in ['kuca','stan','poslovni-prostor','gradevinsko-zemljiste','poljoprivredno-zemljiste','sumsko-zemljiste','zemljiste','garaza','pokretnina','pravo','ostalo'] %}
+  <span data-ty="{{ tyk }}">{% with t=tyk %}{% include "_icons.html" %}{% endwith %}</span>
+  {% endfor %}
+</div>

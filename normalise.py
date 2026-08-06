@@ -560,6 +560,12 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         hits = croatia.settlements().get(fold(clean), [])
         if hits:
             return max(hits, key=lambda h: h[3])[0]
+        # k.o. registar kao kanonski zapis: izvor isto ime piše i verzalom
+        # ("TREŠNJEVKA NOVA") i mješovito ("Trešnjevka Nova") — bez jednog
+        # kanonskog oblika dva zapisa daju dvije stranice s istim URL-om.
+        ko_hits = croatia.ko_points()[1].get(fold(clean), [])
+        if len(ko_hits) == 1:
+            return ko_hits[0][1].title()
         return _canonical_town(_resolve_town(clean) or clean)
 
     zk_town = _town_from_land_registry(text)
@@ -591,8 +597,37 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
                               location_raw=f"{raw} (dominantno naselje)")
                 return result
 
-    # --- 2. naziv katastarske općine -------------------------------------
+    # --- 2. katastarska općina, najprije preko REGISTRA ------------------
+    # data/ko_zupanije.csv veže k.o. za županiju preko službenih koordinata,
+    # ne preko sličnosti imena — "Sesvete Novo" nije naselje i imenska ga
+    # logika ne može riješiti, a registar zna točno gdje mu je točka.
     ko_name = result["cadastral_municipality"] or ""
+    reg_county = None
+    ko_map = croatia.ko_county()
+    if ko_map:
+        m_code = _KO_CODE_RE.search(text)
+        if m_code and m_code.group(1) in ko_map:
+            reg_county = ko_map[m_code.group(1)]
+        elif ko_name:
+            entries = croatia.ko_points()[1].get(
+                fold(_ORDINAL_SUFFIX.sub("", ko_name.strip()))) or []
+            if len(entries) == 1:
+                reg_county = ko_map.get(entries[0][0])
+
+    if reg_county:
+        if not anchors or reg_county in anchors:
+            result.update(county=reg_county, city=_display_name(ko_name) if ko_name else None,
+                          location_confidence="visoka" if reg_county in anchors
+                          else "srednja",
+                          location_raw=f"k.o. registar: {ko_name or 'matični broj'}")
+            return result
+        # sidro se ne slaže s registrom koordinata — koordinate su izravnije
+        # od sjedišta suda, ali neslaganje se priznaje
+        result.update(county=reg_county, city=_display_name(ko_name) if ko_name else None,
+                      location_confidence="niska",
+                      location_raw=f"k.o. {ko_name} ≠ {zk_town or issuer}")
+        return result
+
     ko_cands = _candidates(ko_name)
 
     if len(ko_cands) == 1:

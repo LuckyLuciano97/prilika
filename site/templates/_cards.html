@@ -4,6 +4,7 @@
     <article>
       <div class="card-media mb-{{ c.property_type }}">
         {% with t=c.property_type %}{% include "_icons.html" %}{% endwith %}
+        <span class="mtype">{{ c.type_label }}</span>
         <span class="status status-{{ c.status }}">{{ c.status_label }}</span>
       </div>
       <div class="card-body">
