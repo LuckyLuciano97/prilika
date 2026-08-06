@@ -103,6 +103,16 @@ def main() -> int:
         if not counties:
             counties = settlements_sorted.get(" ".join(sorted(f.split())))
             izvor = "ime-obrnuto"
+        if not counties and " " in f:
+            # Složenica dvaju naselja ("MURTER BETINA"): svaki dio je sam po
+            # sebi naselje i SVI se dijelovi slažu o jednoj županiji. Nužno za
+            # otoke, gdje bi najbliža pridružena k.o. bila preko morskog
+            # kanala u krivoj županiji.
+            parts = [settlements.get(p) for p in f.split()]
+            if all(p and len(p) == 1 for p in parts):
+                merged = set().union(*parts)
+                if len(merged) == 1:
+                    counties, izvor = merged, "ime-slozeno"
         if not counties or len(counties) != 1:
             continue
         county = next(iter(counties))

@@ -1426,7 +1426,7 @@ maticni_broj;naziv;zupanija;izvor
 316482;KUNJ;Istarska županija;ime
 316512;LETAJ;Istarska županija;ime
 316547;MARTINSKI;Istarska županija;susjedstvo
-316555;MOST RAŠA;Istarska županija;susjedstvo
+316555;MOST RAŠA;Istarska županija;ime-slozeno
 316563;NEDEŠĆINA;Istarska županija;ime
 316571;NOVA VAS;Istarska županija;ime
 316580;NOVI LABIN;Istarska županija;susjedstvo
@@ -2600,6 +2600,7 @@ maticni_broj;naziv;zupanija;izvor
 330094;LOZOVAC;Šibensko-kninska županija;ime
 330108;MANDALINA;Šibensko-kninska županija;susjedstvo
 330116;MARTINSKA;Šibensko-kninska županija;susjedstvo
+330124;MURTER BETINA;Šibensko-kninska županija;ime-slozeno
 330132;PIRAMATOVCI;Šibensko-kninska županija;ime
 330159;PIROVAC;Šibensko-kninska županija;ime
 330167;PRIMOŠTEN;Šibensko-kninska županija;ime
