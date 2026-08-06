@@ -107,7 +107,7 @@ So "zero personal data" is **not a property of the source** — it has to be enf
 
 **The debtor's identity is protected. That is the point, and it is checked
 mechanically on every run:** `validate.py` scans every text column in the database
-*and* the visible text of all 2,990 generated pages, and **hard-fails** on a single hit.
+*and* the visible text of all 3,036 generated pages, and **hard-fails** on a single hit.
 
 Latest run: **0 hits in the database, 0 residual names, 0 hits across all pages.**
 
@@ -119,8 +119,8 @@ Stated plainly, because inventing these would be worse than lacking them:
 
 | Field | Reality |
 |---|---|
-| county / city / settlement | **No such column exists.** Derived from four fallible signals and graded by whether two of them agree (see below). High 7,452 · medium 2,310 · **low/conflicting 292** · unresolved 1,035, reported by name. |
-| `area_m2` | No column. Parsed from description text — 9,834 of 11,089 items (88.7%), including `čhv` and `ha` conversion. |
+| county / city / settlement | **No such column exists.** Derived from four fallible signals and graded by whether two of them agree (see below). High 7,439 · medium 2,451 · **low/conflicting 316** · unresolved 884, reported by name. |
+| `area_m2` | No column. Parsed from description text — 9,835 of 11,090 items (88.7%), including `čhv` and `ha` conversion. |
 | `status` | No column. Derived from auction start/end vs snapshot date. |
 | **`current_bid_eur`** | **Not in the export at all** — visible only in the live app. Stored as `NULL`, shown nowhere, never estimated. |
 | per-item deep link | Does not exist. Four URL patterns tested, all HTTP 404 — the app is session-based. Pages link to the registry and cite the auction ID for manual lookup. |
@@ -130,16 +130,20 @@ bankruptcy estate can hold property anywhere in Croatia, so inferring location f
 the court would be invented precision. Those items stay "location not established"
 and are counted.
 
-**That choice costs more than the headline suggests, so here is the uncomfortable
-number.** Location is unresolved for 9.3% of all items — but for **32.0% of
-*active* ones** (784 of 2,447), because active listings skew heavily towards
-bankruptcy sales run by commercial courts. The k.o.→county register
-(`data/ko_zupanije.csv`, derived from official coordinates with spatial
-validation and unanimous-neighbourhood voting — see `tools/build_ko_zupanije.py`)
-is what pulled this down from 46.5% at first build; the remainder genuinely
-names no cadastral municipality at all. `Lokacija nije utvrđena` is therefore the
-largest bucket on the homepage. Filling it by falling back to the court's seat would
-make the site look complete and be wrong; the honest version is visible instead.
+**That choice used to cost 32.0% of active listings, and the path down is worth
+tracing.** At first build 46.5% of active items were unresolved, because active
+listings skew heavily towards bankruptcy sales run by commercial courts. Three
+things pulled it down, each register-backed rather than guessed: the k.o.→county
+register (`data/ko_zupanije.csv`, derived from official coordinates with spatial
+validation and unanimous-neighbourhood voting — see `tools/build_ko_zupanije.py`);
+splitting movables into their own section (machinery and goods legitimately have
+no cadastral location); and a one-time LLM extraction pass over the stubborn
+remainder in which **the model only proposes and the registers dispose** (see
+below). Active *real-estate* listings now stand at **2.9% unresolved (52 of
+1,771)**; the 52 genuinely name no place at all — several are movables
+misfiled as real estate by the source, and two are properties in Serbia.
+Falling back to the court's seat would make even those look complete and be
+wrong; the honest version is visible instead.
 
 ### Location confidence is earned by agreement, not by which rule fired
 
@@ -162,10 +166,30 @@ same-name ties, but only at overwhelming odds: `Dugopolje` near Split (3,248
 people) beats the hamlet near Gračac (17) at 191:1 — below a 20:1 ratio nothing
 is guessed. A ready-made City of Zagreb cadastral CSV was still **rejected**
 because its CKAN record carries `license_id: ""`; unlicensed data stays out no
-matter how convenient. Still open: purely cadastral names that are no settlement
-at all (`Vrapče Novo`, `Blato Novo`) resolve only when a land-registry or court
-anchor corroborates them, and items whose description names nothing stay
-unresolved and counted.
+matter how convenient.
+
+### The stubborn remainder: the model proposes, the registers dispose
+
+The rules deliberately do no fuzzy matching, and the price was a residue of 87
+active items whose description names the location with a typo (`k.o. Kneževci
+Vinogradi`), in free prose (`ZAGREB, DRAGANIĆI`), or via a land-book-only k.o.
+that exists in no cadastral register (`Vrapče Novo`). A one-time pass
+(`tools/llm_lokacije.py`) sends each **already-redacted** description to a
+language model — and treats its answer as a *proposal*, never as data. A
+proposal enters `data/llm_lokacije.csv` only after an official register confirms
+it: the settlement against the DZS census register, the k.o. against the DGU
+cadastre, a bare county claim only when the county (or a settlement uniquely
+belonging to it) is literally in the text. **35 of 87 passed; 52 were rejected
+with the reason printed** — including cases where the model flatly invented a
+county (it placed Zagvozd in Karlovačka; the register put it in
+Splitsko-dalmatinska and its claim was discarded) and a trap worth naming:
+`k.o. Blato Novo` under a Zagreb commercial court, which the model truncated to
+"Blato" — unique as a *settlement* (Korčula) but held by the DGU cadastre in
+three places including Zagreb, so a register-vs-register check rejected it. The
+committed CSV is re-validated against the registers on every load
+(`croatia.llm_locations()`), the daily pipeline needs no API key, affected pages
+disclose the derivation, and confidence never exceeds `srednja`. Items whose
+description names nothing stay unresolved and counted.
 
 ---
 

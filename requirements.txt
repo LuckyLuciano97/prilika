@@ -1,3 +1,6 @@
 requests>=2.31
 psycopg2-binary>=2.9
 Jinja2>=3.1
+
+# samo za tools/llm_lokacije.py (jednokratna ekstrakcija; pipeline radi bez njega)
+anthropic>=0.60

@@ -101,10 +101,17 @@ visokom namjerom. Rješavanje k.o. → županija mapiranja *jest* SEO posao.
 
 ## 4. Otvoreno
 
-- **k.o. → županija:** 879 neriješenih predmeta ima naziv katastarske općine
-  koji nije naziv naselja (324 različita naziva). Potreban je službeni registar
-  s dopuštenom ponovnom uporabom. DGU objavljuje RPJ pod Otvorenom dozvolom,
-  ali kao WFS s geometrijom i bez atributa županije; jedini gotov CSV koji je
-  nađen (Grad Zagreb) ima `license_id: ""` i `isopen: false` pa **nije korišten**.
-- **Provjera br. 12** (promjena cijene između dva RAZLIČITA dnevna snimka)
-  ostaje WARN dok se pipeline ne pokrene dva dana zaredom.
+- **LLM ekstrakcija za novi ostatak:** kako pristižu nove stavke, nakupljat će
+  se novi tvrdokorni ostatak (tipfeleri, slobodna proza). Povremeno pokreni
+  `python tools/llm_lokacije.py` (treba `ANTHROPIC_API_KEY` u `.env`; nekoliko
+  centi po prolazu). Sigurno je pokretati bilo kada: obrađene stavke se
+  preskaču, a svaki prijedlog modela i dalje mora proći potvrdu službenog
+  registra prije nego uđe u `data/llm_lokacije.csv` — nakon prolaza commitaj
+  tu datoteku i pokreni `run.py --rebuild-only`.
+- **Preostali neriješeni predmeti** su pošteno neriješivi iz samog opisa:
+  opis ne imenuje nijedno mjesto (najčešće stečajna roba i oprema), nekretnina
+  je u inozemstvu, ili je ime dvoznačno bez ijedne registarske presude.
+- **Parcelna geolokacija (backlog):** DGU WFS `cp:CadastralParcel` podržava
+  upit po `nationalCadastralReference` (dokazano na živom primjeru, k.o.
+  Murter Betina, čest. 1878/1 — 55 m² potvrđeno); točka po parceli umjesto
+  po k.o. bila bi sljedeći skok preciznosti karte.

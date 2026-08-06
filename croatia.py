@@ -239,6 +239,7 @@ AMBIGUOUS_TOWNS = {
     "Sveta Nedjelja",
     "Privlaka",       # Zadarska i Vukovarsko-srijemska
     "Luka",           # Zagrebačka; ujedno česta imenica
+    "Blato",          # naselje na Korčuli, ali i zagrebačka četvrt/k.o.
     "Dubrava",
     "Orehovica",
     "Stari Grad",
@@ -429,6 +430,59 @@ def ko_county() -> dict[str, str]:
                     table[row["maticni_broj"]] = row["zupanija"]
         _KO_COUNTY = table
     return _KO_COUNTY
+
+
+# --- LLM ekstrakcija, potvrđena registrima ---------------------------------
+# data/llm_lokacije.csv generira tools/llm_lokacije.py: model čita opis i
+# PREDLAŽE lokaciju, a redak je zapisan tek kad ga potvrdi službeni registar.
+# Učitavanje tu provjeru PONAVLJA — županija mora biti s popisa, naselje u
+# DZS registru te županije — pa se datoteka ne može ručno "obogatiti" mimo
+# registara. Nepotvrđeni redak se preskače.
+
+_LLM_LOC: dict[str, dict] | None = None
+
+
+def llm_locations() -> dict[str, dict]:
+    """item_key -> {zupanija, naselje, ko, dokaz} — lijeno učitano."""
+    global _LLM_LOC
+    if _LLM_LOC is None:
+        import csv
+        import unicodedata
+        from pathlib import Path
+
+        def _fold(s: str) -> str:
+            s = s.replace("đ", "d").replace("Đ", "D").lower()
+            return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+
+        table: dict[str, dict] = {}
+        path = Path(__file__).resolve().parent / "data" / "llm_lokacije.csv"
+        if path.exists():
+            with path.open(encoding="utf-8") as fh:
+                for row in csv.DictReader(fh, delimiter=";"):
+                    county = row.get("zupanija", "")
+                    if county not in COUNTIES:
+                        continue
+                    naselje = row.get("naselje", "")
+                    if naselje:
+                        hits = settlements().get(_fold(naselje), [])
+                        if county not in {h[2] for h in hits}:
+                            continue
+                        # istoimena k.o. u drugoj županiji (DGU) — ime nije
+                        # jednoznačan dokaz (pouka slučaja "Blato Novo")
+                        _ko_by_name = ko_points()[1]
+                        _komap = ko_county()
+                        if any((_c := _komap.get(code)) and _c != county
+                               for code, *_ in _ko_by_name.get(_fold(naselje), [])):
+                            continue
+                    ko = row.get("ko", "")
+                    if ko and _fold(ko) not in ko_points()[1]:
+                        continue
+                    table[row["item_key"]] = {
+                        "zupanija": county, "naselje": naselje,
+                        "ko": ko, "dokaz": row.get("dokaz", ""),
+                    }
+        _LLM_LOC = table
+    return _LLM_LOC
 
 
 # --- Službeni registar naselja (DZS, Popis 2021) ---------------------------

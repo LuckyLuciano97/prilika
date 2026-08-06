@@ -91,7 +91,14 @@
     <h2 id="lokacija-naslov">Lokacija</h2>
     {% if item.county %}
       <p>{% if item.city %}<strong>{{ item.city }}</strong>, {% endif %}{{ item.county }}</p>
-      {% if item.location_confidence == 'srednja' %}
+      {% if item.location_confidence == 'srednja' and item.location_raw and item.location_raw.startswith('LLM + registar') %}
+      <p class="muted small">Službeni izvoz nema stupac lokacije. Mjesto je
+        automatski izvučeno iz slobodnog teksta opisa (jezični model) i
+        prihvaćeno tek nakon potvrde u službenom registru naselja (DZS)
+        odnosno katastarskih općina (DGU) —
+        {{ item.location_raw.split(': ', 1)[1] }}. Točno naselje provjeri
+        u izvorniku.</p>
+      {% elif item.location_confidence == 'srednja' %}
       <p class="muted small">Službeni izvoz nema stupac lokacije, pa je županija
         izvedena iz jednog pokazatelja u opisu (katastarska općina,
         zemljišnoknjižni odjel ili nadležni općinski sud) i nije potvrđena drugim.

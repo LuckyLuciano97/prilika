@@ -701,12 +701,14 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
             if not entries and "-" in _fk:
                 # "Komarna-Duboka" ↔ registar "KOMARNA DUBOKA"
                 entries = croatia.ko_points()[1].get(_fk.replace("-", " ")) or []
-            if not entries and " " in _fk:
-                # obrnuti red riječi: "Bistra Donja" u opisu, "DONJA BISTRA"
-                # u registru — isti tokeni, drugi redoslijed
-                _sk = " ".join(sorted(_fk.split()))
+            if not entries:
+                # Obrnuti red riječi ("Bistra Donja" ↔ "DONJA BISTRA") i
+                # crtica s razmacima kao interpunkcija ("Komarna-Duboka" ↔
+                # registar "KOMARNA - DUBOKA"): isti tokeni su isti naziv,
+                # redoslijed i spojnice nisu sadržaj.
+                _sk = " ".join(sorted(_fk.replace("-", " ").split()))
                 for _ents in croatia.ko_points()[1].values():
-                    if " ".join(sorted(fold(_ents[0][1]).split())) == _sk:
+                    if " ".join(sorted(fold(_ents[0][1]).replace("-", " ").split())) == _sk:
                         entries = _ents
                         break
             if len(entries) == 1:
@@ -958,6 +960,23 @@ def normalise_item(clean_row: dict, viewing: str = "",
     item["latitude"], item["longitude"], item["coord_source"] = (
         point if point else (None, None, None))
     item["item_key"] = build_item_key(item)
+    if not item["county"]:
+        # Zadnji izvor: jednokratna LLM ekstrakcija za tvrdokorni ostatak
+        # (tipfeleri, slobodna proza) — ali SAMO retci koje je potvrdio
+        # službeni registar (tools/llm_lokacije.py: model predlaže, registri
+        # odlučuju). Pouzdanost ostaje "srednja" — jedan pokazatelj.
+        _ovr = croatia.llm_locations().get(item["item_key"])
+        if _ovr:
+            item["county"] = _ovr["zupanija"]
+            item["city"] = _ovr["naselje"] or item["city"]
+            if _ovr["ko"]:
+                item["cadastral_municipality"] = _ovr["ko"]
+            item["location_confidence"] = "srednja"
+            item["location_raw"] = f"LLM + registar: {_ovr['dokaz']}"
+            _pt = locate_ko_point(opis, item["cadastral_municipality"],
+                                  item["county"])
+            if _pt:
+                item["latitude"], item["longitude"], item["coord_source"] = _pt
     item["slug"] = build_slug(item)
     return item
 
