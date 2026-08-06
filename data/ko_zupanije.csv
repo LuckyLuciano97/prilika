@@ -1,0 +1,3332 @@
+maticni_broj;naziv;zupanija;izvor
+300012;BARANJSKO PETROVO SELO;Osječko-baranjska županija;ime
+300039;BATINA;Osječko-baranjska županija;susjedstvo
+300047;BELI MANASTIR;Osječko-baranjska županija;ime
+300055;BILJE;Osječko-baranjska županija;ime
+300063;BOLMAN;Osječko-baranjska županija;ime
+300071;BRANJIN VRH;Osječko-baranjska županija;ime
+300080;BRANJINA;Osječko-baranjska županija;ime
+300098;ČEMINAC;Osječko-baranjska županija;ime
+300101;DARDA;Osječko-baranjska županija;ime
+300110;DRAŽ;Osječko-baranjska županija;ime
+300128;DUBOŠEVICA;Osječko-baranjska županija;ime
+300136;GAJIĆ;Osječko-baranjska županija;ime
+300144;GRABOVAC;Osječko-baranjska županija;susjedstvo
+300152;JAGODNJAK;Osječko-baranjska županija;ime
+300179;KAMENAC;Osječko-baranjska županija;ime
+300187;KARANAC;Osječko-baranjska županija;ime
+300195;KNEŽEVI VINOGRADI;Osječko-baranjska županija;ime
+300209;KOPAČEVO;Osječko-baranjska županija;ime
+300217;KOTLINA;Osječko-baranjska županija;ime
+300225;KOZARAC;Osječko-baranjska županija;susjedstvo
+300233;LUČ;Osječko-baranjska županija;ime
+300241;LUG;Osječko-baranjska županija;ime
+300250;PETLOVAC;Osječko-baranjska županija;ime
+300268;PODOLJE;Osječko-baranjska županija;ime
+300276;POPOVAC;Osječko-baranjska županija;susjedstvo
+300284;SUZA;Osječko-baranjska županija;ime
+300292;ŠUMARINA;Osječko-baranjska županija;ime
+300306;TOPOLJE;Osječko-baranjska županija;susjedstvo
+300314;TORJANCI;Osječko-baranjska županija;ime
+300322;VARDARAC;Osječko-baranjska županija;ime
+300349;ZMAJEVAC I;Osječko-baranjska županija;ime
+300357;ZMAJEVAC II;Osječko-baranjska županija;ime
+300365;BANJEVCI;Zadarska županija;ime
+300373;BENKOVAC;Zadarska županija;susjedstvo
+300381;BJELINA;Zadarska županija;ime
+300390;BRGUD;Zadarska županija;ime
+300403;BRUŠKA;Zadarska županija;ime
+300411;BUKOVIĆ;Zadarska županija;ime
+300420;CERANJE;Zadarska županija;susjedstvo
+300438;DOBROPOLJCI;Zadarska županija;ime
+300446;DONJA JAGODNJA;Zadarska županija;ime
+300454;DONJE BILJANE;Zadarska županija;ime
+300462;GORNJA JAGODNJA;Zadarska županija;ime
+300489;GORNJE BILJANE;Zadarska županija;ime
+300497;ISLAM GRČKI;Zadarska županija;ime
+300527;KOLARINA;Zadarska županija;ime
+300535;KORLAT;Zadarska županija;ime
+300543;KULA ATLAGIĆ;Zadarska županija;ime
+300551;LEPURI;Zadarska županija;ime
+300560;LISIČIĆ;Zadarska županija;ime
+300578;LIŠANE OSTROVIČKE;Zadarska županija;ime
+300586;NADIN;Zadarska županija;ime
+300594;OSTROVICA;Zadarska županija;ime
+300608;PARČIĆ;Šibensko-kninska županija;ime
+300616;PERUŠIĆ;Zadarska županija;susjedstvo
+300624;POLAČA;Zadarska županija;susjedstvo
+300632;POPOVIĆI;Zadarska županija;susjedstvo
+300659;PRISTEG;Zadarska županija;ime
+300667;RADAŠINOVCI;Zadarska županija;ime
+300675;RAŠTEVIĆ;Zadarska županija;ime
+300683;SMILČIĆ;Zadarska županija;ime
+300705;ŠOPOT;Zadarska županija;susjedstvo
+300713;TINJ;Zadarska županija;ime
+300721;VELIM;Zadarska županija;ime
+300730;VUKŠIĆ;Zadarska županija;ime
+300748;BANJ;Zadarska županija;ime
+300756;BIOGRAD NA MORU;Zadarska županija;ime
+300764;DOBROPOLJANA;Zadarska županija;ime
+300772;SVETI FILIP I JAKOV;Zadarska županija;ime
+300799;MRLJANE;Zadarska županija;ime
+300802;NEVIĐANE;Zadarska županija;ime
+300829;PAKOŠTANE;Zadarska županija;ime
+300837;PAŠMAN;Zadarska županija;ime
+300845;RAŠTANE;Zadarska županija;susjedstvo
+300853;TKON;Zadarska županija;ime
+300861;TURANJ;Zadarska županija;ime
+300870;VRANA;Zadarska županija;susjedstvo
+300888;VRGADA;Zadarska županija;ime
+300896;ŽDRELAC;Zadarska županija;ime
+300900;BAČKOVICA;Bjelovarsko-bilogorska županija;ime
+300918;BEDENIČKA;Bjelovarsko-bilogorska županija;ime
+300926;BEDENIK;Bjelovarsko-bilogorska županija;ime
+300934;BJELOVAR;Bjelovarsko-bilogorska županija;ime
+300942;BJELOVAR-SREDICE;Bjelovarsko-bilogorska županija;susjedstvo
+300969;NOVE PLAVNICE-HRGOVLJANI;Bjelovarsko-bilogorska županija;susjedstvo
+300977;BREZOVAC;Bjelovarsko-bilogorska županija;susjedstvo
+300985;CIGLENA;Bjelovarsko-bilogorska županija;ime
+300993;ČAĐAVAC;Bjelovarsko-bilogorska županija;ime
+301019;DAUTAN;Bjelovarsko-bilogorska županija;ime
+301027;DIKLENICA;Bjelovarsko-bilogorska županija;susjedstvo
+301035;DRLJANOVAC;Bjelovarsko-bilogorska županija;ime
+301043;GALOVAC;Bjelovarsko-bilogorska županija;susjedstvo
+301051;GORNJE PLAVNICE;Bjelovarsko-bilogorska županija;ime
+301060;SREDICE GORNJE;Bjelovarsko-bilogorska županija;ime
+301086;GUDOVAC;Bjelovarsko-bilogorska županija;ime
+301094;GORNJE ROVIŠĆE;Bjelovarsko-bilogorska županija;ime
+301108;KAKINAC;Bjelovarsko-bilogorska županija;ime
+301116;KAPELA;Bjelovarsko-bilogorska županija;ime
+301124;KLOKOČEVAC;Bjelovarsko-bilogorska županija;ime
+301132;KOBASIČARI;Bjelovarsko-bilogorska županija;ime
+301159;VELIKO KORENOVO;Bjelovarsko-bilogorska županija;ime
+301167;KOZAREVAC RAČANSKI;Bjelovarsko-bilogorska županija;ime
+301175;KRALJEVAC;Bjelovarsko-bilogorska županija;ime
+301183;LASOVAC;Bjelovarsko-bilogorska županija;ime
+301191;MALO TROJSTVO;Bjelovarsko-bilogorska županija;ime
+301205;TROJSTVENI MARKOVAC;Bjelovarsko-bilogorska županija;ime
+301213;MEĐURAČA;Bjelovarsko-bilogorska županija;ime
+301230;NEVINAC;Bjelovarsko-bilogorska županija;ime
+301248;NOVA RAČA;Bjelovarsko-bilogorska županija;ime
+301256;OBROVNICA;Bjelovarsko-bilogorska županija;ime
+301264;ORLOVAC;Bjelovarsko-bilogorska županija;ime
+301272;OROVAC;Bjelovarsko-bilogorska županija;ime
+301299;PAVLIN KLOŠTAR;Bjelovarsko-bilogorska županija;ime
+301302;PODGORCI;Bjelovarsko-bilogorska županija;ime
+301329;PREDAVAC;Bjelovarsko-bilogorska županija;ime
+301337;PRESPA;Bjelovarsko-bilogorska županija;ime
+301353;PUPELICA;Bjelovarsko-bilogorska županija;ime
+301370;RAVNEŠ;Bjelovarsko-bilogorska županija;ime
+301388;RIBNJAČKA;Bjelovarsko-bilogorska županija;ime
+301396;ROVIŠĆE;Bjelovarsko-bilogorska županija;ime
+301400;SASOVAC;Bjelovarsko-bilogorska županija;ime
+301418;SEVERIN;Bjelovarsko-bilogorska županija;ime
+301426;SLOVINSKA KOVAČICA;Bjelovarsko-bilogorska županija;ime
+301434;STARE PLAVNICE;Bjelovarsko-bilogorska županija;ime
+301442;ŠANDROVAC;Bjelovarsko-bilogorska županija;ime
+301469;TOMAŠ;Bjelovarsko-bilogorska županija;ime
+301477;VELIKA PISANICA;Bjelovarsko-bilogorska županija;ime
+301485;VELIKO TROJSTVO;Bjelovarsko-bilogorska županija;ime
+301493;VIŠNJEVAC;Bjelovarsko-bilogorska županija;susjedstvo
+301515;ZRINSKI TOPOLOVAC;Bjelovarsko-bilogorska županija;ime
+301523;ŽABJAK;Bjelovarsko-bilogorska županija;ime
+301531;ŽDRALOVI;Bjelovarsko-bilogorska županija;ime
+301540;BOBOVIŠĆA;Splitsko-dalmatinska županija;ime
+301558;BOL;Splitsko-dalmatinska županija;ime
+301566;DOL;Splitsko-dalmatinska županija;susjedstvo
+301574;DONJI HUMAC;Splitsko-dalmatinska županija;ime
+301582;DRAČEVICA;Splitsko-dalmatinska županija;ime
+301604;GORNJI HUMAC;Splitsko-dalmatinska županija;ime
+301612;MILNA;Splitsko-dalmatinska županija;ime
+301639;MIRCA;Splitsko-dalmatinska županija;ime
+301647;NEREŽIŠĆA;Splitsko-dalmatinska županija;ime
+301655;NOVO SELO;Splitsko-dalmatinska županija;susjedstvo
+301663;POSTIRA;Splitsko-dalmatinska županija;ime
+301671;POVLJA;Splitsko-dalmatinska županija;ime
+301680;PRAŽNICA;Splitsko-dalmatinska županija;ime
+301698;PUČIŠĆA;Splitsko-dalmatinska županija;ime
+301701;SELCA;Splitsko-dalmatinska županija;susjedstvo
+301710;SPLITSKA;Splitsko-dalmatinska županija;ime
+301728;SUMARTIN;Splitsko-dalmatinska županija;ime
+301736;SUPETAR;Splitsko-dalmatinska županija;ime
+301744;SUTIVAN;Splitsko-dalmatinska županija;ime
+301752;ŠKRIP;Splitsko-dalmatinska županija;ime
+301779;BRDO;Istarska županija;susjedstvo
+301809;ČEPIĆ;Istarska županija;susjedstvo
+301850;KRASICA;Primorsko-goranska županija;ime
+301876;KUBERTON;Istarska županija;susjedstvo
+301906;MERIŠĆE;Istarska županija;susjedstvo
+301914;MOMJAN;Istarska županija;susjedstvo
+301922;NOVA VAS;Istarska županija;ime
+301949;NOVIGRAD;Istarska županija;susjedstvo
+301957;OPRTALJ;Istarska županija;susjedstvo
+301990;ŠTERNA;Istarska županija;susjedstvo
+302007;KUĆIBREG;Istarska županija;susjedstvo
+302031;ZAVRŠJE;Istarska županija;susjedstvo
+302040;ZRENJ;Istarska županija;susjedstvo
+302058;BRGUDAC;Istarska županija;ime
+302066;BUZET;Istarska županija;ime
+302074;BUZET-STARI GRAD;Istarska županija;susjedstvo
+302082;ČRNICA;Istarska županija;ime
+302104;DANE;Istarska županija;susjedstvo
+302139;HUM;Istarska županija;susjedstvo
+302147;JELOVICE;Istarska županija;ime
+302155;LANIŠĆE;Istarska županija;susjedstvo
+302171;MARČENEGLA;Istarska županija;ime
+302180;RAČICE;Istarska županija;ime
+302198;ROČ;Istarska županija;ime
+302201;SENJ;Istarska županija;susjedstvo
+302210;SLUM;Istarska županija;ime
+302228;SOVINJAK;Istarska županija;ime
+302236;SOVIŠĆINA;Istarska županija;ime
+302244;SVI SVETI;Istarska županija;susjedstvo
+302252;SALEŽ;Istarska županija;ime
+302279;TRSTENIK;Istarska županija;susjedstvo
+302287;VODICE;Istarska županija;susjedstvo
+302295;VRH;Istarska županija;susjedstvo
+302309;BELEJ;Primorsko-goranska županija;ime
+302317;BELI;Primorsko-goranska županija;ime
+302325;CRES;Primorsko-goranska županija;ime
+302333;CRES-GRAD;Primorsko-goranska županija;susjedstvo
+302341;ĆUNSKI;Primorsko-goranska županija;ime
+302350;DRAGOZETIĆI;Primorsko-goranska županija;ime
+302368;LUBENICE;Primorsko-goranska županija;ime
+302376;MALI LOŠINJ;Primorsko-goranska županija;ime
+302384;MALI LOŠINJ-GRAD;Primorsko-goranska županija;susjedstvo
+302392;MARTINŠĆICA;Primorsko-goranska županija;ime
+302406;NEREZINE;Primorsko-goranska županija;ime
+302414;ORLEC;Primorsko-goranska županija;ime
+302422;OSOR;Primorsko-goranska županija;ime
+302449;PERNAT;Primorsko-goranska županija;ime
+302457;PODOL;Primorsko-goranska županija;susjedstvo
+302465;PREDOŠĆICA;Primorsko-goranska županija;ime
+302473;PUNTA KRIŽA;Primorsko-goranska županija;ime
+302481;STIVAN;Primorsko-goranska županija;ime
+302490;SUSAK;Primorsko-goranska županija;ime
+302503;SVETI JAKOV;Primorsko-goranska županija;ime
+302511;UNIJE;Primorsko-goranska županija;ime
+302520;USTRINE;Primorsko-goranska županija;ime
+302538;VALUN;Primorsko-goranska županija;ime
+302546;VELI LOŠINJ;Primorsko-goranska županija;ime
+302554;VRANA;Primorsko-goranska županija;susjedstvo
+302562;BELGRAD;Primorsko-goranska županija;susjedstvo
+302589;BRIBIR;Primorsko-goranska županija;susjedstvo
+302597;CRIKVENICA;Primorsko-goranska županija;ime
+302619;DRAMALJ;Primorsko-goranska županija;ime
+302627;DRIVENIK;Primorsko-goranska županija;ime
+302635;GRIŽANE;Primorsko-goranska županija;susjedstvo
+302643;JADRANOVO;Primorsko-goranska županija;ime
+302660;LEDENICE;Primorsko-goranska županija;ime
+302678;NOVI;Primorsko-goranska županija;susjedstvo
+302694;ČABAR;Primorsko-goranska županija;ime
+302708;GEROVO;Primorsko-goranska županija;ime
+302716;GORAČI;Primorsko-goranska županija;ime
+302724;HRIB;Primorsko-goranska županija;ime
+302732;PLEŠCE;Primorsko-goranska županija;ime
+302759;PREZID;Primorsko-goranska županija;ime
+302767;BADLIČAN;Međimurska županija;ime
+302775;BELICA;Međimurska županija;ime
+302783;BENKOVEC;Međimurska županija;susjedstvo
+302791;BOGDANOVEC;Međimurska županija;ime
+302805;CIRKOVLJAN;Međimurska županija;ime
+302813;ČAKOVEC;Međimurska županija;ime
+302821;ČEHOVEC;Međimurska županija;ime
+302830;ČREČAN;Međimurska županija;susjedstvo
+302848;ČUKOVEC;Međimurska županija;susjedstvo
+302856;DEKANOVEC;Međimurska županija;ime
+302864;DOMAŠINEC;Međimurska županija;ime
+302872;DONJA DUBRAVA;Međimurska županija;ime
+302899;DONJI HRAŠĆAN;Međimurska županija;ime
+302902;DONJI KRALJEVEC;Međimurska županija;susjedstvo
+302929;DONJI MIHALJEVEC;Međimurska županija;ime
+302937;DONJI PUSTAKOVEC;Međimurska županija;ime
+302945;DONJI VIDOVEC;Međimurska županija;ime
+302953;DRAGOSLAVEC;Međimurska županija;ime
+302961;DRAŠKOVEC;Međimurska županija;ime
+302970;DRŽIMUREC;Međimurska županija;ime
+302988;FERKETINEC;Međimurska županija;ime
+302996;GARDINOVEC;Međimurska županija;ime
+303003;GORIČAN;Međimurska županija;ime
+303011;GORNJA DUBRAVA;Međimurska županija;ime
+303020;GORNJI HRAŠĆAN;Međimurska županija;ime
+303038;GORNJI KRALJEVEC;Međimurska županija;susjedstvo
+303046;GORNJI MIHALJEVEC;Međimurska županija;ime
+303054;GORNJI PUSTAKOVEC;Međimurska županija;susjedstvo
+303062;GORNJI VIDOVEC;Međimurska županija;susjedstvo
+303089;GRADIŠČAK;Međimurska županija;ime
+303097;HEMUŠEVEC;Međimurska županija;ime
+303119;HLAPIČINA;Međimurska županija;ime
+303127;HODOŠAN;Međimurska županija;ime
+303135;IVANOVEC;Međimurska županija;ime
+303143;SVETI JURAJ U TRNJU;Međimurska županija;ime
+303151;JURČEVEC;Međimurska županija;susjedstvo
+303160;KOTORIBA;Međimurska županija;ime
+303178;KRIŠTANOVEC;Međimurska županija;ime
+303186;KRIŽOVEC;Međimurska županija;ime
+303194;KURŠANEC;Međimurska županija;ime
+303208;LOPATINEC;Međimurska županija;ime
+303216;MACINEC;Međimurska županija;ime
+303224;MAČKOVEC;Međimurska županija;ime
+303232;MALA SUBOTICA;Međimurska županija;ime
+303259;SVETA MARIJA;Međimurska županija;ime
+303267;SVETI MARTIN NA MURI;Međimurska županija;ime
+303275;MARTINUŠEVEC;Međimurska županija;ime
+303283;MIHOVLJAN;Međimurska županija;susjedstvo
+303291;MURSKO SREDIŠĆE;Međimurska županija;ime
+303305;NEDELIŠĆE;Međimurska županija;ime
+303313;NOVAKOVEC;Međimurska županija;susjedstvo
+303321;NOVO SELO ROK;Međimurska županija;ime
+303330;OPOROVEC;Međimurska županija;ime
+303356;PALINOVEC;Međimurska županija;ime
+303364;PALOVEC;Međimurska županija;ime
+303372;PEKLENICA;Međimurska županija;ime
+303399;PODBREST;Međimurska županija;ime
+303402;PODTUREN;Međimurska županija;ime
+303429;PRELOG;Međimurska županija;ime
+303437;PRESEKA;Međimurska županija;susjedstvo
+303445;PRETETINEC;Međimurska županija;ime
+303453;PRHOVEC;Međimurska županija;ime
+303461;PRIBISLAVEC;Međimurska županija;ime
+303470;ROBADJE;Međimurska županija;ime
+303488;SAVSKA VES;Međimurska županija;ime
+303496;SELNICA;Međimurska županija;susjedstvo
+303500;SIVICA;Međimurska županija;ime
+303518;SLAKOVEC;Međimurska županija;ime
+303526;STANETINEC;Međimurska županija;ime
+303534;STRAHONINEC;Međimurska županija;ime
+303542;STRELEC;Međimurska županija;ime
+303569;ŠANDOROVEC;Međimurska županija;ime
+303577;ŠENKOVEC;Međimurska županija;susjedstvo
+303585;ŠTEFANEC;Međimurska županija;susjedstvo
+303593;ŠTRIGOVA;Međimurska županija;ime
+303607;ŠTRUKOVEC;Međimurska županija;ime
+303615;TOTOVEC;Međimurska županija;ime
+303623;TRNOVEC;Međimurska županija;susjedstvo
+303631;TURČIŠĆE;Međimurska županija;ime
+303640;SVETI URBAN;Međimurska županija;ime
+303658;VRATIŠINEC;Međimurska županija;ime
+303666;VUKANOVEC;Međimurska županija;ime
+303674;VULARIJA;Međimurska županija;ime
+303682;ZASADBREG;Međimurska županija;ime
+303704;ZEBANEC;Međimurska županija;susjedstvo
+303712;ŽELEZNA GORA;Međimurska županija;ime
+303739;ŽIŠKOVEC;Međimurska županija;ime
+303747;BLATNICA;Bjelovarsko-bilogorska županija;ime
+303755;BOJANA;Bjelovarsko-bilogorska županija;ime
+303763;BOSILJEVO;Bjelovarsko-bilogorska županija;susjedstvo
+303771;CERINA;Bjelovarsko-bilogorska županija;ime
+303780;ČAZMA;Bjelovarsko-bilogorska županija;ime
+303798;DAPCI;Bjelovarsko-bilogorska županija;ime
+303801;DASKATICA;Bjelovarsko-bilogorska županija;ime
+303810;DEREZA;Bjelovarsko-bilogorska županija;susjedstvo
+303828;DRAGANEC;Bjelovarsko-bilogorska županija;susjedstvo
+303836;ĐURĐIC;Bjelovarsko-bilogorska županija;susjedstvo
+303844;IVANSKA;Bjelovarsko-bilogorska županija;ime
+303852;KRIŽIC;Bjelovarsko-bilogorska županija;ime
+303879;LAMINAC;Bjelovarsko-bilogorska županija;ime
+303887;LIPOVČANI;Bjelovarsko-bilogorska županija;ime
+303895;MARTINAC;Bjelovarsko-bilogorska županija;ime
+303909;MIKLOUŠ;Bjelovarsko-bilogorska županija;susjedstvo
+303917;NARTA;Bjelovarsko-bilogorska županija;ime
+303925;PETRIČKA;Bjelovarsko-bilogorska županija;susjedstvo
+303933;POBJENIK;Bjelovarsko-bilogorska županija;ime
+303941;SAMARICA;Bjelovarsko-bilogorska županija;ime
+303950;SIŠĆANI;Bjelovarsko-bilogorska županija;ime
+303968;SRIJEDSKA;Bjelovarsko-bilogorska županija;ime
+303976;STARA PLOŠĆICA;Bjelovarsko-bilogorska županija;ime
+303984;ŠTEFANJE;Bjelovarsko-bilogorska županija;ime
+303992;ŠUŠNJARA;Bjelovarsko-bilogorska županija;susjedstvo
+304000;VAGOVINA;Bjelovarsko-bilogorska županija;ime
+304018;VRTLINSKA;Bjelovarsko-bilogorska županija;ime
+304026;VUKOVIJE;Bjelovarsko-bilogorska županija;ime
+304034;BIJELA;Bjelovarsko-bilogorska županija;ime
+304042;BLAGORODOVAC;Bjelovarsko-bilogorska županija;ime
+304069;BORKI;Bjelovarsko-bilogorska županija;susjedstvo
+304077;BASTAJSKI BRĐANI;Bjelovarsko-bilogorska županija;ime
+304085;BRESTOVAC;Požeško-slavonska županija;ime
+304107;DARUVAR;Bjelovarsko-bilogorska županija;ime
+304115;DEŽANOVAC;Bjelovarsko-bilogorska županija;ime
+304123;DOBRA KUĆA;Bjelovarsko-bilogorska županija;ime
+304131;DOLJANI;Bjelovarsko-bilogorska županija;susjedstvo
+304140;DONJI DARUVAR;Bjelovarsko-bilogorska županija;ime
+304158;DONJI SREĐANI;Bjelovarsko-bilogorska županija;ime
+304166;GOLUBINJAK;Bjelovarsko-bilogorska županija;ime
+304174;GORNJI DARUVAR;Bjelovarsko-bilogorska županija;ime
+304182;GORNJI SREĐANI;Bjelovarsko-bilogorska županija;ime
+304204;GOVEĐE POLJE;Bjelovarsko-bilogorska županija;ime
+304212;IMSOVAC;Bjelovarsko-bilogorska županija;ime
+304239;KIP;Bjelovarsko-bilogorska županija;ime
+304247;KLISA;Virovitičko-podravska županija;susjedstvo
+304255;KONČANICA;Bjelovarsko-bilogorska županija;ime
+304263;KORENIČANI;Bjelovarsko-bilogorska županija;ime
+304271;KREŠTELOVAC;Bjelovarsko-bilogorska županija;ime
+304298;MALI BASTAJI;Bjelovarsko-bilogorska županija;ime
+304301;MARKOVAC;Bjelovarsko-bilogorska županija;susjedstvo
+304310;MILJANOVAC;Bjelovarsko-bilogorska županija;ime
+304336;PAKRANI;Bjelovarsko-bilogorska županija;ime
+304379;REMOVAC;Virovitičko-podravska županija;susjedstvo
+304387;SIRAČ;Bjelovarsko-bilogorska županija;ime
+304395;SOKOLOVAC;Bjelovarsko-bilogorska županija;susjedstvo
+304409;ŠIBOVAC;Bjelovarsko-bilogorska županija;ime
+304417;TROJEGLAVA;Bjelovarsko-bilogorska županija;ime
+304425;ULJANIK;Bjelovarsko-bilogorska županija;ime
+304433;VELIKI BASTAJI;Bjelovarsko-bilogorska županija;ime
+304441;VRBOVAC;Bjelovarsko-bilogorska županija;ime
+304450;VRIJESKA;Bjelovarsko-bilogorska županija;susjedstvo
+304476;BEGOVO RAZDOLJE;Primorsko-goranska županija;ime
+304484;BELO;Primorsko-goranska županija;ime
+304492;BROD MORAVICE;Primorsko-goranska županija;ime
+304506;BROD NA KUPI;Primorsko-goranska županija;ime
+304514;BUKOV VRH;Primorsko-goranska županija;ime
+304522;CRNI LUG;Primorsko-goranska županija;ime
+304549;DELNICE;Primorsko-goranska županija;ime
+304557;DIVJAKE;Primorsko-goranska županija;ime
+304565;FUŽINE;Primorsko-goranska županija;ime
+304573;GRBAJEL;Primorsko-goranska županija;ime
+304581;LIČ;Primorsko-goranska županija;ime
+304590;LOKVE;Primorsko-goranska županija;ime
+304603;MRKOPALJ;Primorsko-goranska županija;ime
+304611;MRZLA VODICA;Primorsko-goranska županija;ime
+304620;RAVNA GORA;Primorsko-goranska županija;ime
+304638;RAZDRTO;Primorsko-goranska županija;ime
+304646;RAZLOGE;Primorsko-goranska županija;ime
+304654;STARA SUŠICA;Primorsko-goranska županija;ime
+304662;STARI LAZ;Primorsko-goranska županija;ime
+304689;SUNGER;Primorsko-goranska županija;ime
+304697;TURKE;Primorsko-goranska županija;ime
+304719;VRATA;Primorsko-goranska županija;ime
+304727;ZAVRŠJE;Primorsko-goranska županija;susjedstvo
+304735;ANDRAŠEVEC;Krapinsko-zagorska županija;ime
+304743;DONJA STUBICA;Krapinsko-zagorska županija;ime
+304751;DUBOVEC;Krapinsko-zagorska županija;ime
+304760;GLOBOČEC;Krapinsko-zagorska županija;ime
+304778;GORNJA STUBICA;Krapinsko-zagorska županija;ime
+304786;GUSAKOVEC;Krapinsko-zagorska županija;ime
+304794;HUM STUBIČKI;Krapinsko-zagorska županija;ime
+304808;JAKOVLJE;Zagrebačka županija;ime
+304824;LAZ BISTRIČKI;Krapinsko-zagorska županija;ime
+304832;LEPA VES;Krapinsko-zagorska županija;ime
+304859;MARIJA BISTRICA;Krapinsko-zagorska županija;ime
+304867;MODROVEC;Krapinsko-zagorska županija;ime
+304875;MOKRICE;Krapinsko-zagorska županija;ime
+304883;OROSLAVJE;Krapinsko-zagorska županija;ime
+304891;POLJANICA BISTRIČKA;Krapinsko-zagorska županija;ime
+304905;PUSTODOL;Krapinsko-zagorska županija;ime
+304913;SELNICA;Krapinsko-zagorska županija;susjedstvo
+304921;SLANI POTOK;Krapinsko-zagorska županija;ime
+304930;STRMEC STUBIČKI;Krapinsko-zagorska županija;ime
+304948;STUBIČKA SLATINA;Krapinsko-zagorska županija;ime
+304956;SVETI MATEJ;Krapinsko-zagorska županija;ime
+304964;STUBIČKO PODGORJE;Krapinsko-zagorska županija;susjedstvo
+304972;BEGLUCI;Zadarska županija;ime
+304999;BORIČEVAC;Ličko-senjska županija;ime
+305006;BROTNJA;Zadarska županija;ime
+305022;DABAŠNICA;Zadarska županija;ime
+305049;DNOPOLJE;Ličko-senjska županija;ime
+305057;DOBROSELO;Ličko-senjska županija;ime
+305073;DONJI LAPAC;Ličko-senjska županija;ime
+305081;DRENOVAC OSREDAČKI;Zadarska županija;ime
+305090;DUGOPOLJE;Zadarska županija;susjedstvo
+305103;GORNJI LAPAC;Ličko-senjska županija;ime
+305111;KALDRMA;Zadarska županija;ime
+305120;KESTENOVAC;Ličko-senjska županija;susjedstvo
+305138;KRUGE;Ličko-senjska županija;ime
+305146;KUPIROVO;Zadarska županija;ime
+305154;MELINOVAC;Ličko-senjska županija;ime
+305162;NEBLJUSI;Ličko-senjska županija;ime
+305189;NETEKA;Zadarska županija;ime
+305197;ORAOVAC;Ličko-senjska županija;ime
+305219;OSREDCI;Zadarska županija;ime
+305227;SEOCE;Ličko-senjska županija;susjedstvo
+305235;SRB;Zadarska županija;ime
+305243;SUVAJA;Zadarska županija;susjedstvo
+305251;ŠTRBCI;Ličko-senjska županija;susjedstvo
+305260;TIŠKOVAC LIČKI;Zadarska županija;ime
+305278;ZAKLOPAC;Zadarska županija;ime
+305286;BENIČANCI;Osječko-baranjska županija;ime
+305294;BOČKINCI;Osječko-baranjska županija;ime
+305308;ČAMAGAJEVCI;Osječko-baranjska županija;ime
+305316;ČRNKOVCI;Osječko-baranjska županija;ime
+305324;DONJI MIHOLJAC;Osječko-baranjska županija;ime
+305332;SVETI ĐURAĐ;Osječko-baranjska županija;susjedstvo
+305359;GOLINCI;Osječko-baranjska županija;ime
+305367;KAPELNA;Osječko-baranjska županija;ime
+305375;KUĆANCI;Osječko-baranjska županija;ime
+305383;KUNIŠINCI;Osječko-baranjska županija;ime
+305391;LACIĆI;Osječko-baranjska županija;ime
+305405;MARIJANCI;Osječko-baranjska županija;ime
+305413;MIHOLJAČKI POREČ;Osječko-baranjska županija;ime
+305430;PODGAJCI PODRAVSKI;Osječko-baranjska županija;ime
+305448;RADIKOVCI;Osječko-baranjska županija;ime
+305456;RAKITOVICA;Osječko-baranjska županija;ime
+305464;ŠLJIVOŠEVCI;Osječko-baranjska županija;ime
+305472;VILJEVO;Osječko-baranjska županija;ime
+305499;BADANJ;Šibensko-kninska županija;ime
+305502;BALJCI;Šibensko-kninska županija;ime
+305529;BIOČIĆ;Šibensko-kninska županija;ime
+305537;BOGATIĆ PROMINSKI;Šibensko-kninska županija;susjedstvo
+305545;BOGATIĆ MILJEVAČKI;Šibensko-kninska županija;susjedstvo
+305553;BRIŠTANI;Šibensko-kninska županija;ime
+305561;ČAVOGLAVE;Šibensko-kninska županija;ime
+305570;ČITLUK;Šibensko-kninska županija;susjedstvo
+305588;ČVRLJEVO;Šibensko-kninska županija;ime
+305596;DONJE UTORE;Šibensko-kninska županija;ime
+305600;DONJE VINOVO;Šibensko-kninska županija;ime
+305618;DRINOVCI;Šibensko-kninska županija;ime
+305626;DRNIŠ;Šibensko-kninska županija;ime
+305634;GORNJE UTORE;Šibensko-kninska županija;ime
+305642;GORNJE VINOVO;Šibensko-kninska županija;ime
+305669;GRADAC;Šibensko-kninska županija;susjedstvo
+305677;KADINA GLAVICA;Šibensko-kninska županija;ime
+305685;KAOČINE;Šibensko-kninska županija;ime
+305693;KARALIĆ;Šibensko-kninska županija;ime
+305707;KLJAKE;Šibensko-kninska županija;ime
+305715;KLJUČ;Šibensko-kninska županija;susjedstvo
+305723;KRIČKE;Šibensko-kninska županija;susjedstvo
+305731;LUKAR;Šibensko-kninska županija;ime
+305740;LJUBOSTINJE;Šibensko-kninska županija;ime
+305758;MATASE;Šibensko-kninska županija;ime
+305766;MIOČIĆ;Šibensko-kninska županija;ime
+305774;MIRLOVIĆ POLJE;Šibensko-kninska županija;ime
+305782;MIRLOVIĆ ZAGORA;Šibensko-kninska županija;ime
+305804;MOSEĆ;Šibensko-kninska županija;ime
+305812;MRATOVO;Šibensko-kninska županija;ime
+305839;NEVEST;Šibensko-kninska županija;ime
+305847;OKLAJ;Šibensko-kninska županija;ime
+305855;OSTROGAŠICA;Šibensko-kninska županija;ime
+305863;OTAVICE;Šibensko-kninska županija;ime
+305871;PAKOVO SELO;Šibensko-kninska županija;ime
+305880;PARČIĆ;Šibensko-kninska županija;ime
+305898;PLANJANE;Šibensko-kninska županija;susjedstvo
+305901;PODUMCI;Šibensko-kninska županija;ime
+305910;POKROVNIK;Šibensko-kninska županija;ime
+305928;PULJANE;Šibensko-kninska županija;ime
+305936;RADONIĆ;Šibensko-kninska županija;ime
+305944;RAZVOĐE;Šibensko-kninska županija;ime
+305952;RUŽIĆ;Šibensko-kninska županija;ime
+305979;SEDRAMIĆ;Šibensko-kninska županija;ime
+305987;SIVERIĆ;Šibensko-kninska županija;ime
+305995;SUKNOVCI;Šibensko-kninska županija;ime
+306002;ŠIRITOVCI;Šibensko-kninska županija;ime
+306029;ŠTIKOVO;Šibensko-kninska županija;ime
+306037;TEPLJUH;Šibensko-kninska županija;ime
+306045;TRBOUNJE;Šibensko-kninska županija;ime
+306053;UMLJANOVIĆ;Šibensko-kninska županija;ime
+306061;UNEŠIĆ;Šibensko-kninska županija;ime
+306070;VELUŠIĆ;Šibensko-kninska županija;ime
+306088;VISOKA;Šibensko-kninska županija;ime
+306096;ŽITNIĆ;Šibensko-kninska županija;ime
+306100;BABINO POLJE;Dubrovačko-neretvanska županija;ime
+306118;BANIĆI;Dubrovačko-neretvanska županija;ime
+306126;BLATO;Dubrovačko-neretvanska županija;ime
+306134;BOLJENOVIĆI;Dubrovačko-neretvanska županija;ime
+306142;BRAŠINA;Dubrovačko-neretvanska županija;ime
+306169;BRIJESTA;Dubrovačko-neretvanska županija;ime
+306177;BROCE;Dubrovačko-neretvanska županija;ime
+306185;BROTNICE;Dubrovačko-neretvanska županija;ime
+306193;BRSEČINE;Dubrovačko-neretvanska županija;ime
+306207;BUIĆI;Dubrovačko-neretvanska županija;susjedstvo
+306215;CAVTAT;Dubrovačko-neretvanska županija;ime
+306223;ČAJKOVICA;Dubrovačko-neretvanska županija;ime
+306231;ČELOPECI;Dubrovačko-neretvanska županija;ime
+306240;ČEPIKUĆE;Dubrovačko-neretvanska županija;ime
+306258;ČESVINICA;Dubrovačko-neretvanska županija;ime
+306266;ČIBAČA;Dubrovačko-neretvanska županija;ime
+306274;ČILIPI;Dubrovačko-neretvanska županija;ime
+306282;DANČANJE;Dubrovačko-neretvanska županija;ime
+306304;DOLI;Dubrovačko-neretvanska županija;ime
+306312;DONJA VRUĆICA;Dubrovačko-neretvanska županija;ime
+306339;DONJI BRGAT;Dubrovačko-neretvanska županija;ime
+306347;MAJKOVI DONJI;Dubrovačko-neretvanska županija;susjedstvo
+306355;DRVENIK;Dubrovačko-neretvanska županija;susjedstvo
+306363;DUBA KONAVOSKA;Dubrovačko-neretvanska županija;ime
+306371;DUBA PELJEŠKA;Dubrovačko-neretvanska županija;ime
+306380;DUBA STONSKA;Dubrovačko-neretvanska županija;ime
+306398;DUBRAVICA;Dubrovačko-neretvanska županija;susjedstvo
+306401;DUBRAVKA;Dubrovačko-neretvanska županija;ime
+306410;DUBROVNIK;Dubrovačko-neretvanska županija;ime
+306428;DUNAVE;Dubrovačko-neretvanska županija;ime
+306436;ĐONTA DOLI;Dubrovačko-neretvanska županija;susjedstvo
+306444;ĐURINIĆI;Dubrovačko-neretvanska županija;ime
+306452;GABRILI;Dubrovačko-neretvanska županija;ime
+306479;GORNJA VRUĆICA;Dubrovačko-neretvanska županija;ime
+306487;GORNJI BRGAT;Dubrovačko-neretvanska županija;ime
+306495;MAJKOVI GORNJI;Dubrovačko-neretvanska županija;susjedstvo
+306509;GOVEĐARI;Dubrovačko-neretvanska županija;ime
+306517;GRBAVAC;Dubrovačko-neretvanska županija;susjedstvo
+306525;GROMAČA;Dubrovačko-neretvanska županija;ime
+306533;GRUDA;Dubrovačko-neretvanska županija;ime
+306541;HODILJE;Dubrovačko-neretvanska županija;ime
+306550;IMOTICA;Dubrovačko-neretvanska županija;ime
+306568;JANJINA;Dubrovačko-neretvanska županija;ime
+306576;JASENICE;Dubrovačko-neretvanska županija;susjedstvo
+306584;KLIŠEVO;Dubrovačko-neretvanska županija;ime
+306592;KNEŽICA;Dubrovačko-neretvanska županija;ime
+306606;KOLOČEP;Dubrovačko-neretvanska županija;ime
+306614;KOMAJI;Dubrovačko-neretvanska županija;ime
+306622;KOMOLAC;Dubrovačko-neretvanska županija;ime
+306649;KORITA;Dubrovačko-neretvanska županija;susjedstvo
+306657;KUNA KONAVOSKA;Dubrovačko-neretvanska županija;ime
+306665;KUNA PELJEŠKA;Dubrovačko-neretvanska županija;ime
+306673;LISAC;Dubrovačko-neretvanska županija;susjedstvo
+306681;LOPUD;Dubrovačko-neretvanska županija;ime
+306690;LOVORNO;Dubrovačko-neretvanska županija;ime
+306703;LJUBAČ;Dubrovačko-neretvanska županija;susjedstvo
+306711;LJUTA;Dubrovačko-neretvanska županija;ime
+306720;MAKOŠE;Dubrovačko-neretvanska županija;ime
+306738;MARANOVIĆI;Dubrovačko-neretvanska županija;ime
+306746;MARTINOVIĆI;Dubrovačko-neretvanska županija;susjedstvo
+306754;MIHANIĆI;Dubrovačko-neretvanska županija;ime
+306762;MOČIĆI;Dubrovačko-neretvanska županija;ime
+306789;MOKOŠICA;Dubrovačko-neretvanska županija;ime
+306797;MRAVINJAC;Dubrovačko-neretvanska županija;ime
+306819;MRAVINJICA;Dubrovačko-neretvanska županija;susjedstvo
+306827;MRČEVO;Dubrovačko-neretvanska županija;ime
+306835;OBOD;Dubrovačko-neretvanska županija;susjedstvo
+306843;OBULJENO;Dubrovačko-neretvanska županija;susjedstvo
+306851;ORAŠAC;Dubrovačko-neretvanska županija;ime
+306860;OSKORUŠNO;Dubrovačko-neretvanska županija;ime
+306878;OSOBJAVA;Dubrovačko-neretvanska županija;ime
+306886;OSOJNIK;Dubrovačko-neretvanska županija;susjedstvo
+306894;OŠLJE;Dubrovačko-neretvanska županija;ime
+306908;PALJE BRDO;Dubrovačko-neretvanska županija;ime
+306916;PETRAČA;Dubrovačko-neretvanska županija;ime
+306924;PETROVO SELO;Dubrovačko-neretvanska županija;ime
+306932;PIJAVIČINO;Dubrovačko-neretvanska županija;ime
+306959;PLAT;Dubrovačko-neretvanska županija;ime
+306967;PLOČICE;Dubrovačko-neretvanska županija;ime
+306975;PODIMOČ;Dubrovačko-neretvanska županija;ime
+306983;PODOBUĆE;Dubrovačko-neretvanska županija;ime
+306991;POLJICE;Dubrovačko-neretvanska županija;susjedstvo
+307009;POPOVA LUKA;Dubrovačko-neretvanska županija;ime
+307017;POPOVIĆI;Dubrovačko-neretvanska županija;susjedstvo
+307025;POTOMJE;Dubrovačko-neretvanska županija;ime
+307033;PRIDVORJE;Dubrovačko-neretvanska županija;susjedstvo
+307041;PRIJEVOR;Dubrovačko-neretvanska županija;ime
+307050;PRIZDRINA;Dubrovačko-neretvanska županija;susjedstvo
+307068;PROŽURA;Dubrovačko-neretvanska županija;ime
+307076;PUTNIKOVIĆ;Dubrovačko-neretvanska županija;ime
+307084;RADOVČIĆI;Dubrovačko-neretvanska županija;ime
+307092;ROŽAT;Dubrovačko-neretvanska županija;ime
+307106;SLANO;Dubrovačko-neretvanska županija;ime
+307114;SMOKOVLJANI;Dubrovačko-neretvanska županija;ime
+307122;SOLINE;Dubrovačko-neretvanska županija;susjedstvo
+307149;SPARAGOVIĆI;Dubrovačko-neretvanska županija;ime
+307157;SRESER;Dubrovačko-neretvanska županija;ime
+307165;STON;Dubrovačko-neretvanska županija;ime
+307173;STRAVČA;Dubrovačko-neretvanska županija;ime
+307181;STUPA;Dubrovačko-neretvanska županija;ime
+307190;SUĐURAĐ;Dubrovačko-neretvanska županija;ime
+307203;SUSTJEPAN;Dubrovačko-neretvanska županija;ime
+307211;ŠILJEŠKI;Dubrovačko-neretvanska županija;ime
+307220;ŠIPANSKA LUKA;Dubrovačko-neretvanska županija;ime
+307238;ŠUMET;Dubrovačko-neretvanska županija;susjedstvo
+307246;TOČIONIK;Dubrovačko-neretvanska županija;ime
+307254;TOMISLAVOVAC;Dubrovačko-neretvanska županija;ime
+307262;TOPOLO;Dubrovačko-neretvanska županija;ime
+307289;TRNOVA;Dubrovačko-neretvanska županija;ime
+307297;TRNOVICA;Dubrovačko-neretvanska županija;susjedstvo
+307319;TRPANJ;Dubrovačko-neretvanska županija;ime
+307327;TRSTENIK;Dubrovačko-neretvanska županija;susjedstvo
+307335;TRSTENO;Dubrovačko-neretvanska županija;susjedstvo
+307343;USKOPLJE;Dubrovačko-neretvanska županija;ime
+307351;VISOČANI;Dubrovačko-neretvanska županija;ime
+307360;VITALJINA;Dubrovačko-neretvanska županija;ime
+307378;VODOVAĐA;Dubrovačko-neretvanska županija;ime
+307386;ZABRĐE;Dubrovačko-neretvanska županija;susjedstvo
+307394;ZASTOLJE;Dubrovačko-neretvanska županija;ime
+307408;ZATON;Dubrovačko-neretvanska županija;susjedstvo
+307416;ZATON DOLI;Dubrovačko-neretvanska županija;ime
+307424;ZAVRELJE;Dubrovačko-neretvanska županija;ime
+307432;ŽULJANA;Dubrovačko-neretvanska županija;ime
+307459;BARILOVIĆ;Karlovačka županija;ime
+307467;BELAJ;Karlovačka županija;susjedstvo
+307475;BOSILJEVO;Karlovačka županija;susjedstvo
+307483;BRAJAKOVO BRDO;Karlovačka županija;ime
+307491;BUKOVLJE;Karlovačka županija;susjedstvo
+307505;CEROVAC BARILOVIĆKI;Karlovačka županija;ime
+307513;DONJI SKRAD;Karlovačka županija;ime
+307521;DONJI ZVEČAJ;Karlovačka županija;ime
+307548;ERDELJ;Karlovačka županija;ime
+307556;GENERALSKI STOL;Karlovačka županija;ime
+307564;GLAVICA;Karlovačka županija;susjedstvo
+307572;GORNJE PRILIŠĆE;Karlovačka županija;ime
+307599;GORNJI ZVEČAJ;Karlovačka županija;ime
+307602;GRABRK;Karlovačka županija;ime
+307629;GRŠĆAKI;Karlovačka županija;ime
+307637;HRSINA;Karlovačka županija;ime
+307645;JARČE POLJE;Karlovačka županija;ime
+307653;KORANSKO SELO;Karlovačka županija;ime
+307661;KORENIĆ BRDO;Karlovačka županija;ime
+307670;KOSIJERSKO SELO;Karlovačka županija;ime
+307688;KOZALJ VRH;Karlovačka županija;ime
+307696;LADEŠIĆI;Karlovačka županija;ime
+307700;LEŠĆE;Karlovačka županija;susjedstvo
+307718;LIPA;Karlovačka županija;susjedstvo
+307726;LIŠNICA;Karlovačka županija;ime
+307734;MALETIĆI;Karlovačka županija;ime
+307742;MATEŠKO SELO;Karlovačka županija;ime
+307769;MODRUŠ POTOK;Karlovačka županija;susjedstvo
+307777;MRAČIN;Karlovačka županija;ime
+307785;MREŽNICA;Karlovačka županija;ime
+307793;MREŽNIČKI NOVAKI;Karlovačka županija;ime
+307807;MRZLO POLJE MREŽNIČKO;Karlovačka županija;susjedstvo
+307815;MRZLJAKI;Karlovačka županija;ime
+307823;NOVO SELO BOSILJEVSKO;Karlovačka županija;ime
+307831;OTOK NA DOBRI;Karlovačka županija;ime
+307840;PERJASICA;Karlovačka županija;ime
+307858;PIŠČETKE;Karlovačka županija;ime
+307866;PODREBAR;Karlovačka županija;ime
+307874;POLOJ;Karlovačka županija;susjedstvo
+307882;POTOK BOSILJEVSKI;Karlovačka županija;ime
+307904;PRIBANJCI;Karlovačka županija;ime
+307912;RADOČAJI;Karlovačka županija;ime
+307939;ROSOPAJNIK;Karlovačka županija;ime
+307947;SVOJIĆ;Karlovačka županija;ime
+307955;UMOL;Karlovačka županija;ime
+307963;VINSKI VRH;Karlovačka županija;ime
+307971;VODENA DRAGA;Karlovačka županija;ime
+307980;VUKOVA GORICA;Karlovačka županija;ime
+307998;ZAGRADCI;Karlovačka županija;ime
+308005;ŽUBRINCI;Karlovačka županija;ime
+308013;ANDRILOVEC;Zagrebačka županija;ime
+308021;BRCKOVLJANI;Zagrebačka županija;ime
+308030;DUGO SELO I;Zagrebačka županija;ime
+308048;DUGO SELO II;Zagrebačka županija;ime
+308056;HREBINEC;Zagrebačka županija;ime
+308064;HRUŠĆICA;Zagrebačka županija;ime
+308072;JEŽEVO;Zagrebačka županija;ime
+308099;LEPROVICA;Zagrebačka županija;ime
+308102;LUPOGLAV;Zagrebačka županija;susjedstvo
+308129;NOVAKI OBOROVSKI;Zagrebačka županija;ime
+308137;OBOROVO;Zagrebačka županija;ime
+308145;OKUNŠĆAK;Zagrebačka županija;ime
+308153;OSTRNA;Zagrebačka županija;susjedstvo
+308161;PREČEC;Zagrebačka županija;ime
+308170;PROZORJE;Zagrebačka županija;ime
+308188;RUGVICA;Zagrebačka županija;ime
+308196;BRĐANI;Sisačko-moslavačka županija;susjedstvo
+308200;BUINJA;Sisačko-moslavačka županija;ime
+308218;ČAVLOVICA;Sisačko-moslavačka županija;ime
+308226;ĆORE;Sisačko-moslavačka županija;ime
+308234;DIVUŠA;Sisačko-moslavačka županija;ime
+308242;DOBRETIN;Sisačko-moslavačka županija;susjedstvo
+308269;DRAGA;Sisačko-moslavačka županija;susjedstvo
+308277;DRAŠKOVAC;Sisačko-moslavačka županija;ime
+308285;DVOR;Sisačko-moslavačka županija;ime
+308293;GAGE;Sisačko-moslavačka županija;ime
+308307;GLAVIČANI;Sisačko-moslavačka županija;ime
+308315;GOLUBOVAC;Sisačko-moslavačka županija;susjedstvo
+308323;GORIČKA;Sisačko-moslavačka županija;ime
+308331;GRABOVICA;Sisačko-moslavačka županija;ime
+308340;GRMUŠANI;Sisačko-moslavačka županija;ime
+308358;GVOZDANSKO;Sisačko-moslavačka županija;ime
+308366;JAVNICA;Sisačko-moslavačka županija;ime
+308374;JAVORANJ;Sisačko-moslavačka županija;susjedstvo
+308382;JAVORNIK;Sisačko-moslavačka županija;ime
+308404;KOBILJAK;Sisačko-moslavačka županija;ime
+308412;KOMORA;Sisačko-moslavačka županija;ime
+308439;KOSNA;Sisačko-moslavačka županija;ime
+308447;KOZIBROD;Sisačko-moslavačka županija;ime
+308455;KULJANI;Sisačko-moslavačka županija;ime
+308463;LOTINE;Sisačko-moslavačka županija;ime
+308471;LJESKOVAC;Sisačko-moslavačka županija;ime
+308480;LJUBINA;Sisačko-moslavačka županija;ime
+308498;MAJDAN;Sisačko-moslavačka županija;ime
+308501;MATIJEVIĆI;Sisačko-moslavačka županija;susjedstvo
+308510;ORAOVICA;Sisačko-moslavačka županija;susjedstvo
+308528;PEDALJ;Sisačko-moslavačka županija;ime
+308536;ROGULJE;Sisačko-moslavačka županija;susjedstvo
+308544;RUJEVAC;Sisačko-moslavačka županija;ime
+308552;SOČANICA;Sisačko-moslavačka županija;ime
+308579;STANIĆ POLJE;Sisačko-moslavačka županija;ime
+308587;STRUGA;Sisačko-moslavačka županija;susjedstvo
+308595;STUPNICA;Sisačko-moslavačka županija;susjedstvo
+308609;ŠAKANLIJE;Sisačko-moslavačka županija;ime
+308617;ŠEGESTIN;Sisačko-moslavačka županija;ime
+308625;ŠVRAKARICA;Sisačko-moslavačka županija;ime
+308633;UDETIN;Sisačko-moslavačka županija;ime
+308641;UNČANI;Sisačko-moslavačka županija;ime
+308650;VOLINJA;Sisačko-moslavačka županija;ime
+308668;VRPOLJE;Sisačko-moslavačka županija;susjedstvo
+308676;ZAKOPA;Sisačko-moslavačka županija;ime
+308684;ZAMLAČA;Sisačko-moslavačka županija;susjedstvo
+308692;ZRIN;Sisačko-moslavačka županija;ime
+308706;ZUT;Sisačko-moslavačka županija;ime
+308714;ŽIROVAC;Sisačko-moslavačka županija;susjedstvo
+308722;BRAČEVCI;Osječko-baranjska županija;ime
+308749;BREZNICA ĐAKOVAČKA;Osječko-baranjska županija;ime
+308757;BUČJE;Požeško-slavonska županija;ime
+308765;BUDROVCI;Osječko-baranjska županija;ime
+308773;ČENKOVO;Osječko-baranjska županija;ime
+308781;DRAGOTIN;Osječko-baranjska županija;ime
+308790;DRENJE;Osječko-baranjska županija;susjedstvo
+308803;ĐAKOVO;Osječko-baranjska županija;ime
+308811;ĐURĐANCI;Osječko-baranjska županija;ime
+308820;FORKUŠEVCI;Osječko-baranjska županija;ime
+308838;GAŠINCI;Osječko-baranjska županija;ime
+308846;GORJANI;Osječko-baranjska županija;ime
+308854;HRKANOVCI ĐAKOVAČKI;Osječko-baranjska županija;ime
+308889;KEŠINCI;Osječko-baranjska županija;ime
+308897;KONDRIĆ;Osječko-baranjska županija;ime
+308919;KORITNA;Osječko-baranjska županija;susjedstvo
+308927;KRNDIJA;Osječko-baranjska županija;ime
+308935;LAPOVCI;Osječko-baranjska županija;ime
+308943;LEVANJSKA VAROŠ;Osječko-baranjska županija;ime
+308951;MAJAR;Osječko-baranjska županija;ime
+308960;MEROLINO SIKIREVAČKO;Osječko-baranjska županija;ime
+308978;MRZOVIĆ;Osječko-baranjska županija;ime
+308986;MUSIĆ;Osječko-baranjska županija;ime
+308994;NABRĐE;Osječko-baranjska županija;susjedstvo
+309001;NOVI PERKOVCI;Osječko-baranjska županija;ime
+309010;PAUČJE;Osječko-baranjska županija;ime
+309028;PIŠKOREVCI;Osječko-baranjska županija;ime
+309036;PODGORJE BRAČEVAČKO;Osječko-baranjska županija;ime
+309044;POTNJANI;Osječko-baranjska županija;ime
+309052;PRESLATINCI;Osječko-baranjska županija;ime
+309079;PRIDVORJE;Osječko-baranjska županija;susjedstvo
+309087;PUNITOVCI;Osječko-baranjska županija;ime
+309095;SATNICA ĐAKOVAČKA;Osječko-baranjska županija;ime
+309109;SELCI ĐAKOVAČKI;Osječko-baranjska županija;ime
+309117;SEMELJCI;Osječko-baranjska županija;ime
+309125;SLATINIK DRENJSKI;Osječko-baranjska županija;ime
+309133;SLOBODNA VLAST;Osječko-baranjska županija;ime
+309141;STRIZIVOJNA;Osječko-baranjska županija;ime
+309150;SVETOBLAŽJE;Osječko-baranjska županija;ime
+309168;ŠIROKO POLJE;Osječko-baranjska županija;ime
+309176;TOMAŠANCI;Osječko-baranjska županija;ime
+309184;TRNAVA;Osječko-baranjska županija;susjedstvo
+309192;VIŠKOVCI;Osječko-baranjska županija;susjedstvo
+309214;VUČEVCI;Osječko-baranjska županija;ime
+309222;SVETA ANA;Koprivničko-križevačka županija;ime
+309249;BUDANČEVICA;Koprivničko-križevačka županija;ime
+309257;BUDROVAC;Koprivničko-križevačka županija;ime
+309265;ČEPELOVAC;Koprivničko-križevačka županija;ime
+309273;DINJEVAC;Virovitičko-podravska županija;ime
+309281;ĐURĐEVAC I;Koprivničko-križevačka županija;ime
+309290;ĐURĐEVAC II;Koprivničko-križevačka županija;ime
+309303;FERDINANDOVAC;Koprivničko-križevačka županija;ime
+309311;GRABROVNICA;Virovitičko-podravska županija;ime
+309320;HAMPOVICA;Koprivničko-križevačka županija;ime
+309338;KALINOVAC;Koprivničko-križevačka županija;ime
+309346;KLADARE;Virovitičko-podravska županija;ime
+309354;KLOŠTAR PODRAVSKI;Koprivničko-križevačka županija;ime
+309362;KOZAREVAC;Koprivničko-križevačka županija;ime
+309389;LEPA GREDA;Koprivničko-križevačka županija;susjedstvo
+309397;MALA ČREŠNJEVICA;Virovitičko-podravska županija;ime
+309419;MIČETINAC;Koprivničko-križevačka županija;ime
+309427;MIHOLJANEC;Koprivničko-križevačka županija;ime
+309435;MOLVE;Koprivničko-križevačka županija;ime
+309443;NOVO VIRJE;Koprivničko-križevačka županija;ime
+309451;OTROVANEC;Virovitičko-podravska županija;ime
+309460;PITOMAČA I;Virovitičko-podravska županija;ime
+309478;PITOMAČA II;Virovitičko-podravska županija;ime
+309486;PODRAVSKE SESVETE;Koprivničko-križevačka županija;ime
+309494;PRUGOVAC;Koprivničko-križevačka županija;ime
+309508;SEDLARICA;Virovitičko-podravska županija;ime
+309516;SEVEROVCI;Koprivničko-križevačka županija;ime
+309524;SIROVA KATALENA;Koprivničko-križevačka županija;ime
+309532;STARI GRADAC;Virovitičko-podravska županija;ime
+309559;SUHA KATALENA;Koprivničko-križevačka županija;ime
+309567;ŠEMOVCI;Koprivničko-križevačka županija;ime
+309575;TURNAŠICA;Virovitičko-podravska županija;ime
+309583;VELIKA ČREŠNJEVICA;Virovitičko-podravska županija;ime
+309591;VIRJE;Koprivničko-križevačka županija;ime
+309605;ŽDALA;Koprivničko-križevačka županija;ime
+309613;BEREK;Bjelovarsko-bilogorska županija;ime
+309630;CIGLENICA;Bjelovarsko-bilogorska županija;susjedstvo
+309648;DIŠNIK;Bjelovarsko-bilogorska županija;ime
+309656;GAREŠNICA;Bjelovarsko-bilogorska županija;ime
+309664;GORNJA GAREŠNICA;Bjelovarsko-bilogorska županija;ime
+309672;HERCEGOVAC;Bjelovarsko-bilogorska županija;ime
+309699;HRASTOVAC;Bjelovarsko-bilogorska županija;susjedstvo
+309702;KAJGANA;Bjelovarsko-bilogorska županija;ime
+309729;KANIŠKA IVA;Bjelovarsko-bilogorska županija;ime
+309745;ILOVSKI KLOKOČEVAC;Bjelovarsko-bilogorska županija;ime
+309753;KOSTANJEVAC;Bjelovarsko-bilogorska županija;susjedstvo
+309761;LADISLAV;Bjelovarsko-bilogorska županija;ime
+309770;MLINSKA;Bjelovarsko-bilogorska županija;susjedstvo
+309788;NOVA PLOŠČICA;Bjelovarsko-bilogorska županija;ime
+309796;PALEŠNIK;Bjelovarsko-bilogorska županija;ime
+309800;PAŠIJAN;Bjelovarsko-bilogorska županija;susjedstvo
+309818;VELIKI PROKOP;Bjelovarsko-bilogorska županija;ime
+309826;RUŠKOVAC;Bjelovarsko-bilogorska županija;ime
+309834;ŠIMLJANA;Bjelovarsko-bilogorska županija;ime
+309842;ŠIMLJANIK;Bjelovarsko-bilogorska županija;ime
+309869;TOMAŠICA;Bjelovarsko-bilogorska županija;ime
+309877;TRNOVITICA;Bjelovarsko-bilogorska županija;susjedstvo
+309885;TRNOVITIČKI POPOVAC;Bjelovarsko-bilogorska županija;ime
+309893;VELIKA TRNAVA;Bjelovarsko-bilogorska županija;ime
+309915;BALINAC;Sisačko-moslavačka županija;ime
+309923;BIJELE VODE;Sisačko-moslavačka županija;ime
+309931;BIŠĆANOVO;Sisačko-moslavačka županija;ime
+309940;BOJNA;Sisačko-moslavačka županija;ime
+309958;BOROVITA;Sisačko-moslavačka županija;ime
+309966;BATURI;Sisačko-moslavačka županija;ime
+309974;BRESTIK;Sisačko-moslavačka županija;ime
+309982;BREZOVO POLJE;Sisačko-moslavačka županija;ime
+310000;BRNJEUŠKA;Sisačko-moslavačka županija;ime
+310018;BRUBNO;Sisačko-moslavačka županija;ime
+310026;BUČICA;Sisačko-moslavačka županija;susjedstvo
+310034;BUZETA;Sisačko-moslavačka županija;ime
+310042;DABRINA;Sisačko-moslavačka županija;ime
+310069;DESNI DEGOJ;Sisačko-moslavačka županija;ime
+310077;DOLNJAKI;Sisačko-moslavačka županija;ime
+310085;DONJA TRSTENICA;Sisačko-moslavačka županija;ime
+310093;DONJE SELIŠTE;Sisačko-moslavačka županija;ime
+310107;DONJI SELKOVAC;Sisačko-moslavačka županija;ime
+310115;DRAGOTINA;Sisačko-moslavačka županija;ime
+310123;DRENOVAC BANSKI;Sisačko-moslavačka županija;ime
+310131;DVORIŠĆE;Sisačko-moslavačka županija;susjedstvo
+310140;GLINA;Sisačko-moslavačka županija;ime
+310158;GORNJE SELIŠTE;Sisačko-moslavačka županija;ime
+310166;GORNJI SELKOVAC;Sisačko-moslavačka županija;ime
+310174;GRAČANICA ŠIŠINEČKA;Sisačko-moslavačka županija;ime
+310182;HAĐER;Sisačko-moslavačka županija;ime
+310204;HAJTIĆ;Sisačko-moslavačka županija;ime
+310212;ILOVAČAK;Sisačko-moslavačka županija;ime
+310239;JAME;Karlovačka županija;ime
+310247;JOŠEVICA;Sisačko-moslavačka županija;ime
+310255;KIHALAC;Sisačko-moslavačka županija;ime
+310263;KLASNIĆ;Sisačko-moslavačka županija;susjedstvo
+310271;KOZAPEROVICA;Sisačko-moslavačka županija;ime
+310280;MAJA;Sisačko-moslavačka županija;ime
+310298;MAJSKE POLJANE;Sisačko-moslavačka županija;ime
+310301;MAJSKI TRTNIK;Sisačko-moslavačka županija;ime
+310310;MALA SOLINA;Sisačko-moslavačka županija;ime
+310328;MALI GRADAC;Sisačko-moslavačka županija;ime
+310336;MARINBROD;Sisačko-moslavačka županija;ime
+310344;MARTINOVIĆI;Sisačko-moslavačka županija;susjedstvo
+310352;NOVO SELO GLINSKO;Sisačko-moslavačka županija;ime
+310379;OBLJAJ;Sisačko-moslavačka županija;susjedstvo
+310395;PREKOPA;Sisačko-moslavačka županija;susjedstvo
+310409;PRIJEKA;Sisačko-moslavačka županija;ime
+310417;RAVNO RAŠĆE;Sisačko-moslavačka županija;ime
+310425;ROVIŠKA;Sisačko-moslavačka županija;ime
+310433;SKELA;Sisačko-moslavačka županija;ime
+310441;STANKOVAC;Sisačko-moslavačka županija;ime
+310450;SVRAČICA;Sisačko-moslavačka županija;ime
+310468;ŠAŠEVA;Sisačko-moslavačka županija;ime
+310476;ŠATORNJA;Sisačko-moslavačka županija;ime
+310484;ŠIBINE;Sisačko-moslavačka županija;ime
+310492;TABORIŠTE;Sisačko-moslavačka županija;ime
+310506;TRTNIK GLINSKI;Sisačko-moslavačka županija;ime
+310514;TURČENICA;Sisačko-moslavačka županija;ime
+310522;VELIKA SOLINA;Sisačko-moslavačka županija;ime
+310549;VELIKI GRADAC;Sisačko-moslavačka županija;ime
+310557;VIDUŠEVAC;Sisačko-moslavačka županija;susjedstvo
+310565;VLAHOVIĆ;Sisačko-moslavačka županija;ime
+310573;ZALOJ;Sisačko-moslavačka županija;ime
+310581;BARLETE;Ličko-senjska županija;ime
+310590;BAŠKE OŠTARIJE;Ličko-senjska županija;ime
+310603;BILAJ;Ličko-senjska županija;ime
+310611;BREZIK;Ličko-senjska županija;susjedstvo
+310620;BRUŠANE;Ličko-senjska županija;ime
+310638;BUŽIM;Ličko-senjska županija;ime
+310646;CESARICA;Ličko-senjska županija;ime
+310654;DEBELO BRDO;Ličko-senjska županija;ime
+310662;DIVOSELO;Ličko-senjska županija;ime
+310689;DONJE PAZARIŠTE;Ličko-senjska županija;ime
+310697;DONJI KOSINJ;Ličko-senjska županija;ime
+310719;DRENOVAC RADUČKI;Ličko-senjska županija;ime
+310727;GORNJE PAZARIŠTE;Ličko-senjska županija;susjedstvo
+310735;GORNJI KOSINJ;Ličko-senjska županija;ime
+310743;GOSPIĆ;Ličko-senjska županija;ime
+310751;KALUĐEROVAC;Ličko-senjska županija;ime
+310760;KARLOBAG;Ličko-senjska županija;ime
+310778;KLANAC;Ličko-senjska županija;susjedstvo
+310786;KONJSKO BRDO;Ličko-senjska županija;ime
+310794;KRUŠČICA;Ličko-senjska županija;ime
+310808;KRUŠKOVAC;Ličko-senjska županija;ime
+310816;KUKLJIĆ;Ličko-senjska županija;ime
+310824;KVARTE;Ličko-senjska županija;ime
+310832;LIČKI ČITLUK;Ličko-senjska županija;ime
+310859;LIČKI NOVI;Ličko-senjska županija;ime
+310867;LIČKI OSIK;Ličko-senjska županija;ime
+310875;LIČKI RIBNIK;Ličko-senjska županija;ime
+310883;LIPE;Ličko-senjska županija;susjedstvo
+310891;LIPOVO POLJE;Ličko-senjska županija;ime
+310905;LUKOVO ŠUGARJE;Ličko-senjska županija;ime
+310913;MEDAK;Ličko-senjska županija;ime
+310921;MLAKVA;Ličko-senjska županija;ime
+310930;MOGORIĆ;Ličko-senjska županija;ime
+310948;MUŠALUK;Ličko-senjska županija;ime
+310956;OSTRVICA;Ličko-senjska županija;susjedstvo
+310964;PAVLOVAC VREBAČKI;Ličko-senjska županija;ime
+310972;PERUŠIĆ;Ličko-senjska županija;ime
+310999;POČITELJ;Ličko-senjska županija;ime
+311006;RADUČ;Ličko-senjska županija;ime
+311014;SMILJAN;Ličko-senjska županija;ime
+311022;STUDENCI;Ličko-senjska županija;susjedstvo
+311049;ŠIROKA KULA;Ličko-senjska županija;ime
+311057;TRNOVAC;Ličko-senjska županija;susjedstvo
+311065;VREBAC;Ličko-senjska županija;ime
+311073;BRUVNO;Zadarska županija;ime
+311081;LIČKO CERJE;Ličko-senjska županija;ime
+311090;DERINGAJ;Zadarska županija;ime
+311103;DUBOKI DOL;Zadarska županija;ime
+311111;GLOGOVO;Zadarska županija;ime
+311120;GRAB;Zadarska županija;susjedstvo
+311146;KIJANI;Zadarska županija;ime
+311154;KIK;Ličko-senjska županija;ime
+311162;KOM;Zadarska županija;ime
+311189;LOVINAC;Ličko-senjska županija;susjedstvo
+311197;MAZIN;Zadarska županija;ime
+311219;OMSICA;Zadarska županija;ime
+311227;PALANKA;Zadarska županija;ime
+311235;GORNJA PLOČA;Ličko-senjska županija;ime
+311243;PRIBUDIĆ;Zadarska županija;ime
+311251;PRLJEVO;Zadarska županija;ime
+311278;RUDOPOLJE BRUVANJSKO;Zadarska županija;ime
+311286;SMOKRIĆ;Ličko-senjska županija;ime
+311294;SVETI ROK;Ličko-senjska županija;ime
+311308;ŠTIKADA;Ličko-senjska županija;ime
+311316;TOMINGAJ;Zadarska županija;ime
+311324;VELIKA POPINA;Zadarska županija;ime
+311332;VRANIK;Ličko-senjska županija;ime
+311359;VRELO;Zadarska županija;susjedstvo
+311367;ZRMANJA;Zadarska županija;ime
+311383;CREMUŠINA;Bjelovarsko-bilogorska županija;ime
+311391;DAPČEVICA;Bjelovarsko-bilogorska županija;susjedstvo
+311405;DONJA KOVAČICA;Bjelovarsko-bilogorska županija;ime
+311413;DRAŽICA;Bjelovarsko-bilogorska županija;ime
+311421;GORNJA KOVAČICA;Bjelovarsko-bilogorska županija;ime
+311430;GRBAVAC;Bjelovarsko-bilogorska županija;susjedstvo
+311448;GRUBIŠNO POLJE;Bjelovarsko-bilogorska županija;ime
+311456;MALA BARNA;Bjelovarsko-bilogorska županija;ime
+311464;MALA JASENOVAČA;Bjelovarsko-bilogorska županija;ime
+311472;MALA PERATOVICA;Bjelovarsko-bilogorska županija;ime
+311499;MALA PISANICA;Bjelovarsko-bilogorska županija;ime
+311502;MALI GRĐEVAC;Bjelovarsko-bilogorska županija;ime
+311529;MALI ZDENCI;Bjelovarsko-bilogorska županija;ime
+311537;PAVLOVAC;Bjelovarsko-bilogorska županija;susjedstvo
+311545;RAŠENICA;Bjelovarsko-bilogorska županija;susjedstvo
+311553;SIBENIK;Bjelovarsko-bilogorska županija;susjedstvo
+311561;TOPOLOVICA;Bjelovarsko-bilogorska županija;susjedstvo
+311570;TURČEVIĆ POLJE;Bjelovarsko-bilogorska županija;ime
+311588;VELIKA BARNA;Bjelovarsko-bilogorska županija;ime
+311596;VELIKA PERATOVICA;Bjelovarsko-bilogorska županija;ime
+311600;VELIKI GRĐEVAC;Bjelovarsko-bilogorska županija;ime
+311618;VELIKI ZDENCI;Bjelovarsko-bilogorska županija;ime
+311626;ZRINSKA;Bjelovarsko-bilogorska županija;ime
+311634;BOGOMOLJE;Splitsko-dalmatinska županija;ime
+311642;BRUSJE;Splitsko-dalmatinska županija;ime
+311669;DOL;Splitsko-dalmatinska županija;susjedstvo
+311677;GDINJ;Splitsko-dalmatinska županija;ime
+311685;GRABLJE;Splitsko-dalmatinska županija;susjedstvo
+311693;HVAR;Splitsko-dalmatinska županija;ime
+311707;JELSA;Splitsko-dalmatinska županija;ime
+311715;PITVE;Splitsko-dalmatinska županija;ime
+311723;STARI GRAD;Splitsko-dalmatinska županija;ime
+311731;SUĆURAJ;Splitsko-dalmatinska županija;ime
+311740;SVIRČE;Splitsko-dalmatinska županija;ime
+311758;VRBANJ;Splitsko-dalmatinska županija;ime
+311766;VRBOSKA;Splitsko-dalmatinska županija;ime
+311774;VRISNIK;Splitsko-dalmatinska županija;ime
+311782;ZASTRAŽIŠĆE;Splitsko-dalmatinska županija;ime
+311804;ARŽANO;Splitsko-dalmatinska županija;ime
+311812;BIORINE;Splitsko-dalmatinska županija;ime
+311839;CISTA;Splitsko-dalmatinska županija;susjedstvo
+311847;DOBRANJE;Splitsko-dalmatinska županija;susjedstvo
+311855;GLAVINA GORNJA;Splitsko-dalmatinska županija;ime
+311863;IMOTSKI-GLAVINA;Splitsko-dalmatinska županija;susjedstvo
+311871;KRSTATICE;Splitsko-dalmatinska županija;ime
+311880;LOKVIČIĆ;Splitsko-dalmatinska županija;susjedstvo
+311898;LOVREĆ;Splitsko-dalmatinska županija;ime
+311901;MEDOVDOLAC;Splitsko-dalmatinska županija;ime
+311910;OPANCI;Splitsko-dalmatinska županija;ime
+311928;PODBABLJE;Splitsko-dalmatinska županija;susjedstvo
+311936;POLJICA;Splitsko-dalmatinska županija;susjedstvo
+311944;POSTRANJE;Splitsko-dalmatinska županija;ime
+311952;PROLOŽAC;Splitsko-dalmatinska županija;susjedstvo
+311979;RIČICE;Splitsko-dalmatinska županija;susjedstvo
+311987;RUNOVIĆ;Splitsko-dalmatinska županija;ime
+311995;SLIVNO;Splitsko-dalmatinska županija;susjedstvo
+312002;STUDENCI;Splitsko-dalmatinska županija;susjedstvo
+312029;SVIB;Splitsko-dalmatinska županija;ime
+312037;VINJANI;Splitsko-dalmatinska županija;susjedstvo
+312045;ZAGVOZD;Splitsko-dalmatinska županija;ime
+312053;ŽUPA;Splitsko-dalmatinska županija;ime
+312061;BEDNJA;Varaždinska županija;ime
+312070;CERJE TUŽNO;Varaždinska županija;ime
+312088;ČALINEC;Varaždinska županija;ime
+312096;DONJA VIŠNJICA;Varaždinska županija;ime
+312100;DONJA VOĆA;Varaždinska županija;ime
+312118;DONJE LADANJE;Varaždinska županija;ime
+312126;DRUŠKOVEC;Varaždinska županija;ime
+312134;GORNJA VIŠNJICA;Varaždinska županija;ime
+312142;GORNJA VOĆA;Varaždinska županija;ime
+312169;IVANEC;Varaždinska županija;ime
+312177;JEROVEC;Varaždinska županija;ime
+312185;KAMENICA;Varaždinska županija;susjedstvo
+312207;KLENOVNIK;Varaždinska županija;ime
+312215;LEPOGLAVA;Varaždinska županija;ime
+312231;MARUŠEVEC;Varaždinska županija;ime
+312240;RADOVAN;Varaždinska županija;ime
+312258;RINKOVEC;Varaždinska županija;ime
+312266;ŠAŠA;Varaždinska županija;ime
+312274;TRAKOŠĆAN;Varaždinska županija;ime
+312282;BEŠLINEC;Zagrebačka županija;ime
+312304;BREŠKA GREDA;Zagrebačka županija;susjedstvo
+312312;CAGINEC;Zagrebačka županija;ime
+312347;IVANIĆ-GRAD;Zagrebačka županija;ime
+312355;KLOŠTAR IVANIĆ;Zagrebačka županija;ime
+312363;KRIŽ;Zagrebačka županija;ime
+312371;LEPŠIĆ;Zagrebačka županija;ime
+312380;LIJEVI DUBROVČAK;Zagrebačka županija;ime
+312401;NOVOSELEC;Zagrebačka županija;ime
+312428;OKEŠINEC;Zagrebačka županija;ime
+312436;OPATINEC;Zagrebačka županija;ime
+312444;POSAVSKI BREGI;Zagrebačka županija;ime
+312452;PREČNO;Zagrebačka županija;ime
+312479;ŠARAMPOV;Zagrebačka županija;susjedstvo
+312487;ŠIRINEC;Zagrebačka županija;ime
+312495;ŠUMEĆANI;Zagrebačka županija;ime
+312525;TREBOVEC;Zagrebačka županija;ime
+312533;BRLENIĆ;Zagrebačka županija;ime
+312541;CVETKOVIĆ;Zagrebačka županija;ime
+312550;ČEGLJE;Zagrebačka županija;ime
+312576;DOMAGOVIĆ;Zagrebačka županija;ime
+312584;DONJA KUPČINA;Zagrebačka županija;ime
+312592;GORNJA KUPČINA;Zagrebačka županija;ime
+312606;JASTREBARSKO;Zagrebačka županija;ime
+312614;KALJE;Zagrebačka županija;ime
+312665;KUPINEC;Zagrebačka županija;ime
+312673;LIJEVO SREDIČKO;Zagrebačka županija;ime
+312681;LUČELNICA;Zagrebačka županija;ime
+312703;MIRKOPOLJE;Zagrebačka županija;ime
+312711;MRZLO POLJE ŽUMBERAČKO;Zagrebačka županija;ime
+312720;PEĆNO;Zagrebačka županija;ime
+312738;PETROVINA;Zagrebačka županija;ime
+312797;PRIBIĆ;Zagrebačka županija;ime
+312819;SLAVETIĆ;Zagrebačka županija;ime
+312827;SOŠICE;Zagrebačka županija;ime
+312835;SVETA JANA;Zagrebačka županija;susjedstvo
+312843;VELIKA JAMNIČKA;Zagrebačka županija;ime
+312851;VOLAVJE;Zagrebačka županija;ime
+312860;ZDENČINA;Zagrebačka županija;susjedstvo
+312878;ŽELJEZNO ŽUMBERAČKO;Zagrebačka županija;ime
+312886;ŽUMBERAK;Zagrebačka županija;ime
+312894;BAĆINA;Dubrovačko-neretvanska županija;ime
+312908;BRIST;Splitsko-dalmatinska županija;ime
+312959;PLINA;Dubrovačko-neretvanska županija;susjedstvo
+312967;PLOČE;Dubrovačko-neretvanska županija;ime
+312975;PODACA;Splitsko-dalmatinska županija;ime
+312983;BANSKA SELNICA;Karlovačka županija;ime
+312991;BANSKI KOVAČEVAC;Karlovačka županija;ime
+313009;BANSKI MORAVCI;Karlovačka županija;ime
+313017;BLATNICA POKUPSKA;Karlovačka županija;ime
+313025;BUDAČKA RIJEKA;Karlovačka županija;ime
+313033;BURIĆ SELO;Karlovačka županija;ime
+313041;CEROVAC VUKMANIČKI;Karlovačka županija;ime
+313050;DONJE MEKUŠJE;Karlovačka županija;ime
+313068;DONJE POKUPJE;Karlovačka županija;susjedstvo
+313076;DONJI BUDAČKI;Karlovačka županija;ime
+313084;DONJI SJENIČAK;Karlovačka županija;ime
+313092;DRAGANIĆ;Karlovačka županija;ime
+313106;GORNJE MEKUŠJE;Karlovačka županija;susjedstvo
+313114;GORNJE STATIVE;Karlovačka županija;ime
+313122;GORNJI BUDAČKI;Karlovačka županija;ime
+313149;GORNJI SJENIČAK;Karlovačka županija;ime
+313157;GORNJI SKRAD;Karlovačka županija;ime
+313165;KAMENSKO;Karlovačka županija;susjedstvo
+313173;KARLOVAC I;Karlovačka županija;ime
+313181;KARLOVAC II;Karlovačka županija;ime
+313190;KRNJAK;Karlovačka županija;ime
+313203;LUKA POKUPSKA;Karlovačka županija;ime
+313211;MAHIČNO;Karlovačka županija;ime
+313220;MALA ŠVARČA;Karlovačka županija;susjedstvo
+313238;POLJANA VOJNIĆKA;Karlovačka županija;ime
+313246;POPOVIĆ BRDO;Karlovačka županija;ime
+313254;REČICA;Karlovačka županija;ime
+313262;SJENIČAK LASINJSKI;Karlovačka županija;ime
+313289;SKAKAVAC;Karlovačka županija;ime
+313297;ŠIŠLJAVIĆ;Karlovačka županija;ime
+313319;TREBINJA;Karlovačka županija;susjedstvo
+313327;TURANJ;Karlovačka županija;susjedstvo
+313335;TUŠILOVIĆ;Karlovačka županija;ime
+313343;UTINJA;Karlovačka županija;ime
+313351;VELIKA CRKVINA;Karlovačka županija;ime
+313360;VELIKA JELSA;Karlovačka županija;susjedstvo
+313378;VUKMANIĆ;Karlovačka županija;ime
+313386;ZADOBARJE;Karlovačka županija;ime
+313394;ZAGORJE;Karlovačka županija;susjedstvo
+313408;ZAGRAD;Karlovačka županija;susjedstvo
+313416;ZIMIĆ;Karlovačka županija;ime
+313424;BOGDANOVIĆI;Splitsko-dalmatinska županija;ime
+313432;DIVOJEVIĆI;Splitsko-dalmatinska županija;ime
+313467;KAŠTEL KAMBELOVAC;Splitsko-dalmatinska županija;ime
+313475;KAŠTEL LUKŠIĆ;Splitsko-dalmatinska županija;ime
+313483;KAŠTEL NOVI;Splitsko-dalmatinska županija;ime
+313491;KAŠTEL STARI;Splitsko-dalmatinska županija;ime
+313505;KAŠTEL SUĆURAC;Splitsko-dalmatinska županija;ime
+313513;KAŠTEL ŠTAFILIĆ;Splitsko-dalmatinska županija;ime
+313521;KLADNJICE;Splitsko-dalmatinska županija;ime
+313530;LABIN;Splitsko-dalmatinska županija;susjedstvo
+313548;LEĆEVICA;Splitsko-dalmatinska županija;ime
+313556;PRGOMET;Splitsko-dalmatinska županija;ime
+313564;PRIMORSKI DOLAC;Splitsko-dalmatinska županija;ime
+313572;RADOŠIĆ;Splitsko-dalmatinska županija;ime
+313599;SITNO;Splitsko-dalmatinska županija;ime
+313602;TROLOKVE;Splitsko-dalmatinska županija;ime
+313629;ČREŠNJEVEC;Krapinsko-zagorska županija;ime
+313637;KLANJEC;Krapinsko-zagorska županija;ime
+313645;KRALJEVEC NA SUTLI;Krapinsko-zagorska županija;ime
+313653;SVETI KRIŽ;Krapinsko-zagorska županija;susjedstvo
+313661;MILJANA;Krapinsko-zagorska županija;ime
+313670;NOVI DVORI KLANJEČKI;Krapinsko-zagorska županija;ime
+313688;POLJANA SUTLANSKA;Krapinsko-zagorska županija;ime
+313696;RADAKOVO;Krapinsko-zagorska županija;ime
+313700;RAVNO BREZJE;Krapinsko-zagorska županija;ime
+313718;RAZVOR;Krapinsko-zagorska županija;ime
+313726;TOMAŠEVEC;Krapinsko-zagorska županija;susjedstvo
+313734;TUHELJ;Krapinsko-zagorska županija;ime
+313742;ZAGORSKA SELA;Krapinsko-zagorska županija;ime
+313769;BIOVIČINO SELO;Šibensko-kninska županija;ime
+313777;BISKUPIJA;Šibensko-kninska županija;ime
+313785;CETINA;Šibensko-kninska županija;ime
+313793;CIVLJANE;Šibensko-kninska županija;ime
+313807;ERVENIK DONJI;Šibensko-kninska županija;susjedstvo
+313815;ĐEVRSKE;Šibensko-kninska županija;ime
+313823;GOLUBIĆ;Šibensko-kninska županija;susjedstvo
+313840;IVOŠEVCI;Šibensko-kninska županija;ime
+313858;KIJEVO;Šibensko-kninska županija;ime
+313866;KISTANJE;Šibensko-kninska županija;ime
+313874;KNIN;Šibensko-kninska županija;ime
+313882;KNINSKO POLJE;Šibensko-kninska županija;ime
+313904;KOLAŠAC;Šibensko-kninska županija;ime
+313912;MODRINO SELO;Šibensko-kninska županija;ime
+313939;MOKRO POLJE;Šibensko-kninska županija;ime
+313947;NUNIĆ;Šibensko-kninska županija;ime
+313955;OĆESTOVO;Šibensko-kninska županija;ime
+313963;ORLIĆ;Šibensko-kninska županija;ime
+313971;OTON;Šibensko-kninska županija;ime
+313980;PAĐENE;Šibensko-kninska županija;ime
+313998;PLAVNO;Šibensko-kninska županija;ime
+314005;POLAČA;Šibensko-kninska županija;susjedstvo
+314013;RADLJEVAC;Šibensko-kninska županija;ime
+314021;RADUČIĆ;Šibensko-kninska županija;ime
+314030;RAMLJANE;Šibensko-kninska županija;susjedstvo
+314048;RIĐANE;Šibensko-kninska županija;ime
+314056;SMRDELJE;Šibensko-kninska županija;ime
+314064;STRMICA;Šibensko-kninska županija;ime
+314072;TURIĆ;Šibensko-kninska županija;susjedstvo
+314099;UZDOLJE;Šibensko-kninska županija;ime
+314102;VRBNIK;Šibensko-kninska županija;susjedstvo
+314129;ZVJERINAC;Šibensko-kninska županija;ime
+314137;ŽAGROVIĆ;Šibensko-kninska županija;ime
+314145;BOTINOVAC;Koprivničko-križevačka županija;susjedstvo
+314153;BOTOVO;Koprivničko-križevačka županija;ime
+314161;BRANJSKA;Koprivničko-križevačka županija;susjedstvo
+314170;KOPRIVNIČKI BREGI;Koprivničko-križevačka županija;ime
+314188;DELOVI;Koprivničko-križevačka županija;ime
+314196;DRNJE;Koprivničko-križevačka županija;ime
+314200;DUGA RIJEKA;Koprivničko-križevačka županija;ime
+314218;ĐELEKOVEC;Koprivničko-križevačka županija;ime
+314226;GLOGOVAC;Koprivničko-križevačka županija;ime
+314234;GOLA;Koprivničko-križevačka županija;ime
+314269;GOTALOVO;Koprivničko-križevačka županija;ime
+314277;HEREŠIN;Koprivničko-križevačka županija;ime
+314285;HLEBINE;Koprivničko-križevačka županija;ime
+314293;HUDOVLJANI;Koprivničko-križevačka županija;ime
+314307;IMBRIOVEC;Koprivničko-križevačka županija;ime
+314315;JAGNJEDOVEC;Koprivničko-križevačka županija;ime
+314323;JAVOROVAC;Koprivničko-križevačka županija;ime
+314331;KOLEDINEC;Koprivničko-križevačka županija;ime
+314340;KOPRIVNICA;Koprivničko-križevačka županija;ime
+314358;KOPRIVNIČKI IVANEC;Koprivničko-križevačka županija;ime
+314366;KUNOVEC;Koprivničko-križevačka županija;ime
+314374;KUTNJAK;Koprivničko-križevačka županija;ime
+314404;LEGRAD;Koprivničko-križevačka županija;ime
+314412;LEPAVINA;Koprivničko-križevačka županija;ime
+314439;MALA MUČNA;Koprivničko-križevačka županija;ime
+314447;NOVAČKA;Koprivničko-križevačka županija;ime
+314455;NOVIGRAD PODRAVSKI;Koprivničko-križevačka županija;ime
+314463;PETERANEC;Koprivničko-križevačka županija;ime
+314471;PLAVŠINAC;Koprivničko-križevačka županija;ime
+314498;RASINJA;Koprivničko-križevačka županija;ime
+314501;REKA;Koprivničko-križevačka županija;ime
+314510;SELNICA PODRAVSKA;Koprivničko-križevačka županija;ime
+314528;SIGETEC;Koprivničko-križevačka županija;ime
+314536;SOKOLOVAC;Koprivničko-križevačka županija;susjedstvo
+314544;SRIJEM;Koprivničko-križevačka županija;ime
+314552;SUBOTICA PODRAVSKA;Koprivničko-križevačka županija;ime
+314579;TORČEC;Koprivničko-križevačka županija;ime
+314587;VELIKA MUČNA;Koprivničko-križevačka županija;ime
+314595;VELIKI GRABIČANI;Koprivničko-križevačka županija;ime
+314609;VELIKI OTOK;Koprivničko-križevačka županija;ime
+314617;VELIKI POGANAC;Koprivničko-križevačka županija;ime
+314625;ZABLATJE;Koprivničko-križevačka županija;ime
+314633;BLATO;Dubrovačko-neretvanska županija;ime
+314641;ČARA;Dubrovačko-neretvanska županija;ime
+314650;KORČULA;Dubrovačko-neretvanska županija;ime
+314668;KUČIŠTE;Dubrovačko-neretvanska županija;ime
+314676;LUMBARDA;Dubrovačko-neretvanska županija;ime
+314684;NAKOVANJ;Dubrovačko-neretvanska županija;ime
+314692;OREBIĆ;Dubrovačko-neretvanska županija;ime
+314706;PODGORJE;Dubrovačko-neretvanska županija;susjedstvo
+314714;PUPNAT;Dubrovačko-neretvanska županija;ime
+314722;RAČIŠĆE;Dubrovačko-neretvanska županija;ime
+314749;SMOKVICA;Dubrovačko-neretvanska županija;susjedstvo
+314757;STANKOVIĆ;Dubrovačko-neretvanska županija;ime
+314765;VELA LUKA;Dubrovačko-neretvanska županija;ime
+314773;VIGANJ;Dubrovačko-neretvanska županija;ime
+314781;ŽRNOVO;Dubrovačko-neretvanska županija;ime
+314790;BABINA RIJEKA;Sisačko-moslavačka županija;ime
+314803;BAĆIN;Sisačko-moslavačka županija;ime
+314811;BJELOVAC;Sisačko-moslavačka županija;susjedstvo
+314820;BOROJEVIĆI;Sisačko-moslavačka županija;ime
+314838;CEROVLJANI;Sisačko-moslavačka županija;ime
+314846;ČUKUR;Sisačko-moslavačka županija;ime
+314854;DONJA VELEŠNJA;Sisačko-moslavačka županija;ime
+314862;DUBICA;Sisačko-moslavačka županija;susjedstvo
+314889;GORNJA VELEŠNJA;Sisačko-moslavačka županija;ime
+314897;GORNJI HRASTOVAC;Sisačko-moslavačka županija;ime
+314919;GRABOŠTANI;Sisačko-moslavačka županija;ime
+314927;KNEZOVLJANI;Sisačko-moslavačka županija;ime
+314935;KOMOGOVINA;Sisačko-moslavačka županija;ime
+314943;KOSTAJNICA;Sisačko-moslavačka županija;susjedstvo
+314951;MAJUR;Sisačko-moslavačka županija;susjedstvo
+314960;KRČEVO;Sisačko-moslavačka županija;susjedstvo
+314978;KUKURUZARI;Sisačko-moslavačka županija;susjedstvo
+314986;LOVČA;Sisačko-moslavačka županija;ime
+314994;MEČENČANI;Sisačko-moslavačka županija;ime
+315001;MEMINSKA;Sisačko-moslavačka županija;susjedstvo
+315010;MRAČAJ;Sisačko-moslavačka županija;ime
+315028;PANJANI;Sisačko-moslavačka županija;ime
+315036;PREVRŠAC;Sisačko-moslavačka županija;ime
+315044;RAUSOVAC;Sisačko-moslavačka županija;ime
+315052;SELIŠTE KOSTAJNIČKO;Sisačko-moslavačka županija;ime
+315079;SLABINJA;Sisačko-moslavačka županija;ime
+315087;STUBALJ;Sisačko-moslavačka županija;ime
+315095;SVINICA;Sisačko-moslavačka županija;ime
+315109;UMETIĆ;Sisačko-moslavačka županija;ime
+315117;UTOLICA;Sisačko-moslavačka županija;ime
+315125;ŽIVAJA;Sisačko-moslavačka županija;ime
+315133;ĐURMANEC;Krapinsko-zagorska županija;ime
+315141;GORNJA PAČETINA;Krapinsko-zagorska županija;ime
+315150;HLEVNICA;Krapinsko-zagorska županija;ime
+315176;KRAPINA;Krapinsko-zagorska županija;ime
+315184;KRAPINA-GRAD;Krapinsko-zagorska županija;susjedstvo
+315192;PETROVSKO;Krapinsko-zagorska županija;ime
+315206;PUTKOVEC;Krapinsko-zagorska županija;ime
+315214;RADOBOJ;Krapinsko-zagorska županija;ime
+315222;SVEDRUŽA;Krapinsko-zagorska županija;ime
+315249;ŠEMNICA;Krapinsko-zagorska županija;susjedstvo
+315257;ŠKARIĆEVO;Krapinsko-zagorska županija;ime
+315273;APATOVEC;Koprivničko-križevačka županija;ime
+315281;BOČKOVEC;Koprivničko-križevačka županija;ime
+315290;BOJNIKOVEC;Koprivničko-križevačka županija;ime
+315303;BORJE;Koprivničko-križevačka županija;ime
+315311;CAREVDAR;Koprivničko-križevačka županija;ime
+315320;CIRKVENA;Koprivničko-križevačka županija;ime
+315338;CUBINEC;Koprivničko-križevačka županija;ime
+315346;SVETI PETAR ČVRSTEC;Koprivničko-križevačka županija;ime
+315354;DIJANKOVEC;Koprivničko-križevačka županija;ime
+315362;DONJA BRCKOVČINA;Koprivničko-križevačka županija;ime
+315389;DUBOVEC;Krapinsko-zagorska županija;ime
+315397;ĐURĐIC;Koprivničko-križevačka županija;susjedstvo
+315419;ERDOVEC;Koprivničko-križevačka županija;ime
+315427;FINČEVEC;Koprivničko-križevačka županija;ime
+315435;FODROVEC;Koprivničko-križevačka županija;susjedstvo
+315443;GLOGOVNICA;Koprivničko-križevačka županija;susjedstvo
+315451;GORNJA RIJEKA;Koprivničko-križevačka županija;ime
+315478;GUŠČEROVEC;Koprivničko-križevačka županija;ime
+315486;SVETA HELENA;Koprivničko-križevačka županija;susjedstvo
+315494;HRSOVO;Koprivničko-križevačka županija;ime
+315508;KALNIK;Koprivničko-križevačka županija;ime
+315516;KAMEŠNICA;Koprivničko-križevačka županija;ime
+315524;KLOŠTAR VOJAKOVAČKI;Koprivničko-križevačka županija;ime
+315532;KRIŽEVCI;Koprivničko-križevačka županija;ime
+315559;LEMEŠ;Koprivničko-križevačka županija;ime
+315567;LUKAČEVEC;Koprivničko-križevačka županija;ime
+315575;MAJUREC;Koprivničko-križevačka županija;ime
+315583;MARINOVEC;Koprivničko-križevačka županija;ime
+315591;MEĐA;Koprivničko-križevačka županija;ime
+315605;MIHOLEC;Koprivničko-križevačka županija;ime
+315613;MIKOVEC;Koprivničko-križevačka županija;ime
+315621;NOVI GLOG;Koprivničko-križevačka županija;ime
+315630;SVETI PETAR OREHOVEC;Koprivničko-križevačka županija;ime
+315648;OSIJEK VOJAKOVAČKI;Koprivničko-križevačka županija;ime
+315656;PODVINJE MIHOLEČKO;Koprivničko-križevačka županija;ime
+315664;POFUKI;Koprivničko-križevačka županija;ime
+315672;POTOČEC;Koprivničko-križevačka županija;susjedstvo
+315699;POTOK KALNIČKI;Koprivničko-križevačka županija;ime
+315702;RAŠĆANI;Koprivničko-križevačka županija;ime
+315745;SUDOVEC;Varaždinska županija;ime
+315753;ŠPIRANEC;Koprivničko-križevačka županija;ime
+315761;ŠTRIGOVEC;Koprivničko-križevačka županija;ime
+315770;TREMA;Koprivničko-križevačka županija;ime
+315788;VOJAKOVAC;Koprivničko-križevačka županija;ime
+315796;VOJAKOVAČKE SESVETE;Koprivničko-križevačka županija;susjedstvo
+315800;VOJNOVEC KALNIČKI;Koprivničko-križevačka županija;ime
+315818;ZAISTOVEC;Koprivničko-križevačka županija;ime
+315826;SVETI IVAN ŽABNO;Koprivničko-križevačka županija;ime
+315834;BAŠKA;Primorsko-goranska županija;ime
+315842;BATOMALJ;Primorsko-goranska županija;ime
+315869;BOGOVIĆI;Primorsko-goranska županija;ime
+315877;DOBRINJ;Primorsko-goranska županija;ime
+315885;DRAGA BAŠĆANSKA;Primorsko-goranska županija;ime
+315893;GARICA;Primorsko-goranska županija;ime
+315907;KORNIĆ;Primorsko-goranska županija;ime
+315915;KRK;Primorsko-goranska županija;ime
+315923;KRK-GRAD;Primorsko-goranska županija;susjedstvo
+315931;LINARDIĆI;Primorsko-goranska županija;ime
+315940;MIHOLJICE;Primorsko-goranska županija;susjedstvo
+315958;OMIŠALJ;Primorsko-goranska županija;ime
+315966;POLJICA;Primorsko-goranska županija;susjedstvo
+315974;PUNAT;Primorsko-goranska županija;ime
+315982;SKRBČIĆI;Primorsko-goranska županija;ime
+316008;SOLINE;Primorsko-goranska županija;susjedstvo
+316016;STARA BAŠKA;Primorsko-goranska županija;ime
+316024;SUŽAN;Primorsko-goranska županija;ime
+316032;SVETI ANTON;Primorsko-goranska županija;ime
+316059;VRBNIK;Primorsko-goranska županija;susjedstvo
+316067;VRH;Primorsko-goranska županija;susjedstvo
+316075;BANOVA JARUGA;Sisačko-moslavačka županija;ime
+316083;BATINA;Sisačko-moslavačka županija;susjedstvo
+316091;ČAIRE;Sisačko-moslavačka županija;ime
+316105;GORNJA JELENSKA;Sisačko-moslavačka županija;ime
+316113;GRABROV POTOK;Sisačko-moslavačka županija;ime
+316121;GRAČENICA;Sisačko-moslavačka županija;susjedstvo
+316130;HUSAIN;Sisačko-moslavačka županija;ime
+316148;ILOVA;Sisačko-moslavačka županija;ime
+316156;JAMARICA;Sisačko-moslavačka županija;ime
+316164;JANJA LIPA;Sisačko-moslavačka županija;ime
+316172;KATOLIČKO SELIŠĆE;Sisačko-moslavačka županija;ime
+316199;KUTINA;Sisačko-moslavačka županija;ime
+316202;KUTINICA;Sisačko-moslavačka županija;ime
+316229;LUDINA;Sisačko-moslavačka županija;susjedstvo
+316237;MEĐURIĆ;Sisačko-moslavačka županija;ime
+316245;MIKLEUŠKA;Sisačko-moslavačka županija;ime
+316253;OKOLI;Sisačko-moslavačka županija;ime
+316261;OSEKOVO;Sisačko-moslavačka županija;ime
+316270;POPOVAČA;Sisačko-moslavačka županija;ime
+316288;POTOK;Sisačko-moslavačka županija;susjedstvo
+316296;REPUŠNICA;Sisačko-moslavačka županija;ime
+316300;RUŠKOVICA;Sisačko-moslavačka županija;ime
+316318;SELIŠTE;Sisačko-moslavačka županija;ime
+316326;STRUŽEC;Sisačko-moslavačka županija;ime
+316334;STUPOVAČA;Sisačko-moslavačka županija;ime
+316342;ŠARTOVAC;Sisačko-moslavačka županija;ime
+316369;VIDRENJAK;Sisačko-moslavačka županija;ime
+316377;VOLODER;Sisačko-moslavačka županija;ime
+316385;ZBJEGOVAČA;Sisačko-moslavačka županija;ime
+316393;BRDO;Istarska županija;susjedstvo
+316407;CERE;Istarska županija;ime
+316415;ČEPIĆ;Istarska županija;susjedstvo
+316423;DIMINIĆI;Istarska županija;susjedstvo
+316431;GROBNIK;Istarska županija;susjedstvo
+316440;JESENOVIK;Istarska županija;ime
+316458;KOŽLJAK;Istarska županija;ime
+316466;KRBUNE;Istarska županija;ime
+316474;KRŠAN;Istarska županija;ime
+316482;KUNJ;Istarska županija;ime
+316512;LETAJ;Istarska županija;ime
+316547;MARTINSKI;Istarska županija;susjedstvo
+316555;MOST RAŠA;Istarska županija;susjedstvo
+316563;NEDEŠĆINA;Istarska županija;ime
+316571;NOVA VAS;Istarska županija;ime
+316580;NOVI LABIN;Istarska županija;susjedstvo
+316598;PIĆAN;Istarska županija;ime
+316601;PLOMIN;Istarska županija;ime
+316610;PRKUŠNICA;Istarska županija;susjedstvo
+316628;RABAC;Istarska županija;ime
+316636;RIPENDA;Istarska županija;susjedstvo
+316644;SANTALEZI;Istarska županija;ime
+316652;SKITAČA;Istarska županija;ime
+316679;ŠUMBER;Istarska županija;ime
+316687;ŠUŠNJEVICA;Istarska županija;ime
+316695;TRGET;Istarska županija;ime
+316709;TUPLJAK;Istarska županija;ime
+316717;LASTOVO;Dubrovačko-neretvanska županija;ime
+316725;BOLFAN;Varaždinska županija;ime
+316733;ČUKOVEC;Varaždinska županija;susjedstvo
+316741;MARTIJANEC;Varaždinska županija;ime
+316750;SVETI ĐURĐ;Varaždinska županija;ime
+316768;GORNJI MARTIJANEC;Varaždinska županija;ime
+316776;HRASTOVLJAN;Varaždinska županija;ime
+316784;HRASTOVSKO;Varaždinska županija;ime
+316792;HRŽENICA;Varaždinska županija;ime
+316806;KRIŽOVLJAN;Varaždinska županija;ime
+316814;LUDBREG;Varaždinska županija;ime
+316822;KOMARNICA LUDBREŠKA;Varaždinska županija;ime
+316849;SESVETE LUDBREŠKE;Varaždinska županija;ime
+316857;KARLOVEC LUDBREŠKI;Varaždinska županija;ime
+316865;SIGETEC LUDBREŠKI;Varaždinska županija;ime
+316873;LUNJKOVEC;Varaždinska županija;ime
+316890;SVETI PETAR;Varaždinska županija;susjedstvo
+316903;KAPELA PODRAVSKA;Varaždinska županija;ime
+316911;NOVO SELO PODRAVSKO;Varaždinska županija;ime
+316920;SELNIK;Varaždinska županija;ime
+316938;SLANJE;Varaždinska županija;ime
+316946;SLOKOVEC;Varaždinska županija;ime
+316954;STRUGA;Varaždinska županija;ime
+316989;VINOGRADI LUDBREŠKI;Varaždinska županija;ime
+316997;BAST-BAŠKA VODA;Splitsko-dalmatinska županija;susjedstvo
+317004;BRELA;Splitsko-dalmatinska županija;ime
+317012;DRAŠNICE;Splitsko-dalmatinska županija;ime
+317039;DRVENIK;Splitsko-dalmatinska županija;susjedstvo
+317047;IGRANE;Splitsko-dalmatinska županija;ime
+317055;KOTIŠINA;Splitsko-dalmatinska županija;susjedstvo
+317063;MAKARSKA-MAKAR;Splitsko-dalmatinska županija;susjedstvo
+317071;PODGORA;Splitsko-dalmatinska županija;susjedstvo
+317080;TUČEPI;Splitsko-dalmatinska županija;ime
+317098;VELIKO BRDO;Splitsko-dalmatinska županija;ime
+317101;ZAOSTROG;Splitsko-dalmatinska županija;ime
+317110;ŽIVOGOŠĆE;Splitsko-dalmatinska županija;ime
+317128;BOROVCI;Dubrovačko-neretvanska županija;ime
+317136;DESNE;Dubrovačko-neretvanska županija;ime
+317144;DOBRANJE;Dubrovačko-neretvanska županija;susjedstvo
+317152;METKOVIĆ;Dubrovačko-neretvanska županija;ime
+317179;OPUZEN;Dubrovačko-neretvanska županija;ime
+317187;SLIVNO;Dubrovačko-neretvanska županija;susjedstvo
+317195;STRUGE;Dubrovačko-neretvanska županija;susjedstvo
+317209;VID;Dubrovačko-neretvanska županija;ime
+317217;VIDONJE;Dubrovačko-neretvanska županija;ime
+317225;BELJEVINA;Osječko-baranjska županija;ime
+317241;BREZNICA NAŠIČKA;Osječko-baranjska županija;ime
+317250;BUDIMCI;Osječko-baranjska županija;ime
+317268;CEREMOŠNJAK;Osječko-baranjska županija;ime
+317276;DONJA MOTIČINA;Osječko-baranjska županija;ime
+317284;FERIČANCI;Osječko-baranjska županija;ime
+317292;GAZIJE;Osječko-baranjska županija;ime
+317306;GORNJA MOTIČINA;Osječko-baranjska županija;ime
+317314;GRADAC NAŠIČKI;Osječko-baranjska županija;ime
+317322;GRANICE;Osječko-baranjska županija;ime
+317349;KLOKOČEVCI;Osječko-baranjska županija;ime
+317357;KOŠKA;Osječko-baranjska županija;ime
+317365;KRŠINCI;Osječko-baranjska županija;ime
+317373;LONDŽICA;Osječko-baranjska županija;ime
+317381;MARTIN;Osječko-baranjska županija;ime
+317390;NAŠICE;Osječko-baranjska županija;ime
+317403;NIZA;Osječko-baranjska županija;ime
+317411;OSTROŠINCI;Osječko-baranjska županija;ime
+317446;POGANOVCI;Osječko-baranjska županija;ime
+317454;PRIBIŠEVCI;Osječko-baranjska županija;ime
+317462;RAZBOJIŠTE;Osječko-baranjska županija;ime
+317489;SEONA;Osječko-baranjska županija;ime
+317519;LUG SUBOTIČKI;Osječko-baranjska županija;ime
+317535;ŠAPTINOVCI;Osječko-baranjska županija;ime
+317543;VUKOJEVCI;Osječko-baranjska županija;ime
+317551;ZOLJAN;Osječko-baranjska županija;ime
+317560;ADŽAMOVCI;Brodsko-posavska županija;ime
+317578;BAĆIN DOL;Brodsko-posavska županija;ime
+317586;BANIĆEVAC;Brodsko-posavska županija;ime
+317594;BATRINA;Brodsko-posavska županija;ime
+317608;BENKOVAC;Brodsko-posavska županija;susjedstvo
+317616;BIJELA STIJENA;Brodsko-posavska županija;ime
+317624;BILI BRIG;Brodsko-posavska županija;ime
+317632;BOBARE;Brodsko-posavska županija;ime
+317659;BODEGRAJ;Brodsko-posavska županija;ime
+317667;BODOVALJCI;Brodsko-posavska županija;ime
+317675;BRĐANI;Brodsko-posavska županija;susjedstvo
+317683;CAGE;Brodsko-posavska županija;ime
+317691;CERNIK;Brodsko-posavska županija;susjedstvo
+317705;CRNOGOVCI;Brodsko-posavska županija;susjedstvo
+317713;ČAPRGINCI;Brodsko-posavska županija;ime
+317721;ČOVAC;Brodsko-posavska županija;ime
+317730;DAVOR;Brodsko-posavska županija;ime
+317748;DOLINA;Brodsko-posavska županija;ime
+317756;DONJI BOGIĆEVCI;Brodsko-posavska županija;ime
+317764;DONJI LIPOVAC;Brodsko-posavska županija;ime
+317772;DONJI VAROŠ;Brodsko-posavska županija;ime
+317799;DRAGALIĆ;Brodsko-posavska županija;ime
+317802;DRAGOVCI;Brodsko-posavska županija;ime
+317829;DUBOVAC;Brodsko-posavska županija;ime
+317837;GILETINCI;Brodsko-posavska županija;ime
+317845;GODINJAK;Brodsko-posavska županija;ime
+317853;GOLOBRDAC;Brodsko-posavska županija;ime
+317861;GORICE;Brodsko-posavska županija;susjedstvo
+317870;TRNAVA;Brodsko-posavska županija;susjedstvo
+317888;GORNJI BOGIĆEVCI;Brodsko-posavska županija;ime
+317896;DREŽNIK;Brodsko-posavska županija;ime
+317900;GORNJI LIPOVAC;Brodsko-posavska županija;ime
+317918;GORNJI VAROŠ;Brodsko-posavska županija;ime
+317926;GREĐANI;Brodsko-posavska županija;susjedstvo
+317934;GUNJAVCI;Brodsko-posavska županija;ime
+317942;KOMARNICA;Brodsko-posavska županija;ime
+317969;KOSOVAC;Brodsko-posavska županija;ime
+317977;KOVAČEVAC;Brodsko-posavska županija;susjedstvo
+317985;LAĐEVAC;Brodsko-posavska županija;ime
+317993;LAZE;Brodsko-posavska županija;ime
+318019;LJEŠTANI;Brodsko-posavska županija;ime
+318027;LJUPINA;Brodsko-posavska županija;ime
+318035;MAČKOVAC;Brodsko-posavska županija;susjedstvo
+318043;MAGIĆ MALA;Brodsko-posavska županija;ime
+318051;MAŠIĆ;Brodsko-posavska županija;ime
+318060;MEDARI;Brodsko-posavska županija;ime
+318078;NOVA GRADIŠKA;Brodsko-posavska županija;ime
+318086;NOVA KAPELA;Brodsko-posavska županija;susjedstvo
+318094;NOVI VAROŠ;Brodsko-posavska županija;ime
+318108;OKUČANI;Brodsko-posavska županija;ime
+318124;ORUBICA;Brodsko-posavska županija;ime
+318132;OŠTRI VRH;Brodsko-posavska županija;ime
+318159;PODVRŠKO;Brodsko-posavska županija;ime
+318167;POLJANE;Brodsko-posavska županija;susjedstvo
+318175;PRVČA;Brodsko-posavska županija;ime
+318183;RATKOVAC;Brodsko-posavska županija;ime
+318191;REŠETARI;Brodsko-posavska županija;ime
+318213;SEOCE;Brodsko-posavska županija;ime
+318221;SIČICE;Brodsko-posavska županija;ime
+318230;SIČE;Brodsko-posavska županija;ime
+318248;SMRTIĆ;Brodsko-posavska županija;ime
+318256;SREDNJI LIPOVAC;Brodsko-posavska županija;ime
+318272;STARO PETROVO SELO;Brodsko-posavska županija;ime
+318299;ŠAGOVINA CERNIČKA;Brodsko-posavska županija;susjedstvo
+318302;ŠAGOVINA MAŠIĆKA;Brodsko-posavska županija;ime
+318329;ŠIRINCI;Brodsko-posavska županija;ime
+318337;ŠTIVICA;Brodsko-posavska županija;ime
+318345;ŠUMETLICA;Brodsko-posavska županija;ime
+318353;TISOVAC;Brodsko-posavska županija;susjedstvo
+318361;TRNAKOVAC;Brodsko-posavska županija;ime
+318370;USKOCI;Brodsko-posavska županija;ime
+318388;VRBJE;Brodsko-posavska županija;ime
+318396;VRBOVA;Brodsko-posavska županija;ime
+318400;VRBOVLJANI;Brodsko-posavska županija;ime
+318418;ŽUBERKOVAC;Brodsko-posavska županija;ime
+318426;BELA;Varaždinska županija;ime
+318434;BISAG;Varaždinska županija;ime
+318442;BREZNICA;Varaždinska županija;ime
+318469;BUTKOVEC;Varaždinska županija;ime
+318477;ČANJEVO;Varaždinska županija;ime
+318485;DONJE MAKOJIŠĆE;Varaždinska županija;ime
+318507;DRENOVEC;Varaždinska županija;ime
+318515;ĐURINOVEC;Varaždinska županija;ime
+318523;GRANA;Varaždinska županija;ime
+318531;HRASTOVEC TOPLIČKI;Varaždinska županija;ime
+318540;KAPELA KALNIČKA;Varaždinska županija;ime
+318558;KAMENA GORICA;Varaždinska županija;ime
+318566;KLJUČ;Varaždinska županija;susjedstvo
+318574;LESKOVEC TOPLIČKI;Varaždinska županija;ime
+318582;LJUBEŠĆICA;Varaždinska županija;ime
+318604;NOVI MAROF;Varaždinska županija;ime
+318612;PODEVČEVO;Varaždinska županija;ime
+318639;POLJANA;Varaždinska županija;susjedstvo
+318647;REMETINEC;Varaždinska županija;susjedstvo
+318655;SVIBOVEC;Varaždinska županija;ime
+318663;ŠĆEPANJE;Varaždinska županija;ime
+318671;TUHOVEC;Varaždinska županija;ime
+318680;VARAŽDINSKE TOPLICE;Varaždinska županija;ime
+318698;VINIČNO;Varaždinska županija;ime
+318701;VISOKO;Varaždinska županija;ime
+318710;BOROVAC;Sisačko-moslavačka županija;ime
+318728;BRESTAČA;Sisačko-moslavačka županija;ime
+318736;BROČICE;Sisačko-moslavačka županija;ime
+318752;DRENOV BOK;Sisačko-moslavačka županija;ime
+318809;JASENOVAC;Sisačko-moslavačka županija;susjedstvo
+318817;JAZAVICA;Sisačko-moslavačka županija;ime
+318825;KOŠUTARICA;Sisačko-moslavačka županija;ime
+318833;KOZARICE;Sisačko-moslavačka županija;ime
+318841;KRAPJE;Sisačko-moslavačka županija;ime
+318868;KRIVAJ;Sisačko-moslavačka županija;susjedstvo
+318876;LIPOVLJANI;Sisačko-moslavačka županija;ime
+318884;LOVSKA;Sisačko-moslavačka županija;ime
+318892;MLAKA;Sisačko-moslavačka županija;susjedstvo
+318906;NOVI GRABOVAC;Sisačko-moslavačka županija;ime
+318922;PAKLENICA;Sisačko-moslavačka županija;ime
+318949;PILJENICE;Sisačko-moslavačka županija;ime
+318957;PLESMO;Sisačko-moslavačka županija;ime
+318965;PUSKA;Sisačko-moslavačka županija;ime
+318973;ROŽDANIK;Sisačko-moslavačka županija;ime
+318981;SUBOCKA;Sisačko-moslavačka županija;susjedstvo
+318990;STARI GRABOVAC;Sisačko-moslavačka županija;ime
+319015;UŠTICA;Sisačko-moslavačka županija;ime
+319023;KRALJEVA VELIKA;Sisačko-moslavačka županija;ime
+319031;VOĆARICA;Sisačko-moslavačka županija;ime
+319040;BILIŠANE;Zadarska županija;ime
+319058;GOLUBIĆ;Zadarska županija;susjedstvo
+319074;KRUPA;Zadarska županija;ime
+319082;KRUŠEVO;Zadarska županija;susjedstvo
+319104;MEDVIĐA;Zadarska županija;ime
+319112;MUŠKOVCI;Zadarska županija;ime
+319139;OBROVAC;Zadarska županija;ime
+319147;ZATON OBROVAČKI;Zadarska županija;ime
+319155;ZELENGRAD;Zadarska županija;ime
+319171;BLATA;Karlovačka županija;ime
+319180;CAREVO POLJE;Karlovačka županija;ime
+319198;CEROVNIK;Karlovačka županija;ime
+319210;DONJE DUBRAVE;Karlovačka županija;ime
+319228;DREŽNICA;Karlovačka županija;ime
+319236;GORNJE DUBRAVE;Karlovačka županija;ime
+319244;HRELJIN OGULINSKI;Karlovačka županija;ime
+319252;JANJA GORA;Karlovačka županija;ime
+319279;JASENAK;Karlovačka županija;ime
+319287;JEZERO;Karlovačka županija;susjedstvo
+319295;JOSIPDOL;Karlovačka županija;ime
+319309;KUNIĆ;Karlovačka županija;ime
+319317;LATIN;Karlovačka županija;ime
+319325;LIČKA JESENICA;Karlovačka županija;ime
+319333;MEĐEĐAK;Karlovačka županija;ime
+319341;MODRUŠ;Karlovačka županija;ime
+319350;POTOK MUSULINSKI;Karlovačka županija;ime
+319368;OGULIN;Karlovačka županija;ime
+319376;OŠTARIJE;Karlovačka županija;ime
+319384;OTOK OŠTARIJSKI;Karlovačka županija;ime
+319392;SVETI PETAR;Karlovačka županija;susjedstvo
+319406;PLAŠKI;Karlovačka županija;ime
+319422;POPOVO SELO;Karlovačka županija;ime
+319449;POTHUM PLAŠČANSKI;Karlovačka županija;ime
+319457;SABORSKO;Karlovačka županija;ime
+319465;SKRADNIK;Karlovačka županija;ime
+319473;TOUNJ;Karlovačka županija;ime
+319481;TROJVRH;Karlovačka županija;ime
+319490;TRŽIĆ TOUNJSKI;Karlovačka županija;ime
+319503;VAJIN VRH;Karlovačka županija;ime
+319511;VITUNJ;Karlovačka županija;ime
+319520;ZAGORJE;Karlovačka županija;susjedstvo
+319538;ZDENAC;Karlovačka županija;ime
+319546;BLATO NA CETINI;Splitsko-dalmatinska županija;ime
+319554;ČISLA;Splitsko-dalmatinska županija;ime
+319562;DONJI DOLAC;Splitsko-dalmatinska županija;ime
+319589;DUBRAVA;Splitsko-dalmatinska županija;susjedstvo
+319597;DUĆE;Splitsko-dalmatinska županija;ime
+319619;GATA;Splitsko-dalmatinska županija;ime
+319627;GORNJI DOLAC;Splitsko-dalmatinska županija;ime
+319635;GRABOVAC;Splitsko-dalmatinska županija;susjedstvo
+319643;JESENICE;Splitsko-dalmatinska županija;ime
+319651;KATUNI;Splitsko-dalmatinska županija;ime
+319660;KOSTANJE;Splitsko-dalmatinska županija;ime
+319678;KREŠEVO;Splitsko-dalmatinska županija;ime
+319686;KUČIĆE;Splitsko-dalmatinska županija;ime
+319694;NOVA SELA;Splitsko-dalmatinska županija;susjedstvo
+319708;OMIŠ;Splitsko-dalmatinska županija;ime
+319716;PODGRAĐE;Splitsko-dalmatinska županija;susjedstvo
+319724;ROGOZNICA;Splitsko-dalmatinska županija;susjedstvo
+319732;SLIME;Splitsko-dalmatinska županija;ime
+319759;SRIJANE;Splitsko-dalmatinska županija;ime
+319767;SVINIŠĆE;Splitsko-dalmatinska županija;ime
+319775;TRNBUSI;Splitsko-dalmatinska županija;ime
+319783;TUGARE;Splitsko-dalmatinska županija;ime
+319791;ZAKUČAC;Splitsko-dalmatinska županija;ime
+319805;ZVEČANJE;Splitsko-dalmatinska županija;ime
+319813;ŽEŽEVICA;Splitsko-dalmatinska županija;ime
+319821;BRDCE;Primorsko-goranska županija;ime
+319830;BREGI;Primorsko-goranska županija;ime
+319848;BRGUD;Primorsko-goranska županija;susjedstvo
+319856;BRSEČ;Primorsko-goranska županija;ime
+319864;JURDANI;Primorsko-goranska županija;ime
+319872;JUŠIĆI;Primorsko-goranska županija;ime
+319899;KALAC;Primorsko-goranska županija;ime
+319902;KRAJ;Primorsko-goranska županija;susjedstvo
+319929;KUĆELI;Primorsko-goranska županija;ime
+319937;LIPA;Primorsko-goranska županija;susjedstvo
+319945;LOVRAN;Primorsko-goranska županija;ime
+319953;MARTINA;Primorsko-goranska županija;ime
+319961;MATULJI;Primorsko-goranska županija;ime
+319970;MOŠĆENICE;Primorsko-goranska županija;ime
+319988;MOŠĆENIČKA DRAGA;Primorsko-goranska županija;ime
+320005;OPATIJA;Primorsko-goranska županija;susjedstvo
+320013;OPRIĆ;Primorsko-goranska županija;ime
+320021;PASJAK;Primorsko-goranska županija;ime
+320048;POBRI;Primorsko-goranska županija;ime
+320056;POLJANE;Primorsko-goranska županija;susjedstvo
+320072;PUŽI;Primorsko-goranska županija;susjedstvo
+320099;RUKAVAC DONJI;Primorsko-goranska županija;susjedstvo
+320102;RUKAVAC GORNJI;Primorsko-goranska županija;susjedstvo
+320129;RUPA;Primorsko-goranska županija;ime
+320137;ŠAPJANE;Primorsko-goranska županija;ime
+320145;TULIŠEVICA;Primorsko-goranska županija;ime
+320153;VASANSKA;Primorsko-goranska županija;susjedstvo
+320161;VEPRINAC;Primorsko-goranska županija;ime
+320170;VOLOSKO;Primorsko-goranska županija;susjedstvo
+320188;ZVONEĆA;Primorsko-goranska županija;ime
+320196;ŽEJANE;Primorsko-goranska županija;ime
+320218;SLAVONSKE BARE;Virovitičko-podravska županija;ime
+320226;BREZOVLJANI;Virovitičko-podravska županija;susjedstvo
+320242;ČAČINCI;Virovitičko-podravska županija;ime
+320269;DOLCI;Virovitičko-podravska županija;ime
+320277;DONJA PIŠTANA;Virovitičko-podravska županija;ime
+320285;DONJE PREDRIJEVO;Virovitičko-podravska županija;ime
+320293;DUZLUK;Virovitičko-podravska županija;ime
+320307;GORNJA PIŠTANA;Virovitičko-podravska županija;ime
+320315;KOKOČAK;Virovitičko-podravska županija;ime
+320323;KRAJNA;Virovitičko-podravska županija;ime
+320331;KRASKOVIĆ;Virovitičko-podravska županija;ime
+320340;KUTOVI;Virovitičko-podravska županija;ime
+320366;NOVA JOŠAVA;Virovitičko-podravska županija;ime
+320374;OBRADOVCI;Virovitičko-podravska županija;ime
+320382;ORAHOVICA;Virovitičko-podravska županija;ime
+320404;PUŠINA;Virovitičko-podravska županija;ime
+320412;SLATINSKI DRENOVAC;Virovitičko-podravska županija;ime
+320439;STARA JOŠAVA;Virovitičko-podravska županija;ime
+320447;SUHA MLAKA;Virovitičko-podravska županija;ime
+320455;ŠUMEĐE;Virovitičko-podravska županija;ime
+320463;ZDENCI;Virovitičko-podravska županija;ime
+320471;ADA;Osječko-baranjska županija;ime
+320480;ALJMAŠ;Osječko-baranjska županija;ime
+320498;ANTUNOVAC;Osječko-baranjska županija;susjedstvo
+320501;BEKETINCI;Osječko-baranjska županija;ime
+320510;BIJELO BRDO;Osječko-baranjska županija;ime
+320528;ČEPIN;Osječko-baranjska županija;ime
+320536;ČOKADINCI;Osječko-baranjska županija;ime
+320544;DALJ;Osječko-baranjska županija;ime
+320552;DOPSIN;Osječko-baranjska županija;ime
+320579;ERDUT;Osječko-baranjska županija;ime
+320587;ERNESTINOVO;Osječko-baranjska županija;ime
+320595;HRASTIN;Osječko-baranjska županija;ime
+320609;JOSIPOVAC;Osječko-baranjska županija;ime
+320617;IVANOVAC;Osječko-baranjska županija;ime
+320625;KOPRIVNA;Osječko-baranjska županija;susjedstvo
+320633;LASLOVO;Osječko-baranjska županija;ime
+320641;ČEPINSKI MARTINCI;Osječko-baranjska županija;ime
+320650;ORLOVNJAK;Osječko-baranjska županija;susjedstvo
+320668;OSIJEK;Osječko-baranjska županija;ime
+320676;PALAČA;Osječko-baranjska županija;ime
+320684;PAULIN DVOR;Osječko-baranjska županija;ime
+320692;BRIJEŠĆE;Osječko-baranjska županija;ime
+320706;SARVAŠ;Osječko-baranjska županija;ime
+320714;ŠODOLOVCI;Osječko-baranjska županija;ime
+320722;TENJA;Osječko-baranjska županija;ime
+320749;TVRĐAVICA-PODRAVLJE;Osječko-baranjska županija;susjedstvo
+320757;VLADISLAVCI;Osječko-baranjska županija;ime
+320765;VUKA;Osječko-baranjska županija;ime
+320773;BABIN POTOK;Ličko-senjska županija;susjedstvo
+320781;BRINJE;Ličko-senjska županija;ime
+320790;BRLOG;Ličko-senjska županija;ime
+320803;BRLOŠKA DUBRAVA;Ličko-senjska županija;ime
+320811;ČOVIĆI;Ličko-senjska županija;ime
+320838;DOLJANI;Ličko-senjska županija;susjedstvo
+320846;JEZERANE;Ličko-senjska županija;ime
+320854;KOMPOLJE;Ličko-senjska županija;ime
+320862;KRIŽPOLJE;Ličko-senjska županija;ime
+320889;KUTEREVO;Ličko-senjska županija;ime
+320897;LIČKO LEŠĆE;Ličko-senjska županija;ime
+320919;LETINAC;Ličko-senjska županija;ime
+320927;LIPICE;Ličko-senjska županija;ime
+320935;OTOČAC;Ličko-senjska županija;ime
+320943;PROKIKE;Ličko-senjska županija;ime
+320951;PROZOR;Ličko-senjska županija;ime
+320960;RAMLJANI;Ličko-senjska županija;ime
+320978;RUDOPOLJE;Ličko-senjska županija;ime
+320986;SINAC;Ličko-senjska županija;ime
+320994;HRVATSKO POLJE;Ličko-senjska županija;ime
+321001;STAJNICA;Ličko-senjska županija;ime
+321010;ŠKARE;Ličko-senjska županija;ime
+321028;ŠVICA;Ličko-senjska županija;ime
+321036;TURJANSKI;Ličko-senjska županija;ime
+321044;VODOTEČ;Ličko-senjska županija;ime
+321052;VOJVODUŠA;Ličko-senjska županija;susjedstvo
+321079;VRHOVINE;Ličko-senjska županija;ime
+321087;ZALUŽNICA;Ličko-senjska županija;ime
+321095;BRAŠLJEVICA;Karlovačka županija;ime
+321109;BRATOVANCI;Karlovačka županija;ime
+321117;BREZNIK;Karlovačka županija;ime
+321125;BRLOG OZALJSKI;Karlovačka županija;ime
+321133;BUBNJARCI;Karlovačka županija;ime
+321141;DONJI LOVIĆ;Karlovačka županija;ime
+321150;DVORIŠTE VIVODINSKO;Karlovačka županija;ime
+321168;FERENCI;Karlovačka županija;susjedstvo
+321176;GRIČE;Karlovačka županija;ime
+321184;ILOVAC;Karlovačka županija;ime
+321192;JAŠKOVO;Karlovačka županija;ime
+321206;JUROVO;Karlovačka županija;ime
+321214;LIPNIK;Karlovačka županija;ime
+321222;LOVIĆ PREKRIŠKI;Karlovačka županija;ime
+321249;MALINCI;Karlovačka županija;ime
+321257;MARTINSKI VRH;Karlovačka županija;ime
+321265;NOVAKI OZALJSKI;Karlovačka županija;ime
+321273;OZALJ;Karlovačka županija;ime
+321281;OŠTRI VRH OZALJSKI;Karlovačka županija;susjedstvo
+321290;PODBREŽJE;Karlovačka županija;ime
+321303;POKUPJE;Karlovačka županija;susjedstvo
+321311;POLICE PIRIŠĆE;Karlovačka županija;ime
+321320;PRAVUTINA;Karlovačka županija;ime
+321338;RIBNIK;Karlovačka županija;ime
+321346;SEKULIĆI;Karlovačka županija;ime
+321354;SLAPNO;Karlovačka županija;ime
+321362;SRAČAK;Karlovačka županija;ime
+321389;SVETICE;Karlovačka županija;ime
+321397;SVETIČKO HRAŠĆE;Karlovačka županija;ime
+321419;TOMAŠNICA;Karlovačka županija;ime
+321427;TRG;Karlovačka županija;ime
+321435;VIVODINA;Karlovačka županija;ime
+321443;VRHOVAC;Karlovačka županija;ime
+321451;ZAJAČKO SELO;Karlovačka županija;ime
+321460;ZALUKA;Karlovačka županija;ime
+321478;ZORKOVAC;Karlovačka županija;ime
+321486;ŽAKANJE;Karlovačka županija;ime
+321508;DINJIŠKA;Zadarska županija;ime
+321516;KOLAN;Zadarska županija;ime
+321524;NOVALJA;Ličko-senjska županija;ime
+321532;PAG;Zadarska županija;ime
+321559;POVLJANA;Zadarska županija;ime
+321575;BADLJEVINA;Požeško-slavonska županija;ime
+321583;BANOVAC;Požeško-slavonska županija;susjedstvo
+321591;BATINJANI;Požeško-slavonska županija;susjedstvo
+321605;BJELAJCI;Požeško-slavonska županija;ime
+321613;BJELANOVAC;Požeško-slavonska županija;ime
+321621;BRANEŠCI;Požeško-slavonska županija;ime
+321630;BREKINSKA;Požeško-slavonska županija;ime
+321656;BUDIĆI;Požeško-slavonska županija;susjedstvo
+321664;BUJAVICA;Požeško-slavonska županija;ime
+321672;BUKOVČANI;Požeško-slavonska županija;ime
+321699;CIKOTE;Požeško-slavonska županija;ime
+321737;DOBROVAC;Požeško-slavonska županija;ime
+321745;DONJA OBRIJEŽ;Požeško-slavonska županija;ime
+321753;DRAGOVIĆ;Požeško-slavonska županija;ime
+321761;FILIPOVAC;Požeško-slavonska županija;ime
+321788;GORNJA OBRIJEŽ;Požeško-slavonska županija;ime
+321800;GRĐEVICA;Požeško-slavonska županija;susjedstvo
+321818;JAGMA;Požeško-slavonska županija;ime
+321826;KAPETANOVO POLJE;Požeško-slavonska županija;ime
+321834;KLISA;Požeško-slavonska županija;susjedstvo
+321877;KRAGUJ;Požeško-slavonska županija;ime
+321893;KUKUNJEVAC;Požeško-slavonska županija;ime
+321907;KUSONJE;Požeško-slavonska županija;ime
+321915;LIPIK;Požeško-slavonska županija;ime
+321931;LIVAĐANI;Požeško-slavonska županija;ime
+321940;MARINO SELO;Požeško-slavonska županija;ime
+321958;ŠPANOVICA;Požeško-slavonska županija;ime
+321966;OMANOVAC;Požeško-slavonska županija;ime
+321974;OŽEGOVCI;Požeško-slavonska županija;ime
+321982;PAKRAC;Požeško-slavonska županija;ime
+322008;PLOŠTINE;Požeško-slavonska županija;ime
+322024;PREKOPAKRA;Požeško-slavonska županija;ime
+322032;PRGOMELJE;Požeško-slavonska županija;susjedstvo
+322059;ROGULJE;Požeško-slavonska županija;susjedstvo
+322067;SKENDEROVCI;Požeško-slavonska županija;ime
+322075;STRIŽIČEVAC;Požeško-slavonska županija;ime
+322083;SUBOCKA;Požeško-slavonska županija;ime
+322091;ŠEOVICA;Požeško-slavonska županija;ime
+322105;ŠUMETLICA;Brodsko-posavska županija;ime
+322113;TISOVAC;Požeško-slavonska županija;susjedstvo
+322121;TORANJ;Požeško-slavonska županija;ime
+322130;BELAJ;Istarska županija;susjedstvo
+322148;BERAM;Istarska županija;ime
+322156;BOLJUN;Istarska županija;ime
+322164;BORUT;Istarska županija;ime
+322172;BREST POD UČKOM;Istarska županija;ime
+322199;BRKAČ;Istarska županija;ime
+322202;BUTONIGA;Istarska županija;ime
+322229;CEROVLJE;Istarska županija;ime
+322237;DOLENJA VAS;Istarska županija;ime
+322245;DRAGUĆ;Istarska županija;ime
+322253;GOLOGORICA;Istarska županija;ime
+322261;GORENJA VAS;Istarska županija;susjedstvo
+322270;GRAČIŠĆE;Istarska županija;ime
+322288;GRADINJE;Istarska županija;ime
+322296;GRDOSELO;Istarska županija;ime
+322300;GRIMALDA;Istarska županija;ime
+322318;KALDIR;Istarska županija;ime
+322326;KAROJBA;Istarska županija;ime
+322334;KAŠĆERGA;Istarska županija;ime
+322342;KRINGA;Istarska županija;ime
+322369;KRŠIKLA;Istarska županija;ime
+322377;LESIŠĆINA;Istarska županija;ime
+322385;LINDAR;Istarska županija;ime
+322393;MOTOVUN;Istarska županija;ime
+322407;MUNTRILJ;Istarska županija;ime
+322415;NOVAKI MOTOVUNSKI;Istarska županija;ime
+322423;NOVAKI PAZINSKI;Istarska županija;ime
+322431;PAZ;Istarska županija;ime
+322440;PAZIN;Istarska županija;ime
+322458;SVETI PETAR U ŠUMI;Istarska županija;ime
+322466;PREVIŽ;Istarska županija;ime
+322474;RAKOTULE;Istarska županija;ime
+322482;SEMIĆ;Istarska županija;ime
+322504;ŠKOPLJAK;Istarska županija;ime
+322512;TIBOLE;Istarska županija;susjedstvo
+322539;TINJAN;Istarska županija;ime
+322547;TRVIŽ;Istarska županija;ime
+322555;VRANJA;Istarska županija;ime
+322563;ZABREŽANI;Istarska županija;ime
+322571;ZAMASK;Istarska županija;ime
+322580;ZAREČJE;Istarska županija;ime
+322598;ZUMESK;Istarska županija;susjedstvo
+322601;BAČUGA;Sisačko-moslavačka županija;susjedstvo
+322610;BEGOVIĆI;Sisačko-moslavačka županija;ime
+322628;BIJELNIK;Sisačko-moslavačka županija;ime
+322636;BLINJA;Sisačko-moslavačka županija;ime
+322644;BREST POKUPSKI;Sisačko-moslavačka županija;ime
+322652;DONJA BUDIČINA;Sisačko-moslavačka županija;ime
+322679;CEPELIŠ;Sisačko-moslavačka županija;ime
+322687;ČUNTIĆ;Sisačko-moslavačka županija;ime
+322695;DEANOVIĆI;Sisačko-moslavačka županija;ime
+322709;DOLČANI;Sisačko-moslavačka županija;susjedstvo
+322717;DRAGOTINCI;Sisačko-moslavačka županija;ime
+322725;GLINSKA POLJANA;Sisačko-moslavačka županija;ime
+322733;GORA;Sisačko-moslavačka županija;ime
+322741;GORSKE MOKRICE;Sisačko-moslavačka županija;susjedstvo
+322750;GRABERJE;Sisačko-moslavačka županija;ime
+322768;GRABOVAC BANSKI;Sisačko-moslavačka županija;ime
+322776;HRASTOVICA;Sisačko-moslavačka županija;ime
+322784;JABUKOVAC;Sisačko-moslavačka županija;ime
+322792;JOŠAVICA;Sisačko-moslavačka županija;ime
+322806;KLINAC;Sisačko-moslavačka županija;ime
+322814;KRALJEVČANI;Sisačko-moslavačka županija;ime
+322822;KRIŽ HRASTOVAČKI;Sisačko-moslavačka županija;ime
+322849;LETOVANCI;Sisačko-moslavačka županija;ime
+322857;LUŠČANI;Sisačko-moslavačka županija;ime
+322865;MAČKOVO SELO;Sisačko-moslavačka županija;ime
+322873;MADŽARI;Sisačko-moslavačka županija;ime
+322881;MEĐURAČE;Sisačko-moslavačka županija;ime
+322890;MLINOGA;Sisačko-moslavačka županija;susjedstvo
+322903;MOŠĆENICA;Sisačko-moslavačka županija;ime
+3229030;MOŠĆENICA NOVA;Sisačko-moslavačka županija;susjedstvo
+322911;MOŠTANICA;Sisačko-moslavačka županija;ime
+322920;NOVA DRENČINA;Sisačko-moslavačka županija;ime
+322938;NOVO SELIŠTE;Sisačko-moslavačka županija;ime
+322946;PASTUŠA;Sisačko-moslavačka županija;susjedstvo
+322954;PECKI;Sisačko-moslavačka županija;ime
+322962;PETKOVAC;Sisačko-moslavačka županija;ime
+322989;PETRINJA;Sisačko-moslavačka županija;ime
+322997;PRNJAVOR ČUNTIĆKI;Sisačko-moslavačka županija;ime
+323004;SIBIĆ;Sisačko-moslavačka županija;ime
+323012;SLANA;Sisačko-moslavačka županija;ime
+323039;STRAŠNIK;Sisačko-moslavačka županija;ime
+323047;STRAŽBENICA;Sisačko-moslavačka županija;ime
+323055;TABORIŠTE;Sisačko-moslavačka županija;ime
+323063;TREMUŠNJAK;Sisačko-moslavačka županija;ime
+323071;VELIKI ŠUŠNJAR;Sisačko-moslavačka županija;ime
+323080;VRATEČKO;Sisačko-moslavačka županija;ime
+323098;BAKIĆ;Virovitičko-podravska županija;ime
+323101;BISTRICA;Virovitičko-podravska županija;ime
+323110;BOKANE;Virovitičko-podravska županija;ime
+323128;ČAĐAVICA;Virovitičko-podravska županija;ime
+323136;ĆERALIJE;Virovitičko-podravska županija;ime
+323144;DOBROVIĆ;Virovitičko-podravska županija;ime
+323152;DONJA BUKOVICA;Virovitičko-podravska županija;ime
+323179;DONJE BAZIJE;Virovitičko-podravska županija;ime
+323187;DONJE KUSONJE;Virovitičko-podravska županija;ime
+323195;DONJI MELJANI;Virovitičko-podravska županija;ime
+323209;ĐURIČIĆ;Virovitičko-podravska županija;ime
+323217;GORNJA BUKOVICA;Virovitičko-podravska županija;susjedstvo
+323225;GORNJE KUSONJE;Virovitičko-podravska županija;ime
+323233;GORNJE PREDRIJEVO;Virovitičko-podravska županija;ime
+323241;GORNJE VILJEVO;Virovitičko-podravska županija;ime
+323250;GORNJI MELJANI;Virovitičko-podravska županija;ime
+323268;GORNJI MIHOLJAC;Virovitičko-podravska županija;ime
+323276;HUM VOĆINSKI;Virovitičko-podravska županija;susjedstvo
+323284;HUM VAROŠ;Virovitičko-podravska županija;ime
+323292;IVANBRIJEG;Virovitičko-podravska županija;ime
+323306;KAPINCI;Virovitičko-podravska županija;ime
+323314;KOMETNIK;Virovitičko-podravska županija;susjedstvo
+323322;KOZICE;Virovitičko-podravska županija;ime
+323349;KUZMA;Virovitičko-podravska županija;ime
+323357;LISIČINE;Virovitičko-podravska županija;ime
+323365;LUKAVAC;Virovitičko-podravska županija;ime
+323373;MACUTE;Virovitičko-podravska županija;ime
+323381;MEDINCI;Virovitičko-podravska županija;ime
+323390;MIKLEUŠ;Virovitičko-podravska županija;ime
+323403;MILJEVCI;Virovitičko-podravska županija;ime
+323411;NOVA BUKOVICA;Virovitičko-podravska županija;ime
+323420;NOVAKI;Virovitičko-podravska županija;susjedstvo
+323438;NOSKOVCI;Virovitičko-podravska županija;ime
+323446;PODRAVSKA SLATINA;Virovitičko-podravska županija;susjedstvo
+323454;POPOVAC;Virovitičko-podravska županija;susjedstvo
+323462;RADOSAVCI;Virovitičko-podravska županija;ime
+323489;RIJENCI;Virovitičko-podravska županija;ime
+323497;SEKULINCI;Virovitičko-podravska županija;ime
+323519;SLADOJEVCI;Virovitičko-podravska županija;ime
+323527;SLATINSKI LIPOVAC;Virovitičko-podravska županija;susjedstvo
+323535;SMUDE;Virovitičko-podravska županija;ime
+323543;SOPJE;Virovitičko-podravska županija;ime
+323551;STARIN;Virovitičko-podravska županija;ime
+323560;VAŠKA;Virovitičko-podravska županija;ime
+323578;VOĆIN;Virovitičko-podravska županija;ime
+323586;VRANEŠEVCI;Virovitičko-podravska županija;ime
+323594;BAČVA;Istarska županija;ime
+323608;BADERNA;Istarska županija;susjedstvo
+323616;DRAČEVAC;Istarska županija;susjedstvo
+323624;FRATA;Istarska županija;ime
+323632;FUNTANA;Istarska županija;ime
+323659;FUŠKULIN;Istarska županija;susjedstvo
+323667;GRADINA;Istarska županija;susjedstvo
+323675;KAŠTELIR;Istarska županija;ime
+323683;LABINCI;Istarska županija;ime
+323691;LIM;Istarska županija;susjedstvo
+323705;LOVREČ;Istarska županija;susjedstvo
+323713;MUGEBA;Istarska županija;susjedstvo
+323721;MUŠALEŽ;Istarska županija;ime
+323730;NOVA VAS;Istarska županija;ime
+323748;POREČ;Istarska županija;susjedstvo
+323756;SVETI IVAN;Istarska županija;susjedstvo
+323764;SVETI VITAL;Istarska županija;susjedstvo
+323772;TAR;Istarska županija;ime
+323799;VABRIGA;Istarska županija;ime
+323802;VIŠNJAN;Istarska županija;ime
+323829;VIŽINADA;Istarska županija;ime
+323837;VRSAR;Istarska županija;ime
+323845;VARVARI;Istarska županija;ime
+323853;ŽBANDAJ;Istarska županija;ime
+323861;BREZNO;Krapinsko-zagorska županija;susjedstvo
+323870;CIGROVEC;Krapinsko-zagorska županija;ime
+323888;DESINIĆ;Krapinsko-zagorska županija;ime
+323896;DRUŠKOVEC HUMSKI;Krapinsko-zagorska županija;ime
+323900;GORJAKOVO;Krapinsko-zagorska županija;ime
+323918;HUM NA SUTLI;Krapinsko-zagorska županija;ime
+323926;JELENJAK;Krapinsko-zagorska županija;ime
+323934;KOSTEL;Krapinsko-zagorska županija;ime
+323942;KOŠNICA;Krapinsko-zagorska županija;ime
+323969;LUPINJAK;Krapinsko-zagorska županija;ime
+323977;PLEMENŠĆINA;Krapinsko-zagorska županija;susjedstvo
+323985;PREGRADA;Krapinsko-zagorska županija;ime
+323993;PRIŠLIN;Krapinsko-zagorska županija;ime
+324019;SOPOT;Krapinsko-zagorska županija;susjedstvo
+324027;VELIKA HORVATSKA;Krapinsko-zagorska županija;ime
+324035;VINAGORA;Krapinsko-zagorska županija;ime
+324043;VRBANEC;Krapinsko-zagorska županija;susjedstvo
+324051;BARBAN;Istarska županija;ime
+324060;BOKORDIĆI;Istarska županija;ime
+324078;BRIONI;Istarska županija;susjedstvo
+324086;FAŽANA;Istarska županija;ime
+324094;FILIPANA;Istarska županija;ime
+324108;GALIŽANA;Istarska županija;ime
+324116;GOČAN;Istarska županija;susjedstvo
+324124;JURŠIĆI;Istarska županija;ime
+324132;KAVRAN;Istarska županija;ime
+324159;KRNICA;Istarska županija;ime
+324167;LIŽNJAN;Istarska županija;ime
+324175;LOBORIKA;Istarska županija;ime
+324183;MARČANA;Istarska županija;ime
+324191;MEDULIN;Istarska županija;ime
+324205;MUNTIĆ;Istarska županija;ime
+324213;PEROJ;Istarska županija;ime
+324221;POMER;Istarska županija;ime
+324230;PREMANTURA;Istarska županija;ime
+324248;PRNJANI;Istarska županija;susjedstvo
+324256;PULA;Istarska županija;ime
+324264;RAKALJ;Istarska županija;ime
+324272;SMOLJANCI;Istarska županija;ime
+324299;SUTIVANAC;Istarska županija;ime
+324302;SVETVINČENAT;Istarska županija;ime
+324329;ŠAJINI;Istarska županija;ime
+324337;ŠIŠAN;Istarska županija;ime
+324345;ŠTINJAN;Istarska županija;susjedstvo
+324353;ŠTOKOVCI;Istarska županija;ime
+324361;VALTURA;Istarska županija;ime
+324370;VODNJAN;Istarska županija;ime
+324388;BANJOL;Primorsko-goranska županija;ime
+324396;BARBAT;Primorsko-goranska županija;ime
+324400;KAMPOR;Primorsko-goranska županija;ime
+324418;LOPAR;Primorsko-goranska županija;ime
+324426;LUN;Ličko-senjska županija;ime
+324434;RAB-MUNDANIJE;Primorsko-goranska županija;susjedstvo
+324442;SUPETARSKA DRAGA;Primorsko-goranska županija;ime
+324469;BAKAR;Primorsko-goranska županija;ime
+324477;BAKARAC;Primorsko-goranska županija;ime
+324485;BREZA;Primorsko-goranska županija;susjedstvo
+324493;CERNIK-ČAVLE;Primorsko-goranska županija;susjedstvo
+324507;DRAGA;Primorsko-goranska županija;susjedstvo
+324515;DRAŽICE;Primorsko-goranska županija;ime
+324523;DRENOVA;Primorsko-goranska županija;susjedstvo
+324531;GROBNIK;Primorsko-goranska županija;susjedstvo
+324540;HRELJIN;Primorsko-goranska županija;ime
+324558;JELENJE;Primorsko-goranska županija;ime
+324566;JELENJE-LEPENICE;Primorsko-goranska županija;susjedstvo
+324574;KASTAV;Primorsko-goranska županija;ime
+324582;KLANA;Primorsko-goranska županija;ime
+324604;KOSTRENA-BARBARA;Primorsko-goranska županija;susjedstvo
+324612;KOSTRENA-LUCIJA;Primorsko-goranska županija;susjedstvo
+324639;KRALJEVICA;Primorsko-goranska županija;ime
+324647;KRASICA;Primorsko-goranska županija;ime
+324655;KUKULJANOVO;Primorsko-goranska županija;ime
+324663;LISAC;Primorsko-goranska županija;susjedstvo
+324671;MARČELJI;Primorsko-goranska županija;ime
+324680;MARINIĆI;Primorsko-goranska županija;ime
+324698;PAŠAC;Primorsko-goranska županija;susjedstvo
+324701;PODHUM;Primorsko-goranska županija;ime
+324710;PODRVANJ;Primorsko-goranska županija;ime
+324728;PRAPUTNJAK;Primorsko-goranska županija;ime
+324736;REČINA;Primorsko-goranska županija;susjedstvo
+324744;RUŽIĆ SELO;Primorsko-goranska županija;susjedstvo
+324752;SRDOČI;Primorsko-goranska županija;susjedstvo
+324779;STARI GRAD;Primorsko-goranska županija;susjedstvo
+324787;STUDENA;Primorsko-goranska županija;ime
+324809;ŠKALNICA;Primorsko-goranska županija;ime
+324817;ŠKRLJEVO;Primorsko-goranska županija;ime
+324825;ŠMRIKA;Primorsko-goranska županija;ime
+324833;VELI DOL;Primorsko-goranska županija;ime
+324841;VIŠKOVO;Primorsko-goranska županija;ime
+324850;ZAMET;Primorsko-goranska županija;susjedstvo
+324868;ZLOBIN;Primorsko-goranska županija;ime
+324876;BALE;Istarska županija;ime
+324884;KANFANAR;Istarska županija;ime
+324892;KRAJCAR BREG;Istarska županija;ime
+324906;MRGANI;Istarska županija;ime
+324914;ROVINJ;Istarska županija;ime
+324922;ROVINJSKO SELO;Istarska županija;ime
+324949;SOŠIĆI;Istarska županija;ime
+324957;ŽMINJ;Istarska županija;ime
+324965;BUDINJAK;Zagrebačka županija;ime
+324973;CERJE SAMOBORSKO;Zagrebačka županija;ime
+324990;DREŽNIK PODOKIĆKI;Zagrebačka županija;ime
+325007;GALGOVO;Zagrebačka županija;ime
+325015;GRABAR;Zagrebačka županija;susjedstvo
+325023;KERESTINEC;Zagrebačka županija;ime
+325031;KLOKOČEVEC SAMOBORSKI;Zagrebačka županija;ime
+325040;KONŠĆICA;Zagrebačka županija;ime
+325058;MOLVICE;Zagrebačka županija;susjedstvo
+325066;SVETA NEDELJA;Zagrebačka županija;ime
+325074;NORŠIĆ SELO;Zagrebačka županija;ime
+325082;OTRUŠEVEC;Zagrebačka županija;ime
+325104;PODVRH;Zagrebačka županija;ime
+325112;POKLEK;Zagrebačka županija;ime
+325139;RAKITJE;Zagrebačka županija;ime
+325147;RAKOV POTOK;Zagrebačka županija;ime
+325155;RAKOVICA;Zagrebačka županija;susjedstvo
+325163;RUDE;Zagrebačka županija;ime
+325171;SAMOBOR;Zagrebačka županija;ime
+325180;SLANI DOL;Zagrebačka županija;ime
+325198;STRMEC SAMOBORSKI;Zagrebačka županija;susjedstvo
+325201;ŠIPAČKI BREG;Zagrebačka županija;ime
+325210;VRBOVEC;Zagrebačka županija;ime
+325228;JABLANAC;Ličko-senjska županija;ime
+325236;SVETI JURAJ;Ličko-senjska županija;ime
+325244;KLADA;Ličko-senjska županija;ime
+325252;KRASNO;Ličko-senjska županija;ime
+325279;KRIVI PUT;Ličko-senjska županija;ime
+325287;MELNICE;Ličko-senjska županija;ime
+325295;PRIZNA;Ličko-senjska županija;ime
+325325;STINICA;Ličko-senjska županija;ime
+325333;ADAMOVEC;Grad Zagreb;ime
+325341;BLAGUŠA;Grad Zagreb;ime
+325350;ĐURĐEKOVEC;Grad Zagreb;ime
+325376;GORANEC;Grad Zagreb;susjedstvo
+325384;KAŠINA;Grad Zagreb;ime
+325406;LUŽAN;Grad Zagreb;ime
+325422;SESVETE;Grad Zagreb;susjedstvo
+325449;ŠAŠINOVEC;Grad Zagreb;ime
+325457;VUGROVEC;Grad Zagreb;ime
+325465;VURNOVEC;Grad Zagreb;ime
+325473;BAJAGIĆ;Splitsko-dalmatinska županija;ime
+325481;BISKO;Splitsko-dalmatinska županija;ime
+325490;BRNAZE;Splitsko-dalmatinska županija;ime
+325503;BUDIMIRI;Splitsko-dalmatinska županija;ime
+325511;ČAPORICE;Splitsko-dalmatinska županija;ime
+325520;DABAR;Splitsko-dalmatinska županija;susjedstvo
+325538;DONJI BITELIĆ;Splitsko-dalmatinska županija;ime
+325546;ERCEGOVCI;Splitsko-dalmatinska županija;susjedstvo
+325554;GALA;Splitsko-dalmatinska županija;ime
+325562;GARJAK;Splitsko-dalmatinska županija;ime
+325589;GLAVICE;Splitsko-dalmatinska županija;ime
+325597;GLJEV;Splitsko-dalmatinska županija;ime
+325619;GORNJI BITELIĆ;Splitsko-dalmatinska županija;ime
+325627;GRAB;Splitsko-dalmatinska županija;susjedstvo
+325635;HRVACE;Splitsko-dalmatinska županija;ime
+325643;JEŽEVIĆ;Splitsko-dalmatinska županija;ime
+325651;KAMENSKO;Splitsko-dalmatinska županija;susjedstvo
+325660;KARAKAŠICA;Splitsko-dalmatinska županija;ime
+325678;KOLJANE;Splitsko-dalmatinska županija;ime
+325686;KOSORE;Splitsko-dalmatinska županija;ime
+325694;KOŠUTE;Splitsko-dalmatinska županija;ime
+325708;KRAJ;Splitsko-dalmatinska županija;susjedstvo
+325716;KRUŠVAR;Splitsko-dalmatinska županija;susjedstvo
+325724;LUČANE;Splitsko-dalmatinska županija;ime
+325732;MAOVICE;Splitsko-dalmatinska županija;ime
+325759;OBROVAC SINJSKI;Splitsko-dalmatinska županija;ime
+325767;OTIŠIĆ;Splitsko-dalmatinska županija;ime
+325775;OTOK;Splitsko-dalmatinska županija;susjedstvo
+325783;PODOSOJE;Splitsko-dalmatinska županija;ime
+325791;POTRAVLJE;Splitsko-dalmatinska županija;ime
+325805;PRISOJE;Splitsko-dalmatinska županija;susjedstvo
+325813;RADOŠIĆ;Splitsko-dalmatinska županija;ime
+325821;RUDA;Splitsko-dalmatinska županija;ime
+325830;SATRIĆ;Splitsko-dalmatinska županija;ime
+325848;SIĆANE;Splitsko-dalmatinska županija;susjedstvo
+325856;SINJ;Splitsko-dalmatinska županija;ime
+325864;STRIZIREP;Splitsko-dalmatinska županija;ime
+325872;SUŠCI;Splitsko-dalmatinska županija;susjedstvo
+325899;TIJARICA;Splitsko-dalmatinska županija;ime
+325902;TURJACI;Splitsko-dalmatinska županija;ime
+325929;UDOVIČIĆI;Splitsko-dalmatinska županija;ime
+325937;UGLJANE;Splitsko-dalmatinska županija;ime
+325945;VEDRINE;Splitsko-dalmatinska županija;ime
+325953;VELIĆ;Splitsko-dalmatinska županija;ime
+325961;VINALIĆ;Splitsko-dalmatinska županija;ime
+325970;VOJNIĆ SINJSKI;Splitsko-dalmatinska županija;ime
+325988;VOŠTANE;Splitsko-dalmatinska županija;ime
+325996;VRLIKA;Splitsko-dalmatinska županija;ime
+326003;VRPOLJE;Splitsko-dalmatinska županija;susjedstvo
+326011;VUČIPOLJE;Splitsko-dalmatinska županija;susjedstvo
+326020;BESTRMA;Sisačko-moslavačka županija;ime
+326038;BISTRAČ;Sisačko-moslavačka županija;ime
+326046;BLINJSKI KUT;Sisačko-moslavačka županija;ime
+326054;BOBOVAC;Sisačko-moslavačka županija;ime
+326062;BOK PALANJEČKI;Sisačko-moslavačka županija;ime
+326089;BRĐANI;Sisačko-moslavačka županija;susjedstvo
+326097;BRKIŠEVINA;Sisačko-moslavačka županija;ime
+326119;BUDAŠEVO-TOPOLOVAC;Sisačko-moslavačka županija;susjedstvo
+326127;CERJE LETOVANIĆKO;Sisačko-moslavačka županija;ime
+326135;CRKVENI BOK;Sisačko-moslavačka županija;ime
+326143;CRNAC;Sisačko-moslavačka županija;susjedstvo
+326151;ČAPLJANI;Sisačko-moslavačka županija;ime
+326160;ČIGOČ;Sisačko-moslavačka županija;ime
+326178;DESNO TREBARJEVO;Sisačko-moslavačka županija;ime
+326186;DESNO ŽELJEZNO;Sisačko-moslavačka županija;ime
+326194;DONJE KOMAREVO;Sisačko-moslavačka županija;ime
+326208;DONJI HRASTOVAC;Sisačko-moslavačka županija;ime
+326216;DRLJAČA;Sisačko-moslavačka županija;ime
+326224;DUŽICA;Sisačko-moslavačka županija;ime
+326232;GALDOVO;Sisačko-moslavačka županija;susjedstvo
+326267;GORNJE KOMAREVO;Sisačko-moslavačka županija;ime
+326275;GRADUSA POSAVSKA;Sisačko-moslavačka županija;ime
+326283;GREDA;Sisačko-moslavačka županija;susjedstvo
+326291;GREDA SUNJSKA;Sisačko-moslavačka županija;ime
+326305;GUŠĆE;Sisačko-moslavačka županija;ime
+326313;HRASTELNICA;Sisačko-moslavačka županija;ime
+326321;IVANJSKI BOK;Sisačko-moslavačka županija;ime
+326330;JASENOVČANI;Sisačko-moslavačka županija;ime
+326348;JAZVENIK;Sisačko-moslavačka županija;ime
+326356;JEZERO POSAVSKO;Sisačko-moslavačka županija;ime
+326364;KINJAČKA;Sisačko-moslavačka županija;ime
+326372;KOSTREŠI ŠAŠKI;Sisačko-moslavačka županija;ime
+326399;KRATEČKO;Sisačko-moslavačka županija;ime
+326402;KRIVAJ SUNJSKI;Sisačko-moslavačka županija;ime
+326429;LEKENIK;Sisačko-moslavačka županija;ime
+326437;LETINA;Sisačko-moslavačka županija;susjedstvo
+326445;LETOVANIĆ;Sisačko-moslavačka županija;ime
+326453;LIJEVA LUKA;Sisačko-moslavačka županija;ime
+326461;LONJA;Sisačko-moslavačka županija;ime
+326470;MAHOVO;Sisačko-moslavačka županija;ime
+326488;MALA GRADUSA;Sisačko-moslavačka županija;ime
+326496;MALA PAUKOVA;Sisačko-moslavačka županija;ime
+326500;MARTINSKA VES;Sisačko-moslavačka županija;susjedstvo
+326518;MARTINSKA VES LIJEVA;Sisačko-moslavačka županija;susjedstvo
+326526;MUŽILOVČICA;Sisačko-moslavačka županija;ime
+326534;NOVI SISAK;Sisačko-moslavačka županija;susjedstvo
+326542;NOVO SELO;Sisačko-moslavačka županija;susjedstvo
+326569;NOVOSELCI;Sisačko-moslavačka županija;susjedstvo
+326577;ODRA;Grad Zagreb;ime
+326585;PALANJEK;Sisačko-moslavačka županija;ime
+326593;PAPIĆI;Sisačko-moslavačka županija;ime
+326607;PEŠĆENICA;Sisačko-moslavačka županija;ime
+326615;PETRINJCI;Sisačko-moslavačka županija;ime
+326623;POBRĐANI;Sisačko-moslavačka županija;susjedstvo
+326631;POLJANA LEKENIČKA;Sisačko-moslavačka županija;ime
+326640;PRAČNO;Sisačko-moslavačka županija;susjedstvo
+326658;PRELOŠĆICA;Sisačko-moslavačka županija;ime
+326666;RADONJA LUKA;Sisačko-moslavačka županija;ime
+326674;SELA;Sisačko-moslavačka županija;ime
+326682;SELIŠĆE;Sisačko-moslavačka županija;susjedstvo
+326704;SETUŠ;Sisačko-moslavačka županija;ime
+326712;SJEVEROVAC;Sisačko-moslavačka županija;ime
+326739;SLOVINCI;Sisačko-moslavačka županija;ime
+326747;STARA DRENČINA;Sisačko-moslavačka županija;ime
+326763;STARO SELO;Sisačko-moslavačka županija;susjedstvo
+326771;STAZA;Sisačko-moslavačka županija;ime
+326780;STRMEN;Sisačko-moslavačka županija;ime
+326798;STUPNO;Sisačko-moslavačka županija;ime
+326801;SUNJA;Sisačko-moslavačka županija;ime
+326810;SVINJIČKO;Sisačko-moslavačka županija;susjedstvo
+326828;ŠAŠ;Sisačko-moslavačka županija;ime
+326836;ŠIŠINEC;Sisačko-moslavačka županija;ime
+326844;TIMARCI;Sisačko-moslavačka županija;ime
+326852;TIŠINA ERDEDSKA;Sisačko-moslavačka županija;ime
+326887;VEDRO POLJE;Sisačko-moslavačka županija;ime
+326895;VELIKA GRADUSA;Sisačko-moslavačka županija;ime
+326917;VUKOŠEVAC;Sisačko-moslavačka županija;ime
+326925;ŽAŽINA;Sisačko-moslavačka županija;ime
+326933;ŽIRČICA;Sisačko-moslavačka županija;ime
+326941;ŽREME;Sisačko-moslavačka županija;ime
+326950;ALILOVCI;Požeško-slavonska županija;ime
+326968;AŠIKOVCI;Požeško-slavonska županija;ime
+326976;BEKTEŽ;Požeško-slavonska županija;ime
+326984;BERTELOVCI;Požeško-slavonska županija;ime
+326992;BLACKO;Požeško-slavonska županija;ime
+327000;BOLOMAČE;Požeško-slavonska županija;ime
+327018;BRATULJEVCI;Požeško-slavonska županija;ime
+327026;BRESTOVAC;Požeško-slavonska županija;ime
+327034;BRODSKI DRENOVAC;Požeško-slavonska županija;ime
+327042;BUČJE;Požeško-slavonska županija;ime
+327069;BUK;Požeško-slavonska županija;ime
+327077;BUSNOVI;Požeško-slavonska županija;ime
+327085;CEROVAC;Požeško-slavonska županija;susjedstvo
+327093;CIGLENIK;Požeško-slavonska županija;susjedstvo
+327107;ČAGLIN;Požeško-slavonska županija;ime
+327115;ČEŠLJAKOVCI;Požeško-slavonska županija;ime
+327123;DARANOVCI;Požeško-slavonska županija;ime
+327131;DERVIŠAGA;Požeško-slavonska županija;ime
+327140;DEŽEVCI;Požeško-slavonska županija;ime
+327158;DJEDINA RIJEKA;Požeško-slavonska županija;ime
+327166;DOLJANOVCI;Požeško-slavonska županija;ime
+327174;DONJI EMOVCI;Požeško-slavonska županija;ime
+327182;DRAGA;Požeško-slavonska županija;ime
+327204;DRŠKOVCI;Požeško-slavonska županija;ime
+327212;DUBOKA;Požeško-slavonska županija;susjedstvo
+327239;EMINOVCI;Požeško-slavonska županija;ime
+327247;FRKLJEVCI;Požeško-slavonska županija;ime
+327255;GORNJI GUČANI;Požeško-slavonska županija;ime
+327263;GORNJI VRHOVCI;Požeško-slavonska županija;ime
+327271;GRABARJE;Požeško-slavonska županija;susjedstvo
+327280;GRADAC;Požeško-slavonska županija;susjedstvo
+327301;IMRIJEVCI;Požeško-slavonska županija;ime
+327310;IVANDOL;Požeško-slavonska županija;ime
+327328;JAGUPLIJE;Požeško-slavonska županija;ime
+327336;JAKŠIĆ;Požeško-slavonska županija;ime
+327344;JURKOVAC;Požeško-slavonska županija;ime
+327352;KALINIĆ;Požeško-slavonska županija;ime
+327379;KAPTOL;Požeško-slavonska županija;ime
+327387;KOMORICA;Požeško-slavonska županija;ime
+327395;KOMUŠINA;Požeško-slavonska županija;ime
+327417;POŽEŠKA KOPRIVNICA;Požeško-slavonska županija;ime
+327425;KUJNIK;Požeško-slavonska županija;susjedstvo
+327433;KULA;Požeško-slavonska županija;ime
+327441;KUTJEVO;Požeško-slavonska županija;ime
+327450;KUZMICA;Požeško-slavonska županija;ime
+327468;LAKUŠIJA;Požeško-slavonska županija;ime
+327476;LATINOVAC;Požeško-slavonska županija;ime
+327484;ĆOSINE LAZE;Požeško-slavonska županija;ime
+327492;LUKAČ;Požeško-slavonska županija;susjedstvo
+327506;MIGALOVCI;Požeško-slavonska županija;ime
+327514;MIHALJEVCI;Požeško-slavonska županija;ime
+327522;MIJAČI;Požeško-slavonska županija;ime
+327549;MITROVAC;Požeško-slavonska županija;susjedstvo
+327557;NOVO SELO;Požeško-slavonska županija;susjedstvo
+327565;NOVO ZVEČEVO;Požeško-slavonska županija;ime
+327573;NURKOVAC;Požeško-slavonska županija;ime
+327581;OLJASI;Požeško-slavonska županija;ime
+327590;ORLJAVAC;Požeško-slavonska županija;ime
+327611;PERENCI;Požeško-slavonska županija;ime
+327620;PLETERNICA;Požeško-slavonska županija;ime
+327638;PODGORJE;Požeško-slavonska županija;susjedstvo
+327646;PODSREĆE;Požeško-slavonska županija;ime
+327654;POLJANSKA;Požeško-slavonska županija;ime
+327662;POREČ;Požeško-slavonska županija;ime
+327689;RADOVANCI;Požeško-slavonska županija;ime
+327697;RATKOVICA;Požeško-slavonska županija;ime
+327719;RUŠEVO;Požeško-slavonska županija;ime
+327727;SAPNA;Požeško-slavonska županija;ime
+327735;SAŽIJE;Požeško-slavonska županija;ime
+327743;SEOCI;Požeško-slavonska županija;ime
+327751;SESVETE;Požeško-slavonska županija;susjedstvo
+327760;POŽEGA;Požeško-slavonska županija;ime
+327778;SLOBOŠTINA;Požeško-slavonska županija;ime
+327786;SOVSKI DOL;Požeško-slavonska županija;ime
+327794;STARA LIPA;Požeško-slavonska županija;ime
+327808;STRAŽEMAN;Požeško-slavonska županija;ime
+327816;SULKOVCI;Požeško-slavonska županija;ime
+327824;ŠEOVCI;Požeško-slavonska županija;ime
+327832;SIBOKOVAC;Požeško-slavonska županija;ime
+327859;ŠKRABUTNIK;Požeško-slavonska županija;ime
+327867;ŠNJEGAVIĆ;Požeško-slavonska županija;ime
+327875;ŠTITNJAK;Požeško-slavonska županija;ime
+327883;TOMINOVAC;Požeško-slavonska županija;ime
+327891;TORANJ;Požeško-slavonska županija;ime
+327905;TRAPARI;Požeško-slavonska županija;ime
+327913;TRENKOVO;Požeško-slavonska županija;ime
+327921;TREŠTANOVCI;Požeško-slavonska županija;ime
+327930;TULNIK;Požeško-slavonska županija;ime
+327948;UGARCI;Požeško-slavonska županija;ime
+327956;VELIKA;Požeško-slavonska županija;ime
+327964;VELIKI BILAČ;Požeško-slavonska županija;ime
+327972;VENJE;Požeško-slavonska županija;ime
+327999;VETOVO;Požeško-slavonska županija;ime
+328006;VIDOVCI;Požeško-slavonska županija;ime
+328014;VILIĆ SELO;Požeško-slavonska županija;ime
+328022;VRANIĆ;Požeško-slavonska županija;ime
+328049;GRADSKI VRHOVCI;Požeško-slavonska županija;ime
+328057;ČEČAVAČKI VUČJAK;Požeško-slavonska županija;ime
+328065;ZAGRAĐE;Požeško-slavonska županija;ime
+328073;ZAKORENJE;Požeško-slavonska županija;ime
+328081;ZARILAC;Požeško-slavonska županija;ime
+328090;BANOVCI;Brodsko-posavska županija;susjedstvo
+328103;BEBRINA;Brodsko-posavska županija;ime
+328111;BEČIC;Brodsko-posavska županija;ime
+328120;BERAVCI;Brodsko-posavska županija;ime
+328138;BICKO SELO;Brodsko-posavska županija;ime
+328146;BRODSKI STUPNIK;Brodsko-posavska županija;ime
+328154;BRODSKI VAROŠ;Brodsko-posavska županija;ime
+328162;BRODSKO VINOGORJE;Brodsko-posavska županija;susjedstvo
+328189;BUKOVLJE;Brodsko-posavska županija;ime
+328197;CIGLENIK;Brodsko-posavska županija;susjedstvo
+328219;CRNI POTOK;Brodsko-posavska županija;susjedstvo
+328227;ČAJKOVCI;Brodsko-posavska županija;ime
+328235;DIVOŠEVCI;Brodsko-posavska županija;ime
+328243;DONJA BEBRINA;Brodsko-posavska županija;ime
+328251;DONJI ANDRIJEVCI;Brodsko-posavska županija;ime
+328260;DUBOČAC;Brodsko-posavska županija;ime
+328278;DUBOVIK;Brodsko-posavska županija;ime
+328286;GARČIN;Brodsko-posavska županija;ime
+328294;GLOGOVICA;Brodsko-posavska županija;ime
+328308;GORNJA BEBRINA;Brodsko-posavska županija;ime
+328316;GORNJI ANDRIJEVCI;Brodsko-posavska županija;ime
+328324;GRABARJE;Brodsko-posavska županija;susjedstvo
+328332;GROMAČNIK;Brodsko-posavska županija;ime
+328359;GUNDINCI;Brodsko-posavska županija;ime
+328367;JARUGE;Brodsko-posavska županija;ime
+328375;JEŽEVIK;Brodsko-posavska županija;ime
+328383;KANIŽA;Brodsko-posavska županija;susjedstvo
+328391;KINDROVO;Brodsko-posavska županija;ime
+328405;KLAKAR;Brodsko-posavska županija;ime
+328413;KLOKOČEVIK;Brodsko-posavska županija;ime
+328421;KORDUŠEVCI;Brodsko-posavska županija;ime
+328430;KRUŠEVICA;Brodsko-posavska županija;ime
+328448;KUJNIK;Brodsko-posavska županija;susjedstvo
+328456;KUPINA;Brodsko-posavska županija;ime
+328464;STUPNIČKI KUTI;Brodsko-posavska županija;ime
+328472;TRNJANSKI KUTI;Brodsko-posavska županija;ime
+328499;LOVČIĆ;Brodsko-posavska županija;ime
+328502;LUŽANI;Brodsko-posavska županija;ime
+328529;MALA KOPANICA;Brodsko-posavska županija;ime
+328537;MALINO;Brodsko-posavska županija;ime
+328545;MATKOVIĆ MALA;Brodsko-posavska županija;ime
+328553;NOVI GRAD;Brodsko-posavska županija;ime
+328561;NOVO TOPOLJE;Brodsko-posavska županija;ime
+328588;OPRISAVCI;Brodsko-posavska županija;ime
+328596;ORIOVAC;Brodsko-posavska županija;ime
+328600;ORIOVČIĆ;Brodsko-posavska županija;ime
+328618;PODCRKAVLJE;Brodsko-posavska županija;ime
+328626;PODVINJE;Brodsko-posavska županija;ime
+328634;POLJANCI;Brodsko-posavska županija;ime
+328642;PRIČAC;Brodsko-posavska županija;ime
+328669;PRNJAVOR;Brodsko-posavska županija;susjedstvo
+328677;RADOVANJE;Brodsko-posavska županija;ime
+328685;RASTUŠJE;Brodsko-posavska županija;ime
+328693;RUŠČICA;Brodsko-posavska županija;ime
+328707;SAPCI;Brodsko-posavska županija;ime
+328715;SELNA;Brodsko-posavska županija;ime
+328723;SIBINJ;Brodsko-posavska županija;ime
+328731;SIKIREVCI;Brodsko-posavska županija;ime
+328740;SLATINIK MALI;Brodsko-posavska županija;susjedstvo
+328758;SLAVONSKI BROD;Brodsko-posavska županija;ime
+328766;SLAVONSKI KOBAŠ;Brodsko-posavska županija;ime
+328774;SLOBODNICA;Brodsko-posavska županija;ime
+328782;SREDANCI;Brodsko-posavska županija;ime
+328804;STARI PERKOVCI;Brodsko-posavska županija;ime
+328812;STARI SLATINIK;Brodsko-posavska županija;ime
+328839;STARO TOPOLJE;Brodsko-posavska županija;ime
+328847;STRUŽANI;Brodsko-posavska županija;ime
+328855;SVILAJ;Brodsko-posavska županija;ime
+328863;SLAVONSKI ŠAMAC;Brodsko-posavska županija;ime
+328871;ŠUMEĆE;Brodsko-posavska županija;ime
+328880;ŠUŠNJEVCI;Brodsko-posavska županija;ime
+328898;TOMICA;Brodsko-posavska županija;ime
+328901;TRNJANI;Brodsko-posavska županija;ime
+328910;VELIKA KOPANICA;Brodsko-posavska županija;ime
+328928;VRANOVCI;Brodsko-posavska županija;ime
+328936;VRBA;Brodsko-posavska županija;susjedstvo
+328944;VRHOVINA;Brodsko-posavska županija;ime
+328979;ZADUBRAVLJE;Brodsko-posavska županija;ime
+328987;ZBJEG;Brodsko-posavska županija;ime
+328995;BRODSKI ZDENCI;Brodsko-posavska županija;ime
+329002;ZOLJANI;Brodsko-posavska županija;ime
+329029;ŽIVIKE;Brodsko-posavska županija;ime
+329037;BLAGAJ;Karlovačka županija;ime
+329045;BOGOVOLJA;Karlovačka županija;ime
+329053;BROĆANAC;Karlovačka županija;ime
+329061;CETINGRAD;Karlovačka županija;ime
+329070;CETINSKI VAROŠ;Karlovačka županija;ime
+329088;CVIJANOVIĆ BRDO;Karlovačka županija;ime
+329096;CVITOVIĆ;Karlovačka županija;ime
+329100;DONJE PRIMIŠLJE;Karlovačka županija;ime
+329118;DONJI LAĐEVAC;Karlovačka županija;ime
+329134;FURJAN;Karlovačka županija;susjedstvo
+329142;GLINICE;Karlovačka županija;ime
+329169;GNOJNICE;Karlovačka županija;ime
+329177;GOJKOVAC;Karlovačka županija;ime
+329185;GORNJE PRIMIŠLJE;Karlovačka županija;ime
+329193;GORNJI LAĐEVAC;Karlovačka županija;ime
+329207;KREMEN;Karlovačka županija;susjedstvo
+329215;KRUŠKOVAČA;Karlovačka županija;ime
+329223;KUZMA;Karlovačka županija;susjedstvo
+329231;MALJEVAC;Karlovačka županija;ime
+329240;MAŠVINA;Karlovačka županija;ime
+329258;GORNJA MOČILA;Karlovačka županija;ime
+329266;NIKŠIĆ;Karlovačka županija;susjedstvo
+329274;NOVA KRŠLJA;Karlovačka županija;ime
+329282;PONOR;Karlovačka županija;ime
+329304;POPOVAC;Karlovačka županija;susjedstvo
+329312;RADOVICA;Karlovačka županija;susjedstvo
+329339;RAKOVICA;Karlovačka županija;ime
+329347;SADILOVAC;Karlovačka županija;ime
+329355;SLUNJ;Karlovačka županija;ime
+329363;ŠLJIVNJAK;Karlovačka županija;susjedstvo
+329371;TOBOLIĆ;Karlovačka županija;susjedstvo
+329380;TOČAK;Karlovačka županija;ime
+329398;TRŽIĆ PRIMIŠLJANSKI;Karlovačka županija;ime
+329401;VELJUN;Karlovačka županija;ime
+329410;ZBJEG MOČILSKI;Karlovačka županija;susjedstvo
+329428;BLACA;Splitsko-dalmatinska županija;ime
+329436;BRAČEVIĆ;Splitsko-dalmatinska županija;ime
+329444;VELIKI BROČANAC;Splitsko-dalmatinska županija;ime
+329452;BRŠTANOVO;Splitsko-dalmatinska županija;ime
+329479;CRIVAC;Splitsko-dalmatinska županija;ime
+329487;DONJE OGORJE;Splitsko-dalmatinska županija;ime
+329495;DONJE POSTINJE;Splitsko-dalmatinska županija;ime
+329509;DONJI MUĆ;Splitsko-dalmatinska županija;ime
+329517;DUGOBABE;Splitsko-dalmatinska županija;ime
+329525;DUGOPOLJE;Splitsko-dalmatinska županija;susjedstvo
+329533;GIZDAVAC;Splitsko-dalmatinska županija;ime
+329541;GORNJE OGORJE;Splitsko-dalmatinska županija;ime
+329550;GORNJE POSTINJE;Splitsko-dalmatinska županija;ime
+329568;GORNJI MUĆ;Splitsko-dalmatinska županija;ime
+329576;KLIS;Splitsko-dalmatinska županija;ime
+329584;KONJSKO;Splitsko-dalmatinska županija;susjedstvo
+329592;KOPRIVNO;Splitsko-dalmatinska županija;ime
+329606;KORUŠCE;Splitsko-dalmatinska županija;ime
+329614;KOTLENICE;Splitsko-dalmatinska županija;ime
+329622;KUČINE;Splitsko-dalmatinska županija;ime
+329649;MILEŠINE;Splitsko-dalmatinska županija;susjedstvo
+329657;MRAVINCE;Splitsko-dalmatinska županija;ime
+329665;NEORIĆ;Splitsko-dalmatinska županija;ime
+329673;NISKO;Splitsko-dalmatinska županija;ime
+329681;PRIBUDE;Splitsko-dalmatinska županija;ime
+329690;PRUGOVO;Splitsko-dalmatinska županija;ime
+329711;SOLIN;Splitsko-dalmatinska županija;ime
+329720;SUTINA;Splitsko-dalmatinska županija;ime
+329738;VUČEVICA;Splitsko-dalmatinska županija;ime
+329746;DONJE SELO;Splitsko-dalmatinska županija;ime
+329754;GORNJE SELO;Splitsko-dalmatinska županija;ime
+329762;GROHOTE;Splitsko-dalmatinska županija;ime
+329789;KAMEN;Splitsko-dalmatinska županija;ime
+329819;SITNO;Splitsko-dalmatinska županija;ime
+329827;SLATINE;Splitsko-dalmatinska županija;ime
+329835;SPLIT;Splitsko-dalmatinska županija;ime
+329843;SREDNJE SELO;Splitsko-dalmatinska županija;susjedstvo
+329851;SRINJINE;Splitsko-dalmatinska županija;ime
+329860;STOBREČ;Splitsko-dalmatinska županija;ime
+329878;ŽRNOVNICA;Splitsko-dalmatinska županija;ime
+329886;BILICE;Šibensko-kninska županija;susjedstvo
+329894;BORAJA;Šibensko-kninska županija;ime
+329908;BRATIŠKOVCI;Šibensko-kninska županija;ime
+329924;CRNICA;Šibensko-kninska županija;susjedstvo
+329959;DANILO BIRANJ;Šibensko-kninska županija;ime
+329967;DANILO KRALJICE;Šibensko-kninska županija;ime
+329975;DONJE POLJE;Šibensko-kninska županija;ime
+329983;DUBRAVA;Šibensko-kninska županija;susjedstvo
+329991;DUBRAVICE;Šibensko-kninska županija;ime
+330019;GORICA;Šibensko-kninska županija;susjedstvo
+330027;GREBAŠTICA;Šibensko-kninska županija;ime
+330035;JADRTOVAC;Šibensko-kninska županija;ime
+330043;JEZERA;Šibensko-kninska županija;ime
+330051;KONJEVRATE;Šibensko-kninska županija;ime
+330060;KORNATI;Šibensko-kninska županija;ime
+330078;KRAPANJ;Šibensko-kninska županija;ime
+330086;LEPENICA;Šibensko-kninska županija;ime
+330094;LOZOVAC;Šibensko-kninska županija;ime
+330108;MANDALINA;Šibensko-kninska županija;susjedstvo
+330116;MARTINSKA;Šibensko-kninska županija;susjedstvo
+330132;PIRAMATOVCI;Šibensko-kninska županija;ime
+330159;PIROVAC;Šibensko-kninska županija;ime
+330167;PRIMOŠTEN;Šibensko-kninska županija;ime
+330175;PRVIĆ;Šibensko-kninska županija;susjedstvo
+330191;ROGOZNICA;Šibensko-kninska županija;ime
+330205;RUPE;Šibensko-kninska županija;ime
+330213;SEVID;Splitsko-dalmatinska županija;ime
+330221;SITNO DONJE;Šibensko-kninska županija;ime
+330230;SKRADIN;Šibensko-kninska županija;ime
+330256;SRIMA;Šibensko-kninska županija;ime
+330264;ŠIBENIK;Šibensko-kninska županija;susjedstvo
+330272;TISNO;Šibensko-kninska županija;ime
+330299;TRIBUNJ;Šibensko-kninska županija;ime
+330302;VAĆANI;Šibensko-kninska županija;ime
+330329;VELIKA GLAVA;Šibensko-kninska županija;ime
+330337;VODICE;Šibensko-kninska županija;susjedstvo
+330345;VRPOLJE;Šibensko-kninska županija;susjedstvo
+330353;ZATON-RASLINA;Šibensko-kninska županija;susjedstvo
+330361;ZLARIN;Šibensko-kninska županija;ime
+330370;ŽIRJE;Šibensko-kninska županija;ime
+330388;BJELOPOLJE;Ličko-senjska županija;ime
+330396;BUNIĆ;Ličko-senjska županija;ime
+330400;ČANAK;Ličko-senjska županija;ime
+330418;DEBELO BRDO;Ličko-senjska županija;ime
+330426;JOŠAN;Ličko-senjska županija;susjedstvo
+330434;KOMIĆ;Ličko-senjska županija;ime
+330442;KOZJAN;Ličko-senjska županija;ime
+330469;KRBAVA;Ličko-senjska županija;ime
+330477;KRBAVICA;Ličko-senjska županija;ime
+330485;KURJAK;Ličko-senjska županija;ime
+330493;LIČKO PETROVO SELO;Ličko-senjska županija;ime
+330507;MEKINJAR;Ličko-senjska županija;ime
+330515;MUTILIĆ;Ličko-senjska županija;ime
+330523;PLITVIČKA JEZERA;Ličko-senjska županija;ime
+330531;PODLAPAČA;Ličko-senjska županija;ime
+330540;PRIJEBOJ;Ličko-senjska županija;ime
+330558;SMOLJANAC;Ličko-senjska županija;ime
+330566;SREDNJA GORA;Ličko-senjska županija;ime
+330574;SVRAČKOVO SELO;Ličko-senjska županija;ime
+330582;ŠALAMUNIĆ;Ličko-senjska županija;ime
+330604;KORENICA;Ličko-senjska županija;ime
+330612;TRNAVAC;Ličko-senjska županija;ime
+330639;UDBINA;Ličko-senjska županija;ime
+330647;VAGANAC;Ličko-senjska županija;ime
+330655;VISUĆ;Ličko-senjska županija;ime
+330671;BRISTIVICA;Splitsko-dalmatinska županija;ime
+330680;SEGET DONJI;Splitsko-dalmatinska županija;ime
+330698;DRVENIK;Splitsko-dalmatinska županija;susjedstvo
+330701;SEGET GORNJI;Splitsko-dalmatinska županija;ime
+330710;LJUBITOVICA;Splitsko-dalmatinska županija;ime
+330728;MARINA;Splitsko-dalmatinska županija;ime
+330744;OKRUG;Splitsko-dalmatinska županija;susjedstvo
+330752;PRAPATNICA;Splitsko-dalmatinska županija;ime
+330779;TROGIR;Splitsko-dalmatinska županija;ime
+330787;VINIŠĆE;Splitsko-dalmatinska županija;ime
+330795;ŽEDNO;Splitsko-dalmatinska županija;ime
+330809;BELIŠĆE;Osječko-baranjska županija;ime
+330817;BISTRINCI;Osječko-baranjska županija;ime
+330825;BIZOVAC;Osječko-baranjska županija;ime
+330833;BOCANJEVCI;Osječko-baranjska županija;ime
+330841;BROĐANCI;Osječko-baranjska županija;ime
+330850;GAT;Osječko-baranjska županija;ime
+330868;HABJANOVCI;Osječko-baranjska županija;ime
+330876;HARKANOVCI;Osječko-baranjska županija;ime
+330884;IVANOVCI;Osječko-baranjska županija;susjedstvo
+330892;LADIMIREVCI;Osječko-baranjska županija;ime
+330906;MARJANČACI;Osječko-baranjska županija;ime
+330914;NARD;Osječko-baranjska županija;ime
+330922;PETRIJEVCI;Osječko-baranjska županija;ime
+330949;SATNICA;Osječko-baranjska županija;ime
+330957;ŠAG;Osječko-baranjska županija;ime
+330965;TIBORJANCI;Osječko-baranjska županija;ime
+330973;VALPOVO;Osječko-baranjska županija;ime
+330981;VELIŠKOVCI;Osječko-baranjska županija;ime
+330990;VINOGRADCI;Osječko-baranjska županija;ime
+331007;ZELČIN;Osječko-baranjska županija;ime
+331015;BABINEC;Varaždinska županija;ime
+331031;BELETINEC;Varaždinska županija;ime
+331040;BERETINEC;Varaždinska županija;ime
+331066;ČREŠNJEVO;Varaždinska županija;ime
+331074;DRUŽBINEC;Varaždinska županija;ime
+331082;SVETI ILIJA;Varaždinska županija;ime
+331104;JAKOPOVEC;Varaždinska županija;ime
+331112;JALKOVEC;Varaždinska županija;ime
+331139;JALŽABET;Varaždinska županija;ime
+331147;KAŠTELANEC;Varaždinska županija;ime
+331155;KELEMEN;Varaždinska županija;ime
+331163;KNEGINEC;Varaždinska županija;susjedstvo
+331171;DUBRAVA KRIŽOVLJANSKA;Varaždinska županija;ime
+331198;GORNJE LADANJE;Varaždinska županija;ime
+331201;MAJERJE;Varaždinska županija;ime
+331210;MARČAN;Varaždinska županija;ime
+331228;NATKRIŽOVLJAN;Varaždinska županija;ime
+331236;NEDELJANEC;Varaždinska županija;ime
+331244;NOVAKOVEC;Varaždinska županija;susjedstvo
+331252;PETRIJANEC;Varaždinska županija;ime
+331279;NOVA VES PETRIJANEČKA;Varaždinska županija;ime
+331287;RADOVEC;Varaždinska županija;ime
+331295;SRAČINEC;Varaždinska županija;ime
+331309;ŠEMOVEC;Varaždinska županija;ime
+331317;TUŽNO;Varaždinska županija;ime
+331325;VARAŽDIN;Varaždinska županija;ime
+331333;VARAŽDIN BREG;Varaždinska županija;ime
+331341;VIDOVEC;Varaždinska županija;ime
+331350;VINICA;Varaždinska županija;ime
+331368;VINICA BREG;Varaždinska županija;ime
+331376;VRATNO;Varaždinska županija;susjedstvo
+331384;ZAMLAČA;Varaždinska županija;susjedstvo
+331406;AUGUŠTANOVEC;Zagrebačka županija;ime
+331414;BUKEVJE;Zagrebačka županija;ime
+331422;BUKOVČAK;Zagrebačka županija;ime
+331449;BUŠEVEC;Zagrebačka županija;ime
+331457;CEROVSKI VRH;Zagrebačka županija;ime
+331465;CVETKOVIĆ BRDO;Zagrebačka županija;ime
+331473;LAZINA ČIČKA;Zagrebačka županija;ime
+331481;ČRNKOVEC;Zagrebačka županija;ime
+331490;DONJA LOMNICA;Zagrebačka županija;ime
+331503;DONJE PODOTOČJE;Zagrebačka županija;ime
+331511;DRNEK;Zagrebačka županija;ime
+331520;DUBRANEC;Zagrebačka županija;ime
+331538;GORNJE PODOTOČJE;Zagrebačka županija;ime
+331546;GORNJI HRUŠEVEC;Zagrebačka županija;ime
+331562;GUSTELNICA;Zagrebačka županija;ime
+331589;HOTNJA;Zagrebačka županija;ime
+331597;KOSNICA;Zagrebačka županija;susjedstvo
+331619;KOZJAČA;Zagrebačka županija;ime
+331627;KRAVARSKO;Zagrebačka županija;ime
+331635;KUČE;Zagrebačka županija;ime
+331643;KURILOVEC;Zagrebačka županija;susjedstvo
+331651;LEKNENO;Zagrebačka županija;ime
+331660;LIJEVI ŠTEFANKI;Zagrebačka županija;ime
+331686;LUKINIĆ BRDO;Zagrebačka županija;ime
+331694;MIČEVEC;Zagrebačka županija;ime
+331708;MRACLIN;Zagrebačka županija;ime
+331716;NOVO BRDO;Zagrebačka županija;ime
+331724;NOVO ČIČE;Zagrebačka županija;ime
+331732;OBREZINA;Zagrebačka županija;ime
+331759;PLESO;Zagrebačka županija;susjedstvo
+331767;PODVORNICA;Zagrebačka županija;ime
+331775;POKUPSKO;Zagrebačka županija;ime
+331783;POLJANA ČIČKA;Zagrebačka županija;ime
+331791;RIBNICA;Zagrebačka županija;ime
+331805;ROŽENICA;Zagrebačka županija;ime
+331813;RUČA;Zagrebačka županija;ime
+331821;STARO ČIČE;Zagrebačka županija;ime
+331830;STRMEC BUKEVSKI;Zagrebačka županija;ime
+331848;ŠĆITARJEVO;Zagrebačka županija;ime
+331856;ŠILJAKOVINA;Zagrebačka županija;ime
+331872;VELEŠEVEC;Zagrebačka županija;ime
+331899;VELIKA BUNA;Zagrebačka županija;ime
+331902;VELIKA GORICA;Zagrebačka županija;ime
+331929;VELIKA MLAKA;Zagrebačka županija;ime
+331937;VUKOMERIĆ;Zagrebačka županija;ime
+331945;VUKOVINA;Zagrebačka županija;ime
+331953;ZGURIĆ BRDO;Zagrebačka županija;ime
+331961;ANDRIJAŠEVCI;Vukovarsko-srijemska županija;ime
+331970;ANTIN;Vukovarsko-srijemska županija;ime
+331988;APŠEVCI;Vukovarsko-srijemska županija;ime
+331996;CERIĆ;Vukovarsko-srijemska županija;ime
+332003;DONJE NOVO SELO;Vukovarsko-srijemska županija;ime
+332011;ĐELETOVCI;Vukovarsko-srijemska županija;ime
+332020;GABOŠ;Vukovarsko-srijemska županija;ime
+332038;ILAČA;Vukovarsko-srijemska županija;ime
+332046;IVANKOVO;Vukovarsko-srijemska županija;ime
+332054;JARMINA;Vukovarsko-srijemska županija;ime
+332062;KARADŽIĆEVO;Vukovarsko-srijemska županija;ime
+332089;KOMLETINCI;Vukovarsko-srijemska županija;ime
+332119;LIPOVAC;Vukovarsko-srijemska županija;susjedstvo
+332127;MARINCI;Vukovarsko-srijemska županija;susjedstvo
+332135;MARKUŠICA;Vukovarsko-srijemska županija;ime
+332143;MIRKOVCI;Vukovarsko-srijemska županija;ime
+332151;NIJEMCI;Vukovarsko-srijemska županija;ime
+332160;NOVI JANKOVCI;Vukovarsko-srijemska županija;ime
+332178;NOVI MIKANOVCI;Vukovarsko-srijemska županija;ime
+332186;NUŠTAR;Vukovarsko-srijemska županija;ime
+332194;OROLIK;Vukovarsko-srijemska županija;ime
+332208;OSTROVO;Vukovarsko-srijemska županija;ime
+332216;OTOK;Vukovarsko-srijemska županija;susjedstvo
+332224;PODGRAĐE;Vukovarsko-srijemska županija;susjedstvo
+332232;PRIVLAKA;Vukovarsko-srijemska županija;susjedstvo
+332259;PRKOVCI;Vukovarsko-srijemska županija;ime
+332267;RETKOVCI;Vukovarsko-srijemska županija;ime
+332275;ROKOVCI;Vukovarsko-srijemska županija;ime
+332283;SLAKOVCI;Vukovarsko-srijemska županija;ime
+332291;SRIJEMSKE LAZE;Vukovarsko-srijemska županija;ime
+332305;STARI JANKOVCI;Vukovarsko-srijemska županija;ime
+332313;STARI MIKANOVCI;Vukovarsko-srijemska županija;ime
+332321;BANOVCI;Vukovarsko-srijemska županija;susjedstvo
+332330;TORDINCI;Vukovarsko-srijemska županija;ime
+332348;VINKOVAČKI BANOVCI;Vukovarsko-srijemska županija;ime
+332356;VINKOVAČKO NOVO SELO;Vukovarsko-srijemska županija;susjedstvo
+332364;VINKOVCI I;Vukovarsko-srijemska županija;ime
+332372;VINKOVCI II;Vukovarsko-srijemska županija;ime
+332399;VOĐINCI;Vukovarsko-srijemska županija;ime
+332402;BAČEVAC;Virovitičko-podravska županija;ime
+332429;BOROVA;Virovitičko-podravska županija;ime
+332437;BUDANICA;Virovitičko-podravska županija;ime
+332445;BUDROVAC LUKAČKI;Virovitičko-podravska županija;ime
+332453;BUŠETINA;Virovitičko-podravska županija;ime
+332461;CABUNA;Virovitičko-podravska županija;ime
+332470;DETKOVAC;Virovitičko-podravska županija;ime
+332488;DUGO SELO LUKAČKO;Virovitičko-podravska županija;ime
+332496;GAĆIŠTE;Virovitičko-podravska županija;ime
+332500;GORNJE BAZJE;Virovitičko-podravska županija;ime
+332518;GRADINA;Virovitičko-podravska županija;susjedstvo
+332526;BREZOVICA;Virovitičko-podravska županija;susjedstvo
+332534;GVOZDANSKA;Virovitičko-podravska županija;ime
+332542;JASENAŠ;Virovitičko-podravska županija;ime
+332569;KAPAN;Virovitičko-podravska županija;susjedstvo
+332577;LEVINOVAC;Virovitičko-podravska županija;ime
+332585;LOZAN;Virovitičko-podravska županija;ime
+332593;LUKAČ;Virovitičko-podravska županija;susjedstvo
+332607;NAUDOVAC;Virovitičko-podravska županija;ime
+332615;OREŠAC;Virovitičko-podravska županija;ime
+332623;PČELIĆ;Virovitičko-podravska županija;ime
+332631;PIVNICA;Virovitičko-podravska županija;susjedstvo
+332640;REZOVAC;Virovitičko-podravska županija;ime
+332658;ROGOVAC;Virovitičko-podravska županija;ime
+332666;RUŠANI;Virovitičko-podravska županija;ime
+332674;SUHOPOLJE;Virovitičko-podravska županija;ime
+332682;ŠPIŠIĆ BUKOVICA;Virovitičko-podravska županija;ime
+332704;TURANOVAC;Virovitičko-podravska županija;ime
+332712;VIROVITICA;Virovitičko-podravska županija;ime
+332739;VIROVITICA-GRAD;Virovitičko-podravska županija;susjedstvo
+332747;VUKOSAVLJEVICA;Virovitičko-podravska županija;ime
+332755;KOMIŽA;Splitsko-dalmatinska županija;ime
+332763;VIS;Splitsko-dalmatinska županija;ime
+332771;BUKOVICA UTINJSKA;Karlovačka županija;ime
+332780;KESTENOVAC;Karlovačka županija;susjedstvo
+332798;KLOKOČ;Karlovačka županija;ime
+332801;KOLARIĆ;Karlovačka županija;ime
+332810;KRSTINJA;Karlovačka županija;ime
+332828;KUPLJENSKO;Karlovačka županija;ime
+332836;MIHOLJSKO;Karlovačka županija;ime
+332844;RADONJA;Karlovačka županija;ime
+332852;SELAKOVA POLJANA;Karlovačka županija;ime
+332879;SVINICA KRSTINJSKA;Karlovačka županija;ime
+332887;ŠIROKA RIJEKA;Karlovačka županija;ime
+332895;UTINJA VRELO;Karlovačka županija;ime
+332909;VOJNIĆ;Karlovačka županija;ime
+332917;BAĐINEC;Zagrebačka županija;ime
+332925;BOLČ;Zagrebačka županija;ime
+332941;BREZJE;Zagrebačka županija;susjedstvo
+332950;CUGOVEC;Zagrebačka županija;ime
+332968;DIJANEŠ;Zagrebačka županija;ime
+332976;DUBRAVA;Zagrebačka županija;susjedstvo
+332984;NOVAKI;Zagrebačka županija;susjedstvo
+332992;FARKAŠEVAC;Zagrebačka županija;ime
+333000;FUKA;Zagrebačka županija;ime
+333018;GOSTOVIĆ;Zagrebačka županija;ime
+333026;GRADEC;Zagrebačka županija;ime
+333034;HABJANOVAC;Zagrebačka županija;ime
+333042;HAGANJ;Zagrebačka županija;ime
+333069;HRUŠKOVICA;Zagrebačka županija;ime
+333077;HUDOVO;Zagrebačka županija;ime
+333085;KABAL;Zagrebačka županija;ime
+333093;LONJICA;Zagrebačka županija;ime
+333115;MLAKA;Zagrebačka županija;susjedstvo
+333123;NEGOVEC;Zagrebačka županija;ime
+333131;PARUŽEVAC;Zagrebačka županija;ime
+333140;PODJALES;Zagrebačka županija;ime
+333166;PRESEKA;Zagrebačka županija;susjedstvo
+333174;RAKOVEC;Zagrebačka županija;susjedstvo
+333204;SALNIK;Zagrebačka županija;ime
+333212;SAMOBOREC;Zagrebačka županija;ime
+333239;NOVA KAPELA;Zagrebačka županija;susjedstvo
+333247;STARI GLOG;Zagrebačka županija;ime
+333255;TKALEC;Varaždinska županija;ime
+333263;TUČENIK;Zagrebačka županija;ime
+333271;LOVREČKA VAROŠ;Zagrebačka županija;ime
+333280;VRBOVEC;Zagrebačka županija;ime
+333298;PIRAKOVEC;Zagrebačka županija;ime
+333310;ZABRĐE;Zagrebačka županija;susjedstvo
+333328;ZETKAN;Zagrebačka županija;ime
+333336;ZVONIK;Zagrebačka županija;ime
+333344;BLAŽEVCI;Primorsko-goranska županija;ime
+333352;GOMIRJE;Primorsko-goranska županija;ime
+333379;GOMIRSKO VRBOVSKO;Primorsko-goranska županija;susjedstvo
+333395;LUKOVDOL;Primorsko-goranska županija;ime
+333409;DRAGA LUKOVDOLSKA;Primorsko-goranska županija;ime
+333417;MALI JADRČ;Primorsko-goranska županija;ime
+333425;OSOJNIK;Primorsko-goranska županija;susjedstvo
+333433;PLEMENITAŠ;Primorsko-goranska županija;ime
+333450;SEVERIN NA KUPI;Primorsko-goranska županija;ime
+333468;MORAVICE;Primorsko-goranska županija;ime
+333476;VELIKI JADRČ;Primorsko-goranska županija;ime
+333484;VRBOVSKO;Primorsko-goranska županija;ime
+333492;BATINOVA KOSA;Sisačko-moslavačka županija;ime
+333506;BLATUŠA;Sisačko-moslavačka županija;ime
+333514;BOVIĆ;Sisačko-moslavačka županija;ime
+333522;BRNJAVAC;Sisačko-moslavačka županija;ime
+333549;BUKOVICA;Sisačko-moslavačka županija;susjedstvo
+333557;ČREMUŠNICA;Sisačko-moslavačka županija;ime
+333573;ČEMERNICA;Sisačko-moslavačka županija;susjedstvo
+333581;DESNI ŠTEFANKI;Karlovačka županija;ime
+333590;DESNO SREDIČKO;Karlovačka županija;ime
+333603;DUGO SELO LASINJSKO;Sisačko-moslavačka županija;ime
+333611;GOLINJA;Sisačko-moslavačka županija;ime
+333620;GORNJA TRSTENICA;Sisačko-moslavačka županija;ime
+333638;GREĐANI;Sisačko-moslavačka županija;susjedstvo
+333646;HRVATSKO SELO;Sisačko-moslavačka županija;ime
+333654;KATINOVAC;Sisačko-moslavačka županija;ime
+333662;KIRIN;Sisačko-moslavačka županija;ime
+333689;KOZARAC;Sisačko-moslavačka županija;susjedstvo
+333697;LASINJA;Karlovačka županija;ime
+333719;MALA VRANOVINA;Sisačko-moslavačka županija;ime
+333727;MALIČKA;Sisačko-moslavačka županija;susjedstvo
+333735;OSTROŽIN;Sisačko-moslavačka županija;ime
+333743;PECKA;Sisačko-moslavačka županija;ime
+333751;PERNA;Sisačko-moslavačka županija;ime
+333760;PJEŠČANICA;Sisačko-moslavačka županija;ime
+333778;PODGORJE;Sisačko-moslavačka županija;susjedstvo
+333786;PONIKVARI;Sisačko-moslavačka županija;ime
+333808;STARO SELO TOPUSKO;Sisačko-moslavačka županija;ime
+333816;STIPAN;Sisačko-moslavačka županija;ime
+333824;ŠLJIVOVAC;Sisačko-moslavačka županija;ime
+333832;TOPUSKO;Sisačko-moslavačka županija;ime
+333859;TREPČA;Sisačko-moslavačka županija;ime
+333867;VELIKA VRANOVINA;Sisačko-moslavačka županija;ime
+333875;VORKAPIĆ;Sisačko-moslavačka županija;ime
+333883;VRGINMOST;Sisačko-moslavačka županija;ime
+333891;DRAGLJANE;Splitsko-dalmatinska županija;ime
+333905;DUSINA;Splitsko-dalmatinska županija;ime
+333913;KOZICA;Splitsko-dalmatinska županija;ime
+333921;ORAH;Splitsko-dalmatinska županija;ime
+333930;POLJICA KOZIČKA;Splitsko-dalmatinska županija;ime
+333948;RAŠĆANE;Splitsko-dalmatinska županija;ime
+333956;RAVČA;Splitsko-dalmatinska županija;ime
+333964;STILJA;Splitsko-dalmatinska županija;ime
+333972;VRGORAC;Splitsko-dalmatinska županija;ime
+333999;VRGORAC I;Splitsko-dalmatinska županija;ime
+334006;ZAVOJANE;Splitsko-dalmatinska županija;ime
+334014;BAPSKA;Vukovarsko-srijemska županija;ime
+334022;BERAK;Vukovarsko-srijemska županija;ime
+334049;BOBOTA;Vukovarsko-srijemska županija;ime
+334057;BOGDANOVCI;Vukovarsko-srijemska županija;ime
+334065;BOROVO;Vukovarsko-srijemska županija;ime
+334073;BOROVO NASELJE;Vukovarsko-srijemska županija;susjedstvo
+334081;BRŠADIN;Vukovarsko-srijemska županija;ime
+334090;ČAKOVCI;Vukovarsko-srijemska županija;ime
+334103;GRABOVO;Vukovarsko-srijemska županija;ime
+334111;ILOK;Vukovarsko-srijemska županija;ime
+334138;LIPOVAČA;Vukovarsko-srijemska županija;susjedstvo
+334146;LOVAS;Vukovarsko-srijemska županija;ime
+334154;LUDVINCI;Vukovarsko-srijemska županija;ime
+334162;MIKLUŠEVCI;Vukovarsko-srijemska županija;ime
+334189;MOHOVO;Vukovarsko-srijemska županija;ime
+334197;NEGOSLAVCI;Vukovarsko-srijemska županija;ime
+334219;OPATOVAC;Vukovarsko-srijemska županija;susjedstvo
+334227;PAČETIN;Vukovarsko-srijemska županija;ime
+334235;PETROVCI;Vukovarsko-srijemska županija;ime
+334243;SOTIN;Vukovarsko-srijemska županija;ime
+334251;SVINJAREVCI;Vukovarsko-srijemska županija;ime
+334260;ŠARENGRAD;Vukovarsko-srijemska županija;ime
+334278;TOMPOJEVCI;Vukovarsko-srijemska županija;ime
+334286;TOVARNIK;Vukovarsko-srijemska županija;ime
+334294;TRPINJA;Vukovarsko-srijemska županija;ime
+334308;VERA;Vukovarsko-srijemska županija;ime
+334316;VUKOVAR;Vukovarsko-srijemska županija;ime
+334324;BEDEKOVČINA;Krapinsko-zagorska županija;ime
+334332;ČRET;Krapinsko-zagorska županija;ime
+334359;DONJA PAČETINA;Krapinsko-zagorska županija;ime
+334367;DUBROVČAN;Krapinsko-zagorska županija;ime
+334375;GUBAŠEVO;Krapinsko-zagorska županija;ime
+334383;JEZERO KLANJEČKO;Krapinsko-zagorska županija;ime
+334391;KLOKOVEC;Krapinsko-zagorska županija;ime
+334405;KOMOR;Krapinsko-zagorska županija;susjedstvo
+334413;KRAPINSKE TOPLICE;Krapinsko-zagorska županija;ime
+334421;MALA ERPENJA;Krapinsko-zagorska županija;ime
+334430;MIRKOVEC;Krapinsko-zagorska županija;ime
+334448;POZNANOVEC;Krapinsko-zagorska županija;ime
+334456;PUSTODOL;Krapinsko-zagorska županija;ime
+334464;SELNO;Krapinsko-zagorska županija;ime
+334472;STRMEC;Krapinsko-zagorska županija;susjedstvo
+334499;ŠPIČKOVINA;Krapinsko-zagorska županija;ime
+334502;ŠVALJKOVEC;Krapinsko-zagorska županija;ime
+334529;VELIKA ERPENJA;Krapinsko-zagorska županija;ime
+334537;VELIKO TRGOVIŠĆE;Krapinsko-zagorska županija;ime
+334545;VRTNJAKOVEC;Krapinsko-zagorska županija;ime
+334553;ZABOK;Krapinsko-zagorska županija;ime
+334561;SVETI KRIŽ ZAČRETJE;Krapinsko-zagorska županija;ime
+334570;BIBINJE;Zadarska županija;ime
+334588;BOKANJAC;Zadarska županija;susjedstvo
+334596;BOŽAVA;Zadarska županija;ime
+334600;BRBINJ;Zadarska županija;ime
+334618;BRIŠEVO;Zadarska županija;ime
+334626;CRNO;Zadarska županija;susjedstvo
+334634;DIKLO;Zadarska županija;susjedstvo
+334642;DRAČEVAC NINSKI;Zadarska županija;ime
+334669;DRAGOVE;Zadarska županija;ime
+334677;GALOVAC;Zadarska županija;susjedstvo
+334685;GORICA;Zadarska županija;susjedstvo
+334693;ISLAM LATINSKI;Zadarska županija;ime
+334707;IST;Zadarska županija;ime
+334715;KALI;Zadarska županija;ime
+334723;KUKLJICA;Zadarska županija;ime
+334731;LUKA;Zadarska županija;susjedstvo
+334740;LUKORAN;Zadarska županija;ime
+334758;MALI IŽ;Zadarska županija;ime
+334766;MOLAT;Zadarska županija;ime
+334774;MURVICA;Zadarska županija;susjedstvo
+334804;NOVIGRAD;Zadarska županija;ime
+334812;OLIB;Zadarska županija;ime
+334839;PETRČANE;Zadarska županija;ime
+334847;POLIČNIK;Zadarska županija;ime
+334855;POLJANA;Zadarska županija;susjedstvo
+334863;POLJICA;Zadarska županija;susjedstvo
+334871;POSEDARJE;Zadarska županija;ime
+334880;PREKO;Zadarska županija;ime
+334898;PREMUDA;Zadarska županija;ime
+334901;PRIDRAGA;Zadarska županija;ime
+334910;PRIVLAKA;Zadarska županija;susjedstvo
+334928;RADOVIN;Zadarska županija;ime
+334936;RAVA;Zadarska županija;ime
+334944;RAŽANAC;Zadarska županija;ime
+334952;SALI;Zadarska županija;ime
+334979;SAVAR;Zadarska županija;ime
+334987;SELINE;Zadarska županija;ime
+334995;SESTRUNJ;Zadarska županija;ime
+335002;SILBA;Zadarska županija;ime
+335029;SLIVNICA;Zadarska županija;ime
+335037;SMOKOVIĆ;Zadarska županija;ime
+335045;SOLINE;Zadarska županija;susjedstvo
+335061;SUHOVARE;Zadarska županija;ime
+335070;SUKOŠAN;Zadarska županija;ime
+335088;SUTOMIŠĆICA;Zadarska županija;ime
+335096;ŠKABRNJA;Zadarska županija;ime
+335100;TRIBANJ;Zadarska županija;ime
+335118;UGLJAN;Zadarska županija;ime
+335126;VELI IŽ;Zadarska županija;ime
+335134;VELI RAT;Zadarska županija;ime
+335142;VINJERAC;Zadarska županija;ime
+335169;VIR;Zadarska županija;ime
+335177;VISOČANE;Zadarska županija;ime
+335185;VRSI;Zadarska županija;ime
+335193;ZADAR;Zadarska županija;ime
+335207;ZAPUNTEL;Zadarska županija;ime
+335215;ZEMUNIK;Zadarska županija;susjedstvo
+335223;ZVERINAC;Zadarska županija;ime
+335231;ŽMAN;Zadarska županija;ime
+335240;CENTAR;Grad Zagreb;jezgra
+335258;ŠESTINE;Grad Zagreb;jezgra
+335266;ČRNOMEREC;Grad Zagreb;jezgra
+335274;MIKULIĆI;Grad Zagreb;jezgra
+335304;DUBRAVA;Grad Zagreb;jezgra
+335339;MAKSIMIR;Grad Zagreb;jezgra
+335355;REMETE;Grad Zagreb;jezgra
+335363;GRAČANI;Grad Zagreb;jezgra
+335371;BLATO;Grad Zagreb;jezgra
+335398;ČEHI;Grad Zagreb;susjedstvo
+335428;HORVATI;Grad Zagreb;ime
+335444;KLARA;Grad Zagreb;jezgra
+335495;ZAPRUDSKI OTOK;Grad Zagreb;jezgra
+335509;STARJAK;Grad Zagreb;ime
+335533;PEŠČENICA;Grad Zagreb;jezgra
+335550;ŽITNJAK;Grad Zagreb;jezgra
+335568;GORNJE VRAPČE;Grad Zagreb;jezgra
+335576;GORNJI STENJEVEC;Grad Zagreb;susjedstvo
+335592;STENJEVEC;Grad Zagreb;jezgra
+335606;VRAPČE;Grad Zagreb;jezgra
+335614;RUDEŠ;Grad Zagreb;jezgra
+335622;TREŠNJEVKA;Grad Zagreb;jezgra
+335649;TRNJE;Grad Zagreb;jezgra
+335665;BRDOVEC;Zagrebačka županija;ime
+335673;DONJA BISTRA;Zagrebačka županija;ime
+335690;GORNJA BISTRA;Zagrebačka županija;ime
+335711;KUPLJENOVO;Zagrebačka županija;ime
+335720;LADUČ;Zagrebačka županija;susjedstvo
+335738;PLUSKA;Zagrebačka županija;ime
+335746;PROSINEC;Zagrebačka županija;ime
+335754;PUŠĆA;Krapinsko-zagorska županija;ime
+335762;ZAPREŠIĆ;Zagrebačka županija;ime
+335789;BEDENICA;Zagrebačka županija;ime
+335797;BLAŠKOVEC;Zagrebačka županija;ime
+335819;BLAŽEVDOL;Zagrebačka županija;ime
+335827;HELENA;Zagrebačka županija;susjedstvo
+335835;HRASTJE;Zagrebačka županija;ime
+335843;HRNJANEC;Zagrebačka županija;ime
+335851;KOMIN;Zagrebačka županija;susjedstvo
+335860;LAKTEC;Zagrebačka županija;ime
+335878;NOVO MJESTO;Zagrebačka županija;ime
+335886;OBREŽ;Zagrebačka županija;susjedstvo
+335894;OREŠJE;Zagrebačka županija;ime
+335908;PAUKOVEC;Zagrebačka županija;ime
+335916;PSARJEVO;Zagrebačka županija;susjedstvo
+335924;RADOIŠĆE;Zagrebačka županija;ime
+335932;TOMAŠEVEC;Zagrebačka županija;susjedstvo
+335959;ZELINA;Zagrebačka županija;susjedstvo
+335967;BELEC;Krapinsko-zagorska županija;ime
+335975;BUDINŠČINA;Krapinsko-zagorska županija;ime
+335983;DONJA BATINA;Krapinsko-zagorska županija;ime
+336009;HRAŠĆINA;Krapinsko-zagorska županija;ime
+336025;JERTOVEC;Krapinsko-zagorska županija;ime
+336033;KONJŠČINA;Krapinsko-zagorska županija;ime
+336041;LOVREČAN;Krapinsko-zagorska županija;susjedstvo
+336050;MAČE;Krapinsko-zagorska županija;ime
+336068;MARTINCI ZLATARSKI;Krapinsko-zagorska županija;susjedstvo
+336076;MIHOVLJAN;Krapinsko-zagorska županija;susjedstvo
+336084;OŠTRC;Krapinsko-zagorska županija;susjedstvo
+336092;PERŠAVES;Krapinsko-zagorska županija;ime
+336106;PEŠĆENO;Krapinsko-zagorska županija;ime
+336114;PETROVA GORA;Krapinsko-zagorska županija;ime
+336122;PODGRAĐE BISTRIČKO;Krapinsko-zagorska županija;susjedstvo
+336149;PURGA;Krapinsko-zagorska županija;susjedstvo
+336165;TUGONICA;Krapinsko-zagorska županija;ime
+336173;VELEŠKOVEC;Krapinsko-zagorska županija;ime
+336181;VETERNICA;Krapinsko-zagorska županija;ime
+336190;VOJNOVEC LOBORSKI;Krapinsko-zagorska županija;ime
+336203;ZAJEZDA;Krapinsko-zagorska županija;ime
+336211;ZLATAR;Krapinsko-zagorska županija;ime
+336220;BABINA GREDA;Vukovarsko-srijemska županija;ime
+336238;BOŠNJACI;Vukovarsko-srijemska županija;ime
+336246;CERNA;Vukovarsko-srijemska županija;ime
+336254;DRENOVCI;Vukovarsko-srijemska županija;ime
+336262;ĐURIĆI;Vukovarsko-srijemska županija;ime
+336289;GRADIŠTE;Vukovarsko-srijemska županija;susjedstvo
+336297;GUNJA;Vukovarsko-srijemska županija;ime
+336319;POSAVSKI PODGAJCI;Vukovarsko-srijemska županija;ime
+336327;RAČINOVCI;Vukovarsko-srijemska županija;ime
+336335;RAJEVO SELO;Vukovarsko-srijemska županija;ime
+336343;SOLJANI;Vukovarsko-srijemska županija;ime
+336351;STROŠINCI;Vukovarsko-srijemska županija;ime
+336360;ŠIŠKOVCI;Vukovarsko-srijemska županija;ime
+336378;ŠTITAR;Vukovarsko-srijemska županija;ime
+336386;VRBANJA;Vukovarsko-srijemska županija;ime
+336394;ŽUPANJA;Vukovarsko-srijemska županija;ime
+336408;TOPOLINE;Osječko-baranjska županija;ime
+336416;NORMANCI;Osječko-baranjska županija;ime
+336424;DRAŠKOVIĆ;Varaždinska županija;ime
+336432;MANDIĆEVAC;Osječko-baranjska županija;ime
+336467;ŽITOMIR;Zagrebačka županija;ime
+336475;GORNJI VINKOVEC;Zagrebačka županija;ime
+336483;VINKOVEC;Zagrebačka županija;ime
+336491;VALETIĆ;Zagrebačka županija;ime
+336505;LUKA;Zagrebačka županija;susjedstvo
+336513;BRČEVEC;Zagrebačka županija;ime
+336521;POLJANSKI LUG;Zagrebačka županija;ime
+336530;POLJANA;Zagrebačka županija;susjedstvo
+336556;DONJA PODSTRANA;Splitsko-dalmatinska županija;susjedstvo
+336564;GORNJI ČEMEHOVEC;Krapinsko-zagorska županija;ime
+336572;ĐURĐENOVAC;Osječko-baranjska županija;ime
+336599;KRAŠIĆ I;Zagrebačka županija;ime
+336602;KRAŠIĆ II;Zagrebačka županija;ime
+336637;OKIĆ;Karlovačka županija;ime
+336645;BIŠKUPEC;Varaždinska županija;susjedstvo
+336661;STIPANOVCI;Osječko-baranjska županija;ime
+336670;KELEŠINKA;Osječko-baranjska županija;ime
+336688;PODGORAČ;Osječko-baranjska županija;ime
+336696;BIJELA LOZA;Osječko-baranjska županija;ime
+336700;LEDENIK;Osječko-baranjska županija;ime
+336718;ANDRIJEVAC;Osječko-baranjska županija;ime
+336726;NIN-ZATON;Zadarska županija;susjedstvo
+336734;NINSKI STANOVI;Zadarska županija;ime
+336742;GRBE;Zadarska županija;ime
+336769;DOLAC;Požeško-slavonska županija;ime
+336777;ZAVRŠJE;Požeško-slavonska županija;susjedstvo
+336785;SVETINJA;Požeško-slavonska županija;ime
+336793;KNEŽCI;Požeško-slavonska županija;ime
+336807;OPUZEN I;Dubrovačko-neretvanska županija;ime
+336815;OPUZEN II;Dubrovačko-neretvanska županija;ime
+336823;KOMIN;Dubrovačko-neretvanska županija;susjedstvo
+336831;ROGOTIN;Dubrovačko-neretvanska županija;ime
+336840;KRVAVAC II;Dubrovačko-neretvanska županija;ime
+336858;POLJICA BRIG;Zadarska županija;susjedstvo
+336866;ŽERAVA;Zadarska županija;ime
+336874;SVETI GRGUR;Primorsko-goranska županija;susjedstvo
+336998;PUŠĆINE;Međimurska županija;ime
+337005;DUNJKOVEC;Međimurska županija;ime
+337013;PAUŠINCI;Virovitičko-podravska županija;ime
+337030;KLOKOČEVEC;Zagrebačka županija;susjedstvo
+337048;OTOK SAMOBORSKI;Zagrebačka županija;susjedstvo
+337056;BREGANA;Zagrebačka županija;ime
+337064;JAZBINA-LUG;Zagrebačka županija;susjedstvo
+337072;VRHOVČAK;Zagrebačka županija;ime
+337099;PERIVOJ;Zagrebačka županija;susjedstvo
+337129;MALI MIHALJEVEC NOVI;Međimurska županija;susjedstvo
+337137;BLACE-TRN;Dubrovačko-neretvanska županija;susjedstvo
+337145;MIHALJ-OTOK-LUČINA;Dubrovačko-neretvanska županija;susjedstvo
+337153;VLAKA-TUŠTEVAC;Dubrovačko-neretvanska županija;susjedstvo
+337161;PIŽINOVAC-LOVORJE;Dubrovačko-neretvanska županija;susjedstvo
+337170;MIHOTIĆI;Primorsko-goranska županija;ime
+337188;DONJI KUĆAN;Varaždinska županija;ime
+337196;GORNJI KUĆAN;Varaždinska županija;ime
+337200;KUĆAN MAROF;Varaždinska županija;ime
+337218;ZBELAVA;Varaždinska županija;ime
+337226;KOBILJAČA;Dubrovačko-neretvanska županija;ime
+337234;OTRIĆ-SEOCI;Dubrovačko-neretvanska županija;ime
+337242;JAGNJEDOVEC - GRAD;Koprivničko-križevačka županija;susjedstvo
+337269;MALINSKA-DUBAŠNICA;Primorsko-goranska županija;susjedstvo
+337285;BAŠKA-NOVA;Primorsko-goranska županija;susjedstvo
+337323;DONJI KARIN;Zadarska županija;ime
+337331;GORNJI KARIN;Zadarska županija;ime
+337374;KUNOVEC BREG;Koprivničko-križevačka županija;ime
+337382;BAKOVČICA;Koprivničko-križevačka županija;ime
+337544;GOJANEC;Varaždinska županija;ime
+337552;POLJANA BIŠKUPEČKA;Varaždinska županija;ime
+337579;ČRNEC BIŠKUPEČKI;Varaždinska županija;ime
+337587;ŠTEVKOVICA;Osječko-baranjska županija;susjedstvo
+337609;KURILOVEC NOVI;Zagrebačka županija;susjedstvo
+337617;KLEK;Dubrovačko-neretvanska županija;ime
+337625;POŽARI;Virovitičko-podravska županija;susjedstvo
+337633;SEGOVINA;Varaždinska županija;ime
+337641;LJUBELJ KALNIČKI;Varaždinska županija;ime
+337668;PERUŠIĆ I;Ličko-senjska županija;ime
+337714;KALINOVICA;Zagrebačka županija;ime
+337722;MALA GORICA;Zagrebačka županija;susjedstvo
+337749;LABIN-PRESIKA;Istarska županija;susjedstvo
+337757;IČIĆI;Primorsko-goranska županija;ime
+337765;IKA-OPRIĆ;Primorsko-goranska županija;susjedstvo
+337773;SLUNJ 1;Karlovačka županija;ime
+337790;DONJA ŠEMNICA;Krapinsko-zagorska županija;ime
+337803;PETROVAC;Virovitičko-podravska županija;susjedstvo
+337811;TABORIŠTE;Virovitičko-podravska županija;susjedstvo
+337820;BAJER;Virovitičko-podravska županija;susjedstvo
+337838;ANTUNOVAC;Virovitičko-podravska županija;susjedstvo
+337846;VIROVITICA-CENTAR;Virovitičko-podravska županija;susjedstvo
+337854;VRBOVEC_1;Zagrebačka županija;susjedstvo
+337889;BAKAR-SVETI KUZAM;Primorsko-goranska županija;susjedstvo
+337897;DUGA MEĐA;Virovitičko-podravska županija;ime
+337935;DUBRAVICA-GLUŠCI;Dubrovačko-neretvanska županija;susjedstvo
+337951;MRKOPALJ-NOVA;Primorsko-goranska županija;susjedstvo
+337960;HRUŠEVEC KUPLJENSKI;Zagrebačka županija;ime
+337986;POJATNO;Zagrebačka županija;ime
+337994;KOMARNA - DUBOKA;Dubrovačko-neretvanska županija;susjedstvo
+338001;PISAROVINA I;Zagrebačka županija;ime
+338010;PISAROVINA II;Zagrebačka županija;ime
+338028;KLANA - NOVA;Primorsko-goranska županija;susjedstvo
+338044;ŠKALNICA-NOVA;Primorsko-goranska županija;susjedstvo
+338079;STUDENA-NOVA;Primorsko-goranska županija;susjedstvo
+338125;DUGA RESA 2;Karlovačka županija;ime
+338150;DONJA ZELINA;Zagrebačka županija;ime
+338168;KRAPINA JUG;Krapinsko-zagorska županija;susjedstvo
+338184;KUPJAK;Primorsko-goranska županija;ime
+338214;ĐURĐEVAC III;Koprivničko-križevačka županija;ime
+338265;BAĆINSKA JEZERA;Dubrovačko-neretvanska županija;susjedstvo
+338273;ŠTINJAN-NOVA;Istarska županija;susjedstvo
+338281;SKENDEROVCI;Požeško-slavonska županija;ime
+338290;KUKULJANOVO - NOVA;Primorsko-goranska županija;susjedstvo
+338303;ŠKRLJEVO-NOVA;Primorsko-goranska županija;susjedstvo
+338311;RAKOVICA 1;Karlovačka županija;ime
+338338;GRANEŠINA NOVA;Grad Zagreb;jezgra
+338346;PODGRADINA;Dubrovačko-neretvanska županija;susjedstvo
+338389;PUSTIKE;Zagrebačka županija;ime
+338397;VAROŠ;Ličko-senjska županija;ime
+338427;OMIŠALJ-NJIVICE;Primorsko-goranska županija;susjedstvo
+338435;JOSIPOVAC PUNITOVAČKI;Osječko-baranjska županija;ime
+338460;SUŠAK;Primorsko-goranska županija;ime
+338478;NOVSKA;Sisačko-moslavačka županija;ime
+338486;ČUČERJE NOVO;Grad Zagreb;susjedstvo
+338494;OGULIN 1;Karlovačka županija;ime
+338508;KOSINJ;Ličko-senjska županija;susjedstvo
+338516;KLINČA SELA;Zagrebačka županija;ime
+338532;KAŠTEL GOMILICA;Splitsko-dalmatinska županija;ime
+338559;OKRUG NOVI;Splitsko-dalmatinska županija;susjedstvo
+338567;GRADIĆI;Zagrebačka županija;ime
+338613;DRAGANIĆ 1;Karlovačka županija;ime
+338630;GORNJA MOTIČINA NOVA;Osječko-baranjska županija;susjedstvo
+338648;MALA ŠVARČA 1;Karlovačka županija;susjedstvo
+338672;GAREŠNICA-CENTAR;Bjelovarsko-bilogorska županija;susjedstvo
+338699;IVANOVCI ĐAKOVAČKI NOVA;Osječko-baranjska županija;susjedstvo
+338702;VELIKA VES NOVA;Krapinsko-zagorska županija;susjedstvo
+338729;DVORIŠĆE NOVA;Sisačko-moslavačka županija;susjedstvo
+338737;VIDUŠEVAC NOVA;Sisačko-moslavačka županija;susjedstvo
+338753;BRAŠINA NOVA;Dubrovačko-neretvanska županija;susjedstvo
+338761;VARAŽDIN II;Varaždinska županija;ime
+338770;SELCE;Primorsko-goranska županija;ime
+338796;SESVETE NOVO;Grad Zagreb;susjedstvo
+338826;JAKUŠEVEC;Grad Zagreb;jezgra
+338869;BJELOVAR NOVI;Bjelovarsko-bilogorska županija;susjedstvo
+338907;METKOVIĆ-GRAD;Dubrovačko-neretvanska županija;susjedstvo
+338923;VELIKA VRANOVINA NOVA;Sisačko-moslavačka županija;susjedstvo
+338931;LIPOVAC NOVA;Vukovarsko-srijemska županija;susjedstvo
+338940;DOMASLOVEC;Zagrebačka županija;ime
+339083;ODRA;Grad Zagreb;ime
+339091;SALI NOVO;Zadarska županija;susjedstvo
+339105;LIČKI OSIK I;Ličko-senjska županija;ime
+339113;LUKOVO ŠUGARJE I;Ličko-senjska županija;ime
+339130;SITNO NOVA;Splitsko-dalmatinska županija;susjedstvo
+339148;SRINJINE NOVA;Splitsko-dalmatinska županija;susjedstvo
+339156;GORNJA PODSTRANA;Splitsko-dalmatinska županija;ime
+339164;CENTAR NOVI;Grad Zagreb;jezgra
+339270;TREŠNJEVKA NOVA;Grad Zagreb;jezgra
+339318;DONJE VRAPČE;Grad Zagreb;jezgra
+339326;LUČKO;Grad Zagreb;ime
+339369;BRČEVEC NOVI;Zagrebačka županija;susjedstvo
+339385;DUBROVNIK NOVA;Dubrovačko-neretvanska županija;susjedstvo
+339407;ZAGRAD 1;Karlovačka županija;susjedstvo
+339415;VIVOZE;Ličko-senjska županija;susjedstvo
+339431;APŠEVCI NOVA;Vukovarsko-srijemska županija;susjedstvo
+339440;PODGRAĐE NOVA;Vukovarsko-srijemska županija;susjedstvo
+339458;DONJE MEKUŠJE 1;Karlovačka županija;ime
+339466;GORNJE MEKUŠJE 1;Karlovačka županija;susjedstvo
+339474;HERCEGOVAC NOVI;Bjelovarsko-bilogorska županija;susjedstvo
+339482;DONJE POKUPJE 1;Karlovačka županija;susjedstvo
+339504;KIHALAC NOVA;Sisačko-moslavačka županija;susjedstvo
+339547;NOVO SELO GLINSKO 1;Sisačko-moslavačka županija;ime
+339563;BISTRANSKO PODGORJE NOVO 2;Zagrebačka županija;susjedstvo
+339571;ZELINA NOVA;Zagrebačka županija;susjedstvo
+339580;KRAVARSKO NOVO;Zagrebačka županija;susjedstvo
+339601;MAČKOVEC NOVI;Međimurska županija;susjedstvo
+339610;BREZJE;Međimurska županija;susjedstvo
+339628;KNEZOVEC;Međimurska županija;ime
+339725;STRAŠNIK NOVI;Sisačko-moslavačka županija;susjedstvo
+339733;STARA DRENČINA 1;Sisačko-moslavačka županija;ime
+339750;GRABERJE NOVO;Sisačko-moslavačka županija;susjedstvo
+339768;MAJA NOVA;Sisačko-moslavačka županija;susjedstvo
+339784;BERAVCI NOVI;Brodsko-posavska županija;susjedstvo
+339792;STARO PETROVO SELO 1;Brodsko-posavska županija;ime
+339806;SUHOVARE NOVE;Zadarska županija;susjedstvo
+339857;PETRINJA JUG;Sisačko-moslavačka županija;susjedstvo
+339873;KUTINA ZAPAD;Sisačko-moslavačka županija;susjedstvo
+339881;ODRANSKI OBREŽ;Grad Zagreb;ime
+339903;KUŠEVAC;Osječko-baranjska županija;ime
+339911;CETINGRAD 1;Karlovačka županija;ime
+339920;IMBRIOVEC NOVA;Koprivničko-križevačka županija;susjedstvo
+339938;BREZOVICA;Grad Zagreb;susjedstvo
+340014;BREST POKUPSKI NOVI;Sisačko-moslavačka županija;susjedstvo
+340057;STENJEVEC JUG;Grad Zagreb;susjedstvo
+340065;STENJEVEC SJEVER;Grad Zagreb;jezgra
+340073;DONJA DUBRAVA;Grad Zagreb;jezgra
+340260;KRASICA-NOVA;Primorsko-goranska županija;susjedstvo
+340383;ŠTAGLINEC;Koprivničko-križevačka županija;ime
+340588;ZAPOLJE;Brodsko-posavska županija;ime
+340626;KUPINEČKI KRALJEVEC;Grad Zagreb;ime
+340634;DEMERJE;Grad Zagreb;ime
+340715;KLARA NOVA;Grad Zagreb;jezgra
+340723;SELO SVETI MARKO;Ličko-senjska županija;ime
+340758;PUNITOVCI NOVI;Osječko-baranjska županija;susjedstvo
+340766;ORAHOVICA - GRAD;Virovitičko-podravska županija;susjedstvo
+340774;ADŽAMOVCI NOVI;Brodsko-posavska županija;susjedstvo
+341428;MARTIN NOVI;Osječko-baranjska županija;susjedstvo
+341541;DIKLO NOVO;Zadarska županija;susjedstvo
