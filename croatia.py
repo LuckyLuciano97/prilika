@@ -340,6 +340,72 @@ COURT_TOWN_COUNTY = {
 LOW_CONFIDENCE_ISSUERS = ("trgovacki_sud", "javni_biljeznik", "ostalo", "nepoznato")
 
 
+# Približna središta županija. Dvije namjene: mjehurići na karti i provjera
+# udaljenosti pri vezanju k.o. točke uz predmet (istoimene k.o. postoje u
+# više dijelova zemlje). Navigacijska preciznost, ne katastarska.
+COUNTY_CENTROIDS = {
+    "Grad Zagreb": (45.815, 15.98),
+    "Zagrebačka županija": (45.85, 16.10),
+    "Krapinsko-zagorska županija": (46.10, 15.87),
+    "Sisačko-moslavačka županija": (45.35, 16.55),
+    "Karlovačka županija": (45.30, 15.55),
+    "Varaždinska županija": (46.25, 16.25),
+    "Koprivničko-križevačka županija": (46.10, 16.75),
+    "Bjelovarsko-bilogorska županija": (45.85, 16.95),
+    "Primorsko-goranska županija": (45.35, 14.55),
+    "Ličko-senjska županija": (44.75, 15.30),
+    "Virovitičko-podravska županija": (45.75, 17.55),
+    "Požeško-slavonska županija": (45.35, 17.75),
+    "Brodsko-posavska županija": (45.15, 17.85),
+    "Zadarska županija": (44.10, 15.55),
+    "Osječko-baranjska županija": (45.55, 18.55),
+    "Šibensko-kninska županija": (43.85, 16.05),
+    "Vukovarsko-srijemska županija": (45.20, 18.85),
+    "Splitsko-dalmatinska županija": (43.55, 16.55),
+    "Istarska županija": (45.15, 13.85),
+    "Dubrovačko-neretvanska županija": (42.85, 17.65),
+    "Međimurska županija": (46.40, 16.45),
+}
+
+
+# --- Referentne točke katastarskih općina (DGU INSPIRE WFS) ----------------
+# data/ko_tocke.csv generira tools/build_ko_tocke.py — službene cp:referencePoint
+# koordinate svih k.o., Otvorena dozvola (provenijencija u zaglavlju skripte).
+
+_KO_POINTS: tuple[dict, dict] | None = None
+
+
+def ko_points() -> tuple[dict[str, tuple[str, float, float]],
+                         dict[str, list[tuple[str, str, float, float]]]]:
+    """(po_maticnom_broju, po_imenu) — lijeno učitano.
+
+    po_maticnom_broju: "329525" -> (naziv, lat, lon)
+    po_imenu:          fold(naziv) -> [(maticni, naziv, lat, lon), ...]
+    """
+    global _KO_POINTS
+    if _KO_POINTS is None:
+        import csv
+        import unicodedata
+        from pathlib import Path
+
+        def _fold(s: str) -> str:
+            s = s.replace("đ", "d").replace("Đ", "D").lower()
+            return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+
+        by_code: dict[str, tuple[str, float, float]] = {}
+        by_name: dict[str, list[tuple[str, str, float, float]]] = {}
+        path = Path(__file__).resolve().parent / "data" / "ko_tocke.csv"
+        if path.exists():
+            with path.open(encoding="utf-8") as fh:
+                for row in csv.DictReader(fh, delimiter=";"):
+                    code, name = row["maticni_broj"], row["naziv"]
+                    lat, lon = float(row["lat"]), float(row["lon"])
+                    by_code[code] = (name, lat, lon)
+                    by_name.setdefault(_fold(name), []).append((code, name, lat, lon))
+        _KO_POINTS = (by_code, by_name)
+    return _KO_POINTS
+
+
 # --- Službeni registar naselja (DZS, Popis 2021) ---------------------------
 # data/naselja.csv generira tools/build_naselja.py iz DZS-ove tablice
 # objavljene pod Otvorenom dozvolom (v. zaglavlje te skripte za provenijenciju).

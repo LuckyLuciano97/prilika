@@ -121,8 +121,45 @@ h1 { font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.3rem); line-height: 1.22; letter
 h2 { font-size: 1.3rem; letter-spacing: -.01em; margin-top: 2.2rem; }
 h3 { font-size: 1.02rem; margin: 0 0 .35rem; }
 
-.hero { padding-block: 1rem .5rem; }
-.hero h1 { max-width: 24ch; }
+.hero { padding-block: 1.6rem .5rem; }
+.hero h1 { max-width: 26ch; }
+.hero-search { display: flex; max-width: 34rem; margin: 1.3rem 0 .7rem; }
+.hero-search input {
+  flex: 1; font: inherit; font-size: 1.05rem; color: var(--fg);
+  padding: .8rem 1.1rem; background: var(--bg-raise);
+  border: 2px solid var(--line); border-right: 0;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+.hero-search input:focus { outline: none; border-color: var(--accent); }
+.hero-search button {
+  font: inherit; font-weight: 650; color: var(--bg);
+  padding: .8rem 1.3rem; background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0; cursor: pointer;
+}
+.hero-search button:hover { background: var(--accent-strong); }
+.hero-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 .6rem; }
+.hero-chips a {
+  text-decoration: none; font-size: .88rem; font-weight: 600;
+  padding: .35rem .8rem; border-radius: 99px;
+  background: var(--bg-soft); border: 1px solid var(--line); color: var(--fg);
+}
+.hero-chips a:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+/* --- property layout --- */
+.property-grid { display: grid; gap: 1.6rem; align-items: start; }
+@media (min-width: 56rem) {
+  .property-grid { grid-template-columns: minmax(0, 1fr) 19rem; }
+  .property-aside { position: sticky; top: 4.6rem; }
+}
+.property-aside .keyfacts { margin: 0 0 1rem; }
+.property-aside .keyfacts dl { grid-template-columns: 1fr; }
+.aside-cta {
+  background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1rem 1.1rem; font-size: .9rem;
+}
+.aside-cta .btn { display: block; text-align: center; margin: .6rem 0; }
+.property-map { height: 15rem; border: 1px solid var(--line); border-radius: var(--radius); margin-top: .8rem; }
 .lede { font-size: 1.08rem; color: var(--fg-muted); max-width: 60ch; text-wrap: pretty; }
 .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin: 0; }
 .muted { color: var(--fg-muted); }
@@ -179,26 +216,71 @@ table.detail tr.current { background: var(--accent-soft); }
 .tag { font-size: .75rem; background: var(--accent-soft); color: var(--accent); padding: .1rem .45rem; border-radius: 99px; }
 
 /* --- cards --- */
-.cards { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+.cards { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr)); gap: 1.1rem; }
 .card article {
-  height: 100%; display: flex; flex-direction: column;
+  position: relative; height: 100%; display: flex; flex-direction: column;
   border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 1.05rem; background: var(--bg-raise);
+  overflow: hidden; background: var(--bg-raise);
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .card article:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow);
   border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
 }
+.card h3 { font-size: .98rem; margin: .15rem 0 .1rem; line-height: 1.35; }
 .card h3 a { text-decoration: none; color: var(--fg); }
 .card h3 a::after { content: ""; position: absolute; inset: 0; }
-.card article { position: relative; }
 .card h3 a:hover { color: var(--accent); }
-.card-loc { color: var(--fg-muted); font-size: .85rem; margin: 0 0 .5rem; }
-.card-price { margin: auto 0 .2rem; padding-top: .4rem; font-size: 1.08rem; }
-.card-meta, .card-status { font-size: .82rem; color: var(--fg-muted); margin: .25rem 0 0; }
-.chip { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: .78rem; font-weight: 650; padding: .12rem .55rem; border-radius: 99px; margin-left: .35rem; }
+
+/* traka umjesto fotografije: registar ne objavljuje slike u izvozu,
+   pa vizualni identitet kartice nosi boja + ikona vrste nekretnine */
+.card-media {
+  position: relative; height: 5.6rem;
+  display: grid; place-items: center;
+  background: var(--mb-bg, var(--accent-soft));
+  color: var(--mb-fg, var(--accent));
+}
+.card-media svg { width: 2.6rem; height: 2.6rem; opacity: .9; }
+.card-media .status {
+  position: absolute; top: .55rem; left: .6rem;
+  font-size: .72rem; padding: .18rem .55rem;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(4px);
+}
+.card-body { display: flex; flex-direction: column; flex: 1; padding: .8rem .95rem .95rem; }
+.card-loc { color: var(--fg-muted); font-size: .84rem; margin: 0; }
+.card-price { margin: 0; font-size: 1.14rem; letter-spacing: -.01em; }
+.card-meta { font-size: .82rem; color: var(--fg-muted); margin: .3rem 0 0; }
+.card-status { font-size: .8rem; color: var(--fg-muted); margin: auto 0 0; padding-top: .55rem; }
+.chip { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: .76rem; font-weight: 650; padding: .12rem .5rem; border-radius: 99px; margin-left: .35rem; vertical-align: 1px; }
+
+/* boje traka po vrsti — svjetle i tamne varijante */
+.mb-kuca                    { --mb-bg: #e3f1e6; --mb-fg: #256d3b; }
+.mb-stan                    { --mb-bg: #e1eef7; --mb-fg: #1e5e8a; }
+.mb-poslovni-prostor        { --mb-bg: #e7e7f6; --mb-fg: #47479c; }
+.mb-gradevinsko-zemljiste   { --mb-bg: #fdeedd; --mb-fg: #9a5a12; }
+.mb-poljoprivredno-zemljiste{ --mb-bg: #edf3d8; --mb-fg: #5c7314; }
+.mb-sumsko-zemljiste        { --mb-bg: #dff0e8; --mb-fg: #1d6e50; }
+.mb-zemljiste               { --mb-bg: #f0eade; --mb-fg: #7c6234; }
+.mb-garaza                  { --mb-bg: #e8ecf0; --mb-fg: #46586b; }
+.mb-pokretnina              { --mb-bg: #ececec; --mb-fg: #5c5c66; }
+.mb-pravo                   { --mb-bg: #f2e6f2; --mb-fg: #7c3f80; }
+.mb-ostalo                  { --mb-bg: #ebedef; --mb-fg: #55606c; }
+
+@media (prefers-color-scheme: dark) {
+  .mb-kuca                    { --mb-bg: #1c2e21; --mb-fg: #8fd3a3; }
+  .mb-stan                    { --mb-bg: #17293a; --mb-fg: #8cc4e8; }
+  .mb-poslovni-prostor        { --mb-bg: #232342; --mb-fg: #b0b0ea; }
+  .mb-gradevinsko-zemljiste   { --mb-bg: #33260f; --mb-fg: #ecb877; }
+  .mb-poljoprivredno-zemljiste{ --mb-bg: #262e10; --mb-fg: #c3d67a; }
+  .mb-sumsko-zemljiste        { --mb-bg: #12302a; --mb-fg: #7fd2b3; }
+  .mb-zemljiste               { --mb-bg: #2e2817; --mb-fg: #d3b985; }
+  .mb-garaza                  { --mb-bg: #1f2831; --mb-fg: #a8bccf; }
+  .mb-pokretnina              { --mb-bg: #26262a; --mb-fg: #b3b3bd; }
+  .mb-pravo                   { --mb-bg: #2e1c2f; --mb-fg: #d8a3dc; }
+  .mb-ostalo                  { --mb-bg: #23272c; --mb-fg: #aab4bf; }
+}
 
 /* --- filteri na popisima --- */
 .filterbar {
@@ -292,3 +374,8 @@ table.detail tr.current { background: var(--accent-soft); }
 
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); padding-block: 1.6rem; font-size: .87rem; }
 .site-footer p { margin: .5rem 0; max-width: 78ch; }
+
+/* na širokim ekranima činjenice živе u bočnom stupcu, ne dvaput */
+@media (min-width: 56rem) {
+  .keyfacts-inline { display: none; }
+}

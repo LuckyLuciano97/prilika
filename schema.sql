@@ -79,6 +79,12 @@ CREATE TABLE IF NOT EXISTS items (
     times_seen               INTEGER NOT NULL DEFAULT 1
 );
 
+-- Koordinate referentne točke katastarske općine (DGU INSPIRE, Otvorena
+-- dozvola). Razina k.o., NE parcele — coord_source to i kaže.
+ALTER TABLE items ADD COLUMN IF NOT EXISTS latitude  NUMERIC(10,7);
+ALTER TABLE items ADD COLUMN IF NOT EXISTS longitude NUMERIC(10,7);
+ALTER TABLE items ADD COLUMN IF NOT EXISTS coord_source TEXT;
+
 CREATE INDEX IF NOT EXISTS idx_items_county        ON items (county);
 CREATE INDEX IF NOT EXISTS idx_items_city          ON items (city);
 CREATE INDEX IF NOT EXISTS idx_items_status        ON items (status);

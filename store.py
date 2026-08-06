@@ -30,6 +30,7 @@ ITEM_COLUMNS = [
     "decision_date", "publish_start", "auction_start", "auction_end",
     "extendable", "deposit_value_date", "viewing_time",
     "status", "slug", "repeat_group", "repeat_seq", "source_snapshot_date",
+    "latitude", "longitude", "coord_source",
 ]
 
 # Polja koja se prate kroz vrijeme.

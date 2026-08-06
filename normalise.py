@@ -365,6 +365,55 @@ def _canonical_town(name: str | None) -> str | None:
 # On se smije odbaciti — riječ je o istom naselju.
 _ORDINAL_SUFFIX = re.compile(r"\s+(?:[IVX]{1,4}|\d{1,2})$")
 
+# Matični broj k.o. iz opisa ("k.o. 309656 Garešnica", "K.O.329525 Dugopolje").
+_KO_CODE_RE = re.compile(r"[Kk]\.?\s*[Oo]\.?\s*:?\s*(\d{4,6})\b")
+
+
+def _approx_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Gruba udaljenost — dovoljna za pitanje "je li k.o. u toj županiji"."""
+    import math
+    dlat = (lat2 - lat1) * 111.0
+    dlon = (lon2 - lon1) * 111.0 * math.cos(math.radians((lat1 + lat2) / 2))
+    return (dlat * dlat + dlon * dlon) ** 0.5
+
+
+def locate_ko_point(description: str, ko_name: str | None,
+                    county: str | None) -> tuple[float, float, str] | None:
+    """Koordinate referentne točke k.o. iz DGU registra (ako postoji).
+
+    Redoslijed povjerenja:
+      1. matični broj k.o. iz opisa -> izravno, jednoznačno;
+      2. naziv k.o. jedinstven u registru -> izravno;
+      3. naziv postoji više puta -> uzmi kandidata unutar ~90 km od središta
+         utvrđene županije; bez županije ili bez jednoznačnog kandidata -> ništa.
+
+    Točka je razina KATASTARSKE OPĆINE (susjedstvo/naselje), ne parcele —
+    to se i prikazuje kao takvo.
+    """
+    by_code, by_name = croatia.ko_points()
+    if not by_code:
+        return None
+
+    m = _KO_CODE_RE.search(description or "")
+    if m and m.group(1) in by_code:
+        name, lat, lon = by_code[m.group(1)]
+        return lat, lon, f"k.o. {name} (matični broj)"
+
+    if not ko_name:
+        return None
+    cands = by_name.get(fold(_ORDINAL_SUFFIX.sub("", ko_name.strip()))) or []
+    if len(cands) == 1:
+        _, name, lat, lon = cands[0]
+        return lat, lon, f"k.o. {name}"
+    if len(cands) > 1 and county in croatia.COUNTY_CENTROIDS:
+        clat, clon = croatia.COUNTY_CENTROIDS[county]
+        near = [(c, _approx_km(clat, clon, c[2], c[3])) for c in cands]
+        near = [x for x in near if x[1] <= 90]
+        if len(near) == 1:
+            _, name, lat, lon = near[0][0]
+            return lat, lon, f"k.o. {name}"
+    return None
+
 
 def _resolve_town(candidate: str) -> str | None:
     """Vrati kanonski naziv naselja ako ga prepoznajemo.
@@ -726,6 +775,9 @@ def normalise_item(clean_row: dict, viewing: str = "",
         "status": derive_status(start, end, now),
         "snapshot_date": snapshot.date(),
     }
+    point = locate_ko_point(opis, loc["cadastral_municipality"], loc["county"])
+    item["latitude"], item["longitude"], item["coord_source"] = (
+        point if point else (None, None, None))
     item["item_key"] = build_item_key(item)
     item["slug"] = build_slug(item)
     return item

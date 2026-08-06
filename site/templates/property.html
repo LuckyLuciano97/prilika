@@ -7,7 +7,9 @@
     <p class="status status-{{ item.status }}">{{ item.status_label }}</p>
   </header>
 
-  <div class="keyfacts">
+  <div class="property-grid">
+  <div class="property-main">
+  <div class="keyfacts keyfacts-inline">
     <dl>
       {% if item.estimated_value_eur %}
       <div><dt>Procijenjena vrijednost</dt><dd class="big">{{ item.estimated_value_eur|eur }}</dd></div>
@@ -124,7 +126,62 @@
       Stabilna izravna poveznica po stavci ne postoji — aplikacija Očevidnika radi
       sa sesijom, pa se pretraga radi ručno.</p>
   </section>
+  </div>{# /property-main #}
+
+  <aside class="property-aside">
+    <div class="keyfacts">
+      <dl>
+        {% if item.opening_price_eur %}
+        <div><dt>Početna cijena</dt><dd class="big accent">{{ item.opening_price_eur|eur }}</dd></div>
+        {% endif %}
+        {% if item.estimated_value_eur %}
+        <div><dt>Procijenjena vrijednost</dt><dd>{{ item.estimated_value_eur|eur }}</dd></div>
+        {% endif %}
+        {% if item.discount_pct is not none and not item.discount_suspicious %}
+        <div><dt>Popust na procjenu</dt><dd class="big discount">{{ item.discount_pct|pct }}</dd></div>
+        {% endif %}
+        {% if item.price_per_m2 %}
+        <div><dt>Cijena po kvadratu</dt><dd>{{ item.price_per_m2|ppm }}</dd></div>
+        {% endif %}
+        {% if item.days_left is not none %}
+        <div><dt>Nadmetanje</dt><dd class="big">{{ item.days_left|days }}</dd></div>
+        {% endif %}
+      </dl>
+    </div>
+    {% if item.latitude %}
+    <div id="mini-karta" class="property-map" role="img"
+         aria-label="Približna lokacija na karti ({{ item.coord_source }})"></div>
+    <p class="muted small">Točka je referentna točka katastarske općine
+      ({{ item.coord_source }}) — susjedstvo, ne točna parcela.</p>
+    {% endif %}
+    <div class="aside-cta">
+      <strong>Kako sudjelovati?</strong>
+      <a class="btn" href="{{ rel('/kako-sudjelovati/') }}">Vodič korak po korak</a>
+      <p class="muted small">Provjeri predmet u
+        <a href="{{ source_url }}" rel="nofollow noopener" target="_blank">Očevidniku</a>{% if item.auction_id %}
+        — ID nadmetanja <strong>{{ item.auction_id }}</strong>{% endif %}.</p>
+    </div>
+  </aside>
+  </div>{# /property-grid #}
 </article>
+
+{% if item.latitude %}
+<link rel="stylesheet" href="{{ rel('/static/vendor/leaflet/leaflet.css') }}">
+<script src="{{ rel('/static/vendor/leaflet/leaflet.js') }}"></script>
+<script>
+(function () {
+  var m = L.map("mini-karta", { scrollWheelZoom: false, zoomControl: false })
+           .setView([{{ item.latitude }}, {{ item.longitude }}], 12);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 15,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+  }).addTo(m);
+  L.circleMarker([{{ item.latitude }}, {{ item.longitude }}], {
+    radius: 9, weight: 2, color: "#0b5d3b", fillColor: "#0b5d3b", fillOpacity: .4
+  }).addTo(m);
+})();
+</script>
+{% endif %}
 
 {% if related %}
 <section class="related" aria-labelledby="slicno-naslov">

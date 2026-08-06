@@ -5,6 +5,20 @@
   <p class="lede">Sve nekretnine koje se u Hrvatskoj prodaju na sudskoj dražbi,
     u ovrsi i stečaju — iz službenog registra FINA-e, na jednom mjestu,
     pretraživo po županiji, gradu i vrsti.</p>
+  <form class="hero-search" role="search" action="{{ rel('/trazi/') }}" method="get">
+    <label class="visually-hidden" for="hero-q">Traži nekretnine</label>
+    <input id="hero-q" name="q" type="search"
+           placeholder="Mjesto, katastarska općina ili broj spisa…">
+    <button type="submit">Traži</button>
+  </form>
+  <nav class="hero-chips" aria-label="Brzi odabir vrste">
+    <a href="{{ rel('/vrste/gradevinsko-zemljiste/') }}">Građevinska zemljišta</a>
+    <a href="{{ rel('/vrste/poljoprivredno-zemljiste/') }}">Poljoprivredna zemljišta</a>
+    <a href="{{ rel('/vrste/stan/') }}">Stanovi</a>
+    <a href="{{ rel('/vrste/kuca/') }}">Kuće</a>
+    <a href="{{ rel('/vrste/poslovni-prostor/') }}">Poslovni prostori</a>
+    <a href="{{ rel('/karta/') }}">Karta →</a>
+  </nav>
 </header>
 
 <dl class="statbar">

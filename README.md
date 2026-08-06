@@ -277,6 +277,20 @@ search, which this project does not do.
 
 ## Roadmap
 
+### Coordinates without inventing precision
+
+Property pins come from the **DGU INSPIRE WFS** (`cp:CadastralZoning`,
+Otvorena dozvola — the same service behind oss.uredjenazemlja.hr): official
+`referencePoint` coordinates for all 3,496 cadastral municipalities, fetched
+once by `tools/build_ko_tocke.py` with throttling and backoff (their backend
+returns ORA-01000 under load; the fetcher waits instead of hammering) and
+committed as `data/ko_tocke.csv`. **1,475 active items (60.3%) get a pin** —
+matched by cadastral code when the description carries one, by unique name
+otherwise, with same-name ties broken only inside the item's resolved county.
+Pins are neighbourhood-level, and every page that shows one says so; the
+per-parcel `cp:CadastralParcel` layer is the documented next step. OSM map
+tiles are the site's only external request.
+
 Operational cadence, the staleness limit and the reasoning behind both are in
 [docs/operations.md](docs/operations.md).
 

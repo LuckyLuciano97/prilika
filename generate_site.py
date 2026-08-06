@@ -22,6 +22,7 @@ from urllib.parse import quote
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import config
+import croatia
 from normalise import (PROPERTY_TYPE_CATEGORY, PROPERTY_TYPE_LABELS,
                        STATUS_LABELS, slugify)
 
@@ -329,7 +330,7 @@ class SiteBuilder:
 
         # 5c. najbolja vrijednost (€/m²), karta, RSS feed
         self._best_value(active)
-        self._map(by_county)
+        self._map(active, by_county)
         self._feed(active)
         counts["static_pages"] += 2
 
@@ -835,52 +836,45 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
         )
 
     # -- karta -------------------------------------------------------------
-    # Približna središta županija — služe SAMO snalaženju na karti.
-    COUNTY_CENTROIDS = {
-        "Grad Zagreb": (45.815, 15.98),
-        "Zagrebačka županija": (45.85, 16.10),
-        "Krapinsko-zagorska županija": (46.10, 15.87),
-        "Sisačko-moslavačka županija": (45.35, 16.55),
-        "Karlovačka županija": (45.30, 15.55),
-        "Varaždinska županija": (46.25, 16.25),
-        "Koprivničko-križevačka županija": (46.10, 16.75),
-        "Bjelovarsko-bilogorska županija": (45.85, 16.95),
-        "Primorsko-goranska županija": (45.35, 14.55),
-        "Ličko-senjska županija": (44.75, 15.30),
-        "Virovitičko-podravska županija": (45.75, 17.55),
-        "Požeško-slavonska županija": (45.35, 17.75),
-        "Brodsko-posavska županija": (45.15, 17.85),
-        "Zadarska županija": (44.10, 15.55),
-        "Osječko-baranjska županija": (45.55, 18.55),
-        "Šibensko-kninska županija": (43.85, 16.05),
-        "Vukovarsko-srijemska županija": (45.20, 18.85),
-        "Splitsko-dalmatinska županija": (43.55, 16.55),
-        "Istarska županija": (45.15, 13.85),
-        "Dubrovačko-neretvanska županija": (42.85, 17.65),
-        "Međimurska županija": (46.40, 16.45),
-    }
+    def _map(self, active: list[dict], by_county: dict) -> None:
+        """Karta s pribadačama na razini katastarske općine.
 
-    def _map(self, by_county: dict) -> None:
-        """Karta po županijama. Jedina stranica s vanjskim zahtjevima
-        (OSM podloga); Leaflet je lokalno u static/vendor/ (MIT)."""
+        Koordinate su službene cp:referencePoint točke k.o. (DGU INSPIRE,
+        Otvorena dozvola) — razina susjedstva, ne parcele, i stranica to
+        kaže. Jedina stranica s vanjskim zahtjevima (OSM podloga); Leaflet
+        je lokalno u static/vendor/ (MIT)."""
+        groups: dict[tuple, list[dict]] = defaultdict(list)
+        for d in active:
+            if d.get("latitude") and d.get("longitude"):
+                groups[(round(float(d["latitude"]), 5),
+                        round(float(d["longitude"]), 5))].append(d)
         map_data = []
+        for (lat, lon), ds in groups.items():
+            ds.sort(key=lambda x: (x.get("discount_pct") is None,
+                                   -(float(x["discount_pct"]) if x.get("discount_pct")
+                                     is not None else 0)))
+            map_data.append({
+                "lat": lat, "lon": lon, "n": len(ds),
+                "name": ds[0].get("cadastral_municipality") or ds[0].get("city")
+                        or ds[0].get("county") or "",
+                "links": [{"n": x["card_title"],
+                           "u": x["url"],
+                           "p": f_eur(x["opening_price_eur"]) if x.get("opening_price_eur") else ""}
+                          for x in ds[:4]],
+                "more": ds[0]["city_url"] if ds[0].get("city") else ds[0]["county_url"],
+            })
         counties = []
         for county, group in sorted(by_county.items(),
                                     key=lambda kv: -len(kv[1])):
             counties.append({"name": county or "Lokacija nije utvrđena",
                              "url": county_url(county), "count": len(group)})
-            if county and county in self.COUNTY_CENTROIDS:
-                lat, lon = self.COUNTY_CENTROIDS[county]
-                map_data.append({"name": county, "n": len(group),
-                                 "lat": lat, "lon": lon,
-                                 "url": county_url(county)})
         crumbs = [{"name": "Početna", "url": "/"}, {"name": "Karta", "url": "/karta/"}]
         self._render(
             "map.html", "/karta/",
             page_title="Karta dražbi nekretnina po županijama | Licita",
-            meta_description=("Interaktivna karta Hrvatske s brojem aktivnih "
-                              "dražbi nekretnina po županijama. Klik na županiju "
-                              "otvara popis svih predmeta."),
+            meta_description=(f"Interaktivna karta s {sum(d['n'] for d in map_data)} "
+                              f"aktivnih dražbi na {len(map_data)} lokacija — točke "
+                              f"katastarskih općina iz službenog DGU registra."),
             map_data=map_data, counties=counties, breadcrumbs=crumbs,
             jsonld=[self._jsonld_breadcrumbs(crumbs)],
             sitemap_priority=0.6, sitemap_changefreq="daily",

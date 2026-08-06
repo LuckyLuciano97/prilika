@@ -1,5 +1,5 @@
 LICITA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-06 14:32:31
+Generirano: 2026-08-06 14:53:43
 Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 
 ==============================================================================
@@ -90,7 +90,7 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
   provjereno redaka: 9,672
   odstupanja: 0
   označeno kao sumnjivo (ne prikazuje se kao prilika): 240
-    primjer: ST-13/2016 procjena 523856.92 € → početna 0.13 €
+    primjer: ST-3705/2016 procjena 7034.31 € → početna 0.13 €
     (0,13 € = 1 kuna po tečaju 7,53450 — zaostatak iz prijelaza na euro)
   [PASS] Izračun popusta — 9,672 provjereno, 0 odstupanja
 
@@ -131,17 +131,17 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 ==============================================================================
 8. INTEGRITET POVIJESTI CIJENA
 ==============================================================================
-  pokretanja zabilježenih: 4
+  pokretanja zabilježenih: 5
   redaka u price_history:  0
   događaja:                39
-  kontrolirani test: opening_price_eur 10286.02 → 8228.82 (-20.0 %) — promjena uhvaćena
+  kontrolirani test: opening_price_eur 122625.92 → 98100.74 (-20.0 %) — promjena uhvaćena
 
   različitih verzija izvora među pokretanjima: 1
   Sva pokretanja koristila su ISTI snimak izvora (isti sha256),
   pa je nula zabilježenih promjena ispravan rezultat, a ne propust.
   Da je zabilježena promjena, to bi značilo da detektor lažno
   prijavljuje — što je i bilo prije ispravka zaokruživanja.
-  [PASS] Povijest cijena: nema lažnih promjena nad istim izvorom — 4 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  [PASS] Povijest cijena: nema lažnih promjena nad istim izvorom — 5 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
   [WARN] Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   [PASS] Mehanizam praćenja cijene radi — kontrolirani test promjene cijene
 
@@ -158,6 +158,6 @@ SAŽETAK
   PASS  Nema pogrešnog spajanja različitih spisa — 0 skupina miješa spise
   PASS  SEO izlaz — 2,928 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   PASS  Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
-  PASS  Povijest cijena: nema lažnih promjena nad istim izvorom — 4 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  PASS  Povijest cijena: nema lažnih promjena nad istim izvorom — 5 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
   WARN  Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   PASS  Mehanizam praćenja cijene radi — kontrolirani test promjene cijene

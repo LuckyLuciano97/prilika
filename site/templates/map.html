@@ -4,16 +4,17 @@
 {% endblock %}
 {% block content %}
 <header class="listing-head">
-  <h1>Karta dražbi po županijama</h1>
-  <p class="lede">Veličina kruga = broj aktivnih predmeta prodaje. Klik vodi na
-    pregled županije.</p>
+  <h1>Karta aktivnih dražbi</h1>
+  <p class="lede">Svaka točka je katastarska općina s aktivnim dražbama —
+    veličina raste s brojem predmeta. Klik otvara popis.</p>
 </header>
 
-<div id="karta" class="karta" role="application" aria-label="Karta Hrvatske s brojem dražbi po županijama"></div>
+<div id="karta" class="karta" role="application" aria-label="Karta Hrvatske s dražbama po katastarskim općinama"></div>
 
-<p class="muted small">Krugovi stoje na približnim središtima županija — služe
-  snalaženju, ne označavaju točnu lokaciju nekretnine. Točnost na razini naselja
-  doći će s službenim koordinatama naselja (Registar geografskih imena).
+<p class="muted small">Točke su službene referentne točke katastarskih općina
+  (DGU, INSPIRE servis, Otvorena dozvola) — razina susjedstva, ne točna parcela.
+  Predmeti bez utvrđene katastarske općine nisu na karti; njih pokriva
+  <a href="{{ rel('/nekretnine/') }}">tekstualni pregled</a>.
   Kartografska podloga: <a href="https://www.openstreetmap.org/copyright"
   rel="noopener" target="_blank">© OpenStreetMap suradnici</a> — jedino mjesto
   na stranici koje učitava sadržaj s vanjskog poslužitelja.</p>
@@ -37,17 +38,30 @@
     maxZoom: 12,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
+  function esc(s) { var e = document.createElement("div"); e.textContent = s || ""; return e.innerHTML; }
   var max = Math.max.apply(null, DATA.map(function (d) { return d.n; }));
+  var canvas = L.canvas({ padding: 0.3 });
   DATA.forEach(function (d) {
-    var r = 8 + 26 * Math.sqrt(d.n / max);
+    var r = 5 + 11 * Math.sqrt(d.n / max);
+    var html = "<strong>" + esc(d.name) + "</strong> · " + d.n +
+      (d.n === 1 ? " predmet" : " predmeta") + "<ul class=\"popup-list\">";
+    d.links.forEach(function (l) {
+      html += '<li><a href="' + esc(l.u) + '">' + esc(l.n) + "</a>" +
+              (l.p ? " — " + esc(l.p) : "") + "</li>";
+    });
+    html += "</ul>";
+    if (d.n > d.links.length) {
+      html += '<a href="' + esc(d.more) + '">Svi predmeti ovdje →</a>';
+    }
     L.circleMarker([d.lat, d.lon], {
-      radius: r, weight: 2, color: "#0b5d3b",
-      fillColor: "#0b5d3b", fillOpacity: 0.35
-    }).addTo(map).bindPopup(
-      '<strong>' + d.name + "</strong><br>" + d.n +
-      ' aktivnih predmeta<br><a href="' + d.url + '">Otvori pregled →</a>'
-    );
+      renderer: canvas, radius: r, weight: 1.5, color: "#0b5d3b",
+      fillColor: "#0b5d3b", fillOpacity: 0.45
+    }).addTo(map).bindPopup(html, { maxWidth: 300 });
   });
+  if (DATA.length) {
+    map.fitBounds(DATA.map(function (d) { return [d.lat, d.lon]; }),
+                  { padding: [24, 24] });
+  }
 })();
 </script>
 {% endblock %}
