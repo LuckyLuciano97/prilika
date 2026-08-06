@@ -1,7 +1,7 @@
 {
   "generirano": "2026-08-06",
   "stanje_na_dan": "2026-08-05",
-  "starost_snimka_h": 43.1,
+  "starost_snimka_h": 43.5,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
     "bajtova": 10329500,
@@ -20,17 +20,17 @@
     "bez_termina": 1775
   },
   "po_zupaniji": {
-    "Nepoznato": 1035,
+    "Nepoznato": 1034,
     "Primorsko-goranska županija": 636,
     "Splitsko-dalmatinska županija": 678,
     "Šibensko-kninska županija": 165,
     "Zadarska županija": 412,
     "Karlovačka županija": 217,
-    "Međimurska županija": 354,
-    "Grad Zagreb": 1410,
+    "Međimurska županija": 351,
+    "Grad Zagreb": 1411,
     "Vukovarsko-srijemska županija": 398,
     "Virovitičko-podravska županija": 274,
-    "Istarska županija": 792,
+    "Istarska županija": 795,
     "Dubrovačko-neretvanska županija": 192,
     "Osječko-baranjska županija": 639,
     "Sisačko-moslavačka županija": 340,
@@ -59,10 +59,10 @@
   "prosjecan_popust_pct": 32.22,
   "sumnjivih_popusta": 240,
   "lokacija_pouzdanost": {
-    "nema": 1035,
+    "nema": 1034,
     "visoka": 7452,
-    "srednja": 2310,
-    "niska": 292
+    "srednja": 2308,
+    "niska": 295
   },
   "ponovljene_drazbe": {
     "linked_groups": 95,
@@ -97,5 +97,5 @@
     "static_pages": 5,
     "total_pages": 2990
   },
-  "trajanje_s": 41.9
+  "trajanje_s": 35.5
 }

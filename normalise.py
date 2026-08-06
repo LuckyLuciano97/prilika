@@ -303,6 +303,14 @@ _KO_RE = re.compile(
     rf"[Kk]\.?\s*[Oo]\.?\s*:?\s*(?:\d{{4,6}}\s+)?({_KO_TOKEN}(?:\s+{_KO_TOKEN}){{0,3}})"
 )
 
+# Popustljiva varijanta: prvo slovo smije biti malo ("k.o. sesvete Novo").
+# Koristi se SAMO kad stroga ne uhvati ništa, i SAMO uz potvrdu da uhvaćeno
+# ime postoji u službenom registru k.o. — v. extract_location.
+_KO_TOKEN_L = r"[A-Za-zČĆĐŠŽčćđšž][\wčćđšž]*(?:-[A-Za-zČĆĐŠŽčćđšž][\wčćđšž]*)?"
+_KO_RE_LOOSE = re.compile(
+    rf"[Kk]\.?\s*[Oo]\.?\s*:?\s*(?:\d{{4,6}}\s+)?({_KO_TOKEN_L}(?:\s+{_KO_TOKEN_L}){{0,3}})"
+)
+
 # Riječi koje su u izvoru pisane velikim slovom, ali nisu dio naziva općine
 # ("k.o. Grad Zagreb Zemljišnoknjižnog odjela ...").
 _KO_STOPWORDS = {
@@ -511,6 +519,21 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         ko_name = _trim_ko(ko.group(1).strip(" ,.;-"))
         if ko_name and not ko_name.isdigit() and len(ko_name) >= 3:
             result["cadastral_municipality"] = ko_name[:80]
+
+    if not result["cadastral_municipality"]:
+        # Sudski pisar zna ime napisati malim slovom ("k.o. sesvete Novo") i
+        # stroga varijanta ga tada ne uhvati. Popustljiva varijanta hvata i
+        # takve zapise, ali kandidat mora POSTOJATI u službenom registru k.o.
+        # (potpuno ime, bez prefiksnog pogađanja) — članstvo u registru je
+        # jači čuvar od velikog slova, pa obična proza ne prolazi.
+        m = _KO_RE_LOOSE.search(text)
+        if m:
+            cand = _trim_ko(m.group(1).strip(" ,.;-"))
+            if cand and not cand.isdigit() and len(cand) >= 3:
+                key = fold(_ORDINAL_SUFFIX.sub("", cand))
+                hits = croatia.ko_points()[1].get(key) or []
+                if hits:
+                    result["cadastral_municipality"] = hits[0][1].title()[:80]
 
     def _candidates(name: str | None) -> dict[str, int]:
         """Županija -> stanovništvo najvećeg istoimenog naselja u njoj.

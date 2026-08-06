@@ -1,5 +1,5 @@
 LICITA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-06 19:11:23
+Generirano: 2026-08-06 19:36:17
 Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 
 ==============================================================================
@@ -25,7 +25,7 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
   Zato se vjernost dokazuje usporedbom baze sa sirovom službenom
   datotekom, polje po polje, na istarskim predmetima.
 
-  usporedeno istarskih predmeta: 15 (od 792 ukupno)
+  usporedeno istarskih predmeta: 15 (od 795 ukupno)
   polja po predmetu: 10
   primjer: OVR-2592/2016 · Rovinj · 480.0 m² · procjena 198141.19 € · početna 158512.96 €
   [PASS] Istra: vjernost prijenosa — 15 predmeta × 10 polja, 0 razlika
@@ -33,9 +33,9 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 ==============================================================================
 3. POKRIVENOST NORMALIZACIJE
 ==============================================================================
-  county                     10,054/11,089   90.7%
-  city                        9,156/11,089   82.6%
-  cadastral_municipality      9,538/11,089   86.0%
+  county                     10,055/11,089   90.7%
+  city                        9,160/11,089   82.6%
+  cadastral_municipality      9,542/11,089   86.0%
   area_m2                     9,834/11,089   88.7%
   estimated_value_eur        11,089/11,089  100.0%
   opening_price_eur           9,672/11,089   87.2%
@@ -50,26 +50,26 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 
   pouzdanost lokacije:
     visoka      7,452   67.2%
-    srednja     2,310   20.8%
-    nema        1,035    9.3%
-    niska         292    2.6%
+    srednja     2,308   20.8%
+    nema        1,034    9.3%
+    niska         295    2.7%
 
-  BEZ UTVRĐENE ŽUPANIJE: 1,035 stavki (9.3%) — razlozi poimence:
-    trgovacki_sud           985
+  BEZ UTVRĐENE ŽUPANIJE: 1,034 stavki (9.3%) — razlozi poimence:
+    trgovacki_sud           984
     ostalo                   40
     javni_biljeznik          10
   Trgovački sudovi i bilježnici namjerno se NE koriste kao izvor
   lokacije: stečajna masa može držati nekretnine bilo gdje u RH.
   najčešća tijela bez lokacije:
       266  Trgovački sud u Zagrebu
-      182  Trgovački sud u Zagrebu, Stalna služba u Karlovcu
+      181  Trgovački sud u Zagrebu, Stalna služba u Karlovcu
       130  Trgovački sud u Osijeku
       127  Trgovački sud u Splitu
        74  Trgovački sud u Bjelovaru
        56  Trgovački sud u Varaždinu
        48  Trgovački sud u Rijeci
        43  Trgovački sud u Pazinu
-  [PASS] Pokrivenost lokacije prijavljena poimence — 10,054 sa županijom, 1,035 bez
+  [PASS] Pokrivenost lokacije prijavljena poimence — 10,055 sa županijom, 1,034 bez
 
 ==============================================================================
 4. NULA OSOBNIH PODATAKA — tvrdi prekid
@@ -90,7 +90,7 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
   provjereno redaka: 9,672
   odstupanja: 0
   označeno kao sumnjivo (ne prikazuje se kao prilika): 240
-    primjer: ST-3705/2016 procjena 7034.31 € → početna 0.13 €
+    primjer: ST-6156/2016 procjena 56758.74 € → početna 0.13 €
     (0,13 € = 1 kuna po tečaju 7,53450 — zaostatak iz prijelaza na euro)
   [PASS] Izračun popusta — 9,672 provjereno, 0 odstupanja
 
@@ -131,17 +131,17 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 ==============================================================================
 8. INTEGRITET POVIJESTI CIJENA
 ==============================================================================
-  pokretanja zabilježenih: 7
+  pokretanja zabilježenih: 8
   redaka u price_history:  0
   događaja:                42
-  kontrolirani test: opening_price_eur 122742.05 → 98193.64 (-20.0 %) — promjena uhvaćena
+  kontrolirani test: opening_price_eur 1826839.13 → 1461471.3 (-20.0 %) — promjena uhvaćena
 
   različitih verzija izvora među pokretanjima: 1
   Sva pokretanja koristila su ISTI snimak izvora (isti sha256),
   pa je nula zabilježenih promjena ispravan rezultat, a ne propust.
   Da je zabilježena promjena, to bi značilo da detektor lažno
   prijavljuje — što je i bilo prije ispravka zaokruživanja.
-  [PASS] Povijest cijena: nema lažnih promjena nad istim izvorom — 7 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  [PASS] Povijest cijena: nema lažnih promjena nad istim izvorom — 8 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
   [WARN] Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   [PASS] Mehanizam praćenja cijene radi — kontrolirani test promjene cijene
 
@@ -150,7 +150,7 @@ SAŽETAK
 ==============================================================================
   PASS  Usklađenje broja stavki — 11,089 = 11,091 redaka − 2 duplikata
   PASS  Istra: vjernost prijenosa — 15 predmeta × 10 polja, 0 razlika
-  PASS  Pokrivenost lokacije prijavljena poimence — 10,054 sa županijom, 1,035 bez
+  PASS  Pokrivenost lokacije prijavljena poimence — 10,055 sa županijom, 1,034 bez
   PASS  Nula osobnih podataka (baza + stranice) — 0 pogodaka (baza 0, imena 0, HTML 0)
   PASS  Detektor osobnih podataka radi (kontrolni uzorak) — pronađeno: ['email', 'oib_labelled', 'phone_labelled', 'phone_mobile']
   PASS  Izračun popusta — 9,672 provjereno, 0 odstupanja
@@ -158,6 +158,6 @@ SAŽETAK
   PASS  Nema pogrešnog spajanja različitih spisa — 0 skupina miješa spise
   PASS  SEO izlaz — 2,990 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   PASS  Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
-  PASS  Povijest cijena: nema lažnih promjena nad istim izvorom — 7 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  PASS  Povijest cijena: nema lažnih promjena nad istim izvorom — 8 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
   WARN  Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   PASS  Mehanizam praćenja cijene radi — kontrolirani test promjene cijene
