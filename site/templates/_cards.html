@@ -9,10 +9,9 @@
         {% if c.discount_pct is not none and not c.discount_suspicious %}<span class="chip">−{{ c.discount_pct|pct_plain }} na procjenu</span>{% endif %}
       </p>
       <p class="card-meta">
-        {{ c.type_label }}{% if c.area_m2 %} · {{ c.area_m2|area }}{% endif %}
-        {% if c.auction_end %} · završava {{ c.auction_end|d }}{% endif %}
+        {{ c.type_label }}{% if c.area_m2 %} · {{ c.area_m2|area }}{% endif %}{% if c.price_per_m2 %} · {{ c.price_per_m2|ppm }}{% endif %}
       </p>
-      <p class="card-status status-{{ c.status }}">{{ c.status_label }}{% if c.auction_round_no and c.auction_round_no > 1 %} · {{ c.auction_round }} dražba{% endif %}</p>
+      <p class="card-status status-line-{{ c.status }}">{{ c.status_label }}{% if c.days_left is not none %} <span class="chip chip-rok">{{ c.days_left|days }}</span>{% elif c.auction_end %} · završava {{ c.auction_end|d }}{% endif %}{% if c.auction_round_no and c.auction_round_no > 1 %} · {{ c.auction_round }} dražba{% endif %}</p>
     </article>
   </li>
 {% endfor %}

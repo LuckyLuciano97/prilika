@@ -1,5 +1,5 @@
 LICITA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-06 14:13:01
+Generirano: 2026-08-06 14:32:31
 Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 
 ==============================================================================
@@ -79,7 +79,7 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
   polja skenirana u bazi: 11,089 × 8
   pogodaka u bazi: 0
   preostalih osobnih imena po rječniku: 0
-  generiranih stranica skenirano: 2,926
+  generiranih stranica skenirano: 2,928
   pogodaka na stranicama: 0
   [PASS] Nula osobnih podataka (baza + stranice) — 0 pogodaka (baza 0, imena 0, HTML 0)
   [PASS] Detektor osobnih podataka radi (kontrolni uzorak) — pronađeno: ['email', 'oib_labelled', 'phone_labelled', 'phone_mobile']
@@ -114,7 +114,7 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 ==============================================================================
 7. SEO IZLAZ
 ==============================================================================
-  stranica ukupno:              2,926
+  stranica ukupno:              2,928
   bez <title>:                  0
   ponovljenih <title>:          0
   bez / prekratkog meta opisa:  0
@@ -122,16 +122,16 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
   bez canonical:                0
   bez točno jednog <h1>:        0
   neispravnih JSON-LD blokova:  0
-  stranica s dijakritikom:      2,926/2,926
-  URL-ova u sitemap.xml:        2,926
+  stranica s dijakritikom:      2,928/2,928
+  URL-ova u sitemap.xml:        2,928
   stranica koje nedostaju u sitemapu: 0
-  [PASS] SEO izlaz — 2,926 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
+  [PASS] SEO izlaz — 2,928 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   [PASS] Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
 
 ==============================================================================
 8. INTEGRITET POVIJESTI CIJENA
 ==============================================================================
-  pokretanja zabilježenih: 3
+  pokretanja zabilježenih: 4
   redaka u price_history:  0
   događaja:                39
   kontrolirani test: opening_price_eur 10286.02 → 8228.82 (-20.0 %) — promjena uhvaćena
@@ -141,7 +141,7 @@ Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
   pa je nula zabilježenih promjena ispravan rezultat, a ne propust.
   Da je zabilježena promjena, to bi značilo da detektor lažno
   prijavljuje — što je i bilo prije ispravka zaokruživanja.
-  [PASS] Povijest cijena: nema lažnih promjena nad istim izvorom — 3 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  [PASS] Povijest cijena: nema lažnih promjena nad istim izvorom — 4 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
   [WARN] Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   [PASS] Mehanizam praćenja cijene radi — kontrolirani test promjene cijene
 
@@ -156,8 +156,8 @@ SAŽETAK
   PASS  Izračun popusta — 9,672 provjereno, 0 odstupanja
   PASS  Ponovljena dražba: poznati slučaj povezan — OVR-12767/2016 — 2 pokušaja, cijena pada
   PASS  Nema pogrešnog spajanja različitih spisa — 0 skupina miješa spise
-  PASS  SEO izlaz — 2,926 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
+  PASS  SEO izlaz — 2,928 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   PASS  Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
-  PASS  Povijest cijena: nema lažnih promjena nad istim izvorom — 3 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  PASS  Povijest cijena: nema lažnih promjena nad istim izvorom — 4 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
   WARN  Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   PASS  Mehanizam praćenja cijene radi — kontrolirani test promjene cijene

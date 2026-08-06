@@ -13,10 +13,64 @@
 </dl>
 {% endif %}
 
+{% if filter_scope is defined and filter_scope is not none %}
+<form class="filterbar" id="filteri" onsubmit="return false" hidden
+      data-county="{{ filter_scope.county or '' }}"
+      data-city="{{ filter_scope.city or '' }}"
+      data-type="{{ filter_scope.type or '' }}">
+  <fieldset class="f-types">
+    <legend>Vrsta</legend>
+    <!-- građevinsko i poljoprivredno prva — to je razlika koju kupac zemljišta traži -->
+    <label><input type="checkbox" name="ty" value="gradevinsko-zemljiste"> Građevinsko zemljište</label>
+    <label><input type="checkbox" name="ty" value="poljoprivredno-zemljiste"> Poljoprivredno zemljište</label>
+    <label><input type="checkbox" name="ty" value="stan"> Stan</label>
+    <label><input type="checkbox" name="ty" value="kuca"> Kuća</label>
+    <label><input type="checkbox" name="ty" value="poslovni-prostor"> Poslovni prostor</label>
+    <label><input type="checkbox" name="ty" value="zemljiste"> Zemljište (ostalo)</label>
+    <label><input type="checkbox" name="ty" value="sumsko-zemljiste"> Šumsko</label>
+    <label><input type="checkbox" name="ty" value="garaza"> Garaža</label>
+  </fieldset>
+  <div class="f-row">
+    <label>Status
+      <select name="sk">
+        <option value="">svi</option>
+        <option value="u_tijeku">u tijeku</option>
+        <option value="najavljeno">najavljeno</option>
+        <option value="bez_termina">bez termina</option>
+      </select>
+    </label>
+    <label>Postupak
+      <select name="pk">
+        <option value="">svi</option>
+        <option value="ovrha">ovrha</option>
+        <option value="stecaj">stečaj</option>
+      </select>
+    </label>
+    <label>Cijena od <input type="number" name="pmin" min="0" step="1000" placeholder="€"></label>
+    <label>do <input type="number" name="pmax" min="0" step="1000" placeholder="€"></label>
+    <label>Površina od <input type="number" name="amin" min="0" step="10" placeholder="m²"></label>
+    <label>Sortiraj
+      <select name="sort">
+        <option value="dn">najveći popust</option>
+        <option value="pn_asc">najniža cijena</option>
+        <option value="pn_desc">najviša cijena</option>
+        <option value="mn">najbolji €/m²</option>
+        <option value="an">najveća površina</option>
+        <option value="ei">najbliži rok</option>
+      </select>
+    </label>
+    <button type="button" id="f-reset" class="btn-plain">Poništi</button>
+  </div>
+  <p class="muted small" id="f-brojac" aria-live="polite"></p>
+</form>
+{% endif %}
+
 {% if cards %}
 <section aria-labelledby="popis-naslov">
   <h2 id="popis-naslov" class="visually-hidden">Popis nekretnina</h2>
+  <div id="popis">
   {% include "_cards.html" %}
+  </div>
 </section>
 {% else %}
 <p class="empty">Trenutno nema aktivnih dražbi u ovoj kategoriji. Podaci se
@@ -36,5 +90,99 @@
 
 {% if body_html %}
 <section class="prose">{{ body_html }}</section>
+{% endif %}
+
+{% if filter_scope is defined and filter_scope is not none %}
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("filteri");
+  var out = document.getElementById("popis");
+  var counter = document.getElementById("f-brojac");
+  if (!form || !out) return;
+  form.hidden = false;                 // bez JS-a: statični popis, bez alatne trake
+
+  var scope = form.dataset, data = null, ssr = out.innerHTML;
+
+  function esc(s) { var d = document.createElement("div"); d.textContent = s || ""; return d.innerHTML; }
+
+  function card(it) {
+    var loc = it.g ? esc(it.g) + (it.z ? ", " + esc(it.z) : "") :
+              (it.z ? esc(it.z) : "Lokacija nije utvrđena");
+    var price = it.p ? "<strong>" + esc(it.p) + "</strong>" :
+                '<span class="muted">Početna cijena nije objavljena</span>';
+    var chip = it.d ? ' <span class="chip">−' + esc(it.d) + " na procjenu</span>" : "";
+    var meta = [esc(it.t)];
+    if (it.a) meta.push(esc(it.a));
+    if (it.pm) meta.push(esc(it.pm));
+    var rok = it.dl !== null && it.dl !== undefined
+      ? ' <span class="chip chip-rok">još ' + it.dl + " " +
+        (it.dl % 10 === 1 && it.dl % 100 !== 11 ? "dan" : "dana") + "</span>"
+      : (it.e ? " · završava " + esc(it.e) : "");
+    return '<li class="card"><article>' +
+      '<h3><a href="' + esc(it.u) + '">' + esc(it.n) + "</a></h3>" +
+      '<p class="card-loc">' + loc + "</p>" +
+      '<p class="card-price">' + price + chip + "</p>" +
+      '<p class="card-meta">' + meta.join(" · ") + "</p>" +
+      '<p class="card-status">' + esc(it.s) + rok + "</p>" +
+      "</article></li>";
+  }
+
+  function apply() {
+    if (!data) return;
+    var f = new FormData(form);
+    var types = f.getAll("ty");
+    var sk = f.get("sk"), pk = f.get("pk");
+    var pmin = parseFloat(f.get("pmin")), pmax = parseFloat(f.get("pmax"));
+    var amin = parseFloat(f.get("amin"));
+    var sort = f.get("sort");
+
+    var hits = data.filter(function (it) {
+      if (scope.county && it.zs !== scope.county) return false;
+      if (scope.city && it.gs !== scope.city) return false;
+      if (scope.type && it.ty !== scope.type) return false;
+      if (types.length && types.indexOf(it.ty) === -1) return false;
+      if (sk && it.sk !== sk) return false;
+      if (pk && it.pk !== pk) return false;
+      if (!isNaN(pmin) && (it.pn === null || it.pn < pmin)) return false;
+      if (!isNaN(pmax) && (it.pn === null || it.pn > pmax)) return false;
+      if (!isNaN(amin) && (it.an === null || it.an < amin)) return false;
+      return true;
+    });
+
+    var key = { dn: "dn", pn_asc: "pn", pn_desc: "pn", mn: "mn", an: "an", ei: "ei" }[sort] || "dn";
+    var asc = (sort === "pn_asc" || sort === "mn" || sort === "ei");
+    hits.sort(function (x, y) {
+      var a = x[key], b = y[key];
+      if (a === null || a === undefined || a === "") return 1;
+      if (b === null || b === undefined || b === "") return -1;
+      if (a < b) return asc ? -1 : 1;
+      if (a > b) return asc ? 1 : -1;
+      return 0;
+    });
+
+    counter.textContent = hits.length + " od " + data.filter(function (it) {
+      return (!scope.county || it.zs === scope.county) &&
+             (!scope.city || it.gs === scope.city) &&
+             (!scope.type || it.ty === scope.type);
+    }).length + " predmeta u ovom pregledu";
+    out.innerHTML = hits.length
+      ? '<ul class="cards">' + hits.slice(0, 200).map(card).join("") + "</ul>"
+      : '<p class="empty">Nijedan predmet ne odgovara filtrima.</p>';
+  }
+
+  function load() {
+    if (data) { apply(); return; }
+    fetch("/search-index.json").then(function (r) { return r.json(); })
+      .then(function (j) { data = j; apply(); })
+      .catch(function () { out.innerHTML = ssr; });
+  }
+
+  form.addEventListener("input", load);
+  document.getElementById("f-reset").addEventListener("click", function () {
+    form.reset(); if (data) apply(); else out.innerHTML = ssr;
+  });
+})();
+</script>
 {% endif %}
 {% endblock %}

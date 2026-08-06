@@ -102,6 +102,17 @@ def f_subjects(n: int) -> str:
     return f"{n} {hr_plural(n, 'predmet', 'predmeta', 'predmeta')}"
 
 
+def f_days(n: int) -> str:
+    return f"još {n} {hr_plural(n, 'dan', 'dana', 'dana')}"
+
+
+def f_ppm(v) -> str:
+    if v is None:
+        return "—"
+    s = f"{float(v):,.0f}".replace(",", " ")
+    return f"{s} €/m²"
+
+
 def f_dt(v) -> str:
     if not v:
         return "—"
@@ -163,7 +174,7 @@ class SiteBuilder:
         )
         self.env.filters.update(
             eur=f_eur, pct=f_pct, pct_plain=f_pct_plain,
-            area=f_area, dt=f_dt, d=f_d,
+            area=f_area, dt=f_dt, d=f_d, days=f_days, ppm=f_ppm,
         )
         self.pages: list[dict] = []   # za sitemap
         self._written: set[str] = set()
@@ -214,6 +225,22 @@ class SiteBuilder:
         d["city_url"] = city_url(d.get("county"), d.get("city"))
         d["card_title"] = _card_title(d, _place_of(d))
         d["map_query"] = quote(f"{d['city']}, Hrvatska") if d.get("city") else ""
+
+        # €/m² — samo kad postoje i cijena i smislena površina; kod sumnjivih
+        # cijena se ne računa, da "0,13 €" ne proizvede lažni superlativ.
+        d["price_per_m2"] = None
+        if (d.get("opening_price_eur") and d.get("area_m2")
+                and float(d["area_m2"]) >= 1
+                and not d.get("discount_suspicious")):
+            d["price_per_m2"] = round(float(d["opening_price_eur"]) / float(d["area_m2"]), 2)
+
+        # odbrojavanje do kraja nadmetanja (računa se pri generiranju;
+        # dnevna regeneracija ga drži točnim na dan)
+        d["days_left"] = None
+        if d.get("auction_end") and d.get("status") in ("najavljeno", "u_tijeku"):
+            delta = (d["auction_end"].date() - datetime.now().date()).days
+            if 0 <= delta <= 60:
+                d["days_left"] = delta
         return d
 
     # -- glavni ulaz ------------------------------------------------------
@@ -300,6 +327,12 @@ class SiteBuilder:
         self._search(active)
         counts["static_pages"] += 1
 
+        # 5c. najbolja vrijednost (€/m²), karta, RSS feed
+        self._best_value(active)
+        self._map(by_county)
+        self._feed(active)
+        counts["static_pages"] += 2
+
         # 6. početna
         self._home(active, by_county)
 
@@ -376,6 +409,8 @@ class SiteBuilder:
             "listing.html", url,
             page_title=page_title, meta_description=meta, h1=h1,
             intro=meta, cards=items[:120],
+            filter_scope={"county": slugify(county) if county else UNKNOWN_COUNTY_SLUG,
+                          "city": "", "type": ""},
             children=children, children_title="Gradovi i naselja",
             stats_row=_stats_row(items),
             breadcrumbs=crumbs,
@@ -404,6 +439,8 @@ class SiteBuilder:
             "listing.html", url,
             page_title=page_title, meta_description=meta, h1=h1,
             intro=meta, cards=items[:120], stats_row=_stats_row(items),
+            filter_scope={"county": slugify(county) if county else UNKNOWN_COUNTY_SLUG,
+                          "city": slugify(city), "type": ""},
             breadcrumbs=crumbs,
             jsonld=[self._jsonld_collection(h1, meta, url, items),
                     self._jsonld_breadcrumbs(crumbs)],
@@ -431,6 +468,7 @@ class SiteBuilder:
             intro=("Svi aktivni predmeti prodaje iz službenog registra FINA-e. "
                    "Odaberi županiju za uži pregled."),
             cards=_sort_for_display(active)[:60],
+            filter_scope={"county": "", "city": "", "type": ""},
             children=counties, children_title="Po županijama",
             stats_row=_stats_row(active), breadcrumbs=crumbs,
             jsonld=[self._jsonld_collection("Nekretnine na dražbi u Hrvatskoj",
@@ -460,6 +498,7 @@ class SiteBuilder:
                 page_title=f"{h1} ({len(group)}) | Licita",
                 meta_description=meta, h1=h1, intro=meta,
                 cards=group[:120], stats_row=_stats_row(group), breadcrumbs=crumbs,
+                filter_scope={"county": "", "city": "", "type": ptype},
                 jsonld=[self._jsonld_collection(h1, meta, url, group),
                         self._jsonld_breadcrumbs(crumbs)],
                 sitemap_priority=0.7, sitemap_changefreq="daily",
@@ -696,6 +735,7 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
         index = []
         for d in active:
             index.append({
+                # prikaz
                 "n": d["card_title"],
                 "u": d["url"],
                 "g": d.get("city") or "",
@@ -711,6 +751,21 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
                       and not d.get("discount_suspicious") else ""),
                 "a": f_area(d["area_m2"]) if d.get("area_m2") else "",
                 "e": f_d(d["auction_end"]) if d.get("auction_end") else "",
+                "pm": f_ppm(d["price_per_m2"]) if d.get("price_per_m2") else "",
+                "dl": d.get("days_left"),
+                # sirove vrijednosti za filtriranje/sortiranje na klijentu
+                "ty": d.get("property_type") or "",
+                "sk": d.get("status") or "",
+                "pk": d.get("procedure_type") or "",
+                "zs": county_slug(d),
+                "gs": city_slug(d),
+                "pn": float(d["opening_price_eur"]) if d.get("opening_price_eur") else None,
+                "an": float(d["area_m2"]) if d.get("area_m2") else None,
+                "dn": (float(d["discount_pct"])
+                       if d.get("discount_pct") is not None
+                       and not d.get("discount_suspicious") else None),
+                "mn": d.get("price_per_m2"),
+                "ei": _iso(d.get("auction_end"), date_only=True) or "",
             })
         (self.out / "search-index.json").write_text(
             json.dumps(index, ensure_ascii=False, separators=(",", ":")),
@@ -729,6 +784,150 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
             jsonld=[self._jsonld_breadcrumbs(crumbs)],
             sitemap_priority=0.4, sitemap_changefreq="daily",
         )
+
+    # -- najbolja vrijednost (€/m²) ----------------------------------------
+    def _best_value(self, active: list[dict]) -> None:
+        """Rang po €/m². Zgrade i zemljišta se NE miješaju u istoj ljestvici —
+        €/m² stana i €/m² oranice nisu usporedive veličine."""
+        def usable(d, types, min_area):
+            return (d.get("price_per_m2") and d["property_type"] in types
+                    and float(d["area_m2"]) >= min_area
+                    and float(d["opening_price_eur"]) >= 500)
+
+        buildings = sorted(
+            (d for d in active if usable(d, ("stan", "kuca", "poslovni-prostor"), 25)),
+            key=lambda d: d["price_per_m2"])[:60]
+        build_land = sorted(
+            (d for d in active if usable(d, ("gradevinsko-zemljiste",), 100)),
+            key=lambda d: d["price_per_m2"])[:60]
+        farm_land = sorted(
+            (d for d in active if usable(d, ("poljoprivredno-zemljiste", "zemljiste",
+                                             "sumsko-zemljiste"), 500)),
+            key=lambda d: d["price_per_m2"])[:60]
+
+        url = "/najbolja-vrijednost/"
+        h1 = "Najbolja vrijednost — cijena po kvadratu"
+        crumbs = [{"name": "Početna", "url": "/"},
+                  {"name": "Nekretnine", "url": "/nekretnine/"},
+                  {"name": "Najbolja vrijednost", "url": url}]
+        body = ""
+        for title, group in (("Stanovi, kuće i poslovni prostori", buildings),
+                             ("Građevinska zemljišta", build_land),
+                             ("Poljoprivredna, šumska i ostala zemljišta", farm_land)):
+            if not group:
+                continue
+            tmpl = self.env.get_template("_cards.html")
+            cards_html = tmpl.render(cards=group[:24], rel=lambda p: p)
+            body += f"<h2>{title}</h2>{cards_html}"
+        meta = ("Aktivne dražbe rangirane po cijeni kvadrata: stanovi i kuće, "
+                "građevinska i poljoprivredna zemljišta zasebno — jer njihovi "
+                "€/m² nisu usporedivi. Službeni podaci FINA Očevidnika.")
+        self._render(
+            "listing.html", url,
+            page_title=f"{h1} | Licita",
+            meta_description=meta, h1=h1,
+            intro=("Najniža početna cijena po kvadratu među aktivnim dražbama. "
+                   "Zgrade i zemljišta rangirani su odvojeno; premale površine i "
+                   "nominalne cijene su isključene da ljestvicu ne iskrive."),
+            cards=None, body_html=body, breadcrumbs=crumbs,
+            jsonld=[self._jsonld_breadcrumbs(crumbs)],
+            sitemap_priority=0.8, sitemap_changefreq="daily",
+        )
+
+    # -- karta -------------------------------------------------------------
+    # Približna središta županija — služe SAMO snalaženju na karti.
+    COUNTY_CENTROIDS = {
+        "Grad Zagreb": (45.815, 15.98),
+        "Zagrebačka županija": (45.85, 16.10),
+        "Krapinsko-zagorska županija": (46.10, 15.87),
+        "Sisačko-moslavačka županija": (45.35, 16.55),
+        "Karlovačka županija": (45.30, 15.55),
+        "Varaždinska županija": (46.25, 16.25),
+        "Koprivničko-križevačka županija": (46.10, 16.75),
+        "Bjelovarsko-bilogorska županija": (45.85, 16.95),
+        "Primorsko-goranska županija": (45.35, 14.55),
+        "Ličko-senjska županija": (44.75, 15.30),
+        "Virovitičko-podravska županija": (45.75, 17.55),
+        "Požeško-slavonska županija": (45.35, 17.75),
+        "Brodsko-posavska županija": (45.15, 17.85),
+        "Zadarska županija": (44.10, 15.55),
+        "Osječko-baranjska županija": (45.55, 18.55),
+        "Šibensko-kninska županija": (43.85, 16.05),
+        "Vukovarsko-srijemska županija": (45.20, 18.85),
+        "Splitsko-dalmatinska županija": (43.55, 16.55),
+        "Istarska županija": (45.15, 13.85),
+        "Dubrovačko-neretvanska županija": (42.85, 17.65),
+        "Međimurska županija": (46.40, 16.45),
+    }
+
+    def _map(self, by_county: dict) -> None:
+        """Karta po županijama. Jedina stranica s vanjskim zahtjevima
+        (OSM podloga); Leaflet je lokalno u static/vendor/ (MIT)."""
+        map_data = []
+        counties = []
+        for county, group in sorted(by_county.items(),
+                                    key=lambda kv: -len(kv[1])):
+            counties.append({"name": county or "Lokacija nije utvrđena",
+                             "url": county_url(county), "count": len(group)})
+            if county and county in self.COUNTY_CENTROIDS:
+                lat, lon = self.COUNTY_CENTROIDS[county]
+                map_data.append({"name": county, "n": len(group),
+                                 "lat": lat, "lon": lon,
+                                 "url": county_url(county)})
+        crumbs = [{"name": "Početna", "url": "/"}, {"name": "Karta", "url": "/karta/"}]
+        self._render(
+            "map.html", "/karta/",
+            page_title="Karta dražbi nekretnina po županijama | Licita",
+            meta_description=("Interaktivna karta Hrvatske s brojem aktivnih "
+                              "dražbi nekretnina po županijama. Klik na županiju "
+                              "otvara popis svih predmeta."),
+            map_data=map_data, counties=counties, breadcrumbs=crumbs,
+            jsonld=[self._jsonld_breadcrumbs(crumbs)],
+            sitemap_priority=0.6, sitemap_changefreq="daily",
+        )
+
+    # -- RSS ---------------------------------------------------------------
+    def _feed(self, active: list[dict]) -> None:
+        """RSS 2.0 s nedavno objavljenim predmetima — preteča Phase 2
+        obavijesti, a radi već sada u svakom čitaču feedova."""
+        recent = sorted(
+            (d for d in active if d.get("publish_start")),
+            key=lambda d: d["publish_start"], reverse=True)[:50]
+        items_xml = []
+        for d in recent:
+            title = d["card_title"]
+            if d.get("opening_price_eur"):
+                title += f" — {f_eur(d['opening_price_eur'])}"
+            desc_bits = [d.get("type_label") or ""]
+            if d.get("county"):
+                desc_bits.append(d["county"])
+            if d.get("discount_pct") is not None and not d.get("discount_suspicious"):
+                desc_bits.append(f"{f_pct(d['discount_pct'])} ispod procjene")
+            if d.get("auction_end"):
+                desc_bits.append(f"nadmetanje do {f_d(d['auction_end'])}")
+            pub = d["publish_start"].strftime("%a, %d %b %Y %H:%M:%S +0100")
+            link = self._abs(d["url"])
+            items_xml.append(
+                "<item>"
+                f"<title>{_xml(title)}</title>"
+                f"<link>{_xml(link)}</link>"
+                f"<guid isPermaLink=\"true\">{_xml(link)}</guid>"
+                f"<pubDate>{pub}</pubDate>"
+                f"<description>{_xml(' · '.join(b for b in desc_bits if b))}</description>"
+                "</item>"
+            )
+        feed = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<rss version="2.0"><channel>'
+            f"<title>{config.SITE_NAME} — nove dražbe nekretnina</title>"
+            f"<link>{self.site_url}/</link>"
+            "<description>Novi predmeti prodaje u ovršnim i stečajnim postupcima, "
+            "iz službenog registra FINA-e. Bez osobnih podataka.</description>"
+            "<language>hr</language>"
+            + "".join(items_xml) +
+            "</channel></rss>\n"
+        )
+        (self.out / "feed.xml").write_text(feed, encoding="utf-8")
 
     # -- blog --------------------------------------------------------------
     def _blog(self, active: list[dict], by_county: dict, run_stats: dict) -> int:

@@ -19,6 +19,7 @@
 <meta name="twitter:description" content="{{ meta_description }}">
 
 <link rel="stylesheet" href="{{ rel('/static/style.css') }}">
+<link rel="alternate" type="application/rss+xml" title="Licita — nove dražbe" href="{{ rel('/feed.xml') }}">
 {% block head_extra %}{% endblock %}
 {% if jsonld %}
 {% for block in jsonld %}
@@ -38,7 +39,9 @@
     <nav aria-label="Glavna navigacija">
       <ul>
         <li><a href="{{ rel('/nekretnine/') }}">Sve nekretnine</a></li>
+        <li><a href="{{ rel('/karta/') }}">Karta</a></li>
         <li><a href="{{ rel('/najveci-popusti/') }}">Najveći popusti</a></li>
+        <li><a href="{{ rel('/najbolja-vrijednost/') }}">Najbolja vrijednost</a></li>
         <li><a href="{{ rel('/uskoro-zavrsavaju/') }}">Uskoro završavaju</a></li>
         <li><a href="{{ rel('/blog/') }}">Blog</a></li>
         <li><a href="{{ rel('/kako-sudjelovati/') }}">Kako sudjelovati</a></li>

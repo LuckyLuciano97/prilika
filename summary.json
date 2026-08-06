@@ -1,7 +1,7 @@
 {
   "generirano": "2026-08-06",
   "stanje_na_dan": "2026-08-05",
-  "starost_snimka_h": 38.2,
+  "starost_snimka_h": 38.5,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
     "bajtova": 10329500,
@@ -94,8 +94,8 @@
     "city_pages": 432,
     "category_pages": 15,
     "blog_posts": 4,
-    "static_pages": 3,
-    "total_pages": 2926
+    "static_pages": 5,
+    "total_pages": 2928
   },
-  "trajanje_s": 28.8
+  "trajanje_s": 27.8
 }
