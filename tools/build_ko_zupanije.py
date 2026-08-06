@@ -64,8 +64,16 @@ def dist_km(a, b) -> float:
 def main() -> int:
     kos = list(csv.DictReader(KO.open(encoding="utf-8"), delimiter=";"))
     settlements: dict[str, set[str]] = {}
+    # Sekundarni ključ: poredani tokeni. Katastarska imena često obrću red
+    # riječi u odnosu na naselje ("MOSLAVINA PODRAVSKA" ↔ "Podravska
+    # Moslavina") — isti tokeni, drugi redoslijed. Ista pravila vrijede:
+    # jednoznačna županija + prostorna provjera.
+    settlements_sorted: dict[str, set[str]] = {}
     for r in csv.DictReader(NAS.open(encoding="utf-8"), delimiter=";"):
-        settlements.setdefault(fold(r["naselje"]), set()).add(r["zupanija"])
+        f = fold(r["naselje"])
+        settlements.setdefault(f, set()).add(r["zupanija"])
+        skey = " ".join(sorted(f.split()))
+        settlements_sorted.setdefault(skey, set()).add(r["zupanija"])
 
     assigned: dict[str, tuple[str, str]] = {}   # code -> (županija, izvor)
 
@@ -89,7 +97,12 @@ def main() -> int:
         if k["maticni_broj"] in assigned:
             continue
         name = _ORDINAL.sub("", k["naziv"].strip())
-        counties = settlements.get(fold(name))
+        f = fold(name)
+        counties = settlements.get(f)
+        izvor = "ime"
+        if not counties:
+            counties = settlements_sorted.get(" ".join(sorted(f.split())))
+            izvor = "ime-obrnuto"
         if not counties or len(counties) != 1:
             continue
         county = next(iter(counties))
@@ -101,7 +114,7 @@ def main() -> int:
             if d_claim > MIN_SUSPECT_KM and d_claim > REJECT_RATIO * d_min:
                 rejected_far.append((k["naziv"], county, round(d_claim)))
                 continue
-        assigned[k["maticni_broj"]] = (county, "ime")
+        assigned[k["maticni_broj"]] = (county, izvor)
     by_name = len(assigned) - by_core
     if rejected_far:
         print(f"odbačeno {len(rejected_far)} imenskih pridruženja čija je županija "

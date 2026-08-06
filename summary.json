@@ -1,7 +1,7 @@
 {
   "generirano": "2026-08-06",
   "stanje_na_dan": "2026-08-05",
-  "starost_snimka_h": 43.5,
+  "starost_snimka_h": 43.9,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
     "bajtova": 10329500,
@@ -20,28 +20,28 @@
     "bez_termina": 1775
   },
   "po_zupaniji": {
-    "Nepoznato": 1034,
-    "Primorsko-goranska županija": 636,
-    "Splitsko-dalmatinska županija": 678,
-    "Šibensko-kninska županija": 165,
-    "Zadarska županija": 412,
-    "Karlovačka županija": 217,
-    "Međimurska županija": 351,
+    "Nepoznato": 979,
+    "Primorsko-goranska županija": 637,
+    "Splitsko-dalmatinska županija": 680,
+    "Šibensko-kninska županija": 164,
+    "Zadarska županija": 413,
+    "Karlovačka županija": 214,
+    "Međimurska županija": 357,
+    "Zagrebačka županija": 963,
+    "Vukovarsko-srijemska županija": 402,
+    "Virovitičko-podravska županija": 276,
     "Grad Zagreb": 1411,
-    "Vukovarsko-srijemska županija": 398,
-    "Virovitičko-podravska županija": 274,
-    "Istarska županija": 795,
-    "Dubrovačko-neretvanska županija": 192,
-    "Osječko-baranjska županija": 639,
-    "Sisačko-moslavačka županija": 340,
-    "Zagrebačka županija": 941,
-    "Krapinsko-zagorska županija": 465,
-    "Koprivničko-križevačka županija": 386,
-    "Varaždinska županija": 476,
-    "Bjelovarsko-bilogorska županija": 443,
-    "Požeško-slavonska županija": 146,
-    "Brodsko-posavska županija": 484,
-    "Ličko-senjska županija": 206
+    "Istarska županija": 801,
+    "Dubrovačko-neretvanska županija": 199,
+    "Osječko-baranjska županija": 645,
+    "Sisačko-moslavačka županija": 342,
+    "Krapinsko-zagorska županija": 472,
+    "Koprivničko-križevačka županija": 387,
+    "Varaždinska županija": 472,
+    "Bjelovarsko-bilogorska županija": 432,
+    "Požeško-slavonska županija": 151,
+    "Brodsko-posavska županija": 487,
+    "Ličko-senjska županija": 205
   },
   "po_vrsti": {
     "kuca": 2514,
@@ -59,10 +59,10 @@
   "prosjecan_popust_pct": 32.22,
   "sumnjivih_popusta": 240,
   "lokacija_pouzdanost": {
-    "nema": 1034,
-    "visoka": 7452,
-    "srednja": 2308,
-    "niska": 295
+    "nema": 979,
+    "visoka": 7620,
+    "srednja": 2190,
+    "niska": 300
   },
   "ponovljene_drazbe": {
     "linked_groups": 95,
@@ -91,11 +91,11 @@
   "stranica": {
     "property_pages": 2447,
     "county_pages": 22,
-    "city_pages": 495,
+    "city_pages": 520,
     "category_pages": 15,
     "blog_posts": 4,
     "static_pages": 5,
-    "total_pages": 2990
+    "total_pages": 3015
   },
-  "trajanje_s": 35.5
+  "trajanje_s": 32.3
 }

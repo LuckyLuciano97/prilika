@@ -296,11 +296,15 @@ def classify_property(opis: str, vrsta: str) -> str:
 # poput "Kuća 9 402 m² — Lužan čkbr" i "Gornje Vrapče kao suvlasništvo
 # ovršenika". Zato se staje na prvoj riječi malim slovom.
 _KO_TOKEN = r"[A-ZČĆĐŠŽ][\wčćđšž]*(?:-[A-ZČĆĐŠŽ][\wčćđšž]*)?"
-# Izvor piše i "k.o. Ime" i "K.O. Ime" i "K.O.329525 Ime" (matični broj
-# između oznake i imena). Prefiks je neosjetljiv na velika slova — ali SAMO
-# prefiks; sam naziv ostaje osjetljiv, da se ne proguta obična proza.
+# Izvor piše i "k.o. Ime", "K.O. Ime", "K.O.329525 Ime" (matični broj između
+# oznake i imena), pa i punim riječima "Katastarska općina: 335053, Starigrad".
+# Prefiks je neosjetljiv na velika slova — ali SAMO prefiks; sam naziv ostaje
+# osjetljiv, da se ne proguta obična proza.
+# (?<!\w) je nužan: bez granice riječi "KO" unutar "OPĆINSKOG" (verzal!)
+# lažno pali prefiks i pojede pravi "K.O. JAKUŠEVEC" dalje u tekstu.
+_KO_PREFIX = r"(?<!\w)(?:[Kk]\.?\s*[Oo]\.?|[Kk]atastarsk\w+\s+[Oo]p[cć]in\w*)\s*:?\s*"
 _KO_RE = re.compile(
-    rf"[Kk]\.?\s*[Oo]\.?\s*:?\s*(?:\d{{4,6}}\s+)?({_KO_TOKEN}(?:\s+{_KO_TOKEN}){{0,3}})"
+    rf"{_KO_PREFIX}(?:\d{{4,6}}[\s,]+)?({_KO_TOKEN}(?:\s+{_KO_TOKEN}){{0,3}})"
 )
 
 # Popustljiva varijanta: prvo slovo smije biti malo ("k.o. sesvete Novo").
@@ -308,7 +312,7 @@ _KO_RE = re.compile(
 # ime postoji u službenom registru k.o. — v. extract_location.
 _KO_TOKEN_L = r"[A-Za-zČĆĐŠŽčćđšž][\wčćđšž]*(?:-[A-Za-zČĆĐŠŽčćđšž][\wčćđšž]*)?"
 _KO_RE_LOOSE = re.compile(
-    rf"[Kk]\.?\s*[Oo]\.?\s*:?\s*(?:\d{{4,6}}\s+)?({_KO_TOKEN_L}(?:\s+{_KO_TOKEN_L}){{0,3}})"
+    rf"{_KO_PREFIX}(?:\d{{4,6}}[\s,]+)?({_KO_TOKEN_L}(?:\s+{_KO_TOKEN_L}){{0,3}})"
 )
 
 # Riječi koje su u izvoru pisane velikim slovom, ali nisu dio naziva općine
@@ -318,6 +322,7 @@ _KO_STOPWORDS = {
     "opcinskog", "opcinski", "trgovackog", "trgovacki", "suda", "sud", "odjela",
     "odjel", "sluzbe", "sluzba", "vlasnistvo", "vlasnistvu", "etazno", "upisano",
     "upisane", "upisana", "poslovni", "stambeni", "zgrada", "kuca", "stan",
+    "zk", "ul", "zkul", "kc", "kcbr", "ckbr", "br", "broj", "cest", "cestica",
 }
 
 
@@ -373,8 +378,11 @@ def _canonical_town(name: str | None) -> str | None:
 # On se smije odbaciti — riječ je o istom naselju.
 _ORDINAL_SUFFIX = re.compile(r"\s+(?:[IVX]{1,4}|\d{1,2})$")
 
+# Niz riječi velikim početnim slovom — za skeniranje spomena mjesta u opisu.
+_TOK_TITLE_RE = r"[A-ZČĆĐŠŽ][\wčćđšž]{2,}"
+
 # Matični broj k.o. iz opisa ("k.o. 309656 Garešnica", "K.O.329525 Dugopolje").
-_KO_CODE_RE = re.compile(r"[Kk]\.?\s*[Oo]\.?\s*:?\s*(\d{4,6})\b")
+_KO_CODE_RE = re.compile(rf"{_KO_PREFIX}(\d{{4,6}})\b")
 
 
 def _approx_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -450,8 +458,11 @@ def _resolve_town(candidate: str) -> str | None:
 
 # Zemljišnoknjižni odjel prati lokaciju NEKRETNINE (zemljišna knjiga se vodi
 # po katastarskoj općini), pa je bolji pokazatelj od sjedišta suda.
+# Pisari pišu "Zemljišnoknjižni odjel X", kraticom "ZK odjel X", pa i sve
+# VERZALOM — oznaka je zato neosjetljiva na velika slova, a hvatanje imena
+# ostaje ograničeno (ime ide kroz kuriranu tablicu, pa proza ne prolazi).
 _ZK_RE = re.compile(
-    r"[Zz]emlji[šs]noknji[žz]n\w*\s+odjel\w*\s+(?:u\s+)?"
+    r"(?i:(?:zemlji[šs]noknji[žz]n\w*|zk\.?)\s+odjel\w*)\s+(?:[Uu]\s+)?"
     r"([A-ZČĆĐŠŽ][\wčćđšž\-]+(?:\s+[A-ZČĆĐŠŽ][\wčćđšž\-]+)?)"
 )
 
@@ -513,12 +524,14 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
     }
     text = opis or ""
 
-    # Katastarska općina — korisna i kad grad nije prepoznat.
-    ko = _KO_RE.search(text)
-    if ko:
+    # Katastarska općina — korisna i kad grad nije prepoznat. Prolazi se
+    # kroz SVE pogotke, ne samo prvi: raniji pogodak zna nakon čišćenja
+    # ostati prazan, a pravi "k.o. Ime" tek slijedi.
+    for ko in _KO_RE.finditer(text):
         ko_name = _trim_ko(ko.group(1).strip(" ,.;-"))
         if ko_name and not ko_name.isdigit() and len(ko_name) >= 3:
             result["cadastral_municipality"] = ko_name[:80]
+            break
 
     if not result["cadastral_municipality"]:
         # Sudski pisar zna ime napisati malim slovom ("k.o. sesvete Novo") i
@@ -596,6 +609,42 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
     court_county = _county_from_court(issuer, issuer_type)
     anchors = {c for c in (zk_county, court_county) if c}
 
+    def _text_hints() -> set[str]:
+        """Županije JEDNOZNAČNIH imena mjesta spomenutih bilo gdje u opisu.
+
+        Pisar zna lokaciju navesti izvan svake formule ("na adresi
+        Dicmo-Kraj"). Ovi glasovi NIKAD sami ne određuju županiju — smiju
+        samo presuditi između već postojećih kandidata (presjek), pa ulično
+        ime poput "Splitska" ne može ništa izmisliti. Složenice se
+        razdvajaju i po crtici.
+        """
+        hints: set[str] = set()
+        for m in re.finditer(rf"{_TOK_TITLE_RE}(?:[\s\-]{_TOK_TITLE_RE}){{0,2}}", text):
+            frag = m.group(0)
+            parts = [frag, frag.replace("-", " ")] + [
+                p for p in re.split(r"[\s\-]+", frag) if len(p) >= 5
+            ]
+            for cand in parts:
+                cs = _candidates(cand)
+                if len(cs) == 1:
+                    hints.add(next(iter(cs)))
+        return hints
+
+    hints: set[str] | None = None   # lijeno — treba tek kod dvosmislenih
+
+    def _tiebreak(counties: set[str]) -> str | None:
+        """Presudi među kandidatima: prvo sidra, zatim glasovi iz teksta."""
+        nonlocal hints
+        hit = anchors & counties
+        if len(hit) == 1:
+            return next(iter(hit))
+        if hints is None:
+            hints = _text_hints()
+        hit = hints & counties
+        if len(hit) == 1:
+            return next(iter(hit))
+        return None
+
     # --- 1. naselje izrijekom navedeno u opisu ---------------------------
     for m in _CITY_CTX_RE.finditer(text):
         raw = m.group(1).strip()
@@ -605,10 +654,10 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
                           location_confidence="visoka", location_raw=raw)
             return result
         if len(cands) > 1:
-            hit = anchors & cands.keys()
-            if hit:
+            tb = _tiebreak(set(cands))
+            if tb:
                 # dvosmisleno ime, ali ga drugi neovisni pokazatelj potvrđuje
-                result.update(county=next(iter(hit)), city=_display_name(raw),
+                result.update(county=tb, city=_display_name(raw),
                               location_confidence="visoka", location_raw=raw)
                 return result
             dom = _dominant(cands)
@@ -624,6 +673,22 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
     # data/ko_zupanije.csv veže k.o. za županiju preko službenih koordinata,
     # ne preko sličnosti imena — "Sesvete Novo" nije naselje i imenska ga
     # logika ne može riješiti, a registar zna točno gdje mu je točka.
+    def _nearest_assigned(lat: float, lon: float) -> str | None:
+        """Županija najbliže PRIDRUŽENE k.o. — za k.o. koje su u registru
+        koordinata, ali uz granicu županija nisu dobile jednoglasan glas
+        (npr. STARIGRAD kod Paklenice). Točka je poznata, susjedstvo
+        presuđuje; preko 12 km se ne pogađa."""
+        ko_map2 = croatia.ko_county()
+        best, best_d = None, 12.0
+        for code2, (_n2, la2, lo2) in croatia.ko_points()[0].items():
+            c2 = ko_map2.get(code2)
+            if not c2:
+                continue
+            d = _approx_km(lat, lon, la2, lo2)
+            if d < best_d:
+                best, best_d = c2, d
+        return best
+
     ko_name = result["cadastral_municipality"] or ""
     reg_county = None
     ko_map = croatia.ko_county()
@@ -631,11 +696,31 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         m_code = _KO_CODE_RE.search(text)
         if m_code and m_code.group(1) in ko_map:
             reg_county = ko_map[m_code.group(1)]
+        elif m_code and m_code.group(1) in croatia.ko_points()[0]:
+            _n, _la, _lo = croatia.ko_points()[0][m_code.group(1)]
+            reg_county = _nearest_assigned(_la, _lo)
         elif ko_name:
-            entries = croatia.ko_points()[1].get(
-                fold(_ORDINAL_SUFFIX.sub("", ko_name.strip()))) or []
+            _fk = fold(_ORDINAL_SUFFIX.sub("", ko_name.strip()))
+            entries = croatia.ko_points()[1].get(_fk) or []
+            if not entries and " " in _fk:
+                # obrnuti red riječi: "Bistra Donja" u opisu, "DONJA BISTRA"
+                # u registru — isti tokeni, drugi redoslijed
+                _sk = " ".join(sorted(_fk.split()))
+                for _ents in croatia.ko_points()[1].values():
+                    if " ".join(sorted(fold(_ents[0][1]).split())) == _sk:
+                        entries = _ents
+                        break
             if len(entries) == 1:
                 reg_county = ko_map.get(entries[0][0])
+            elif len(entries) > 1:
+                # istoimene k.o. u više županija ("KRAJ" ×3): županije svih
+                # kandidata iz registra, pa presuda sidrom ili spomenom
+                # mjesta u opisu ("na adresi Dicmo-Kraj" -> Dicmo -> SD)
+                cand_counties = {ko_map[e[0]] for e in entries if e[0] in ko_map}
+                if len(cand_counties) == 1:
+                    reg_county = next(iter(cand_counties))
+                elif len(cand_counties) > 1:
+                    reg_county = _tiebreak(cand_counties)
 
     if reg_county:
         if not anchors or reg_county in anchors:
@@ -669,11 +754,11 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         return result
 
     if len(ko_cands) > 1:
-        hit = anchors & ko_cands.keys()
-        if hit:
-            # dvosmisleno ime k.o., ali sidro bira među kandidatima -> dva
-            # neovisna pokazatelja se slažu
-            result.update(county=next(iter(hit)), city=_display_name(ko_name),
+        tb = _tiebreak(set(ko_cands))
+        if tb:
+            # dvosmisleno ime k.o., ali sidro/spomen mjesta bira kandidata
+            # -> dva neovisna pokazatelja se slažu
+            result.update(county=tb, city=_display_name(ko_name),
                           location_confidence="visoka", location_raw=ko_name)
             return result
         dom = _dominant(ko_cands)

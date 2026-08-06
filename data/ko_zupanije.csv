@@ -456,6 +456,7 @@ maticni_broj;naziv;zupanija;izvor
 305391;LACIĆI;Osječko-baranjska županija;ime
 305405;MARIJANCI;Osječko-baranjska županija;ime
 305413;MIHOLJAČKI POREČ;Osječko-baranjska županija;ime
+305421;MOSLAVINA PODRAVSKA;Osječko-baranjska županija;ime-obrnuto
 305430;PODGAJCI PODRAVSKI;Osječko-baranjska županija;ime
 305448;RADIKOVCI;Osječko-baranjska županija;ime
 305456;RAKITOVICA;Osječko-baranjska županija;ime
@@ -899,6 +900,7 @@ maticni_broj;naziv;zupanija;izvor
 310344;MARTINOVIĆI;Sisačko-moslavačka županija;susjedstvo
 310352;NOVO SELO GLINSKO;Sisačko-moslavačka županija;ime
 310379;OBLJAJ;Sisačko-moslavačka županija;susjedstvo
+310387;POKUPSKA SLATINA;Sisačko-moslavačka županija;ime-obrnuto
 310395;PREKOPA;Sisačko-moslavačka županija;susjedstvo
 310409;PRIJEKA;Sisačko-moslavačka županija;ime
 310417;RAVNO RAŠĆE;Sisačko-moslavačka županija;ime
@@ -1067,7 +1069,7 @@ maticni_broj;naziv;zupanija;izvor
 312266;ŠAŠA;Varaždinska županija;ime
 312274;TRAKOŠĆAN;Varaždinska županija;ime
 312282;BEŠLINEC;Zagrebačka županija;ime
-312304;BREŠKA GREDA;Zagrebačka županija;susjedstvo
+312304;BREŠKA GREDA;Zagrebačka županija;ime-obrnuto
 312312;CAGINEC;Zagrebačka županija;ime
 312347;IVANIĆ-GRAD;Zagrebačka županija;ime
 312355;KLOŠTAR IVANIĆ;Zagrebačka županija;ime
@@ -1573,7 +1575,7 @@ maticni_broj;naziv;zupanija;izvor
 318248;SMRTIĆ;Brodsko-posavska županija;ime
 318256;SREDNJI LIPOVAC;Brodsko-posavska županija;ime
 318272;STARO PETROVO SELO;Brodsko-posavska županija;ime
-318299;ŠAGOVINA CERNIČKA;Brodsko-posavska županija;susjedstvo
+318299;ŠAGOVINA CERNIČKA;Brodsko-posavska županija;ime-obrnuto
 318302;ŠAGOVINA MAŠIĆKA;Brodsko-posavska županija;ime
 318329;ŠIRINCI;Brodsko-posavska županija;ime
 318337;ŠTIVICA;Brodsko-posavska županija;ime
@@ -3168,7 +3170,7 @@ maticni_broj;naziv;zupanija;izvor
 337005;DUNJKOVEC;Međimurska županija;ime
 337013;PAUŠINCI;Virovitičko-podravska županija;ime
 337030;KLOKOČEVEC;Zagrebačka županija;susjedstvo
-337048;OTOK SAMOBORSKI;Zagrebačka županija;susjedstvo
+337048;OTOK SAMOBORSKI;Zagrebačka županija;ime-obrnuto
 337056;BREGANA;Zagrebačka županija;ime
 337064;JAZBINA-LUG;Zagrebačka županija;susjedstvo
 337072;VRHOVČAK;Zagrebačka županija;ime
