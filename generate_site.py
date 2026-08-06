@@ -296,6 +296,10 @@ class SiteBuilder:
         self._static_pages(len(active), run_stats)
         counts["static_pages"] += 2
 
+        # 5b. pretraga: indeks + stranica
+        self._search(active)
+        counts["static_pages"] += 1
+
         # 6. početna
         self._home(active, by_county)
 
@@ -677,6 +681,53 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
                 [{"name": "Početna", "url": "/"},
                  {"name": "O podacima", "url": "/o-podacima/"}])],
             sitemap_priority=0.6, sitemap_changefreq="monthly",
+        )
+
+    # -- pretraga ----------------------------------------------------------
+    def _search(self, active: list[dict]) -> None:
+        """Klijentska pretraga: JSON indeks + stranica /trazi/.
+
+        Statička stranica ne može imati poslužiteljsku tražilicu, ali može
+        posve solidnu klijentsku: indeks svih aktivnih predmeta (~300 KB)
+        učita se jednom, pretraga radi trenutačno i dijakritički neosjetljivo,
+        i ništa se nigdje ne šalje. Pokriva mjesto, k.o., spis, ID nadmetanja,
+        vrstu i status — upravo polja po kojima se predmet stvarno traži.
+        """
+        index = []
+        for d in active:
+            index.append({
+                "n": d["card_title"],
+                "u": d["url"],
+                "g": d.get("city") or "",
+                "z": d.get("county") or "",
+                "k": d.get("cadastral_municipality") or "",
+                "r": d.get("case_ref") or "",
+                "i": d.get("auction_id") or "",
+                "t": d.get("type_label") or "",
+                "s": d.get("status_label") or "",
+                "p": f_eur(d["opening_price_eur"]) if d.get("opening_price_eur") else "",
+                "d": (f_pct_plain(d["discount_pct"])
+                      if d.get("discount_pct") is not None
+                      and not d.get("discount_suspicious") else ""),
+                "a": f_area(d["area_m2"]) if d.get("area_m2") else "",
+                "e": f_d(d["auction_end"]) if d.get("auction_end") else "",
+            })
+        (self.out / "search-index.json").write_text(
+            json.dumps(index, ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8",
+        )
+
+        crumbs = [{"name": "Početna", "url": "/"}, {"name": "Traži", "url": "/trazi/"}]
+        self._render(
+            "search.html", "/trazi/",
+            page_title="Traži nekretnine na dražbi | Licita",
+            meta_description=(f"Pretraži svih {len(active)} aktivnih predmeta prodaje "
+                              f"po mjestu, katastarskoj općini, broju spisa ili vrsti "
+                              f"nekretnine. Trenutačna pretraga, bez prijave."),
+            total=len(active), breadcrumbs=crumbs,
+            robots="noindex,follow",
+            jsonld=[self._jsonld_breadcrumbs(crumbs)],
+            sitemap_priority=0.4, sitemap_changefreq="daily",
         )
 
     # -- blog --------------------------------------------------------------

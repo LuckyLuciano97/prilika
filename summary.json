@@ -1,7 +1,7 @@
 {
   "generirano": "2026-08-06",
   "stanje_na_dan": "2026-08-05",
-  "starost_snimka_h": 25.9,
+  "starost_snimka_h": 38.2,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
     "bajtova": 10329500,
@@ -11,37 +11,37 @@
   "redaka_u_csv": 11091,
   "stavki": 11089,
   "duplikata_spojeno": 2,
-  "aktivnih": 2462,
-  "u_tijeku": 136,
+  "aktivnih": 2448,
+  "u_tijeku": 147,
   "po_statusu": {
-    "zavrseno": 8627,
-    "najavljeno": 551,
-    "u_tijeku": 136,
+    "zavrseno": 8641,
+    "u_tijeku": 147,
+    "najavljeno": 526,
     "bez_termina": 1775
   },
   "po_zupaniji": {
-    "Nepoznato": 2059,
-    "Primorsko-goranska županija": 589,
-    "Splitsko-dalmatinska županija": 405,
-    "Šibensko-kninska županija": 150,
-    "Zadarska županija": 393,
-    "Karlovačka županija": 203,
+    "Nepoznato": 1362,
+    "Primorsko-goranska županija": 613,
+    "Splitsko-dalmatinska županija": 650,
+    "Šibensko-kninska županija": 171,
+    "Zadarska županija": 431,
+    "Karlovačka županija": 213,
     "Međimurska županija": 356,
-    "Grad Zagreb": 1314,
-    "Vukovarsko-srijemska županija": 385,
-    "Virovitičko-podravska županija": 246,
-    "Istarska županija": 712,
-    "Dubrovačko-neretvanska županija": 181,
-    "Osječko-baranjska županija": 603,
-    "Sisačko-moslavačka županija": 297,
-    "Zagrebačka županija": 776,
-    "Krapinsko-zagorska županija": 431,
-    "Koprivničko-križevačka županija": 389,
-    "Bjelovarsko-bilogorska županija": 403,
-    "Varaždinska županija": 450,
-    "Brodsko-posavska županija": 461,
-    "Požeško-slavonska županija": 124,
-    "Ličko-senjska županija": 162
+    "Grad Zagreb": 1326,
+    "Vukovarsko-srijemska županija": 397,
+    "Virovitičko-podravska županija": 257,
+    "Istarska županija": 784,
+    "Dubrovačko-neretvanska županija": 183,
+    "Osječko-baranjska županija": 630,
+    "Sisačko-moslavačka županija": 326,
+    "Zagrebačka županija": 873,
+    "Krapinsko-zagorska županija": 446,
+    "Koprivničko-križevačka županija": 394,
+    "Varaždinska županija": 459,
+    "Bjelovarsko-bilogorska županija": 410,
+    "Požeško-slavonska županija": 146,
+    "Brodsko-posavska županija": 481,
+    "Ličko-senjska županija": 181
   },
   "po_vrsti": {
     "kuca": 2514,
@@ -59,10 +59,10 @@
   "prosjecan_popust_pct": 32.22,
   "sumnjivih_popusta": 240,
   "lokacija_pouzdanost": {
-    "nema": 2059,
-    "visoka": 3900,
-    "srednja": 5013,
-    "niska": 117
+    "nema": 1362,
+    "visoka": 6749,
+    "srednja": 2724,
+    "niska": 254
   },
   "ponovljene_drazbe": {
     "linked_groups": 95,
@@ -89,13 +89,13 @@
     "Razgledavanje": "1 074 e-mailova i 2 480 telefona osobnih kontakata; zadržava se samo izvedeni obrazac termina, bez kontakt-podataka"
   },
   "stranica": {
-    "property_pages": 2462,
+    "property_pages": 2448,
     "county_pages": 22,
-    "city_pages": 192,
+    "city_pages": 432,
     "category_pages": 15,
     "blog_posts": 4,
-    "static_pages": 2,
-    "total_pages": 2699
+    "static_pages": 3,
+    "total_pages": 2926
   },
-  "trajanje_s": 17.2
+  "trajanje_s": 28.8
 }

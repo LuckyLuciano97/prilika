@@ -1,6 +1,6 @@
 LICITA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-06 01:58:03
-Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
+Generirano: 2026-08-06 14:13:01
+Rezultat:   12 PASS · 1 WARN · 0 FAIL  (ukupno 13)
 
 ==============================================================================
 1. USKLAĐENJE BROJEVA — je li sve iz izvora stiglo u bazu
@@ -10,13 +10,13 @@ Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
   očekivano jedinstvenih stavki:         11,089
   stavki u bazi:                         11,089
   [PASS] Usklađenje broja stavki — 11,089 = 11,091 redaka − 2 duplikata
-  aktivnih nadmetanja (najavljeno + u tijeku): 687
+  aktivnih nadmetanja (najavljeno + u tijeku): 673
   napomena: FINA navodi ~1 000 aktivnih stavki; izvoz je pun snimak
            registra (11,089 stavki) uključujući povijest.
-    zavrseno         8,627
+    zavrseno         8,641
     bez_termina      1,775
-    najavljeno       551
-    u_tijeku         136
+    najavljeno       526
+    u_tijeku         147
 
 ==============================================================================
 2. UZORAK ISTRE — vjernost prijenosa iz izvora u bazu
@@ -25,7 +25,7 @@ Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
   Zato se vjernost dokazuje usporedbom baze sa sirovom službenom
   datotekom, polje po polje, na istarskim predmetima.
 
-  usporedeno istarskih predmeta: 15 (od 712 ukupno)
+  usporedeno istarskih predmeta: 15 (od 784 ukupno)
   polja po predmetu: 10
   primjer: OVR-2592/2016 · Rovinj · 480.0 m² · procjena 198141.19 € · početna 158512.96 €
   [PASS] Istra: vjernost prijenosa — 15 predmeta × 10 polja, 0 razlika
@@ -33,9 +33,9 @@ Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
 ==============================================================================
 3. POKRIVENOST NORMALIZACIJE
 ==============================================================================
-  county                      9,030/11,089   81.4%
-  city                        4,946/11,089   44.6%
-  cadastral_municipality      8,689/11,089   78.4%
+  county                      9,727/11,089   87.7%
+  city                        8,179/11,089   73.8%
+  cadastral_municipality      9,538/11,089   86.0%
   area_m2                     9,834/11,089   88.7%
   estimated_value_eur        11,089/11,089  100.0%
   opening_price_eur           9,672/11,089   87.2%
@@ -49,27 +49,27 @@ Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
   status                     11,089/11,089  100.0%
 
   pouzdanost lokacije:
-    srednja     5,013   45.2%
-    visoka      3,900   35.2%
-    nema        2,059   18.6%
-    niska         117    1.1%
+    visoka      6,749   60.9%
+    srednja     2,724   24.6%
+    nema        1,362   12.3%
+    niska         254    2.3%
 
-  BEZ UTVRĐENE ŽUPANIJE: 2,059 stavki (18.6%) — razlozi poimence:
-    trgovacki_sud         1,941
-    ostalo                   71
-    javni_biljeznik          47
+  BEZ UTVRĐENE ŽUPANIJE: 1,362 stavki (12.3%) — razlozi poimence:
+    trgovacki_sud         1,299
+    ostalo                   43
+    javni_biljeznik          20
   Trgovački sudovi i bilježnici namjerno se NE koriste kao izvor
   lokacije: stečajna masa može držati nekretnine bilo gdje u RH.
   najčešća tijela bez lokacije:
-      543  Trgovački sud u Zagrebu
-      388  Trgovački sud u Splitu
-      236  Trgovački sud u Zagrebu, Stalna služba u Karlovcu
-      174  Trgovački sud u Osijeku
-      151  Trgovački sud u Bjelovaru
-      120  Trgovački sud u Pazinu
-       99  Trgovački sud u Rijeci
-       91  Trgovački sud u Varaždinu
-  [PASS] Pokrivenost lokacije prijavljena poimence — 9,030 sa županijom, 2,059 bez
+      411  Trgovački sud u Zagrebu
+      219  Trgovački sud u Zagrebu, Stalna služba u Karlovcu
+      149  Trgovački sud u Splitu
+      137  Trgovački sud u Osijeku
+      124  Trgovački sud u Bjelovaru
+       72  Trgovački sud u Varaždinu
+       64  Trgovački sud u Rijeci
+       48  Trgovački sud u Pazinu
+  [PASS] Pokrivenost lokacije prijavljena poimence — 9,727 sa županijom, 1,362 bez
 
 ==============================================================================
 4. NULA OSOBNIH PODATAKA — tvrdi prekid
@@ -79,7 +79,7 @@ Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
   polja skenirana u bazi: 11,089 × 8
   pogodaka u bazi: 0
   preostalih osobnih imena po rječniku: 0
-  generiranih stranica skenirano: 2,699
+  generiranih stranica skenirano: 2,926
   pogodaka na stranicama: 0
   [PASS] Nula osobnih podataka (baza + stranice) — 0 pogodaka (baza 0, imena 0, HTML 0)
   [PASS] Detektor osobnih podataka radi (kontrolni uzorak) — pronađeno: ['email', 'oib_labelled', 'phone_labelled', 'phone_mobile']
@@ -114,7 +114,7 @@ Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
 ==============================================================================
 7. SEO IZLAZ
 ==============================================================================
-  stranica ukupno:              2,699
+  stranica ukupno:              2,926
   bez <title>:                  0
   ponovljenih <title>:          0
   bez / prekratkog meta opisa:  0
@@ -122,22 +122,27 @@ Rezultat:   11 PASS · 1 WARN · 0 FAIL  (ukupno 12)
   bez canonical:                0
   bez točno jednog <h1>:        0
   neispravnih JSON-LD blokova:  0
-  stranica s dijakritikom:      2,699/2,699
-  URL-ova u sitemap.xml:        2,699
+  stranica s dijakritikom:      2,926/2,926
+  URL-ova u sitemap.xml:        2,926
   stranica koje nedostaju u sitemapu: 0
-  [PASS] SEO izlaz — 2,699 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
+  [PASS] SEO izlaz — 2,926 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   [PASS] Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
 
 ==============================================================================
 8. INTEGRITET POVIJESTI CIJENA
 ==============================================================================
-  pokretanja zabilježenih: 1
+  pokretanja zabilježenih: 3
   redaka u price_history:  0
-  događaja:                0
-  kontrolirani test: opening_price_eur 2599019.31 → 2079215.45 (-20.0 %) — promjena uhvaćena
+  događaja:                39
+  kontrolirani test: opening_price_eur 10286.02 → 8228.82 (-20.0 %) — promjena uhvaćena
 
   različitih verzija izvora među pokretanjima: 1
-  [WARN] Povijest cijena kroz vrijeme — samo 1 pokretanje — promjena kroz vrijeme još nije opažena; mehanizam dokazan kontroliranim testom (radi)
+  Sva pokretanja koristila su ISTI snimak izvora (isti sha256),
+  pa je nula zabilježenih promjena ispravan rezultat, a ne propust.
+  Da je zabilježena promjena, to bi značilo da detektor lažno
+  prijavljuje — što je i bilo prije ispravka zaokruživanja.
+  [PASS] Povijest cijena: nema lažnih promjena nad istim izvorom — 3 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  [WARN] Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   [PASS] Mehanizam praćenja cijene radi — kontrolirani test promjene cijene
 
 ==============================================================================
@@ -145,13 +150,14 @@ SAŽETAK
 ==============================================================================
   PASS  Usklađenje broja stavki — 11,089 = 11,091 redaka − 2 duplikata
   PASS  Istra: vjernost prijenosa — 15 predmeta × 10 polja, 0 razlika
-  PASS  Pokrivenost lokacije prijavljena poimence — 9,030 sa županijom, 2,059 bez
+  PASS  Pokrivenost lokacije prijavljena poimence — 9,727 sa županijom, 1,362 bez
   PASS  Nula osobnih podataka (baza + stranice) — 0 pogodaka (baza 0, imena 0, HTML 0)
   PASS  Detektor osobnih podataka radi (kontrolni uzorak) — pronađeno: ['email', 'oib_labelled', 'phone_labelled', 'phone_mobile']
   PASS  Izračun popusta — 9,672 provjereno, 0 odstupanja
   PASS  Ponovljena dražba: poznati slučaj povezan — OVR-12767/2016 — 2 pokušaja, cijena pada
   PASS  Nema pogrešnog spajanja različitih spisa — 0 skupina miješa spise
-  PASS  SEO izlaz — 2,699 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
+  PASS  SEO izlaz — 2,926 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   PASS  Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
-  WARN  Povijest cijena kroz vrijeme — samo 1 pokretanje — promjena kroz vrijeme još nije opažena; mehanizam dokazan kontroliranim testom (radi)
+  PASS  Povijest cijena: nema lažnih promjena nad istim izvorom — 3 pokretanja nad istim sha256 → 0 promjena (očekivano 0)
+  WARN  Povijest cijena kroz vrijeme (stvarni protok dana) — još nije opažena promjena između DVA RAZLIČITA dnevna snimka — za to treba pokretanje u dva različita dana; mehanizam je dokazan kontroliranim testom
   PASS  Mehanizam praćenja cijene radi — kontrolirani test promjene cijene

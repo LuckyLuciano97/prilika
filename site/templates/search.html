@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="listing-head">
+  <h1>Traži nekretnine na dražbi</h1>
+  <p class="lede">Pretraga po mjestu, katastarskoj općini, broju spisa, ID-u
+    nadmetanja ili vrsti nekretnine — kroz svih {{ total }} aktivnih predmeta.</p>
+</header>
+
+<form class="searchbar" role="search" onsubmit="return false">
+  <label class="visually-hidden" for="q">Pojam pretrage</label>
+  <input id="q" type="search" placeholder="npr. Dugopolje, k.o. Grebaštica, OVR-1738/2020, stan Split…"
+         autocomplete="off" autofocus>
+  <span id="brojac" class="muted" aria-live="polite"></span>
+</form>
+
+<div id="rezultati" aria-live="polite">
+  <p class="empty">Upiši pojam — pretraga radi odmah, bez slanja ičega na
+    poslužitelj. Podaci su stanje na dan {{ snapshot_date }}.</p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var INDEX_URL = "/search-index.json";
+  var input = document.getElementById("q");
+  var out = document.getElementById("rezultati");
+  var counter = document.getElementById("brojac");
+  var data = null;
+
+  // dijakritički neosjetljivo: "kuca" nalazi "kuća", "Sibenik" nalazi "Šibenik"
+  function fold(s) {
+    return (s || "").toLowerCase()
+      .replace(/đ/g, "d")
+      .normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
+  function esc(s) {
+    var d = document.createElement("div");
+    d.textContent = s || "";
+    return d.innerHTML;
+  }
+
+  function card(it) {
+    var loc = it.g ? esc(it.g) + (it.z ? ", " + esc(it.z) : "") :
+              (it.z ? esc(it.z) : "Lokacija nije utvrđena");
+    var price = it.p ? "<strong>" + esc(it.p) + "</strong>" :
+                '<span class="muted">Početna cijena nije objavljena</span>';
+    var chip = it.d ? ' <span class="chip">−' + esc(it.d) + ' na procjenu</span>' : "";
+    var meta = [esc(it.t)];
+    if (it.a) meta.push(esc(it.a));
+    if (it.e) meta.push("završava " + esc(it.e));
+    return '<li class="card"><article>' +
+      '<h3><a href="' + esc(it.u) + '">' + esc(it.n) + "</a></h3>" +
+      '<p class="card-loc">' + loc + "</p>" +
+      '<p class="card-price">' + price + chip + "</p>" +
+      '<p class="card-meta">' + meta.join(" · ") + "</p>" +
+      '<p class="card-status">' + esc(it.s) +
+      (it.k ? ' · k.o. ' + esc(it.k) : "") +
+      ' · spis ' + esc(it.r) + "</p>" +
+      "</article></li>";
+  }
+
+  function render(hits, q) {
+    if (!q) {
+      counter.textContent = "";
+      out.innerHTML = '<p class="empty">Upiši pojam za pretragu.</p>';
+      return;
+    }
+    counter.textContent = hits.length + " " +
+      (hits.length % 100 >= 11 && hits.length % 100 <= 14 ? "rezultata"
+        : hits.length % 10 === 1 ? "rezultat"
+        : hits.length % 10 >= 2 && hits.length % 10 <= 4 ? "rezultata"
+        : "rezultata");
+    if (!hits.length) {
+      out.innerHTML = '<p class="empty">Nema rezultata za „' + esc(q) +
+        '”. Pokušaj kraći pojam ili bez dijakritike.</p>';
+      return;
+    }
+    out.innerHTML = '<ul class="cards">' +
+      hits.slice(0, 60).map(card).join("") + "</ul>" +
+      (hits.length > 60
+        ? '<p class="muted">Prikazano prvih 60 — suzi pretragu.</p>' : "");
+  }
+
+  function search(q) {
+    var f = fold(q.trim());
+    if (!f || !data) { render([], ""); return; }
+    var terms = f.split(/\s+/);
+    var hits = data.filter(function (it) {
+      return terms.every(function (t) { return it._h.indexOf(t) !== -1; });
+    });
+    render(hits, q.trim());
+  }
+
+  fetch(INDEX_URL)
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      data = j.map(function (it) {
+        it._h = fold([it.n, it.g, it.z, it.k, it.r, it.i, it.t, it.s].join(" | "));
+        return it;
+      });
+      var q = new URLSearchParams(location.search).get("q");
+      if (q) { input.value = q; search(q); }
+    })
+    .catch(function () {
+      out.innerHTML = '<p class="empty">Indeks pretrage nije dostupan.</p>';
+    });
+
+  var t = null;
+  input.addEventListener("input", function () {
+    clearTimeout(t);
+    t = setTimeout(function () { search(input.value); }, 120);
+  });
+})();
+</script>
+{% endblock %}

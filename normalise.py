@@ -296,8 +296,11 @@ def classify_property(opis: str, vrsta: str) -> str:
 # poput "Kuća 9 402 m² — Lužan čkbr" i "Gornje Vrapče kao suvlasništvo
 # ovršenika". Zato se staje na prvoj riječi malim slovom.
 _KO_TOKEN = r"[A-ZČĆĐŠŽ][\wčćđšž]*(?:-[A-ZČĆĐŠŽ][\wčćđšž]*)?"
+# Izvor piše i "k.o. Ime" i "K.O. Ime" i "K.O.329525 Ime" (matični broj
+# između oznake i imena). Prefiks je neosjetljiv na velika slova — ali SAMO
+# prefiks; sam naziv ostaje osjetljiv, da se ne proguta obična proza.
 _KO_RE = re.compile(
-    rf"k\.?\s*o\.?\s*:?\s*({_KO_TOKEN}(?:\s+{_KO_TOKEN}){{0,3}})"
+    rf"[Kk]\.?\s*[Oo]\.?\s*:?\s*(?:\d{{4,6}}\s+)?({_KO_TOKEN}(?:\s+{_KO_TOKEN}){{0,3}})"
 )
 
 # Riječi koje su u izvoru pisane velikim slovom, ali nisu dio naziva općine
@@ -319,8 +322,9 @@ def _trim_ko(name: str) -> str:
             break
         out.append(p)
     return " ".join(out).strip(" ,.;-")
+# "na adresi Dugopolje" je doslovna izjava o lokaciji — mora biti u kontekstu.
 _CITY_CTX_RE = re.compile(
-    r"\b(?:u|na|iz|kod|blizu|mjestu|naselju|gradu|općini|opcini)\s+"
+    r"\b(?:u|na|iz|kod|blizu|mjestu|naselju|gradu|općini|opcini|adresi)\s+"
     r"([A-ZČĆĐŠŽ][\wčćđšžČĆĐŠŽ\-]+(?:\s+[A-ZČĆĐŠŽ][\wčćđšž\-]+){0,2})"
 )
 
@@ -459,69 +463,133 @@ def extract_location(opis: str, issuer: str, issuer_type: str) -> dict:
         if ko_name and not ko_name.isdigit() and len(ko_name) >= 3:
             result["cadastral_municipality"] = ko_name[:80]
 
-    def _county_of(town: str | None) -> str | None:
-        if not town or town in croatia.AMBIGUOUS_TOWNS:
+    def _candidates(name: str | None) -> dict[str, int]:
+        """Županija -> stanovništvo najvećeg istoimenog naselja u njoj.
+
+        Dva izvora: kurirana tablica većih mjesta (pokriva sklonidbene oblike
+        poput "u Rijeci") i službeni DZS registar svih 6 357 naselja s
+        popisnim stanovništvom (Otvorena dozvola; v. tools/build_naselja.py).
+        Ime koje postoji u više županija vraća više kandidata.
+        """
+        if not name:
+            return {}
+        out: dict[str, int] = {}
+        clean = _ORDINAL_SUFFIX.sub("", name.strip(" ,.;:-"))
+        for _, _, county, pop in croatia.settlements().get(fold(clean), []):
+            out[county] = max(out.get(county, 0), pop)
+        t = _resolve_town(name)
+        if t and t not in croatia.AMBIGUOUS_TOWNS:
+            c = croatia.TOWN_COUNTY.get(t)
+            if c:
+                out.setdefault(c, 0)
+        return out
+
+    def _dominant(cands: dict[str, int]) -> str | None:
+        """Županija čije je istoimeno naselje ≥20× veće od svih ostalih.
+
+        Rješava slučajeve poput "Dugopolje": mjesto kraj Splita (3 248 st.)
+        prema zaselku kraj Gračca (17 st.) — omjer 191:1. Ovo je izmjeren
+        prag nad službenim popisom, ne dojam; ispod praga se NE pogađa.
+        """
+        if len(cands) < 2:
             return None
-        return croatia.TOWN_COUNTY.get(town)
+        ranked = sorted(cands.items(), key=lambda kv: -kv[1])
+        top, second = ranked[0], ranked[1]
+        if top[1] >= 20 * max(second[1], 1):
+            return top[0]
+        return None
 
-    # --- četiri neovisna pokazatelja -------------------------------------
-    city_town = None
-    city_raw = ""
-    for m in _CITY_CTX_RE.finditer(text):
-        t = _resolve_town(m.group(1))
-        if _county_of(t):
-            city_town, city_raw = t, m.group(1).strip()
-            break
+    def _display_name(name: str) -> str:
+        """Službeni zapis imena naselja iz DZS registra.
 
-    ko_town = _resolve_town(result["cadastral_municipality"] or "")
-    ko_county = _county_of(ko_town)
+        Izvor isto mjesto piše i "Susak" i "Sušak"; bez normalizacije na
+        službeni zapis dvije bi varijante dale dvije stranice s istim URL-om
+        (guard protiv prepisivanja to je i uhvatio). Registar je autoritet
+        za zapis imena; kod više istoimenih uzima se najmnogoljudnije.
+        """
+        clean = _ORDINAL_SUFFIX.sub("", name.strip(" ,.;:-"))
+        hits = croatia.settlements().get(fold(clean), [])
+        if hits:
+            return max(hits, key=lambda h: h[3])[0]
+        return _canonical_town(_resolve_town(clean) or clean)
 
     zk_town = _town_from_land_registry(text)
-    zk_county = _county_of(zk_town)
-
+    zk_county = croatia.TOWN_COUNTY.get(zk_town) if zk_town else None
     court_county = _county_from_court(issuer, issuer_type)
+    anchors = {c for c in (zk_county, court_county) if c}
 
-    # --- odluka ----------------------------------------------------------
-    # 1. izrijekom navedeno naselje je najjači pokazatelj
-    if city_town:
-        result.update(county=_county_of(city_town), city=city_town,
-                      location_confidence="visoka", location_raw=city_raw)
-        return result
+    # --- 1. naselje izrijekom navedeno u opisu ---------------------------
+    for m in _CITY_CTX_RE.finditer(text):
+        raw = m.group(1).strip()
+        cands = _candidates(raw)
+        if len(cands) == 1:
+            result.update(county=next(iter(cands)), city=_display_name(raw),
+                          location_confidence="visoka", location_raw=raw)
+            return result
+        if len(cands) > 1:
+            hit = anchors & cands.keys()
+            if hit:
+                # dvosmisleno ime, ali ga drugi neovisni pokazatelj potvrđuje
+                result.update(county=next(iter(hit)), city=_display_name(raw),
+                              location_confidence="visoka", location_raw=raw)
+                return result
+            dom = _dominant(cands)
+            if dom:
+                # izrijekom navedeno, ime dvoznačno, ali populacijski omjer
+                # ≥20:1 — razuman zaključak, označen kao neprovjeren
+                result.update(county=dom, city=_display_name(raw),
+                              location_confidence="srednja",
+                              location_raw=f"{raw} (dominantno naselje)")
+                return result
 
-    # 2. naziv k.o. potvrđen drugim izvorom
-    if ko_county and ko_county in (zk_county, court_county):
-        result.update(county=ko_county, city=ko_town,
-                      location_confidence="visoka",
-                      location_raw=result["cadastral_municipality"] or "")
-        return result
+    # --- 2. naziv katastarske općine -------------------------------------
+    ko_name = result["cadastral_municipality"] or ""
+    ko_cands = _candidates(ko_name)
 
-    # 3. proturječje — priznaj ga i uzmi pokazatelj vezan uz nekretninu
-    if ko_county and (zk_county or court_county) and ko_county not in (zk_county, court_county):
+    if len(ko_cands) == 1:
+        ko_county = next(iter(ko_cands))
+        if not anchors or ko_county in anchors:
+            # jedinstveno ime; s potvrdom "visoka", bez sidra "srednja"
+            result.update(county=ko_county, city=_display_name(ko_name),
+                          location_confidence="visoka" if ko_county in anchors
+                          else "srednja",
+                          location_raw=ko_name)
+            return result
+        # 3. proturječje — priznaj ga i uzmi pokazatelj vezan uz nekretninu
         result.update(county=zk_county or court_county, city=zk_town,
                       location_confidence="niska",
-                      location_raw=f"k.o. {result['cadastral_municipality']} "
-                                   f"≠ {zk_town or issuer}")
+                      location_raw=f"k.o. {ko_name} ≠ {zk_town or issuer}")
         return result
 
-    # 4. jedan pokazatelj bez potvrde
+    if len(ko_cands) > 1:
+        hit = anchors & ko_cands.keys()
+        if hit:
+            # dvosmisleno ime k.o., ali sidro bira među kandidatima -> dva
+            # neovisna pokazatelja se slažu
+            result.update(county=next(iter(hit)), city=_display_name(ko_name),
+                          location_confidence="visoka", location_raw=ko_name)
+            return result
+        dom = _dominant(ko_cands)
+        if dom:
+            result.update(county=dom, city=_display_name(ko_name),
+                          location_confidence="srednja",
+                          location_raw=f"k.o. {ko_name} (dominantno naselje)")
+            return result
+
+    # --- 4. jedan pokazatelj bez potvrde ---------------------------------
     if zk_county:
         result.update(county=zk_county, city=zk_town,
                       location_confidence="srednja",
                       location_raw=f"zemljišnoknjižni odjel {zk_town}")
-        return result
-    if ko_county:
-        result.update(county=ko_county, city=ko_town,
-                      location_confidence="srednja",
-                      location_raw=result["cadastral_municipality"] or "")
         return result
     if court_county:
         result.update(county=court_county, location_confidence="srednja",
                       location_raw=issuer)
         return result
 
-    # 5. ništa se ne da potvrditi — ne pogađa se
-    if ko_town:
-        result.update(city=ko_town, location_raw=result["cadastral_municipality"] or "")
+    # --- 5. ništa se ne da potvrditi — ne pogađa se ----------------------
+    if ko_name:
+        result.update(location_raw=ko_name)
     return result
 
 

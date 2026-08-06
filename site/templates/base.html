@@ -39,10 +39,16 @@
       <ul>
         <li><a href="{{ rel('/nekretnine/') }}">Sve nekretnine</a></li>
         <li><a href="{{ rel('/najveci-popusti/') }}">Najveći popusti</a></li>
+        <li><a href="{{ rel('/uskoro-zavrsavaju/') }}">Uskoro završavaju</a></li>
         <li><a href="{{ rel('/blog/') }}">Blog</a></li>
         <li><a href="{{ rel('/kako-sudjelovati/') }}">Kako sudjelovati</a></li>
       </ul>
     </nav>
+    <form class="header-search" role="search" action="{{ rel('/trazi/') }}" method="get">
+      <label class="visually-hidden" for="hq">Traži</label>
+      <input id="hq" name="q" type="search" placeholder="Traži: mjesto, k.o., spis…">
+      <button type="submit" aria-label="Traži">⌕</button>
+    </form>
   </div>
 </header>
 

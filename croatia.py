@@ -338,3 +338,39 @@ COURT_TOWN_COUNTY = {
 # nekretnine bilo gdje u RH. Zato njihov grad NIJE pouzdan pokazatelj
 # lokacije nekretnine i koristi se samo kao zadnja, označena pretpostavka.
 LOW_CONFIDENCE_ISSUERS = ("trgovacki_sud", "javni_biljeznik", "ostalo", "nepoznato")
+
+
+# --- Službeni registar naselja (DZS, Popis 2021) ---------------------------
+# data/naselja.csv generira tools/build_naselja.py iz DZS-ove tablice
+# objavljene pod Otvorenom dozvolom (v. zaglavlje te skripte za provenijenciju).
+# 6 357 naselja; ime koje postoji u više jedinica rješava se korovoracijom
+# u normalise.py, nikad pogađanjem.
+
+_SETTLEMENTS: dict[str, list[tuple[str, str, str, int]]] | None = None
+
+
+def settlements() -> dict[str, list[tuple[str, str, str, int]]]:
+    """fold(ime) -> [(ime, grad/općina, županija, stanovništvo), ...]."""
+    global _SETTLEMENTS
+    if _SETTLEMENTS is None:
+        import csv
+        from pathlib import Path
+
+        # lokalni fold — croatia.py ne smije ovisiti o normalise.py (ciklus)
+        import unicodedata
+
+        def _fold(s: str) -> str:
+            s = s.replace("đ", "d").replace("Đ", "D").lower()
+            return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+
+        table: dict[str, list[tuple[str, str, str, int]]] = {}
+        path = Path(__file__).resolve().parent / "data" / "naselja.csv"
+        with path.open(encoding="utf-8") as fh:
+            for row in csv.DictReader(fh, delimiter=";"):
+                key = _fold(row["naselje"])
+                table.setdefault(key, []).append(
+                    (row["naselje"], row["grad_opcina"], row["zupanija"],
+                     int(row.get("stanovnistvo") or 0))
+                )
+        _SETTLEMENTS = table
+    return _SETTLEMENTS

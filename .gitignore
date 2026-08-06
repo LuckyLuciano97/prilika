@@ -7,6 +7,9 @@
 # preuzeti sirovi podaci — ne commitaju se (10 MB dnevno)
 cache/
 *.csv
+# ...osim službenog DZS registra naselja (Otvorena dozvola, generira ga
+# tools/build_naselja.py, provenijencija u zaglavlju te skripte)
+!data/naselja.csv
 
 # generirane stranice
 public/
