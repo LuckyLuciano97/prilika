@@ -290,11 +290,11 @@ canonical URL, Open Graph tags, and valid JSON-LD — verified, not asserted.
 | 11 | Changes across two real snapshots | PASS — 2 distinct snapshots → 73 events tracked |
 | 12 | Price-tracking mechanism | PASS — controlled test |
 
-**On check 13, honestly:** proving a price change between two *different* daily
-snapshots requires runs on two different days. That has not happened yet. The
-mechanism is proven by a controlled test and by the absence of false positives, and
-the check will stay a WARN until a real multi-day change is recorded. It is not
-marked PASS in the meantime.
+**On check 11, honestly:** this check spent its first days as a WARN, because
+proving change-tracking between two *different* daily snapshots requires runs on
+two different days — and asserting it earlier would have been a claim without
+evidence. It flipped to PASS only once a second real snapshot arrived and 73
+genuine events (new items, status transitions) were recorded between the two.
 
 Check 2 compares the database against the raw official file field by field. It is
 not a second scrape of the web app: that would mean touching the reCAPTCHA-protected
