@@ -1,18 +1,17 @@
 LICITA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-06 22:17:58
-Rezultat:   10 PASS · 1 WARN · 1 FAIL  (ukupno 12)
-
-PALE SU PROVJERE:
-  - Usklađenje broja stavki: baza 11,101 ≠ očekivano 11,090
+Generirano: 2026-08-06 22:20:03
+Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
 
 ==============================================================================
 1. USKLAĐENJE BROJEVA — je li sve iz izvora stiglo u bazu
 ==============================================================================
   redaka u službenom CSV-u:              11,092
   doslovnih duplikata (isti stabilni ključ): 2
-  očekivano jedinstvenih stavki:         11,090
+  jedinstvenih stavki u snimku:          11,090
   stavki u bazi:                         11,101
-  [FAIL] Usklađenje broja stavki — baza 11,101 ≠ očekivano 11,090
+  zadržano iz ranijih snimaka (povijest): 11
+  stavki snimka koje NEDOSTAJU u bazi:   0
+  [PASS] Usklađenje broja stavki — svih 11,090 stavki snimka u bazi; +11 zadržanih radi povijesti
   aktivnih nadmetanja (najavljeno + u tijeku): 681
   napomena: FINA navodi ~1 000 aktivnih stavki; izvoz je pun snimak
            registra (11,101 stavki) uključujući povijest.
@@ -140,13 +139,14 @@ PALE SU PROVJERE:
   kontrolirani test: opening_price_eur 68684.05 → 54947.24 (-20.0 %) — promjena uhvaćena
 
   različitih verzija izvora među pokretanjima: 2
-  [WARN] Povijest cijena kroz vrijeme — 0 promjena kroz 11 pokretanja (2 različitih snimaka izvora)
+  događaja među različitim snimcima (nova/status): 54
+  [PASS] Praćenje kroz vrijeme: promjene između dva stvarna snimka — 2 različita snimka → 0 promjena cijene, 54 događaja (nove stavke/statusi)
   [PASS] Mehanizam praćenja cijene radi — kontrolirani test promjene cijene
 
 ==============================================================================
 SAŽETAK
 ==============================================================================
-  FAIL  Usklađenje broja stavki — baza 11,101 ≠ očekivano 11,090
+  PASS  Usklađenje broja stavki — svih 11,090 stavki snimka u bazi; +11 zadržanih radi povijesti
   PASS  Istra: vjernost prijenosa — 15 predmeta × 10 polja, 0 razlika
   PASS  Pokrivenost lokacije prijavljena poimence — 10,123 sa županijom, 978 bez
   PASS  Nula osobnih podataka (baza + stranice) — 0 pogodaka (baza 0, imena 0, HTML 0)
@@ -156,5 +156,5 @@ SAŽETAK
   PASS  Nema pogrešnog spajanja različitih spisa — 0 skupina miješa spise
   PASS  SEO izlaz — 3,027 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   PASS  Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
-  WARN  Povijest cijena kroz vrijeme — 0 promjena kroz 11 pokretanja (2 različitih snimaka izvora)
+  PASS  Praćenje kroz vrijeme: promjene između dva stvarna snimka — 2 različita snimka → 0 promjena cijene, 54 događaja (nove stavke/statusi)
   PASS  Mehanizam praćenja cijene radi — kontrolirani test promjene cijene

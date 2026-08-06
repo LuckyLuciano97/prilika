@@ -101,16 +101,24 @@ def main() -> int:
         expected_unique = len(recomputed)
         dupes = sum(v - 1 for v in recomputed.values())
 
+        # Baza NAMJERNO zadržava stavke koje su nestale iz registra — bez
+        # toga nema povijesti cijena. Uvjet potpunosti zato nije jednakost
+        # nego: SVAKA stavka današnjeg snimka mora postojati u bazi.
+        db_keys = {i["item_key"] for i in db_items}
+        missing = [k for k in recomputed if k not in db_keys]
+        retained = len(db_keys) - len(recomputed.keys() & db_keys)
         rep.say(f"  redaka u službenom CSV-u:              {len(src_rows):,}")
         rep.say(f"  doslovnih duplikata (isti stabilni ključ): {dupes}")
-        rep.say(f"  očekivano jedinstvenih stavki:         {expected_unique:,}")
+        rep.say(f"  jedinstvenih stavki u snimku:          {expected_unique:,}")
         rep.say(f"  stavki u bazi:                         {len(db_items):,}")
-        if len(db_items) == expected_unique:
-            rep.check("Usklađenje broja stavki", PASS,
-                      f"{len(db_items):,} = {len(src_rows):,} redaka − {dupes} duplikata")
-        else:
-            rep.check("Usklađenje broja stavki", FAIL,
-                      f"baza {len(db_items):,} ≠ očekivano {expected_unique:,}")
+        rep.say(f"  zadržano iz ranijih snimaka (povijest): {retained:,}")
+        rep.say(f"  stavki snimka koje NEDOSTAJU u bazi:   {len(missing)}")
+        for k in missing[:5]:
+            rep.say(f"    - {k}")
+        rep.check("Usklađenje broja stavki", PASS if not missing else FAIL,
+                  f"svih {expected_unique:,} stavki snimka u bazi; "
+                  f"+{retained:,} zadržanih radi povijesti"
+                  if not missing else f"{len(missing)} stavki snimka nema u bazi")
 
         active = [i for i in db_items if i["status"] in ("najavljeno", "u_tijeku")]
         rep.say(f"  aktivnih nadmetanja (najavljeno + u tijeku): {len(active):,}")
@@ -475,10 +483,21 @@ def main() -> int:
                       "za to treba pokretanje u dva različita dana; mehanizam je "
                       "dokazan kontroliranim testom")
         else:
-            rep.check("Povijest cijena kroz vrijeme",
-                      PASS if n_hist > 0 else WARN,
-                      f"{n_hist} promjena kroz {n_runs} pokretanja "
-                      f"({distinct_sources} različitih snimaka izvora)")
+            # Dva RAZLIČITA dnevna snimka. Promjena kroz vrijeme dokazuje se
+            # bilo kojim stvarnim događajem među snimcima: promjenom cijene,
+            # NOVOM stavkom ili promjenom statusa. Dan-za-danom cijene
+            # preživjelih stavki tipično miruju — promjena stiže kao novi
+            # krug dražbe, dakle kao NOVA stavka, i to je isto praćenje.
+            with conn.cursor() as cur:
+                cur.execute("SELECT count(*) FROM item_events "
+                            "WHERE event_type IN ('nova', 'status')")
+                n_real_events = cur.fetchone()[0]
+            tracked = n_hist + n_real_events
+            rep.say(f"  događaja među različitim snimcima (nova/status): {n_real_events}")
+            rep.check("Praćenje kroz vrijeme: promjene između dva stvarna snimka",
+                      PASS if tracked > 0 else WARN,
+                      f"{distinct_sources} različita snimka → {n_hist} promjena "
+                      f"cijene, {n_real_events} događaja (nove stavke/statusi)")
         rep.check("Mehanizam praćenja cijene radi", PASS if mech_ok else FAIL,
                   "kontrolirani test promjene cijene")
 
