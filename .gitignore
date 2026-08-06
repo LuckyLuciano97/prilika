@@ -10,6 +10,7 @@ cache/
 # ...osim službenog DZS registra naselja (Otvorena dozvola, generira ga
 # tools/build_naselja.py, provenijencija u zaglavlju te skripte)
 !data/naselja.csv
+!data/ko_tocke.csv
 
 # generirane stranice
 public/
