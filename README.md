@@ -342,7 +342,7 @@ personal-data handling that survives scrutiny, and validation that proves the cl
 instead of restating them. If you have a public or semi-public dataset that would be
 worth more as a product than as a download, I can help.
 
-**Nexi Studio** — [support@nexistudio.dev](mailto:support@nexistudio.dev)
+**Nexis Studio** — [support@nexistudio.dev](mailto:support@nexistudio.dev)
 
 MIT licensed. Source data © FINA, reused under
 [Otvorena dozvola](http://data.gov.hr/otvorena-dozvola). Licita is not affiliated
