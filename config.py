@@ -10,6 +10,31 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
+
+def load_dotenv(path: Path | None = None) -> None:
+    """Minimalni .env loader — bez vanjskih ovisnosti.
+
+    Postojeće varijable okoline imaju prednost pred .env datotekom.
+    Poziva se ODMAH pri uvozu: konstante niže u ovoj datoteci čitaju
+    okolinu u trenutku uvoza, pa .env mora biti učitan prije njih —
+    inače LICITA_SITE_URL iz .env nikad ne bi dospio u canonicale.
+    """
+    path = path or (ROOT / ".env")
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+load_dotenv()
+
 # --- Izvor podataka -------------------------------------------------------
 # Službeni CSV export FINA Očevidnika. Potvrđen u Phase 0 (docs/source-notes.md).
 CSV_URL = "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv"
@@ -57,25 +82,6 @@ SOURCE_LICENCE_URL = "http://data.gov.hr/otvorena-dozvola"
 
 # Prag iz Zakona: očevidnik pokriva imovinu procijenjenu iznad ovog iznosa.
 VALUE_THRESHOLD_EUR = 6630.00
-
-
-def load_dotenv(path: Path | None = None) -> None:
-    """Minimalni .env loader — bez vanjskih ovisnosti.
-
-    Postojeće varijable okoline imaju prednost pred .env datotekom.
-    """
-    path = path or (ROOT / ".env")
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, _, value = line.partition("=")
-        key = key.strip()
-        value = value.strip().strip('"').strip("'")
-        if key and key not in os.environ:
-            os.environ[key] = value
 
 
 def database_url() -> str:
