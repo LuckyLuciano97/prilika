@@ -92,10 +92,12 @@ Google Search Console (kad domena proradi) i Google Trends za `ovrha`,
 `dražba`, `e-dražba` — zbog sezonalnosti. Ne izmišljati brojke o pretragama;
 zasad ih nemamo nijednu.
 
-**d) Najveći SEO dobitak trenutno nije SEO.**
-Lokacija nije utvrđena za **44,8 % aktivnih predmeta**. Svaki predmet koji
-dobije županiju dobiva i stranicu koja može odgovoriti na lokalni upit s
-visokom namjerom. Rješavanje k.o. → županija mapiranja *jest* SEO posao.
+**d) Najveći SEO dobitak nije bio SEO.**
+Na početku lokacija nije bila utvrđena za 44,8 % aktivnih predmeta; svaki
+predmet koji dobije županiju dobiva i stranicu koja odgovara na lokalni upit
+s visokom namjerom. Registar k.o. → županija, izdvajanje pokretnina i
+LLM prolaz potvrđen registrima spustili su to na **2,9 % aktivnih
+nekretnina** — preostalo je pošteno neriješivo (v. §4).
 
 ---
 
