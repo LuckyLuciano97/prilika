@@ -54,7 +54,7 @@ class Report:
         nwarn = sum(1 for r in self.results if r[1] == WARN)
         nfail = len(self.failed)
         header = [
-            "LICITA — IZVJEŠTAJ VALIDACIJE",
+            "PRILIKA — IZVJEŠTAJ VALIDACIJE",
             f"Generirano: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             f"Rezultat:   {npass} PASS · {nwarn} WARN · {nfail} FAIL  (ukupno {total})",
         ]

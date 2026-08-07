@@ -52,17 +52,17 @@
   var form = document.getElementById("filteri");
   var out = document.getElementById("popis");
   var counter = document.getElementById("f-brojac");
-  if (!form || !out || !window.Licita) return;
+  if (!form || !out || !window.Prilika) return;
 
   var data = null, ssr = out.innerHTML, scopedTotal = null;
 
   function apply() {
     if (!data) return;
-    var hits = data.filter(Licita.predicate(form));
-    Licita.sortHits(hits, new FormData(form).get("sort"));
+    var hits = data.filter(Prilika.predicate(form));
+    Prilika.sortHits(hits, new FormData(form).get("sort"));
     counter.textContent = hits.length + " od " + scopedTotal + " predmeta u ovom pregledu";
     out.innerHTML = hits.length
-      ? '<ul class="cards">' + hits.slice(0, 200).map(Licita.card).join("") + "</ul>"
+      ? '<ul class="cards">' + hits.slice(0, 200).map(Prilika.card).join("") + "</ul>"
       : '<p class="empty">Nijedan predmet ne odgovara filtrima — probaj ih proširiti.</p>';
   }
 
@@ -82,7 +82,7 @@
       .catch(function () { out.innerHTML = ssr; });
   }
 
-  Licita.wireFilterbar(form, load);
+  Prilika.wireFilterbar(form, load);
 })();
 </script>
 {% endif %}

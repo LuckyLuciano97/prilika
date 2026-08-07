@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="{{ meta_description }}">
 
 <link rel="stylesheet" href="{{ rel('/static/style.css') }}">
-<link rel="alternate" type="application/rss+xml" title="Licita — nove dražbe" href="{{ rel('/feed.xml') }}">
+<link rel="alternate" type="application/rss+xml" title="Prilika — nove dražbe" href="{{ rel('/feed.xml') }}">
 {% block head_extra %}{% endblock %}
 {% if jsonld %}
 {% for block in jsonld %}
@@ -33,7 +33,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ rel('/') }}">
-      <span class="brand-mark">Licita</span>
+      <span class="brand-mark">Prilika</span>
       <span class="brand-sub">nekretnine na dražbi</span>
     </a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-area"
@@ -80,7 +80,7 @@
   <h2 id="cta-naslov">Želiš znati čim se pojavi ovakva nekretnina?</h2>
   <p>Priprema se obavijest e-poštom za nove dražbe po županiji, vrsti nekretnine i visini popusta.</p>
   <p class="cta-note">Pretplata je u pripremi — javi se na
-    <a href="mailto:{{ contact_email }}?subject=Licita%20obavijesti">{{ contact_email }}</a>
+    <a href="mailto:{{ contact_email }}?subject=Prilika%20obavijesti">{{ contact_email }}</a>
     i javit ćemo ti kad krene.</p>
 </section>
 
@@ -91,14 +91,14 @@
       službeni javni registar. Licenca:
       <a href="{{ source_licence_url }}" rel="nofollow noopener" target="_blank">{{ source_licence }}</a>.
     </p>
-    <p><strong>Zaštita podataka:</strong> Licita ne objavljuje nikakve osobne podatke.
+    <p><strong>Zaštita podataka:</strong> Prilika ne objavljuje nikakve osobne podatke.
       Imena, OIB-i, adrese stanovanja, e-mail adrese i telefonski brojevi uklanjaju se
       iz izvornih podataka prije obrade. Identitet ovršenika i dužnika je zaštićen.
       <a href="{{ rel('/o-podacima/') }}">Više o podacima</a>.</p>
-    <p class="muted">Podaci su preuzeti {{ snapshot_date }}. Licita nije FINA i nije
+    <p class="muted">Podaci su preuzeti {{ snapshot_date }}. Prilika nije FINA i nije
       sudionik u postupku prodaje. Prije bilo kakve odluke provjeri podatke izravno
       u Očevidniku.</p>
-    <p class="muted">© {{ year }} Licita · <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+    <p class="muted">© {{ year }} Prilika · <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
   </div>
 </footer>
 <script>

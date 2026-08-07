@@ -24,7 +24,7 @@ from generate_site import ACTIVE_STATUSES, SiteBuilder
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Licita — dnevni pipeline")
+    ap = argparse.ArgumentParser(description="Prilika — dnevni pipeline")
     ap.add_argument("--force", action="store_true", help="ignoriraj cache, preuzmi ponovno")
     ap.add_argument("--skip-site", action="store_true", help="samo podaci, bez generiranja stranica")
     ap.add_argument("--no-db", action="store_true",
@@ -39,7 +39,7 @@ def main() -> int:
     config.load_dotenv()
     t0 = time.time()
     print("=" * 70)
-    print("LICITA — dnevni pipeline")
+    print("PRILIKA — dnevni pipeline")
     print("=" * 70)
 
     # ---- 1. preuzimanje -------------------------------------------------

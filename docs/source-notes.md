@@ -271,7 +271,7 @@ ima više od jednog retka**. Najviše redaka na jednom spisu: 150
 ## 7. Poštivanje izvora
 
 - Jedan GET dnevno na jednu rutu (`/preuzmi/csv`), 10,3 MB.
-- Opisni User-Agent: `LicitaBot/0.1 (+https://licita.hr; kontakt: support@nexistudio.dev)`
+- Opisni User-Agent: `PrilikaBot/0.1 (+https://prilika.net; kontakt: support@nexistudio.dev)`
 - Lokalni cache; ponovno preuzimanje se ne radi bez potrebe.
 - **Bez rješavanja CAPTCHA-e, bez zaobilaženja zaštita, bez pristupa
   interaktivnoj tražilici.**

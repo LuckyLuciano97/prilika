@@ -38,7 +38,7 @@
   "use strict";
   var form = document.getElementById("filteri");
   var counter = document.getElementById("f-brojac");
-  if (!window.L || !window.Licita || !form) return;
+  if (!window.L || !window.Prilika || !form) return;
 
   var map = L.map("karta", { scrollWheelZoom: false }).setView([44.6, 16.4], 7);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -49,11 +49,11 @@
   var canvas = L.canvas({ padding: 0.3 });
   var data = null, fitted = false;
 
-  function esc(s) { return Licita.esc(s); }
+  function esc(s) { return Prilika.esc(s); }
 
   function render() {
     if (!data) return;
-    var hits = data.filter(Licita.predicate(form))
+    var hits = data.filter(Prilika.predicate(form))
                    .filter(function (it) { return it.lt !== null && it.lt !== undefined; });
     /* grupiraj po točki k.o. — više predmeta na istoj točki = jedan veći krug,
        pa karta ostaje čitljiva i bez plugina za clustering */
@@ -94,7 +94,7 @@
 
   fetch("/search-index.json").then(function (r) { return r.json(); })
     .then(function (j) { data = j; render(); });
-  Licita.wireFilterbar(form, render);
+  Prilika.wireFilterbar(form, render);
 })();
 </script>
 {% endblock %}

@@ -33,7 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "ko_tocke.csv"
 
 WFS = "https://api.uredjenazemlja.hr/services/inspire/cp/wfs"
-UA = ("LicitaBot/1.0 (+https://licita.hr; kontakt: support@nexistudio.dev) "
+UA = ("PrilikaBot/1.0 (+https://prilika.net; kontakt: support@nexistudio.dev) "
       "jednokratno preuzimanje k.o. referentnih tocaka, INSPIRE otvoreni podaci")
 
 PAGE = 200

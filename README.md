@@ -1,4 +1,4 @@
-# Licita — Croatia's foreclosure & auction property deal flow, in one place
+# Prilika — Croatia's foreclosure & auction property deal flow, in one place
 
 Every property sold at judicial auction in Croatia — in enforcement (*ovrha*) and
 bankruptcy (*stečaj*) proceedings — is published in an official public registry.
@@ -6,12 +6,12 @@ That registry is legally public, free, and machine-readable. It is also close to
 unusable: no location column, no area column, no status, no property type, a
 free-text description field, and a web app behind a reCAPTCHA with a 100-result cap.
 
-Licita turns it into something you can actually search: **11,090 sale items**,
+Prilika turns it into something you can actually search: **11,090 sale items**,
 normalised, deduplicated, geocoded to county and town, with discount-vs-appraisal
 computed and repeat auctions linked — regenerated daily into a fast static site of
 **3,036 pages**, all in Croatian, with **zero personal data**.
 
-The public site is in Croatian (`licita.hr`); this README is in English.
+The public site is in Croatian (`prilika.net`); this README is in English.
 
 ```bash
 pip install -r requirements.txt
@@ -344,5 +344,5 @@ worth more as a product than as a download, I can help.
 **Nexis Studio** — [support@nexistudio.dev](mailto:support@nexistudio.dev)
 
 MIT licensed. Source data © FINA, reused under
-[Otvorena dozvola](http://data.gov.hr/otvorena-dozvola). Licita is not affiliated
+[Otvorena dozvola](http://data.gov.hr/otvorena-dozvola). Prilika is not affiliated
 with FINA and is not a party to any sale proceeding.

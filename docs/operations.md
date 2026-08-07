@@ -39,7 +39,7 @@ python run.py --rebuild-only  # kroz dan: samo status + stranice, bez dohvata
 
 ## 2. Koliko podatak smije biti star
 
-**Tvrda granica: 48 h** (`LICITA_MAX_SNAPSHOT_AGE_H`, zadano 48).
+**Tvrda granica: 48 h** (`PRILIKA_MAX_SNAPSHOT_AGE_H`, zadano 48).
 Preko toga `run.py` izlazi s kodom **3** i **ne generira stranice**.
 
 Granica nije proizvoljna. Iz istog izvoza:
@@ -132,3 +132,10 @@ npx wrangler deploy      # učita public/ (v. wrangler.jsonc)
 
 `wrangler login` treba jednom po računalu. `.env` i baza nikad nisu dio
 objave — deploy nosi isključivo sadržaj mape `public/`.
+
+Automatika: zadatak Task Schedulera **"Prilika dnevna objava"** (svaki dan u
+09:00, ili pri prvom paljenju računala nakon toga) pokreće
+`tools/daily_deploy.ps1` — isti slijed, s istim ugovorom: bez 12/12 PASS nema
+objave. Za deploy iz zadatka treba `CLOUDFLARE_API_TOKEN` u `.env`
+(wrangler u neinteraktivnom okruženju ne prihvaća OAuth prijavu); dnevnik je
+u `cache\deploy\`.

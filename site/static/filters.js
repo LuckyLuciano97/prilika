@@ -1,4 +1,4 @@
-/* Licita — zajednička logika kartica i filtara.
+/* Prilika — zajednička logika kartica i filtara.
    Jedna definicija za popise, kartu i pretragu: JS upravlja STANJEM
    (koji su predmeti vidljivi), CSS upravlja IZGLEDOM. */
 (function () {
@@ -108,7 +108,7 @@
     refreshBadge();
   }
 
-  window.Licita = { esc: esc, card: card, predicate: predicate,
+  window.Prilika = { esc: esc, card: card, predicate: predicate,
                     sortHits: sortHits, countActive: countActive,
                     wireFilterbar: wireFilterbar, danPlural: danPlural };
 })();

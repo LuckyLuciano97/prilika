@@ -372,7 +372,7 @@ class SiteBuilder:
         title_bits = [h1]
         if item.get("opening_price_eur"):
             title_bits.append(f_eur(item["opening_price_eur"]))
-        page_title = " — ".join(title_bits) + " | Licita"
+        page_title = " — ".join(title_bits) + " | Prilika"
 
         meta = _meta_description(item, place)
         if item.get("title_discriminator"):
@@ -404,7 +404,7 @@ class SiteBuilder:
         items = _sort_for_display(items)
         h1 = (f"Nekretnine na dražbi — {name}" if county
               else "Dražbe bez utvrđene lokacije")
-        page_title = f"{h1} ({len(items)}) | Licita"
+        page_title = f"{h1} ({len(items)}) | Prilika"
         avg = _avg_discount(items)
         meta = (
             f"{f_items(len(items))} u ovrsi i stečaju na području "
@@ -443,7 +443,7 @@ class SiteBuilder:
         url = city_url(county, city)
         items = _sort_for_display(items)
         h1 = f"Nekretnine na dražbi — {city}"
-        page_title = f"{h1} ({len(items)}) | Licita"
+        page_title = f"{h1} ({len(items)}) | Prilika"
         meta = (
             f"{f_items(len(items))} na sudskoj dražbi u mjestu {city}"
             f"{', ' + county if county else ''}. Procjena, početna cijena, "
@@ -479,7 +479,7 @@ class SiteBuilder:
                   {"name": "Nekretnine", "url": "/nekretnine/"}]
         self._render(
             "listing.html", "/nekretnine/",
-            page_title=f"Nekretnine na dražbi u Hrvatskoj — {len(active)} aktivnih predmeta | Licita",
+            page_title=f"Nekretnine na dražbi u Hrvatskoj — {len(active)} aktivnih predmeta | Prilika",
             meta_description=(
                 f"Svih {f_items(len(active))} koje se trenutno prodaju na sudskoj "
                 f"dražbi u Hrvatskoj — po županijama, gradovima i vrsti. Službeni "
@@ -515,7 +515,7 @@ class SiteBuilder:
                       {"name": label, "url": url}]
             self._render(
                 "listing.html", url,
-                page_title=f"{h1} ({len(group)}) | Licita",
+                page_title=f"{h1} ({len(group)}) | Prilika",
                 meta_description=meta, h1=h1, intro=meta,
                 cards=group[:120], stats_row=_stats_row(group), breadcrumbs=crumbs,
                 filter_scope={"county": "", "city": "", "type": ptype},
@@ -557,7 +557,7 @@ class SiteBuilder:
             meta = f"{intro} Ukupno {f_subjects(len(group))}, stanje {self.snapshot}."
             self._render(
                 "listing.html", url,
-                page_title=f"{h1} | Licita", meta_description=meta[:300],
+                page_title=f"{h1} | Prilika", meta_description=meta[:300],
                 h1=h1, intro=intro, cards=group, stats_row=_stats_row(group),
                 breadcrumbs=crumbs,
                 jsonld=[self._jsonld_collection(h1, intro, url, group),
@@ -591,7 +591,7 @@ class SiteBuilder:
         )
         self._render(
             "home.html", "/",
-            page_title="Licita — nekretnine na dražbi u Hrvatskoj",
+            page_title="Prilika — nekretnine na dražbi u Hrvatskoj",
             meta_description=meta, h1=h1,
             stats={
                 "active": len(active),
@@ -648,7 +648,7 @@ predmeta piše je li produljenje moguće.</p>
 <p>Na prvoj dražbi nekretnina se u pravilu ne može prodati ispod određenog
 postotka procijenjene vrijednosti; na sljedećoj je prag niži. Zato ista
 nekretnina zna proći kroz nekoliko dražbi po sve nižoj cijeni. Upravo su te
-ponovljene dražbe najzanimljivije — Licita ih povezuje i prikazuje redoslijed.</p>
+ponovljene dražbe najzanimljivije — Prilika ih povezuje i prikazuje redoslijed.</p>
 
 <h2>7. Nakon dosude</h2>
 <p>Kupac plaća kupovninu u roku iz zaključka. Porez na promet nekretnina i
@@ -660,7 +660,7 @@ isključivo zaključak nadležnog tijela.</p>
 """
         self._render(
             "article.html", "/kako-sudjelovati/",
-            page_title="Kako kupiti nekretninu na e-Dražbi — vodič korak po korak | Licita",
+            page_title="Kako kupiti nekretninu na e-Dražbi — vodič korak po korak | Prilika",
             meta_description=("Kako sudjelovati na sudskoj dražbi nekretnine u Hrvatskoj: "
                               "provjera zaključka, jamčevina, e-Građani, tijek nadmetanja "
                               "i što slijedi nakon dosude."),
@@ -681,7 +681,7 @@ isključivo zaključak nadležnog tijela.</p>
         ) or "<tr><td>—</td><td>0</td></tr>"
 
         about = f"""
-<p>Licita koristi <strong>jedan jedini izvor</strong>: službeni CSV izvoz iz
+<p>Prilika koristi <strong>jedan jedini izvor</strong>: službeni CSV izvoz iz
 <a href="{config.SOURCE_URL}" rel="nofollow noopener" target="_blank">Očevidnika
 nekretnina i pokretnina</a> koji vodi FINA. Registar je po zakonu javan i
 besplatan, a skup podataka objavljen je na portalu otvorenih podataka
@@ -721,15 +721,15 @@ označeni kao lokacija neutvrđena.</p>
 
 <h2>Ažuriranje</h2>
 <p>Izvoz je dnevni snimak cijelog registra. Podaci na ovoj stranici odgovaraju
-stanju na dan <strong>{self.snapshot}</strong>. Licita bilježi promjene cijena i
+stanju na dan <strong>{self.snapshot}</strong>. Prilika bilježi promjene cijena i
 statusa između pokretanja te povezuje ponovljene dražbe iste nekretnine.</p>
 
-<p class="muted">Licita nije FINA, nije sud i nije sudionik u postupku prodaje.
+<p class="muted">Prilika nije FINA, nije sud i nije sudionik u postupku prodaje.
 Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
 """
         self._render(
             "article.html", "/o-podacima/",
-            page_title="O podacima: izvor, licenca i zaštita osobnih podataka | Licita",
+            page_title="O podacima: izvor, licenca i zaštita osobnih podataka | Prilika",
             meta_description=("Odakle Liciti podaci, pod kojom licencom, i kako se "
                               "osobni podaci uklanjaju prije objave. Izvor: službeni "
                               "CSV izvoz FINA Očevidnika, Otvorena dozvola."),
@@ -767,7 +767,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
             "article.html", "/404.html",
             file_target="404.html", in_sitemap=False,
             robots="noindex",
-            page_title="Stranica ne postoji (404) | Licita",
+            page_title="Stranica ne postoji (404) | Prilika",
             meta_description="Tražena stranica ne postoji — dražba je "
                              "najvjerojatnije završila.",
             h1="Ova stranica ne postoji", body_html=body,
@@ -829,7 +829,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
         crumbs = [{"name": "Početna", "url": "/"}, {"name": "Traži", "url": "/trazi/"}]
         self._render(
             "search.html", "/trazi/",
-            page_title="Traži nekretnine na dražbi | Licita",
+            page_title="Traži nekretnine na dražbi | Prilika",
             meta_description=(f"Pretraži svih {len(active)} aktivnih predmeta prodaje "
                               f"po mjestu, katastarskoj općini, broju spisa ili vrsti "
                               f"nekretnine. Trenutačna pretraga, bez prijave."),
@@ -850,7 +850,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
                 f"Službeni podaci FINA Očevidnika.")
         self._render(
             "listing.html", url,
-            page_title=f"Pokretnine i prava na dražbi ({len(items)}) | Licita",
+            page_title=f"Pokretnine i prava na dražbi ({len(items)}) | Prilika",
             meta_description=meta,
             h1="Pokretnine i prava na dražbi",
             intro=("Vozila, strojevi, stoka, roba i poslovni udjeli iz ovrha i "
@@ -904,7 +904,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
                 "€/m² nisu usporedivi. Službeni podaci FINA Očevidnika.")
         self._render(
             "listing.html", url,
-            page_title=f"{h1} | Licita",
+            page_title=f"{h1} | Prilika",
             meta_description=meta, h1=h1,
             intro=("Najniža početna cijena po kvadratu među aktivnim dražbama. "
                    "Zgrade i zemljišta rangirani su odvojeno; premale površine i "
@@ -932,7 +932,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
         crumbs = [{"name": "Početna", "url": "/"}, {"name": "Karta", "url": "/karta/"}]
         self._render(
             "map.html", "/karta/",
-            page_title="Karta dražbi nekretnina po županijama | Licita",
+            page_title="Karta dražbi nekretnina po županijama | Prilika",
             meta_description=(f"Interaktivna karta s {with_coords} aktivnih "
                               f"dražbi s filtrima po vrsti, cijeni i statusu — točke "
                               f"katastarskih općina iz službenog DGU registra."),
@@ -1020,7 +1020,7 @@ na sva tri pitanja i vrijedi ga pročitati prije nego ponudu.</p>
         posts.append({
             "slug": f"pregled-trzista-{today.year}-{today.month:02d}",
             "h1": f"Nekretnine na dražbi — pregled za {mlabel}",
-            "title": f"Nekretnine na dražbi u Hrvatskoj: pregled za {mlabel} | Licita",
+            "title": f"Nekretnine na dražbi u Hrvatskoj: pregled za {mlabel} | Prilika",
             "meta": (f"Koliko je nekretnina na dražbi u {mlabel}, u kojim županijama, "
                      f"i koliki je prosječan popust na procjenu. Podaci iz službenog "
                      f"registra FINA-e."),
@@ -1053,7 +1053,7 @@ iz ovršnih i stečajnih postupaka.</p>
             posts.append({
                 "slug": f"drazbe-{slugify(county)}",
                 "h1": f"Dražbe nekretnina u županiji {county}",
-                "title": f"Nekretnine na dražbi — {county} | Licita",
+                "title": f"Nekretnine na dražbi — {county} | Prilika",
                 "meta": (f"Pregled {n} aktivnih dražbi nekretnina u županiji {county}: "
                          f"gdje su, što se prodaje i koliki je prosječan popust."),
                 "body": body, "cards": citems[:6],
@@ -1093,7 +1093,7 @@ iz ovršnih i stečajnih postupaka.</p>
         )
         self._render(
             "article.html", "/blog/",
-            page_title="Blog — analize tržišta nekretnina na dražbi | Licita",
+            page_title="Blog — analize tržišta nekretnina na dražbi | Prilika",
             meta_description=("Mjesečni pregledi tržišta dražbi, analize po županijama "
                               "i vodiči za kupnju nekretnine u ovrsi i stečaju."),
             h1="Blog", body_html=f"<ul class='linklist'>{listing}</ul>",

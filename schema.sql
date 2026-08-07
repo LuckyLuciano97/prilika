@@ -1,4 +1,4 @@
--- Licita — PostgreSQL shema
+-- Prilika — PostgreSQL shema
 --
 -- Načelo: u bazu ulaze SAMO polja koja su prošla sanitise.py.
 -- Slobodna tekstualna polja iz izvora koja sadrže osobne podatke

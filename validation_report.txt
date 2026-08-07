@@ -1,5 +1,5 @@
-LICITA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-07 05:24:42
+PRILIKA — IZVJEŠTAJ VALIDACIJE
+Generirano: 2026-08-07 05:53:00
 Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
 
 ==============================================================================
@@ -92,7 +92,7 @@ Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
   provjereno redaka: 9,685
   odstupanja: 0
   označeno kao sumnjivo (ne prikazuje se kao prilika): 240
-    primjer: ST-71/2014 procjena 33791.23 € → početna 0.13 €
+    primjer: ST-543/2016 procjena 19510.25 € → početna 0.13 €
     (0,13 € = 1 kuna po tečaju 7,53450 — zaostatak iz prijelaza na euro)
   [PASS] Izračun popusta — 9,685 provjereno, 0 odstupanja
 
@@ -133,7 +133,7 @@ Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
 ==============================================================================
 8. INTEGRITET POVIJESTI CIJENA
 ==============================================================================
-  pokretanja zabilježenih: 18
+  pokretanja zabilježenih: 21
   redaka u price_history:  0
   događaja:                73
   kontrolirani test: opening_price_eur 9396.77 → 7517.42 (-20.0 %) — promjena uhvaćena
