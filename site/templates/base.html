@@ -98,7 +98,9 @@
     <p class="muted">Podaci su preuzeti {{ snapshot_date }}. Prilika nije FINA i nije
       sudionik u postupku prodaje. Prije bilo kakve odluke provjeri podatke izravno
       u Očevidniku.</p>
-    <p class="muted">© {{ year }} Prilika · <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+    {# svjesno bez rel="nofollow": povratna poveznica na studio #}
+    <p class="muted">© {{ year }} Prilika · Izrada:
+      <a href="https://nexistudio.dev" target="_blank" rel="noopener">nexistudio.dev</a></p>
   </div>
 </footer>
 <script>
