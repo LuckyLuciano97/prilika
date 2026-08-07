@@ -87,6 +87,7 @@ main { padding-block: 1.8rem 3rem; }
   align-items: center; padding-block: .7rem;
 }
 .brand { text-decoration: none; color: var(--fg-head); display: flex; align-items: baseline; gap: .5rem; margin-right: auto; }
+.brand-logo { width: 26px; height: 26px; align-self: center; flex-shrink: 0; }
 .brand-mark { font-weight: 800; font-size: 1.4rem; letter-spacing: -.02em; }
 .brand-mark::first-letter { color: var(--accent); }
 .brand-sub { color: var(--fg-muted); font-size: .82rem; }

@@ -1,7 +1,7 @@
 {
   "generirano": "2026-08-07",
   "stanje_na_dan": "2026-08-06",
-  "starost_snimka_h": 29.8,
+  "starost_snimka_h": 44.8,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
     "bajtova": 10331632,
@@ -11,12 +11,12 @@
   "redaka_u_csv": 11092,
   "stavki": 11090,
   "duplikata_spojeno": 2,
-  "aktivnih": 2456,
-  "u_tijeku": 148,
+  "aktivnih": 2443,
+  "u_tijeku": 150,
   "po_statusu": {
-    "zavrseno": 8634,
-    "u_tijeku": 148,
-    "najavljeno": 533,
+    "zavrseno": 8647,
+    "u_tijeku": 150,
+    "najavljeno": 518,
     "bez_termina": 1775
   },
   "po_zupaniji": {
@@ -89,13 +89,13 @@
     "Razgledavanje": "1 074 e-mailova i 2 480 telefona osobnih kontakata; zadržava se samo izvedeni obrazac termina, bez kontakt-podataka"
   },
   "stranica": {
-    "property_pages": 2456,
+    "property_pages": 2443,
     "county_pages": 22,
-    "city_pages": 531,
+    "city_pages": 529,
     "category_pages": 16,
     "blog_posts": 4,
     "static_pages": 6,
-    "total_pages": 3036
+    "total_pages": 3021
   },
-  "trajanje_s": 68.8
+  "trajanje_s": 42.4
 }

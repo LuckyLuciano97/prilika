@@ -18,6 +18,10 @@
 <meta name="twitter:title" content="{{ og_title|default(page_title) }}">
 <meta name="twitter:description" content="{{ meta_description }}">
 
+<link rel="icon" href="{{ rel('/static/favicon.svg') }}" type="image/svg+xml">
+<link rel="icon" href="{{ rel('/static/favicon-32.png') }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ rel('/static/apple-touch-icon.png') }}">
+<meta name="theme-color" content="#0b6b43">
 <link rel="stylesheet" href="{{ rel('/static/style.css') }}">
 <link rel="alternate" type="application/rss+xml" title="Prilika — nove dražbe" href="{{ rel('/feed.xml') }}">
 {% block head_extra %}{% endblock %}
@@ -33,6 +37,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ rel('/') }}">
+      <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#0b6b43"/>
+        <g fill="#fff">
+          <rect x="41" y="17" width="6" height="10"/>
+          <path d="M32 12 L55 34 L49.5 34 L49.5 51 L14.5 51 L14.5 34 L9 34 Z"/>
+        </g>
+        <rect x="27" y="37" width="10" height="14" rx="2" fill="#0b6b43"/>
+      </svg>
       <span class="brand-mark">Prilika</span>
       <span class="brand-sub">nekretnine na dražbi</span>
     </a>
