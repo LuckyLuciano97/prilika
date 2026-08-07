@@ -115,3 +115,18 @@ visokom namjerom. Rješavanje k.o. → županija mapiranja *jest* SEO posao.
   upit po `nationalCadastralReference` (dokazano na živom primjeru, k.o.
   Murter Betina, čest. 1878/1 — 55 m² potvrđeno); točka po parceli umjesto
   po k.o. bila bi sljedeći skok preciznosti karte.
+
+## 5. Objava (Cloudflare)
+
+Stranice se poslužuju kao statični asseti workera `licita` (domena
+`prilika.net`). Cloudflareov git-build je namjerno isključen: pipeline treba
+PostgreSQL i dnevni snimak izvora, pa se gradi lokalno i objavljuje izravno:
+
+```
+python run.py            # ili --rebuild-only za osvježenje bez dohvaćanja
+python validate.py       # objavljuje se samo 12/12 PASS
+npx wrangler deploy      # učita public/ (v. wrangler.jsonc)
+```
+
+`wrangler login` treba jednom po računalu. `.env` i baza nikad nisu dio
+objave — deploy nosi isključivo sadržaj mape `public/`.

@@ -1,0 +1,17 @@
+// Cloudflare deploy — statični site iz public/, bez ikakvog koda na rubu.
+//
+// Stranice se grade LOKALNO (pipeline treba PostgreSQL i dnevni snimak izvora,
+// pa Cloudflareov CI build ne može raditi i treba ostati isključen).
+// Objava nakon dnevnog pokretanja:
+//
+//   python run.py            # ili run.py --rebuild-only
+//   python validate.py       # objavljuje se samo 12/12 PASS
+//   npx wrangler deploy      # učita public/ kao statične assete workera "licita"
+{
+  "name": "licita",
+  "compatibility_date": "2026-08-07",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

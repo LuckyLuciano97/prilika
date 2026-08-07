@@ -194,7 +194,8 @@ class SiteBuilder:
     def _abs(self, path: str) -> str:
         return f"{self.site_url}{path}"
 
-    def _render(self, template: str, path: str, **ctx) -> None:
+    def _render(self, template: str, path: str, file_target: str | None = None,
+                in_sitemap: bool = True, **ctx) -> None:
         ctx.setdefault("site_name", config.SITE_NAME)
         ctx.setdefault("contact_email", config.CONTACT_EMAIL)
         ctx.setdefault("source_name", config.SOURCE_NAME)
@@ -214,14 +215,19 @@ class SiteBuilder:
         self._written.add(path)
 
         html = self.env.get_template(template).render(**ctx)
-        target = self.out / path.strip("/") / "index.html" if path != "/" else self.out / "index.html"
+        if file_target:
+            # izravna datoteka (npr. 404.html) umjesto mape s index.html
+            target = self.out / file_target
+        else:
+            target = self.out / path.strip("/") / "index.html" if path != "/" else self.out / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding="utf-8")
-        self.pages.append({
-            "path": path,
-            "priority": ctx.get("sitemap_priority", 0.5),
-            "changefreq": ctx.get("sitemap_changefreq", "weekly"),
-        })
+        if in_sitemap:
+            self.pages.append({
+                "path": path,
+                "priority": ctx.get("sitemap_priority", 0.5),
+                "changefreq": ctx.get("sitemap_changefreq", "weekly"),
+            })
 
     def _decorate(self, item: dict) -> dict:
         """Dodaj polja koja predlošci trebaju (oznake, URL-ovi, naslovi)."""
@@ -334,7 +340,8 @@ class SiteBuilder:
 
         # 5. statične stranice
         self._static_pages(len(active), run_stats)
-        counts["static_pages"] += 2
+        self._not_found_page()
+        counts["static_pages"] += 3
 
         # 5b. pretraga: indeks + stranica
         self._search(active)
@@ -733,6 +740,38 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
                 [{"name": "Početna", "url": "/"},
                  {"name": "O podacima", "url": "/o-podacima/"}])],
             sitemap_priority=0.6, sitemap_changefreq="monthly",
+        )
+
+    def _not_found_page(self) -> None:
+        """/404.html — poslužitelj ga vraća uz status 404.
+
+        Dražbene stranice nestaju svakim danom kako nadmetanja završe (završeni
+        predmeti namjerno nemaju stranicu), pa zastarjela poveznica iz
+        tražilice nije rubni slučaj nego svakodnevica. Stranica ne ulazi u
+        sitemap i nosi noindex.
+        """
+        body = """
+<p>Ove stranice više nema — ili nikad nije postojala.</p>
+<p>Najčešći razlog: <strong>dražba je završila.</strong> Završeni predmeti
+namjerno nemaju stranicu — podatak ostaje u povijesti cijena, ali stranica o
+prodaji iz prošlosti nikome ne pomaže.</p>
+<p>Kamo dalje:</p>
+<ul>
+  <li><a href="/nekretnine/">Sve aktivne nekretnine</a></li>
+  <li><a href="/trazi/">Pretraga po mjestu, k.o. ili broju spisa</a></li>
+  <li><a href="/uskoro-zavrsavaju/">Dražbe koje uskoro završavaju</a></li>
+  <li><a href="/">Početna</a></li>
+</ul>
+"""
+        self._render(
+            "article.html", "/404.html",
+            file_target="404.html", in_sitemap=False,
+            robots="noindex",
+            page_title="Stranica ne postoji (404) | Licita",
+            meta_description="Tražena stranica ne postoji — dražba je "
+                             "najvjerojatnije završila.",
+            h1="Ova stranica ne postoji", body_html=body,
+            breadcrumbs=[{"name": "Početna", "url": "/"}],
         )
 
     # -- pretraga ----------------------------------------------------------
