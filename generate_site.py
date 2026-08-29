@@ -15,7 +15,8 @@ from __future__ import annotations
 import json
 import shutil
 from collections import Counter, defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
+from html import escape
 from pathlib import Path
 from urllib.parse import quote
 
@@ -143,6 +144,84 @@ def city_slug(item) -> str:
 
 
 MOVABLE_TYPES = ("pokretnina", "pravo")
+
+# Ručno pisane priče: tijelo u site/content/{file}, brojke vrijede na datum
+# objave (data_note kaže iz kojeg snimka dolaze) i namjerno se NE osvježavaju.
+STORY_POSTS = [
+    {"slug": "varazdinski-stecaj-20-milijuna",
+     "h1": "Šesnaest nekretnina, 20 milijuna eura: najveći aktivni stečajni paket",
+     "title": "Varaždinski stečaj: 16 nekretnina za 20 milijuna eura | Prilika",
+     "meta": ("U jednom stečajnom spisu prodaje se 16 nekretnina ukupne procjene "
+              "20,5 milijuna eura — a već zakazani listopadski krug kreće od "
+              "četvrtine procjene."),
+     "file": "prica-varazdinski-stecaj.html", "published": "2026-08-13",
+     "data_note": "brojke iz službenog snimka od 12.8.2026."},
+    {"slug": "drazba-udjela-zracna-luka-zagreb",
+     "h1": "Na dražbi i udjel u koncesionaru Zračne luke Zagreb",
+     "title": "Stečaj prodaje udjel u koncesionaru Zračne luke Zagreb | Prilika",
+     "meta": ("Među predmetima jednog stečaja: udjeli u jedinom članu društva "
+              "koncesionara zagrebačke zračne luke, procijenjeni na 7 milijuna "
+              "eura — i 16 milijuna eura teretnih vozila."),
+     "file": "prica-zracna-luka.html", "published": "2026-08-13",
+     "data_note": "brojke iz službenog snimka od 12.8.2026."},
+    {"slug": "nekretnina-od-jednog-eura",
+     "h1": "Procjena 10,2 milijuna, početna cijena: jedan euro",
+     "title": "Predmet od 10 milijuna eura s početnom cijenom 1 € — što tu piše | Prilika",
+     "meta": ("U registru stoji pravo građenja procijenjeno na 10,2 milijuna "
+              "eura s početnom cijenom od jednog eura. Zašto takve stavke "
+              "označavamo sumnjivima i što zapravo znače."),
+     "file": "prica-jedan-euro.html", "published": "2026-08-13",
+     "data_note": "brojke iz službenog snimka od 12.8.2026."},
+    {"slug": "hotel-bellevue-split-na-drazbi",
+     "h1": "Dio splitskog hotela Bellevue čeka dražbu",
+     "title": "Hotel Bellevue u Splitu: dio zgrade u stečajnoj prodaji | Prilika",
+     "meta": ("Dio zgrade povijesnog hotela Bellevue na Prokurativama upisan je "
+              "u stečajnu prodaju s procjenom od 9,3 milijuna eura — zasad bez "
+              "termina nadmetanja."),
+     "file": "prica-hotel-bellevue.html", "published": "2026-08-13",
+     "data_note": "brojke iz službenog snimka od 12.8.2026."},
+    {"slug": "od-japanki-do-zracne-luke",
+     "h1": "Od japanki do zračne luke: što sve Hrvatska prodaje na dražbi",
+     "title": "Najneobičniji predmeti na hrvatskim dražbama | Prilika",
+     "meta": ("338 pari japanki, motor broda \"Stočar\", šuma koja se devet puta "
+              "vraćala na dražbu i udjel u zračnoj luci — najneobičniji predmeti "
+              "službenog registra."),
+     "file": "prica-od-japanki-do-zracne-luke.html", "published": "2026-08-13",
+     "data_note": "brojke iz službenog snimka od 12.8.2026."},
+]
+
+# Vodiči za strane kupce: jedna stranica po jeziku, hreflang klaster s
+# hrvatskim vodičem /kako-sudjelovati/; x-default je engleska inačica.
+GUIDES = [
+    {"lang": "en", "og": "en_US", "path": "/en/croatian-property-auctions/",
+     "file": "vodic-en.html",
+     "h1": "Buying property at Croatian judicial auctions",
+     "title": "Croatian Property Auctions — a Buyer's Guide | Prilika",
+     "meta": ("How judicial auctions work in Croatia: why prices run 30–75% "
+              "below appraisal, what foreign buyers need (OIB, deposit, FINA "
+              "e-auction) and which risks to check first.")},
+    {"lang": "de", "og": "de_DE", "path": "/de/zwangsversteigerungen-kroatien/",
+     "file": "vodic-de.html",
+     "h1": "Immobilien aus Zwangsversteigerungen in Kroatien kaufen",
+     "title": "Zwangsversteigerungen in Kroatien — Leitfaden für Käufer | Prilika",
+     "meta": ("Wie kroatische Zwangsversteigerungen funktionieren: warum die "
+              "Preise 30–75 % unter dem Schätzwert liegen, was ausländische "
+              "Käufer brauchen und welche Risiken zu prüfen sind.")},
+    {"lang": "sl", "og": "sl_SI", "path": "/sl/drazbe-nepremicnin-na-hrvaskem/",
+     "file": "vodic-sl.html",
+     "h1": "Nakup nepremičnine na sodni dražbi na Hrvaškem",
+     "title": "Dražbe nepremičnin na Hrvaškem — vodnik za kupce | Prilika",
+     "meta": ("Kako delujejo hrvaške sodne dražbe: zakaj so cene 30–75 % pod "
+              "oceno, kaj potrebujejo tuji kupci (OIB, varščina, FINA "
+              "e-dražba) in katera tveganja preveriti.")},
+    {"lang": "it", "og": "it_IT", "path": "/it/aste-immobiliari-in-croazia/",
+     "file": "vodic-it.html",
+     "h1": "Comprare immobili alle aste giudiziarie in Croazia",
+     "title": "Aste immobiliari in Croazia — guida per gli acquirenti | Prilika",
+     "meta": ("Come funzionano le aste giudiziarie croate: perché i prezzi sono "
+              "del 30–75% sotto la stima, cosa serve agli acquirenti stranieri "
+              "e quali rischi verificare prima di offrire.")},
+]
 
 
 def property_url(item) -> str:
@@ -336,12 +415,14 @@ class SiteBuilder:
         counts["category_pages"] += 1
 
         # 4. blog
-        counts["blog_posts"] += self._blog(active, by_county, run_stats)
+        counts["blog_posts"] += self._blog(active, by_county, run_stats,
+                                           repeat_groups)
 
         # 5. statične stranice
         self._static_pages(len(active), run_stats)
         self._not_found_page()
         counts["static_pages"] += 3
+        counts["static_pages"] += self._foreign_guides()
 
         # 5b. pretraga: indeks + stranica
         self._search(active)
@@ -666,6 +747,7 @@ isključivo zaključak nadležnog tijela.</p>
                               "i što slijedi nakon dosude."),
             h1="Kako kupiti nekretninu na e-Dražbi, korak po korak",
             body_html=guide, og_type="article",
+            hreflangs=self._guide_hreflangs(),
             breadcrumbs=[{"name": "Početna", "url": "/"},
                          {"name": "Kako sudjelovati", "url": "/kako-sudjelovati/"}],
             jsonld=[self._jsonld_breadcrumbs(
@@ -741,6 +823,38 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
                  {"name": "O podacima", "url": "/o-podacima/"}])],
             sitemap_priority=0.6, sitemap_changefreq="monthly",
         )
+
+    def _guide_hreflangs(self) -> list[dict]:
+        """Hreflang klaster vodiča: hr + četiri strana jezika + x-default."""
+        alts = [{"lang": "hr", "url": self._abs("/kako-sudjelovati/")}]
+        alts += [{"lang": g["lang"], "url": self._abs(g["path"])} for g in GUIDES]
+        alts.append({"lang": "x-default",
+                     "url": self._abs("/en/croatian-property-auctions/")})
+        return alts
+
+    def _foreign_guides(self) -> int:
+        """Vodiči za strane kupce (EN/DE/SL/IT) iz site/content/.
+
+        Namjerno se NE prevode stranice predmeta: mijenjaju se svakodnevno, a
+        strani kupac postupak ionako ne može dovršiti bez hrvatskog. Jedan
+        temeljit vodič po jeziku cilja upravo upite koje ti kupci traže.
+        """
+        n = 0
+        for g in GUIDES:
+            path = config.SITE_DIR / "content" / g["file"]
+            if not path.exists():
+                continue
+            self._render(
+                "article.html", g["path"],
+                lang=g["lang"], og_locale=g["og"],
+                hreflangs=self._guide_hreflangs(),
+                page_title=g["title"], meta_description=g["meta"],
+                h1=g["h1"], body_html=path.read_text(encoding="utf-8"),
+                og_type="article",
+                sitemap_priority=0.7, sitemap_changefreq="monthly",
+            )
+            n += 1
+        return n
 
     def _not_found_page(self) -> None:
         """/404.html — poslužitelj ga vraća uz status 404.
@@ -985,7 +1099,8 @@ prodaji iz prošlosti nikome ne pomaže.</p>
         (self.out / "feed.xml").write_text(feed, encoding="utf-8")
 
     # -- blog --------------------------------------------------------------
-    def _blog(self, active: list[dict], by_county: dict, run_stats: dict) -> int:
+    def _blog(self, active: list[dict], by_county: dict, run_stats: dict,
+              repeat_groups: dict[str, list[dict]] | None = None) -> int:
         posts = []
 
         # (a) mjesečni pregled tržišta
@@ -1062,6 +1177,130 @@ iz ovršnih i stečajnih postupaka.</p>
                 "data_note": f"{n} aktivnih predmeta",
             })
 
+        # (c) rang-liste koje se osvježavaju sa svakim pokretanjem — stabilan
+        # URL skuplja poveznice, a sadržaj je svaki dan svjež
+        rank_posts = []
+
+        priciest = sorted((d for d in active if d.get("estimated_value_eur")),
+                          key=lambda x: -float(x["estimated_value_eur"]))[:10]
+        rows = "".join(
+            f'<tr><td><a href="{d["url"]}">{escape(d["type_label"])}'
+            f'</a></td><td>{escape(d.get("city") or d.get("county") or "—")}</td>'
+            f'<td>{f_eur(d["estimated_value_eur"])}</td>'
+            f'<td>{f_eur(d["opening_price_eur"]) if d.get("opening_price_eur") else "—"}</td></tr>'
+            for d in priciest)
+        body = f"""
+<p>Deset trenutačno najvrjednijih aktivnih predmeta u službenom registru,
+poredanih po procijenjenoj vrijednosti. Popis se osvježava svakodnevno iz
+službenog snimka.</p>
+<table><thead><tr><th>Predmet</th><th>Mjesto</th><th>Procjena</th>
+<th>Početna cijena</th></tr></thead><tbody>{rows}</tbody></table>
+<p><strong>Prije oduševljenja brojkama:</strong> velike procjene često znače
+suvlasničke udjele, pravo građenja umjesto vlasništva, ili terete koji ostaju
+upisani. Što se točno prodaje piše u zaključku o prodaji — poveznica na
+službeni registar stoji na svakoj stranici predmeta.</p>
+"""
+        rank_posts.append({
+            "slug": "najskuplje-na-drazbi",
+            "h1": "Najskuplje na dražbi upravo sada",
+            "title": "Najskuplje nekretnine i imovina na dražbi u Hrvatskoj | Prilika",
+            "meta": ("Deset najvrjednijih aktivnih predmeta u službenom registru "
+                     "dražbi — s procjenama, početnim cijenama i upozorenjima na "
+                     "što paziti. Osvježava se svakodnevno."),
+            "body": body, "cards": priciest[:6],
+            "cards_title": "Najvrjedniji aktivni predmeti",
+            "published": self.snapshot, "changefreq": "daily",
+            "data_note": "osvježava se svakodnevno",
+        })
+
+        if repeat_groups:
+            stubborn = []
+            for group in repeat_groups.values():
+                if len(group) < 3:
+                    continue
+                live = next((m for m in group if m.get("status") != "zavrseno"), None)
+                opens = [float(m["opening_price_eur"]) for m in group
+                         if m.get("opening_price_eur")]
+                drop = (round((1 - opens[-1] / opens[0]) * 100)
+                        if len(opens) >= 2 and opens[0] > opens[-1] > 0 else None)
+                stubborn.append({"n": len(group), "live": live, "drop": drop,
+                                 "title": (live or group[-1])["card_title"]})
+            stubborn.sort(key=lambda s: -s["n"])
+            stubborn = stubborn[:8]
+            if stubborn:
+                rows = "".join(
+                    "<tr><td>" + (f'<a href="{s["live"]["url"]}">{escape(s["title"])}</a>'
+                                  if s["live"] else escape(s["title"])) + "</td>"
+                    f'<td>{s["n"]}</td>'
+                    f'<td>{str(s["drop"]) + " %" if s["drop"] else "—"}</td></tr>'
+                    for s in stubborn)
+                body = f"""
+<p>Neki se predmeti na dražbu vraćaju tri, pet, pa i devet puta — i svaki
+povratak u pravilu znači nižu početnu cijenu. Ovo su trenutačni rekorderi po
+broju pojavljivanja u registru, izvedeno iz povezanih ponovljenih dražbi.</p>
+<table><thead><tr><th>Predmet</th><th>Pojavljivanja</th>
+<th>Pad početne cijene</th></tr></thead><tbody>{rows}</tbody></table>
+<p>Zašto se ne prodaju? Ponekad je razlog očit iz opisa (suvlasnički udio,
+specifična oprema), ponekad tek iz zaključka o prodaji. Ali upravo među
+ovakvim predmetima nastaju najveći popusti u registru — pregled po visini
+popusta: <a href="/najveci-popusti/">najveći popusti</a>.</p>
+"""
+                rank_posts.append({
+                    "slug": "predmeti-koje-nitko-ne-zeli",
+                    "h1": "Predmeti koje (zasad) nitko ne želi",
+                    "title": "Dražbe koje se ponavljaju najviše puta | Prilika",
+                    "meta": ("Predmeti s najviše ponovljenih dražbi u službenom "
+                             "registru i koliko im je pala početna cijena. "
+                             "Osvježava se svakodnevno."),
+                    "body": body, "published": self.snapshot, "changefreq": "daily",
+                    "data_note": "izvedeno iz povezanih ponovljenih dražbi",
+                })
+
+        week_end = today + timedelta(days=7)
+        ending = sorted((d for d in active
+                         if d.get("status") == "u_tijeku" and d.get("auction_end")
+                         and d["auction_end"].date() <= week_end
+                         and float(d.get("estimated_value_eur") or 0) >= 50000),
+                        key=lambda d: d["auction_end"])[:10]
+        if ending:
+            rows = "".join(
+                f'<tr><td><a href="{d["url"]}">{escape(d["card_title"])}</a></td>'
+                f'<td>{f_eur(d["estimated_value_eur"])}</td>'
+                f'<td>{f_eur(d["opening_price_eur"]) if d.get("opening_price_eur") else "—"}</td>'
+                f'<td>{f_d(d["auction_end"])}</td></tr>'
+                for d in ending)
+            body = f"""
+<p>Nadmetanja vrijednija od 50.000 € koja završavaju u sljedećih sedam dana,
+poredana po roku. Tko želi sudjelovati, jamčevinu mora uplatiti prije
+završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
+<table><thead><tr><th>Predmet</th><th>Procjena</th><th>Početna cijena</th>
+<th>Završava</th></tr></thead><tbody>{rows}</tbody></table>
+<p>Cijeli pregled, uključujući manje vrijedne predmete:
+<a href="/uskoro-zavrsavaju/">dražbe koje uskoro završavaju</a>.</p>
+"""
+            rank_posts.append({
+                "slug": "zavrsavaju-ovaj-tjedan",
+                "h1": "Vrijedne dražbe koje završavaju ovaj tjedan",
+                "title": "Dražbe iznad 50.000 € koje završavaju ovaj tjedan | Prilika",
+                "meta": ("Nadmetanja procijenjena iznad 50.000 € koja završavaju "
+                         "u sljedećih sedam dana — s rokovima i početnim "
+                         "cijenama. Osvježava se svakodnevno."),
+                "body": body, "cards": ending[:6],
+                "cards_title": "Završavaju uskoro",
+                "published": self.snapshot, "changefreq": "daily",
+                "data_note": "osvježava se svakodnevno",
+            })
+
+        # (d) ručno pisane priče — statični tekstovi iz site/content/, s
+        # brojkama na datum objave (data_note kaže iz kojeg su snimka)
+        story_posts = []
+        for meta in STORY_POSTS:
+            path = config.SITE_DIR / "content" / meta["file"]
+            if path.exists():
+                story_posts.append({**meta, "body": path.read_text(encoding="utf-8")})
+
+        posts = story_posts + rank_posts + posts
+
         for p in posts:
             url = f"/blog/{p['slug']}/"
             crumbs = [{"name": "Početna", "url": "/"},
@@ -1083,7 +1322,8 @@ iz ovršnih i stečajnih postupaka.</p>
                     "author": {"@type": "Organization", "name": config.SITE_NAME},
                     "publisher": {"@type": "Organization", "name": config.SITE_NAME},
                 }, self._jsonld_breadcrumbs(crumbs)],
-                sitemap_priority=0.6, sitemap_changefreq="monthly",
+                sitemap_priority=0.6,
+                sitemap_changefreq=p.get("changefreq", "monthly"),
             )
 
         crumbs = [{"name": "Početna", "url": "/"}, {"name": "Blog", "url": "/blog/"}]

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="{{ lang|default('hr') }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,10 +7,12 @@
 <meta name="description" content="{{ meta_description }}">
 <link rel="canonical" href="{{ canonical }}">
 {% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
-
+{% if hreflangs %}
+{% for hl in hreflangs %}<link rel="alternate" hreflang="{{ hl.lang }}" href="{{ hl.url }}">
+{% endfor %}{% endif %}
 <meta property="og:type" content="{{ og_type|default('website') }}">
 <meta property="og:site_name" content="{{ site_name }}">
-<meta property="og:locale" content="hr_HR">
+<meta property="og:locale" content="{{ og_locale|default('hr_HR') }}">
 <meta property="og:title" content="{{ og_title|default(page_title) }}">
 <meta property="og:description" content="{{ meta_description }}">
 <meta property="og:url" content="{{ canonical }}">
@@ -110,6 +112,11 @@
     <p class="muted">Podaci su preuzeti {{ snapshot_date }}. Prilika nije FINA i nije
       sudionik u postupku prodaje. Prije bilo kakve odluke provjeri podatke izravno
       u Očevidniku.</p>
+    <p class="muted">Vodič za strane kupce:
+      <a href="{{ rel('/en/croatian-property-auctions/') }}" hreflang="en">English</a> ·
+      <a href="{{ rel('/de/zwangsversteigerungen-kroatien/') }}" hreflang="de">Deutsch</a> ·
+      <a href="{{ rel('/sl/drazbe-nepremicnin-na-hrvaskem/') }}" hreflang="sl">Slovenščina</a> ·
+      <a href="{{ rel('/it/aste-immobiliari-in-croazia/') }}" hreflang="it">Italiano</a></p>
     {# svjesno bez rel="nofollow": povratna poveznica na studio #}
     <p class="muted">© {{ year }} Prilika · Izrada:
       <a href="https://nexistudio.dev" target="_blank" rel="noopener">nexistudio.dev</a></p>
