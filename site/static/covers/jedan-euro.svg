@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <rect x="60" y="312" width="520" height="6" rx="3" fill="#0b6b43" opacity=".25"/>
+  <!-- velika kovanica -->
+  <circle cx="235" cy="195" r="120" fill="#b45309"/>
+  <circle cx="235" cy="195" r="120" fill="none" stroke="#8a3e06" stroke-width="10"/>
+  <circle cx="235" cy="195" r="88" fill="none" stroke="#d97f2e" stroke-width="4" stroke-dasharray="6 10"/>
+  <text x="235" y="238" font-family="Georgia, serif" font-size="130" font-weight="bold" fill="#fff" text-anchor="middle">€1</text>
+  <!-- mala kuća s golemom procjenom -->
+  <g>
+    <rect x="428" y="216" width="120" height="100" rx="4" fill="#0b6b43"/>
+    <path d="M488 158 L568 226 L408 226 Z" fill="#12855a"/>
+    <rect x="470" y="262" width="34" height="54" rx="3" fill="#edf3ef"/>
+    <rect x="440" y="238" width="22" height="20" fill="#edf3ef" opacity=".85"/>
+    <rect x="514" y="238" width="22" height="20" fill="#edf3ef" opacity=".85"/>
+  </g>
+  <!-- oznaka procjene -->
+  <g transform="rotate(6 520 120)">
+    <rect x="430" y="86" width="182" height="52" rx="10" fill="#fff" stroke="#0b6b43" stroke-width="3"/>
+    <text x="521" y="121" font-family="Georgia, serif" font-size="27" font-weight="bold" fill="#0b6b43" text-anchor="middle">10.238.569 €</text>
+  </g>
+  <text x="320" y="72" font-family="Georgia, serif" font-size="30" font-style="italic" fill="#1a1a1a" text-anchor="middle" opacity=".7">procjena vs. početna cijena</text>
+</svg>

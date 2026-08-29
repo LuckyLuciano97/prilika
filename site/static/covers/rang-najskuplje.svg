@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <rect x="60" y="312" width="520" height="6" rx="3" fill="#0b6b43" opacity=".25"/>
+  <!-- stupci vrijednosti -->
+  <rect x="110" y="210" width="90" height="102" rx="8" fill="#12855a"/>
+  <rect x="230" y="110" width="90" height="202" rx="8" fill="#0b6b43"/>
+  <rect x="350" y="170" width="90" height="142" rx="8" fill="#12855a"/>
+  <rect x="470" y="240" width="90" height="72" rx="8" fill="#8fbfab"/>
+  <!-- kuća na pobjedničkom stupcu -->
+  <g fill="#fff">
+    <path d="M275 44 L318 82 L232 82 Z"/>
+    <rect x="244" y="80" width="62" height="24" rx="3"/>
+  </g>
+  <!-- oznake € -->
+  <text x="155" y="272" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#fff" text-anchor="middle">€€</text>
+  <text x="275" y="190" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="#fff" text-anchor="middle">€€€</text>
+  <text x="395" y="240" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#fff" text-anchor="middle">€€</text>
+  <text x="515" y="284" font-family="Georgia, serif" font-size="30" font-weight="bold" fill="#fff" text-anchor="middle">€</text>
+</svg>

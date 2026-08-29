@@ -409,3 +409,35 @@ table.detail tr.current { background: var(--accent-soft); }
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); padding-block: 1.7rem; font-size: .88rem; }
 .site-footer p { margin: .55rem 0; max-width: 78ch; }
 .site-footer p:first-child { font-size: .95rem; }
+
+/* --- blog: mreža objava + naslovnice ------------------------------------ */
+.blog-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.4rem; margin-top: 1.2rem;
+}
+.bpost {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg); overflow: hidden; display: flex; flex-direction: column;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.bpost:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: #cfd8d2; }
+.bpost-cover { display: block; line-height: 0; }
+.bpost-cover img { width: 100%; height: auto; display: block; }
+.bpost-body { padding: 1rem 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .45rem; }
+.bpost-date { color: var(--fg-muted); font-size: .82rem; margin: 0; }
+.bpost-body h2 { font-size: 1.12rem; line-height: 1.35; margin: 0; }
+.bpost-body h2 a { text-decoration: none; color: var(--fg-head); }
+.bpost-body h2 a:hover { color: var(--accent); }
+.bpost-body > p { margin: 0; font-size: .92rem; color: var(--fg); }
+.bpost-more { margin-top: auto; }
+.bpost-more a { font-weight: 600; text-decoration: none; }
+
+/* naslovnica unutar članka */
+.article-cover {
+  width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid var(--line); margin: .4rem 0 1.4rem; display: block;
+}
+
+/* blog index smije preko cijele širine — mreža, ne tekst */
+.article:has(.blog-grid) { max-width: none; }
+.article:has(.blog-grid) > .blog-grid p { max-width: none; }

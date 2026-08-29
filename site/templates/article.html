@@ -5,6 +5,7 @@
     <h1>{{ h1 }}</h1>
     {% if published %}<p class="muted">Objavljeno {{ published }}{% if data_note %} · {{ data_note }}{% endif %}</p>{% endif %}
   </header>
+  {% if cover %}<img class="article-cover" src="{{ rel(cover) }}" alt="" width="640" height="360">{% endif %}
   {{ body_html|safe }}
 
   {% if cards %}

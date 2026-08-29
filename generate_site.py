@@ -154,7 +154,8 @@ STORY_POSTS = [
      "meta": ("U jednom stečajnom spisu prodaje se 16 nekretnina ukupne procjene "
               "20,5 milijuna eura — a već zakazani listopadski krug kreće od "
               "četvrtine procjene."),
-     "file": "prica-varazdinski-stecaj.html", "published": "2026-08-13",
+     "file": "prica-varazdinski-stecaj.html",
+     "cover": "/static/covers/stecaj-paket.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "drazba-udjela-zracna-luka-zagreb",
      "h1": "Na dražbi i udjel u koncesionaru Zračne luke Zagreb",
@@ -162,7 +163,8 @@ STORY_POSTS = [
      "meta": ("Među predmetima jednog stečaja: udjeli u jedinom članu društva "
               "koncesionara zagrebačke zračne luke, procijenjeni na 7 milijuna "
               "eura — i 16 milijuna eura teretnih vozila."),
-     "file": "prica-zracna-luka.html", "published": "2026-08-13",
+     "file": "prica-zracna-luka.html",
+     "cover": "/static/covers/zracna-luka.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "nekretnina-od-jednog-eura",
      "h1": "Procjena 10,2 milijuna, početna cijena: jedan euro",
@@ -170,7 +172,8 @@ STORY_POSTS = [
      "meta": ("U registru stoji pravo građenja procijenjeno na 10,2 milijuna "
               "eura s početnom cijenom od jednog eura. Zašto takve stavke "
               "označavamo sumnjivima i što zapravo znače."),
-     "file": "prica-jedan-euro.html", "published": "2026-08-13",
+     "file": "prica-jedan-euro.html",
+     "cover": "/static/covers/jedan-euro.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "hotel-bellevue-split-na-drazbi",
      "h1": "Dio splitskog hotela Bellevue čeka dražbu",
@@ -178,7 +181,8 @@ STORY_POSTS = [
      "meta": ("Dio zgrade povijesnog hotela Bellevue na Prokurativama upisan je "
               "u stečajnu prodaju s procjenom od 9,3 milijuna eura — zasad bez "
               "termina nadmetanja."),
-     "file": "prica-hotel-bellevue.html", "published": "2026-08-13",
+     "file": "prica-hotel-bellevue.html",
+     "cover": "/static/covers/bellevue.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "od-japanki-do-zracne-luke",
      "h1": "Od japanki do zračne luke: što sve Hrvatska prodaje na dražbi",
@@ -186,7 +190,8 @@ STORY_POSTS = [
      "meta": ("338 pari japanki, motor broda \"Stočar\", šuma koja se devet puta "
               "vraćala na dražbu i udjel u zračnoj luci — najneobičniji predmeti "
               "službenog registra."),
-     "file": "prica-od-japanki-do-zracne-luke.html", "published": "2026-08-13",
+     "file": "prica-od-japanki-do-zracne-luke.html",
+     "cover": "/static/covers/kuriozitet.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
 ]
 
@@ -283,6 +288,7 @@ class SiteBuilder:
         ctx.setdefault("source_licence_url", config.SOURCE_LICENCE_URL)
         ctx.setdefault("snapshot_date", self.snapshot)
         ctx.setdefault("year", date.today().year)
+        ctx.setdefault("og_image", self._abs("/static/og-image.png"))
         ctx["canonical"] = self._abs(path)
         ctx["rel"] = lambda p: p
 
@@ -1134,6 +1140,7 @@ na sva tri pitanja i vrijedi ga pročitati prije nego ponudu.</p>
 """
         posts.append({
             "slug": f"pregled-trzista-{today.year}-{today.month:02d}",
+            "cover": "/static/covers/pregled.svg",
             "h1": f"Nekretnine na dražbi — pregled za {mlabel}",
             "title": f"Nekretnine na dražbi u Hrvatskoj: pregled za {mlabel} | Prilika",
             "meta": (f"Koliko je nekretnina na dražbi u {mlabel}, u kojim županijama, "
@@ -1167,6 +1174,7 @@ iz ovršnih i stečajnih postupaka.</p>
 """
             posts.append({
                 "slug": f"drazbe-{slugify(county)}",
+                "cover": "/static/covers/zupanija.svg",
                 "h1": f"Dražbe nekretnina u županiji {county}",
                 "title": f"Nekretnine na dražbi — {county} | Prilika",
                 "meta": (f"Pregled {n} aktivnih dražbi nekretnina u županiji {county}: "
@@ -1202,6 +1210,7 @@ službeni registar stoji na svakoj stranici predmeta.</p>
 """
         rank_posts.append({
             "slug": "najskuplje-na-drazbi",
+            "cover": "/static/covers/rang-najskuplje.svg",
             "h1": "Najskuplje na dražbi upravo sada",
             "title": "Najskuplje nekretnine i imovina na dražbi u Hrvatskoj | Prilika",
             "meta": ("Deset najvrjednijih aktivnih predmeta u službenom registru "
@@ -1247,6 +1256,7 @@ popusta: <a href="/najveci-popusti/">najveći popusti</a>.</p>
 """
                 rank_posts.append({
                     "slug": "predmeti-koje-nitko-ne-zeli",
+                    "cover": "/static/covers/rang-ponovljene.svg",
                     "h1": "Predmeti koje (zasad) nitko ne želi",
                     "title": "Dražbe koje se ponavljaju najviše puta | Prilika",
                     "meta": ("Predmeti s najviše ponovljenih dražbi u službenom "
@@ -1280,6 +1290,7 @@ završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
 """
             rank_posts.append({
                 "slug": "zavrsavaju-ovaj-tjedan",
+                "cover": "/static/covers/rang-rok.svg",
                 "h1": "Vrijedne dražbe koje završavaju ovaj tjedan",
                 "title": "Dražbe iznad 50.000 € koje završavaju ovaj tjedan | Prilika",
                 "meta": ("Nadmetanja procijenjena iznad 50.000 € koja završavaju "
@@ -1310,6 +1321,7 @@ završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
                 "article.html", url,
                 page_title=p["title"], meta_description=p["meta"], h1=p["h1"],
                 body_html=p["body"], cards=p.get("cards"),
+                cover=p.get("cover"),
                 cards_title=p.get("cards_title"), published=p["published"],
                 data_note=p.get("data_note"), og_type="article",
                 breadcrumbs=crumbs,
@@ -1328,17 +1340,27 @@ završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
 
         crumbs = [{"name": "Početna", "url": "/"}, {"name": "Blog", "url": "/blog/"}]
         listing = "".join(
-            f'<li><a href="/blog/{p["slug"]}/">{p["h1"]}</a> '
-            f'<span class="muted">— {p["published"]}</span></li>' for p in posts
+            f'''<article class="bpost">
+  <a class="bpost-cover" href="/blog/{p["slug"]}/" tabindex="-1" aria-hidden="true">
+    <img src="{p.get("cover") or "/static/covers/pregled.svg"}" alt="" loading="lazy" width="640" height="360">
+  </a>
+  <div class="bpost-body">
+    <p class="bpost-date">{p["published"]}{" · " + p["data_note"] if p.get("data_note") else ""}</p>
+    <h2><a href="/blog/{p["slug"]}/">{escape(p["h1"])}</a></h2>
+    <p>{escape(p["meta"])}</p>
+    <p class="bpost-more"><a href="/blog/{p["slug"]}/">Pročitaj →</a></p>
+  </div>
+</article>''' for p in posts
         )
         self._render(
             "article.html", "/blog/",
-            page_title="Blog — analize tržišta nekretnina na dražbi | Prilika",
-            meta_description=("Mjesečni pregledi tržišta dražbi, analize po županijama "
-                              "i vodiči za kupnju nekretnine u ovrsi i stečaju."),
-            h1="Blog", body_html=f"<ul class='linklist'>{listing}</ul>",
+            page_title="Blog — priče i analize s hrvatskih dražbi | Prilika",
+            meta_description=("Priče iz službenog registra dražbi, rang-liste koje se "
+                              "osvježavaju svakodnevno, mjesečni pregledi tržišta i "
+                              "analize po županijama."),
+            h1="Blog", body_html=f'<div class="blog-grid">{listing}</div>',
             breadcrumbs=crumbs, jsonld=[self._jsonld_breadcrumbs(crumbs)],
-            sitemap_priority=0.6, sitemap_changefreq="weekly",
+            sitemap_priority=0.6, sitemap_changefreq="daily",
         )
         return len(posts)
 

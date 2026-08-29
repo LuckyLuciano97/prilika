@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <!-- japanka, junakinja priče -->
+  <g transform="rotate(-12 250 190)">
+    <ellipse cx="250" cy="190" rx="105" ry="150" fill="#b45309"/>
+    <ellipse cx="250" cy="190" rx="105" ry="150" fill="none" stroke="#8a3e06" stroke-width="8"/>
+    <path d="M250 96 L214 190 M250 96 L286 190" stroke="#0b6b43" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <circle cx="250" cy="96" r="11" fill="#0b6b43"/>
+  </g>
+  <!-- druga japanka, proviruje -->
+  <g transform="rotate(9 455 220)" opacity=".92">
+    <ellipse cx="455" cy="220" rx="85" ry="122" fill="#d97f2e"/>
+    <path d="M455 144 L426 220 M455 144 L484 220" stroke="#0b6b43" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <circle cx="455" cy="144" r="9" fill="#0b6b43"/>
+  </g>
+  <!-- etiketa količine -->
+  <g transform="rotate(-6 130 78)">
+    <rect x="58" y="50" width="150" height="56" rx="10" fill="#0b6b43"/>
+    <text x="133" y="88" font-family="Georgia, serif" font-size="30" font-weight="bold" fill="#fff" text-anchor="middle">× 338</text>
+  </g>
+  <text x="320" y="336" font-family="Georgia, serif" font-size="24" font-style="italic" fill="#1a1a1a" text-anchor="middle" opacity=".65">sve je jednom bilo na dražbi</text>
+</svg>

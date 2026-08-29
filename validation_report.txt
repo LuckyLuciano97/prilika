@@ -1,5 +1,5 @@
 PRILIKA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-29 23:51:42
+Generirano: 2026-08-30 00:06:15
 Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
 
 ==============================================================================
@@ -133,7 +133,7 @@ Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
 ==============================================================================
 8. INTEGRITET POVIJESTI CIJENA
 ==============================================================================
-  pokretanja zabilježenih: 27
+  pokretanja zabilježenih: 29
   redaka u price_history:  0
   događaja:                517
   kontrolirani test: opening_price_eur 101722.48 → 81377.98 (-20.0 %) — promjena uhvaćena

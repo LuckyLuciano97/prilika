@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <!-- mreža -->
+  <g stroke="#0b6b43" stroke-width="1.5" opacity=".18">
+    <line x1="90" y1="70" x2="90" y2="300"/><line x1="90" y1="300" x2="570" y2="300"/>
+    <line x1="90" y1="130" x2="570" y2="130"/><line x1="90" y1="190" x2="570" y2="190"/><line x1="90" y1="245" x2="570" y2="245"/>
+  </g>
+  <!-- ploha grafa -->
+  <path d="M90 260 L190 235 L290 250 L390 180 L490 150 L570 100 L570 300 L90 300 Z" fill="#0b6b43" opacity=".18"/>
+  <path d="M90 260 L190 235 L290 250 L390 180 L490 150 L570 100" stroke="#0b6b43" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#b45309">
+    <circle cx="190" cy="235" r="10"/><circle cx="290" cy="250" r="10"/>
+    <circle cx="390" cy="180" r="10"/><circle cx="490" cy="150" r="10"/>
+  </g>
+  <!-- mala kuća na vrhu krivulje -->
+  <g fill="#0b6b43">
+    <path d="M570 56 L596 80 L544 80 Z"/>
+    <rect x="551" y="79" width="38" height="26" rx="3"/>
+  </g>
+</svg>

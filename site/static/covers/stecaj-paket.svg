@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <!-- niz zgrada: stečajni paket -->
+  <rect x="70" y="150" width="90" height="170" rx="4" fill="#0b6b43"/>
+  <rect x="180" y="100" width="110" height="220" rx="4" fill="#12855a"/>
+  <rect x="310" y="170" width="80" height="150" rx="4" fill="#0b6b43"/>
+  <rect x="410" y="130" width="100" height="190" rx="4" fill="#12855a"/>
+  <g fill="#edf3ef" opacity=".85">
+    <rect x="85" y="170" width="16" height="16"/><rect x="115" y="170" width="16" height="16"/>
+    <rect x="85" y="200" width="16" height="16"/><rect x="115" y="200" width="16" height="16"/>
+    <rect x="85" y="230" width="16" height="16"/><rect x="115" y="230" width="16" height="16"/>
+    <rect x="198" y="120" width="18" height="18"/><rect x="228" y="120" width="18" height="18"/><rect x="258" y="120" width="18" height="18"/>
+    <rect x="198" y="152" width="18" height="18"/><rect x="228" y="152" width="18" height="18"/><rect x="258" y="152" width="18" height="18"/>
+    <rect x="198" y="184" width="18" height="18"/><rect x="228" y="184" width="18" height="18"/><rect x="258" y="184" width="18" height="18"/>
+    <rect x="325" y="190" width="14" height="14"/><rect x="351" y="190" width="14" height="14"/>
+    <rect x="325" y="218" width="14" height="14"/><rect x="351" y="218" width="14" height="14"/>
+    <rect x="425" y="150" width="16" height="16"/><rect x="455" y="150" width="16" height="16"/><rect x="485" y="150" width="16" height="16"/>
+    <rect x="425" y="182" width="16" height="16"/><rect x="455" y="182" width="16" height="16"/><rect x="485" y="182" width="16" height="16"/>
+  </g>
+  <rect x="60" y="318" width="520" height="6" rx="3" fill="#0b6b43" opacity=".25"/>
+  <!-- cjenovna etiketa preko paketa -->
+  <g transform="rotate(-8 500 90)">
+    <rect x="430" y="58" width="150" height="64" rx="10" fill="#b45309"/>
+    <circle cx="452" cy="90" r="7" fill="#edf3ef"/>
+    <text x="505" y="100" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">−75%</text>
+  </g>
+</svg>
