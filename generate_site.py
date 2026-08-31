@@ -145,6 +145,17 @@ def city_slug(item) -> str:
 
 MOVABLE_TYPES = ("pokretnina", "pravo")
 
+# Fotografije i njihove licence — generira tools/fetch_photos.py iz Commons
+# API-ja. Kredit se ispisuje iz OVE datoteke, pa ne može odlutati od izvora.
+def _photo_sources() -> dict:
+    path = config.ROOT / "data" / "foto_izvori.json"
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    return {}
+
+
+PHOTOS = _photo_sources()
+
 # Ručno pisane priče: tijelo u site/content/{file}, brojke vrijede na datum
 # objave (data_note kaže iz kojeg snimka dolaze) i namjerno se NE osvježavaju.
 STORY_POSTS = [
@@ -154,7 +165,7 @@ STORY_POSTS = [
      "meta": ("U jednom stečajnom spisu prodaje se 16 nekretnina ukupne procjene "
               "20,5 milijuna eura — a već zakazani listopadski krug kreće od "
               "četvrtine procjene."),
-     "file": "prica-varazdinski-stecaj.html",
+     "file": "prica-varazdinski-stecaj.html", "photo": "varazdin",
      "cover": "/static/covers/stecaj-paket.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "drazba-udjela-zracna-luka-zagreb",
@@ -163,7 +174,7 @@ STORY_POSTS = [
      "meta": ("Među predmetima jednog stečaja: udjeli u jedinom članu društva "
               "koncesionara zagrebačke zračne luke, procijenjeni na 7 milijuna "
               "eura — i 16 milijuna eura teretnih vozila."),
-     "file": "prica-zracna-luka.html",
+     "file": "prica-zracna-luka.html", "photo": "zracna-luka",
      "cover": "/static/covers/zracna-luka.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "nekretnina-od-jednog-eura",
@@ -181,9 +192,50 @@ STORY_POSTS = [
      "meta": ("Dio zgrade povijesnog hotela Bellevue na Prokurativama upisan je "
               "u stečajnu prodaju s procjenom od 9,3 milijuna eura — zasad bez "
               "termina nadmetanja."),
-     "file": "prica-hotel-bellevue.html",
+     "file": "prica-hotel-bellevue.html", "photo": "prokurative",
      "cover": "/static/covers/bellevue.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
+    {"slug": "kako-padaju-cijene-na-drazbi",
+     "h1": "Prva, druga, treća: kako zapravo padaju cijene na dražbi",
+     "title": "Prva, druga i treća dražba — koliko pada cijena | Prilika",
+     "meta": ("Prosječan popust je 21 % u prvoj dražbi, 42 % u drugoj i 75 % u "
+              "trećoj. Kako radi sustav krugova, gdje je donja granica i koliko "
+              "košta čekanje."),
+     "file": "vodic-krugovi.html", "photo": "sud", "published": "2026-08-31",
+     "data_note": "izvedeno iz svih aktivnih predmeta s iskazanim krugom"},
+    {"slug": "ovrha-ili-stecaj-razlika-za-kupca",
+     "h1": "Ovrha ili stečaj: zašto je razlika važna za kupca",
+     "title": "Ovrha ili stečaj — razlika koja mijenja cijenu i rizik | Prilika",
+     "meta": ("Stečajni predmeti nose prosječno 40 % popusta, ovršni 25 %. Tko "
+              "prodaje, zašto se popusti razlikuju i koje su tipične zamke u "
+              "svakom od dva postupka."),
+     "file": "vodic-ovrha-stecaj.html", "published": "2026-08-31",
+     "data_note": "2.458 aktivnih predmeta s poznatom vrstom postupka"},
+    {"slug": "jamcevina-koliko-i-kada",
+     "h1": "Jamčevina: koliko, do kada, i što ako ne pobijedite",
+     "title": "Jamčevina na sudskoj dražbi — iznos, rok i povrat | Prilika",
+     "meta": ("Prosječna jamčevina je 9,1 % procijenjene vrijednosti, a raspon "
+              "ide do dva milijuna eura. Kada mora biti uplaćena, kada se vraća "
+              "i kada se gubi."),
+     "file": "vodic-jamcevina.html", "published": "2026-08-31",
+     "data_note": "2.292 aktivna predmeta s iskazanom jamčevinom"},
+    {"slug": "kuce-ispod-30000-eura",
+     "h1": "129 kuća ispod 30.000 € — i zašto su gotovo sve na istom mjestu",
+     "title": "Kuće na dražbi ispod 30.000 eura: gdje su i zašto | Prilika",
+     "meta": ("U registru je 129 aktivnih kuća s početnom cijenom ispod 30.000 €, "
+              "a Slavonija drži gotovo cijeli popis. Zašto su jeftine i što "
+              "provjeriti prije ponude."),
+     "file": "prica-jeftine-kuce.html", "photo": "slavonija",
+     "published": "2026-08-31",
+     "data_note": "brojke iz službenog snimka na dan objave"},
+    {"slug": "nekretnine-na-obali",
+     "h1": "564 nekretnine na obali — i zašto su popusti ondje manji",
+     "title": "Nekretnine na dražbi na hrvatskoj obali | Prilika",
+     "meta": ("Šest obalnih županija drži 564 aktivne nekretnine, ali s popustima "
+              "ispod državnog prosjeka. Što to govori o tržištu i na što paziti "
+              "kod primorskih predmeta."),
+     "file": "prica-obala.html", "photo": "obala", "published": "2026-08-31",
+     "data_note": "brojke iz službenog snimka na dan objave"},
     {"slug": "od-japanki-do-zracne-luke",
      "h1": "Od japanki do zračne luke: što sve Hrvatska prodaje na dražbi",
      "title": "Najneobičniji predmeti na hrvatskim dražbama | Prilika",
@@ -289,6 +341,11 @@ class SiteBuilder:
         ctx.setdefault("snapshot_date", self.snapshot)
         ctx.setdefault("year", date.today().year)
         ctx.setdefault("og_image", self._abs("/static/og-image.png"))
+        photo = PHOTOS.get(ctx.pop("photo", "") or "")
+        if photo:
+            ctx["cover"] = photo["datoteka"]
+            ctx["cover_credit"] = photo
+            ctx["og_image"] = self._abs(photo["datoteka"])
         ctx["canonical"] = self._abs(path)
         ctx["rel"] = lambda p: p
 
@@ -1321,7 +1378,7 @@ završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
                 "article.html", url,
                 page_title=p["title"], meta_description=p["meta"], h1=p["h1"],
                 body_html=p["body"], cards=p.get("cards"),
-                cover=p.get("cover"),
+                cover=p.get("cover"), photo=p.get("photo"),
                 cards_title=p.get("cards_title"), published=p["published"],
                 data_note=p.get("data_note"), og_type="article",
                 breadcrumbs=crumbs,
@@ -1342,7 +1399,7 @@ završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
         listing = "".join(
             f'''<article class="bpost">
   <a class="bpost-cover" href="/blog/{p["slug"]}/" tabindex="-1" aria-hidden="true">
-    <img src="{p.get("cover") or "/static/covers/pregled.svg"}" alt="" loading="lazy" width="640" height="360">
+    <img src="{(PHOTOS.get(p.get("photo") or "") or {}).get("datoteka") or p.get("cover") or "/static/covers/pregled.svg"}" alt="" loading="lazy" width="640" height="360">
   </a>
   <div class="bpost-body">
     <p class="bpost-date">{p["published"]}{" · " + p["data_note"] if p.get("data_note") else ""}</p>

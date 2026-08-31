@@ -441,3 +441,13 @@ table.detail tr.current { background: var(--accent-soft); }
 /* blog index smije preko cijele širine — mreža, ne tekst */
 .article:has(.blog-grid) { max-width: none; }
 .article:has(.blog-grid) > .blog-grid p { max-width: none; }
+
+/* naslovna fotografija + kredit */
+figure.article-cover { margin: .4rem 0 1.6rem; }
+figure.article-cover img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius); border: 1px solid var(--line);
+}
+figure.article-cover figcaption {
+  margin-top: .5rem; font-size: .78rem; color: var(--fg-muted); max-width: none;
+}

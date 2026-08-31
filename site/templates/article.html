@@ -5,7 +5,17 @@
     <h1>{{ h1 }}</h1>
     {% if published %}<p class="muted">Objavljeno {{ published }}{% if data_note %} · {{ data_note }}{% endif %}</p>{% endif %}
   </header>
-  {% if cover %}<img class="article-cover" src="{{ rel(cover) }}" alt="" width="640" height="360">{% endif %}
+  {% if cover %}
+  <figure class="article-cover">
+    <img src="{{ rel(cover) }}" alt="" width="1200" height="630">
+    {% if cover_credit %}
+    <figcaption>Foto: <a href="{{ cover_credit.izvor_url }}" rel="nofollow noopener" target="_blank">{{ cover_credit.naslov }}</a>,
+      {{ cover_credit.autor }} ·
+      {% if cover_credit.licenca_url %}<a href="{{ cover_credit.licenca_url }}" rel="nofollow noopener license" target="_blank">{{ cover_credit.licenca }}</a>{% else %}{{ cover_credit.licenca }}{% endif %}
+      · Wikimedia Commons. Fotografija prikazuje lokalitet, ne predmet prodaje.</figcaption>
+    {% endif %}
+  </figure>
+  {% endif %}
   {{ body_html|safe }}
 
   {% if cards %}

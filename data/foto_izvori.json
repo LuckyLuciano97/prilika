@@ -1,0 +1,50 @@
+{
+  "varazdin": {
+    "naslov": "Varaždin - stari grad.jpg",
+    "autor": "Pudelek",
+    "licenca": "CC BY-SA 3.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Vara%C5%BEdin_-_stari_grad.jpg",
+    "datoteka": "/static/photos/varazdin.jpg"
+  },
+  "zracna-luka": {
+    "naslov": "Zagreb Airport Terminal 20170429220324.jpg",
+    "autor": "Tromber",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Zagreb_Airport_Terminal_20170429220324.jpg",
+    "datoteka": "/static/photos/zracna-luka.jpg"
+  },
+  "prokurative": {
+    "naslov": "Prokurative, Split.jpg",
+    "autor": "currystrumpet",
+    "licenca": "CC BY-SA 2.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Prokurative,_Split.jpg",
+    "datoteka": "/static/photos/prokurative.jpg"
+  },
+  "sud": {
+    "naslov": "Općinski i županijski sud Osijek.jpg",
+    "autor": "Roko Poljak",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Op%C4%87inski_i_%C5%BEupanijski_sud_Osijek.jpg",
+    "datoteka": "/static/photos/sud.jpg"
+  },
+  "slavonija": {
+    "naslov": "Ilok Town hall.JPG",
+    "autor": "Mazbln",
+    "licenca": "CC BY-SA 3.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Ilok_Town_hall.JPG",
+    "datoteka": "/static/photos/slavonija.jpg"
+  },
+  "obala": {
+    "naslov": "Rovinj Old Town.jpg",
+    "autor": "Einaz80",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Rovinj_Old_Town.jpg",
+    "datoteka": "/static/photos/obala.jpg"
+  }
+}

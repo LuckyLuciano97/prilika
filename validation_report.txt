@@ -1,5 +1,5 @@
 PRILIKA — IZVJEŠTAJ VALIDACIJE
-Generirano: 2026-08-30 00:06:15
+Generirano: 2026-08-31 02:03:12
 Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
 
 ==============================================================================
@@ -81,7 +81,7 @@ Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
   polja skenirana u bazi: 11,287 × 8
   pogodaka u bazi: 0
   preostalih osobnih imena po rječniku: 0
-  generiranih stranica skenirano: 2,936
+  generiranih stranica skenirano: 2,941
   pogodaka na stranicama: 0
   [PASS] Nula osobnih podataka (baza + stranice) — 0 pogodaka (baza 0, imena 0, HTML 0)
   [PASS] Detektor osobnih podataka radi (kontrolni uzorak) — pronađeno: ['email', 'oib_labelled', 'phone_labelled', 'phone_mobile']
@@ -92,7 +92,7 @@ Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
   provjereno redaka: 9,813
   odstupanja: 0
   označeno kao sumnjivo (ne prikazuje se kao prilika): 240
-    primjer: ST-4903/2016 procjena 5587.63 € → početna 0.13 €
+    primjer: ST-14/2015 procjena 4216.95 € → početna 0.13 €
     (0,13 € = 1 kuna po tečaju 7,53450 — zaostatak iz prijelaza na euro)
   [PASS] Izračun popusta — 9,813 provjereno, 0 odstupanja
 
@@ -116,7 +116,7 @@ Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
 ==============================================================================
 7. SEO IZLAZ
 ==============================================================================
-  stranica ukupno:              2,936
+  stranica ukupno:              2,941
   bez <title>:                  0
   ponovljenih <title>:          0
   bez / prekratkog meta opisa:  0
@@ -124,23 +124,23 @@ Rezultat:   12 PASS · 0 WARN · 0 FAIL  (ukupno 12)
   bez canonical:                0
   bez točno jednog <h1>:        0
   neispravnih JSON-LD blokova:  0
-  stranica s dijakritikom:      2,936/2,936
-  URL-ova u sitemap.xml:        2,935
+  stranica s dijakritikom:      2,941/2,941
+  URL-ova u sitemap.xml:        2,940
   stranica koje nedostaju u sitemapu: 0
-  [PASS] SEO izlaz — 2,936 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
+  [PASS] SEO izlaz — 2,941 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   [PASS] Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
 
 ==============================================================================
 8. INTEGRITET POVIJESTI CIJENA
 ==============================================================================
-  pokretanja zabilježenih: 29
+  pokretanja zabilježenih: 33
   redaka u price_history:  0
   događaja:                517
   kontrolirani test: opening_price_eur 101722.48 → 81377.98 (-20.0 %) — promjena uhvaćena
 
-  različitih verzija izvora među pokretanjima: 4
+  različitih verzija izvora među pokretanjima: 5
   događaja među različitim snimcima (nova/status): 517
-  [PASS] Praćenje kroz vrijeme: promjene između dva stvarna snimka — 4 različita snimka → 0 promjena cijene, 517 događaja (nove stavke/statusi)
+  [PASS] Praćenje kroz vrijeme: promjene između dva stvarna snimka — 5 različita snimka → 0 promjena cijene, 517 događaja (nove stavke/statusi)
   [PASS] Mehanizam praćenja cijene radi — kontrolirani test promjene cijene
 
 ==============================================================================
@@ -154,7 +154,7 @@ SAŽETAK
   PASS  Izračun popusta — 9,813 provjereno, 0 odstupanja
   PASS  Ponovljena dražba: poznati slučaj povezan — OVR-12767/2016 — 2 pokušaja, cijena pada
   PASS  Nema pogrešnog spajanja različitih spisa — 0 skupina miješa spise
-  PASS  SEO izlaz — 2,936 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
+  PASS  SEO izlaz — 2,941 stranica; 0 duplih naslova, 0 loših opisa, 0 loših JSON-LD, 0 izvan sitemapa
   PASS  Dijakritika ispravno zapisana — pronađeni hrvatski znakovi u početnoj stranici
-  PASS  Praćenje kroz vrijeme: promjene između dva stvarna snimka — 4 različita snimka → 0 promjena cijene, 517 događaja (nove stavke/statusi)
+  PASS  Praćenje kroz vrijeme: promjene između dva stvarna snimka — 5 različita snimka → 0 promjena cijene, 517 događaja (nove stavke/statusi)
   PASS  Mehanizam praćenja cijene radi — kontrolirani test promjene cijene

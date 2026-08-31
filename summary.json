@@ -1,11 +1,11 @@
 {
-  "generirano": "2026-08-30",
-  "stanje_na_dan": "2026-08-29",
-  "starost_snimka_h": 24.0,
+  "generirano": "2026-08-31",
+  "stanje_na_dan": "2026-08-30",
+  "starost_snimka_h": 26.0,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
     "bajtova": 10343490,
-    "sha256": "4aa6f08c804ae32676c2d9d88813f4910e38eced91baedd1b672b8790f39419d",
+    "sha256": "3636250d4f774f6680d1aa7e07f094016bd0fbc7be2f2b05baace79804fd5002",
     "licenca": "Otvorena dozvola (OD)"
   },
   "redaka_u_csv": 11092,
@@ -93,9 +93,9 @@
     "county_pages": 22,
     "city_pages": 511,
     "category_pages": 16,
-    "blog_posts": 12,
+    "blog_posts": 17,
     "static_pages": 10,
-    "total_pages": 2935
+    "total_pages": 2940
   },
-  "trajanje_s": 51.4
+  "trajanje_s": 51.5
 }
