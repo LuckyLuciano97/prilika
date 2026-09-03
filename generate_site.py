@@ -879,8 +879,8 @@ i osobnih imena. Identitet ovršenika je zaštićen.</p>
 <p>U posljednjem pokretanju uklonjeno je:</p>
 <table><thead><tr><th>Vrsta podatka</th><th>Broj uklanjanja</th></tr></thead>
 <tbody>{red_rows}</tbody></table>
-<p>Provjera <code>validate.py</code> pretražuje bazu <em>i</em> svaku generiranu
-stranicu i prekida objavu ako pronađe ijedan osobni podatak.</p>
+<p>Automatska provjera pretražuje bazu <em>i</em> svaku generiranu
+stranicu prije objave i prekida objavu ako pronađe ijedan osobni podatak.</p>
 
 <h2>Što izvor nema</h2>
 <p>Radi poštenja: službeni izvoz nema stupac lokacije, površine, statusa ni
@@ -1395,7 +1395,11 @@ završetka, rokovi stoje u zaključku o prodaji svakog predmeta.</p>
             if path.exists():
                 story_posts.append({**meta, "body": path.read_text(encoding="utf-8")})
 
-        posts = story_posts + rank_posts + posts
+        # Svi popisi (ručne priče, rang-liste, mjesečni pregled, županije)
+        # spajaju se i sortiraju po datumu objave, najnovije prvo, tako da
+        # /blog/ stvarno prikazuje kronološki poredak, a ne redoslijed koda.
+        posts = sorted(story_posts + rank_posts + posts,
+                       key=lambda p: p["published"], reverse=True)
 
         for p in posts:
             url = f"/blog/{p['slug']}/"

@@ -1,7 +1,7 @@
 {
   "generirano": "2026-09-03",
   "stanje_na_dan": "2026-09-02",
-  "starost_snimka_h": 39.4,
+  "starost_snimka_h": 42.1,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
     "bajtova": 10348352,
@@ -96,5 +96,5 @@
     "static_pages": 10,
     "total_pages": 2894
   },
-  "trajanje_s": 43.9
+  "trajanje_s": 43.2
 }
