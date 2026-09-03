@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <!-- golem postotak precrtan: brojka koja ne znači ono što izgleda -->
+  <text x="300" y="230" font-family="Georgia, serif" font-size="150" font-weight="bold" fill="#0b6b43" text-anchor="middle" opacity=".28">−99 %</text>
+  <line x1="96" y1="240" x2="504" y2="128" stroke="#b45309" stroke-width="14" stroke-linecap="round"/>
+  <!-- zastavica upozorenja -->
+  <g transform="translate(452 76)">
+    <rect x="-4" y="0" width="9" height="120" rx="4" fill="#1a1a1a"/>
+    <path d="M5 6 L104 26 L5 50 Z" fill="#b45309"/>
+    <text x="42" y="42" font-family="Georgia, serif" font-size="30" font-weight="bold" fill="#fff" text-anchor="middle">!</text>
+  </g>
+  <text x="320" y="306" font-family="Georgia, serif" font-size="25" font-style="italic" fill="#1a1a1a" text-anchor="middle" opacity=".7">označeno, prikazano, izuzeto iz prosjeka</text>
+</svg>

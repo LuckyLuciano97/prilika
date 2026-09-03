@@ -156,6 +156,17 @@ def _photo_sources() -> dict:
 
 PHOTOS = _photo_sources()
 
+# Spotlight po županiji: stvarna fotografija te županije ako je imamo,
+# inače apstraktna karta. Bez ovoga sve tri županije dijele istu sliku.
+COUNTY_PHOTOS = {
+    "Grad Zagreb": "zagreb",
+    "Splitsko-dalmatinska županija": "split",
+    "Istarska županija": "pula",
+    "Primorsko-goranska županija": "obala",
+    "Osječko-baranjska županija": "sud",
+    "Varaždinska županija": "varazdin",
+}
+
 # Ručno pisane priče: tijelo u site/content/{file}, brojke vrijede na datum
 # objave (data_note kaže iz kojeg snimka dolaze) i namjerno se NE osvježavaju.
 STORY_POSTS = [
@@ -201,7 +212,7 @@ STORY_POSTS = [
      "meta": ("Prosječan popust je 21 % u prvoj dražbi, 42 % u drugoj i 75 % u "
               "trećoj. Kako radi sustav krugova, gdje je donja granica i koliko "
               "košta čekanje."),
-     "file": "vodic-krugovi.html", "photo": "sud", "published": "2026-08-31",
+     "file": "vodic-krugovi.html", "cover": "/static/covers/krugovi.svg", "published": "2026-08-31",
      "data_note": "izvedeno iz svih aktivnih predmeta s iskazanim krugom"},
     {"slug": "ovrha-ili-stecaj-razlika-za-kupca",
      "h1": "Ovrha ili stečaj: zašto je razlika važna za kupca",
@@ -209,7 +220,7 @@ STORY_POSTS = [
      "meta": ("Stečajni predmeti nose prosječno 40 % popusta, ovršni 25 %. Tko "
               "prodaje, zašto se popusti razlikuju i koje su tipične zamke u "
               "svakom od dva postupka."),
-     "file": "vodic-ovrha-stecaj.html", "published": "2026-08-31",
+     "file": "vodic-ovrha-stecaj.html", "cover": "/static/covers/ovrha-stecaj.svg", "published": "2026-08-31",
      "data_note": "2.458 aktivnih predmeta s poznatom vrstom postupka"},
     {"slug": "jamcevina-koliko-i-kada",
      "h1": "Jamčevina: koliko, do kada, i što ako ne pobijedite",
@@ -217,7 +228,7 @@ STORY_POSTS = [
      "meta": ("Prosječna jamčevina je 9,1 % procijenjene vrijednosti, a raspon "
               "ide do dva milijuna eura. Kada mora biti uplaćena, kada se vraća "
               "i kada se gubi."),
-     "file": "vodic-jamcevina.html", "published": "2026-08-31",
+     "file": "vodic-jamcevina.html", "cover": "/static/covers/jamcevina.svg", "published": "2026-08-31",
      "data_note": "2.292 aktivna predmeta s iskazanom jamčevinom"},
     {"slug": "kuce-ispod-30000-eura",
      "h1": "129 kuća ispod 30.000 € i zašto su gotovo sve na istom mjestu",
@@ -225,7 +236,7 @@ STORY_POSTS = [
      "meta": ("U registru je 129 aktivnih kuća s početnom cijenom ispod 30.000 €, "
               "a Slavonija drži gotovo cijeli popis. Zašto su jeftine i što "
               "provjeriti prije ponude."),
-     "file": "prica-jeftine-kuce.html", "photo": "slavonija",
+     "file": "prica-jeftine-kuce.html", "photo": "selo",
      "published": "2026-08-31",
      "data_note": "brojke iz službenog snimka na dan objave"},
     {"slug": "nekretnine-na-obali",
@@ -250,7 +261,7 @@ STORY_POSTS = [
      "meta": ("580 aktivnih predmeta, prosječan popust 28 %, a najviše ih je u "
               "Zagrebačkoj i Istarskoj županiji. Zašto su čestice male i što "
               "provjeriti prije ponude."),
-     "file": "prica-poljoprivredno.html", "published": "2026-09-03",
+     "file": "prica-poljoprivredno.html", "photo": "polje", "published": "2026-09-03",
      "data_note": "580 aktivnih predmeta te kategorije"},
     {"slug": "sumnjivi-popusti",
      "h1": "Popust od 99 %: kada brojka laže i zašto je svejedno prikazujemo",
@@ -258,7 +269,7 @@ STORY_POSTS = [
      "meta": ("Jedanaest aktivnih predmeta nosi popust koji ne znači ono što "
               "izgleda. Kako ih sustav automatski označava, što se iza njih krije "
               "i zašto ih ne brišemo."),
-     "file": "vodic-sumnjivi-popusti.html", "published": "2026-09-03",
+     "file": "vodic-sumnjivi-popusti.html", "cover": "/static/covers/sumnjivo.svg", "published": "2026-09-03",
      "data_note": "11 predmeta označenih automatskom provjerom"},
     {"slug": "od-japanki-do-zracne-luke",
      "h1": "Od japanki do zračne luke: što sve Hrvatska prodaje na dražbi",
@@ -1260,6 +1271,7 @@ iz ovršnih i stečajnih postupaka.</p>
             posts.append({
                 "slug": f"drazbe-{slugify(county)}",
                 "cover": "/static/covers/zupanija.svg",
+                "photo": COUNTY_PHOTOS.get(county),
                 "h1": f"Dražbe nekretnina u županiji {county}",
                 "title": f"Nekretnine na dražbi, {county} | Prilika",
                 "meta": (f"Pregled {n} aktivnih dražbi nekretnina u županiji {county}: "

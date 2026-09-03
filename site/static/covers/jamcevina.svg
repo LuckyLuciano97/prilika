@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <!-- novčanik s izdvojenim desetim dijelom -->
+  <rect x="90" y="120" width="300" height="180" rx="18" fill="#0b6b43"/>
+  <rect x="90" y="120" width="300" height="46" rx="18" fill="#12855a"/>
+  <rect x="300" y="196" width="120" height="52" rx="12" fill="#edf3ef"/>
+  <circle cx="336" cy="222" r="12" fill="#0b6b43"/>
+  <!-- kovanica koja izlazi: jamčevina -->
+  <g transform="translate(492 150)">
+    <circle r="76" fill="#b45309"/>
+    <circle r="76" fill="none" stroke="#8a3e06" stroke-width="8"/>
+    <text y="8" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">9,1 %</text>
+    <text y="42" font-family="Georgia, serif" font-size="19" fill="#fff" text-anchor="middle">procjene</text>
+  </g>
+  <path d="M400 210 Q 440 190 424 168" stroke="#0b6b43" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M420 154 L438 174 L414 180 Z" fill="#0b6b43"/>
+  <text x="240" y="332" font-family="Georgia, serif" font-size="23" font-style="italic" fill="#1a1a1a" text-anchor="middle" opacity=".65">bez uplate nema licitiranja</text>
+</svg>

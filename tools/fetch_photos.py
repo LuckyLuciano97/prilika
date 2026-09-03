@@ -34,12 +34,24 @@ OK_LICENCE = re.compile(r"^(cc[ -]by([ -]sa)?([ -][0-9.]+)?|public domain|cc0|pd
                         re.IGNORECASE)
 
 WANTED = [
-    ("varazdin",   "File:Varaždin - stari grad.jpg"),
+    # Stvarna mjesta koja su tema teksta. Fotografija prikazuje lokalitet,
+    # nikad konkretan predmet prodaje (to stoji i u potpisu ispod slike).
+    ("varazdin",    "File:Varaždin - stari grad.jpg"),
     ("zracna-luka", "File:Zagreb Airport Terminal 20170429220324.jpg"),
     ("prokurative", "File:Prokurative, Split.jpg"),
-    ("sud",        "File:Općinski i županijski sud Osijek.jpg"),
-    ("slavonija",  "File:Ilok Town hall.JPG"),
-    ("obala",      "File:Rovinj Old Town.jpg"),
+    ("sud",         "File:Općinski i županijski sud Osijek.jpg"),
+    ("obala",       "File:Rovinj Old Town.jpg"),
+    # Po jedna za svaku od najčešćih županija, da tri spotlight teksta ne
+    # dijele istu sliku.
+    ("zagreb",      "File:Zagreb - Ban Jelačić Square.JPG"),
+    # Namjerno bez Flickr ID-a u nazivu: 11-znamenkasti broj u kreditu
+    # detektor osobnih podataka ispravno prijavljuje kao mogući OIB.
+    ("split",       "File:Splitska Riva.jpg"),
+    ("pula",        "File:Pula Aerial View.jpg"),
+    # Slavonsko selo i obradivo polje: teme su jeftine seoske kuće i
+    # poljoprivredno zemljište, pa slika mora prikazivati upravo to.
+    ("selo",        "File:Đakovo - panoramio.jpg"),
+    ("polje",       "File:Field in Brezje Varazdin.jpg"),
 ]
 
 

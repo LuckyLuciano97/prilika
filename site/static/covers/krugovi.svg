@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#edf3ef"/>
+  <rect x="60" y="312" width="520" height="6" rx="3" fill="#0b6b43" opacity=".25"/>
+  <!-- tri kruga dražbe: 21 %, 42 %, 75 % popusta -->
+  <g>
+    <rect x="95" y="86" width="120" height="226" rx="8" fill="#0b6b43"/>
+    <text x="155" y="150" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">1.</text>
+    <text x="155" y="196" font-family="Georgia, serif" font-size="30" fill="#fff" text-anchor="middle">−21 %</text>
+  </g>
+  <g>
+    <rect x="255" y="150" width="120" height="162" rx="8" fill="#12855a"/>
+    <text x="315" y="208" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">2.</text>
+    <text x="315" y="252" font-family="Georgia, serif" font-size="30" fill="#fff" text-anchor="middle">−42 %</text>
+  </g>
+  <g>
+    <rect x="415" y="228" width="120" height="84" rx="8" fill="#b45309"/>
+    <text x="475" y="266" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle">3.</text>
+    <text x="475" y="298" font-family="Georgia, serif" font-size="26" fill="#fff" text-anchor="middle">−75 %</text>
+  </g>
+  <path d="M150 62 Q 320 34 470 196" stroke="#b45309" stroke-width="7" fill="none" stroke-dasharray="1 17" stroke-linecap="round"/>
+  <path d="M478 210 L452 182 L486 176 Z" fill="#b45309"/>
+</svg>

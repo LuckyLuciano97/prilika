@@ -31,14 +31,6 @@
     "izvor_url": "https://commons.wikimedia.org/wiki/File:Op%C4%87inski_i_%C5%BEupanijski_sud_Osijek.jpg",
     "datoteka": "/static/photos/sud.jpg"
   },
-  "slavonija": {
-    "naslov": "Ilok Town hall.JPG",
-    "autor": "Mazbln",
-    "licenca": "CC BY-SA 3.0",
-    "licenca_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "izvor_url": "https://commons.wikimedia.org/wiki/File:Ilok_Town_hall.JPG",
-    "datoteka": "/static/photos/slavonija.jpg"
-  },
   "obala": {
     "naslov": "Rovinj Old Town.jpg",
     "autor": "Einaz80",
@@ -46,5 +38,45 @@
     "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "izvor_url": "https://commons.wikimedia.org/wiki/File:Rovinj_Old_Town.jpg",
     "datoteka": "/static/photos/obala.jpg"
+  },
+  "zagreb": {
+    "naslov": "Zagreb - Ban Jelačić Square.JPG",
+    "autor": "Husond",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Zagreb_-_Ban_Jela%C4%8Di%C4%87_Square.JPG",
+    "datoteka": "/static/photos/zagreb.jpg"
+  },
+  "split": {
+    "naslov": "Splitska Riva.jpg",
+    "autor": "MZarkovic",
+    "licenca": "Public domain",
+    "licenca_url": "",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Splitska_Riva.jpg",
+    "datoteka": "/static/photos/split.jpg"
+  },
+  "pula": {
+    "naslov": "Pula Aerial View.jpg",
+    "autor": "Orlovic",
+    "licenca": "CC BY-SA 3.0",
+    "licenca_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Pula_Aerial_View.jpg",
+    "datoteka": "/static/photos/pula.jpg"
+  },
+  "selo": {
+    "naslov": "Đakovo - panoramio.jpg",
+    "autor": "Reklam-net",
+    "licenca": "CC BY-SA 3.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:%C4%90akovo_-_panoramio.jpg",
+    "datoteka": "/static/photos/selo.jpg"
+  },
+  "polje": {
+    "naslov": "Field in Brezje Varazdin.jpg",
+    "autor": "Albinica610",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Field_in_Brezje_Varazdin.jpg",
+    "datoteka": "/static/photos/polje.jpg"
   }
 }
