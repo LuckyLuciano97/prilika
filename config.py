@@ -75,7 +75,7 @@ SITE_NAME = "Prilika"
 SITE_TAGLINE = "Nekretnine na dražbi u Hrvatskoj — službeni podaci, na jednom mjestu"
 CONTACT_EMAIL = "support@nexistudio.dev"
 
-SOURCE_NAME = "FINA — Očevidnik nekretnina i pokretnina"
+SOURCE_NAME = "FINA: Očevidnik nekretnina i pokretnina"
 SOURCE_URL = "https://ponip.fina.hr/ocevidnik-web/pocetna"
 SOURCE_LICENCE = "Otvorena dozvola (OD)"
 SOURCE_LICENCE_URL = "http://data.gov.hr/otvorena-dozvola"

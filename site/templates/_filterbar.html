@@ -1,4 +1,4 @@
-{# Zajednička traka filtara — ISTA na popisima i na karti, da se logika ne
+{# Zajednička traka filtara, ISTA na popisima i na karti, da se logika ne
    duplicira. JS samo čita ovu formu; izgled je čist CSS (chip = stilizirani
    label s checkboxom). Na mobitelu se sklapa iza gumba "Filteri". #}
 <form class="filterbar" id="filteri" onsubmit="return false" hidden
@@ -14,7 +14,7 @@
   <div class="f-body" id="f-body">
     <fieldset class="f-types">
       <legend>Vrsta</legend>
-      {# građevinsko i poljoprivredno prva — razlika koju kupac zemljišta traži #}
+      {# građevinsko i poljoprivredno prva, razlika koju kupac zemljišta traži #}
       <label><input type="checkbox" name="ty" value="gradevinsko-zemljiste"> Građevinsko zemljište</label>
       <label><input type="checkbox" name="ty" value="poljoprivredno-zemljiste"> Poljoprivredno zemljište</label>
       <label><input type="checkbox" name="ty" value="stan"> Stan</label>

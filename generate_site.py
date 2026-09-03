@@ -1,4 +1,4 @@
-"""Generator statičkog sadržaja — SEO površina projekta.
+"""Generator statičkog sadržaja, SEO površina projekta.
 
 Gradi:
   * stranicu po aktivnom predmetu prodaje  /nekretnine/{zupanija}/{grad}/{slug}/
@@ -7,7 +7,7 @@ Gradi:
   * blog s podacima izvedenim člancima
   * sitemap.xml i robots.txt
 
-Sve je statički HTML bez ijednog vanjskog zahtjeva — brzo se učitava i
+Sve je statički HTML bez ijednog vanjskog zahtjeva, brzo se učitava i
 jeftino hosta.
 """
 from __future__ import annotations
@@ -163,7 +163,7 @@ STORY_POSTS = [
      "h1": "Šesnaest nekretnina, 20 milijuna eura: najveći aktivni stečajni paket",
      "title": "Varaždinski stečaj: 16 nekretnina za 20 milijuna eura | Prilika",
      "meta": ("U jednom stečajnom spisu prodaje se 16 nekretnina ukupne procjene "
-              "20,5 milijuna eura — a već zakazani listopadski krug kreće od "
+              "20,5 milijuna eura, a već zakazani listopadski krug kreće od "
               "četvrtine procjene."),
      "file": "prica-varazdinski-stecaj.html", "photo": "varazdin",
      "cover": "/static/covers/stecaj-paket.svg", "published": "2026-08-13",
@@ -173,13 +173,13 @@ STORY_POSTS = [
      "title": "Stečaj prodaje udjel u koncesionaru Zračne luke Zagreb | Prilika",
      "meta": ("Među predmetima jednog stečaja: udjeli u jedinom članu društva "
               "koncesionara zagrebačke zračne luke, procijenjeni na 7 milijuna "
-              "eura — i 16 milijuna eura teretnih vozila."),
+              "eura, i 16 milijuna eura teretnih vozila."),
      "file": "prica-zracna-luka.html", "photo": "zracna-luka",
      "cover": "/static/covers/zracna-luka.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "nekretnina-od-jednog-eura",
      "h1": "Procjena 10,2 milijuna, početna cijena: jedan euro",
-     "title": "Predmet od 10 milijuna eura s početnom cijenom 1 € — što tu piše | Prilika",
+     "title": "Predmet od 10 milijuna eura s početnom cijenom 1 €: što tu piše | Prilika",
      "meta": ("U registru stoji pravo građenja procijenjeno na 10,2 milijuna "
               "eura s početnom cijenom od jednog eura. Zašto takve stavke "
               "označavamo sumnjivima i što zapravo znače."),
@@ -190,14 +190,14 @@ STORY_POSTS = [
      "h1": "Dio splitskog hotela Bellevue čeka dražbu",
      "title": "Hotel Bellevue u Splitu: dio zgrade u stečajnoj prodaji | Prilika",
      "meta": ("Dio zgrade povijesnog hotela Bellevue na Prokurativama upisan je "
-              "u stečajnu prodaju s procjenom od 9,3 milijuna eura — zasad bez "
+              "u stečajnu prodaju s procjenom od 9,3 milijuna eura, zasad bez "
               "termina nadmetanja."),
      "file": "prica-hotel-bellevue.html", "photo": "prokurative",
      "cover": "/static/covers/bellevue.svg", "published": "2026-08-13",
      "data_note": "brojke iz službenog snimka od 12.8.2026."},
     {"slug": "kako-padaju-cijene-na-drazbi",
      "h1": "Prva, druga, treća: kako zapravo padaju cijene na dražbi",
-     "title": "Prva, druga i treća dražba — koliko pada cijena | Prilika",
+     "title": "Prva, druga i treća dražba: koliko pada cijena | Prilika",
      "meta": ("Prosječan popust je 21 % u prvoj dražbi, 42 % u drugoj i 75 % u "
               "trećoj. Kako radi sustav krugova, gdje je donja granica i koliko "
               "košta čekanje."),
@@ -205,7 +205,7 @@ STORY_POSTS = [
      "data_note": "izvedeno iz svih aktivnih predmeta s iskazanim krugom"},
     {"slug": "ovrha-ili-stecaj-razlika-za-kupca",
      "h1": "Ovrha ili stečaj: zašto je razlika važna za kupca",
-     "title": "Ovrha ili stečaj — razlika koja mijenja cijenu i rizik | Prilika",
+     "title": "Ovrha ili stečaj: razlika koja mijenja cijenu i rizik | Prilika",
      "meta": ("Stečajni predmeti nose prosječno 40 % popusta, ovršni 25 %. Tko "
               "prodaje, zašto se popusti razlikuju i koje su tipične zamke u "
               "svakom od dva postupka."),
@@ -213,14 +213,14 @@ STORY_POSTS = [
      "data_note": "2.458 aktivnih predmeta s poznatom vrstom postupka"},
     {"slug": "jamcevina-koliko-i-kada",
      "h1": "Jamčevina: koliko, do kada, i što ako ne pobijedite",
-     "title": "Jamčevina na sudskoj dražbi — iznos, rok i povrat | Prilika",
+     "title": "Jamčevina na sudskoj dražbi: iznos, rok i povrat | Prilika",
      "meta": ("Prosječna jamčevina je 9,1 % procijenjene vrijednosti, a raspon "
               "ide do dva milijuna eura. Kada mora biti uplaćena, kada se vraća "
               "i kada se gubi."),
      "file": "vodic-jamcevina.html", "published": "2026-08-31",
      "data_note": "2.292 aktivna predmeta s iskazanom jamčevinom"},
     {"slug": "kuce-ispod-30000-eura",
-     "h1": "129 kuća ispod 30.000 € — i zašto su gotovo sve na istom mjestu",
+     "h1": "129 kuća ispod 30.000 € i zašto su gotovo sve na istom mjestu",
      "title": "Kuće na dražbi ispod 30.000 eura: gdje su i zašto | Prilika",
      "meta": ("U registru je 129 aktivnih kuća s početnom cijenom ispod 30.000 €, "
               "a Slavonija drži gotovo cijeli popis. Zašto su jeftine i što "
@@ -229,18 +229,42 @@ STORY_POSTS = [
      "published": "2026-08-31",
      "data_note": "brojke iz službenog snimka na dan objave"},
     {"slug": "nekretnine-na-obali",
-     "h1": "564 nekretnine na obali — i zašto su popusti ondje manji",
+     "h1": "564 nekretnine na obali i zašto su popusti ondje manji",
      "title": "Nekretnine na dražbi na hrvatskoj obali | Prilika",
      "meta": ("Šest obalnih županija drži 564 aktivne nekretnine, ali s popustima "
               "ispod državnog prosjeka. Što to govori o tržištu i na što paziti "
               "kod primorskih predmeta."),
      "file": "prica-obala.html", "photo": "obala", "published": "2026-08-31",
      "data_note": "brojke iz službenog snimka na dan objave"},
+    {"slug": "predmeti-bez-termina",
+     "h1": "1.877 predmeta čeka datum, i to je najbolje vrijeme za pripremu",
+     "title": "Dražbe bez termina nadmetanja: zašto ih vrijedi pratiti | Prilika",
+     "meta": ("Gotovo tri četvrtine aktivnih predmeta u registru još nema datum "
+              "nadmetanja. Zašto je to prednost za kupca i kako ih pratiti prije "
+              "nego što se prozor zatvori."),
+     "file": "vodic-bez-termina.html", "photo": "sud", "published": "2026-09-03",
+     "data_note": "2.492 aktivna predmeta po statusu"},
+    {"slug": "poljoprivredno-zemljiste-na-drazbi",
+     "h1": "Poljoprivredno zemljište je najbrojnije na dražbama, i najviše se griješi oko njega",
+     "title": "Poljoprivredno zemljište na sudskim dražbama | Prilika",
+     "meta": ("580 aktivnih predmeta, prosječan popust 28 %, a najviše ih je u "
+              "Zagrebačkoj i Istarskoj županiji. Zašto su čestice male i što "
+              "provjeriti prije ponude."),
+     "file": "prica-poljoprivredno.html", "published": "2026-09-03",
+     "data_note": "580 aktivnih predmeta te kategorije"},
+    {"slug": "sumnjivi-popusti",
+     "h1": "Popust od 99 %: kada brojka laže i zašto je svejedno prikazujemo",
+     "title": "Sumnjivi popusti na dražbama: kako ih prepoznati | Prilika",
+     "meta": ("Jedanaest aktivnih predmeta nosi popust koji ne znači ono što "
+              "izgleda. Kako ih sustav automatski označava, što se iza njih krije "
+              "i zašto ih ne brišemo."),
+     "file": "vodic-sumnjivi-popusti.html", "published": "2026-09-03",
+     "data_note": "11 predmeta označenih automatskom provjerom"},
     {"slug": "od-japanki-do-zracne-luke",
      "h1": "Od japanki do zračne luke: što sve Hrvatska prodaje na dražbi",
      "title": "Najneobičniji predmeti na hrvatskim dražbama | Prilika",
      "meta": ("338 pari japanki, motor broda \"Stočar\", šuma koja se devet puta "
-              "vraćala na dražbu i udjel u zračnoj luci — najneobičniji predmeti "
+              "vraćala na dražbu i udjel u zračnoj luci, najneobičniji predmeti "
               "službenog registra."),
      "file": "prica-od-japanki-do-zracne-luke.html",
      "cover": "/static/covers/kuriozitet.svg", "published": "2026-08-13",
@@ -253,28 +277,28 @@ GUIDES = [
     {"lang": "en", "og": "en_US", "path": "/en/croatian-property-auctions/",
      "file": "vodic-en.html",
      "h1": "Buying property at Croatian judicial auctions",
-     "title": "Croatian Property Auctions — a Buyer's Guide | Prilika",
+     "title": "Croatian Property Auctions: a Buyer's Guide | Prilika",
      "meta": ("How judicial auctions work in Croatia: why prices run 30–75% "
               "below appraisal, what foreign buyers need (OIB, deposit, FINA "
               "e-auction) and which risks to check first.")},
     {"lang": "de", "og": "de_DE", "path": "/de/zwangsversteigerungen-kroatien/",
      "file": "vodic-de.html",
      "h1": "Immobilien aus Zwangsversteigerungen in Kroatien kaufen",
-     "title": "Zwangsversteigerungen in Kroatien — Leitfaden für Käufer | Prilika",
+     "title": "Zwangsversteigerungen in Kroatien: Leitfaden für Käufer | Prilika",
      "meta": ("Wie kroatische Zwangsversteigerungen funktionieren: warum die "
               "Preise 30–75 % unter dem Schätzwert liegen, was ausländische "
               "Käufer brauchen und welche Risiken zu prüfen sind.")},
     {"lang": "sl", "og": "sl_SI", "path": "/sl/drazbe-nepremicnin-na-hrvaskem/",
      "file": "vodic-sl.html",
      "h1": "Nakup nepremičnine na sodni dražbi na Hrvaškem",
-     "title": "Dražbe nepremičnin na Hrvaškem — vodnik za kupce | Prilika",
+     "title": "Dražbe nepremičnin na Hrvaškem: vodnik za kupce | Prilika",
      "meta": ("Kako delujejo hrvaške sodne dražbe: zakaj so cene 30–75 % pod "
               "oceno, kaj potrebujejo tuji kupci (OIB, varščina, FINA "
               "e-dražba) in katera tveganja preveriti.")},
     {"lang": "it", "og": "it_IT", "path": "/it/aste-immobiliari-in-croazia/",
      "file": "vodic-it.html",
      "h1": "Comprare immobili alle aste giudiziarie in Croazia",
-     "title": "Aste immobiliari in Croazia — guida per gli acquirenti | Prilika",
+     "title": "Aste immobiliari in Croazia: guida per gli acquirenti | Prilika",
      "meta": ("Come funzionano le aste giudiziarie croate: perché i prezzi sono "
               "del 30–75% sotto la stima, cosa serve agli acquirenti stranieri "
               "e quali rischi verificare prima di offrire.")},
@@ -516,7 +540,7 @@ class SiteBuilder:
         title_bits = [h1]
         if item.get("opening_price_eur"):
             title_bits.append(f_eur(item["opening_price_eur"]))
-        page_title = " — ".join(title_bits) + " | Prilika"
+        page_title = ", ".join(title_bits) + " | Prilika"
 
         meta = _meta_description(item, place)
         if item.get("title_discriminator"):
@@ -546,14 +570,16 @@ class SiteBuilder:
         name = county or "Lokacija nije utvrđena"
         url = county_url(county)
         items = _sort_for_display(items)
-        h1 = (f"Nekretnine na dražbi — {name}" if county
+        h1 = (f"Nekretnine na dražbi, {name}" if county
               else "Dražbe bez utvrđene lokacije")
         page_title = f"{h1} ({len(items)}) | Prilika"
         avg = _avg_discount(items)
         meta = (
             f"{f_items(len(items))} u ovrsi i stečaju na području "
-            f"{name}. Prosječan popust na procijenjenu vrijednost {f_pct(avg)}. "
-            f"Službeni podaci FINA Očevidnika, ažurirano {self.snapshot}."
+            f"{name}. "
+            + (f"Prosječan popust na procijenjenu vrijednost {f_pct(avg)}. "
+               if avg is not None else "")
+            + f"Službeni podaci FINA Očevidnika, ažurirano {self.snapshot}."
         ) if county else (
             "Predmeti prodaje kojima lokacija nije utvrđena iz službenog opisa. "
             "Sjedište trgovačkog suda nije dokaz gdje se nekretnina nalazi, "
@@ -586,7 +612,7 @@ class SiteBuilder:
     def _city_page(self, county: str | None, city: str, items: list[dict]):
         url = city_url(county, city)
         items = _sort_for_display(items)
-        h1 = f"Nekretnine na dražbi — {city}"
+        h1 = f"Nekretnine na dražbi, {city}"
         page_title = f"{h1} ({len(items)}) | Prilika"
         meta = (
             f"{f_items(len(items))} na sudskoj dražbi u mjestu {city}"
@@ -623,10 +649,10 @@ class SiteBuilder:
                   {"name": "Nekretnine", "url": "/nekretnine/"}]
         self._render(
             "listing.html", "/nekretnine/",
-            page_title=f"Nekretnine na dražbi u Hrvatskoj — {len(active)} aktivnih predmeta | Prilika",
+            page_title=f"Nekretnine na dražbi u Hrvatskoj: {len(active)} aktivnih predmeta | Prilika",
             meta_description=(
                 f"Svih {f_items(len(active))} koje se trenutno prodaju na sudskoj "
-                f"dražbi u Hrvatskoj — po županijama, gradovima i vrsti. Službeni "
+                f"dražbi u Hrvatskoj, po županijama, gradovima i vrsti. Službeni "
                 f"podaci FINA Očevidnika, stanje {self.snapshot}."),
             h1="Nekretnine na dražbi u Hrvatskoj",
             intro=("Svi aktivni predmeti prodaje iz službenog registra FINA-e. "
@@ -651,9 +677,11 @@ class SiteBuilder:
             url = type_url(ptype)
             group = _sort_for_display(group)
             h1 = f"{label} na dražbi u Hrvatskoj"
+            _avg = _avg_discount(group)
             meta = (f"{f_subjects(len(group))} u kategoriji {label.lower()} na sudskim "
-                    f"dražbama. Prosječan popust {f_pct(_avg_discount(group))}. "
-                    f"Podaci: FINA Očevidnik, {self.snapshot}.")
+                    f"dražbama. "
+                    + (f"Prosječan popust {f_pct(_avg)}. " if _avg is not None else "")
+                    + f"Podaci: FINA Očevidnik, {self.snapshot}.")
             crumbs = [{"name": "Početna", "url": "/"},
                       {"name": "Nekretnine", "url": "/nekretnine/"},
                       {"name": label, "url": url}]
@@ -680,14 +708,14 @@ class SiteBuilder:
                  key=lambda x: -float(x["discount_pct"]))),
             ("/najjeftinije/", "Najjeftinije nekretnine na dražbi",
              "Predmeti s najnižom početnom cijenom. Niska cijena često prati "
-             "malu površinu ili suvlasnički udio — provjeri opis.",
+             "malu površinu ili suvlasnički udio, provjeri opis.",
              lambda xs: sorted(
                  [x for x in xs if x.get("opening_price_eur")
                   and float(x["opening_price_eur"]) >= 1],
                  key=lambda x: float(x["opening_price_eur"]))),
             ("/uskoro-zavrsavaju/", "Dražbe koje uskoro završavaju",
              "Nadmetanja s najbližim rokom završetka. Jamčevina se uplaćuje "
-             "prije roka — provjeri datum valute.",
+             "prije roka, provjeri datum valute.",
              lambda xs: sorted(
                  [x for x in xs if x.get("auction_end")
                   and x.get("status") in ("najavljeno", "u_tijeku")],
@@ -727,15 +755,15 @@ class SiteBuilder:
              for t, n in Counter(d["property_type"] for d in active).items()),
             key=lambda x: -x["count"],
         )
-        h1 = "Nekretnine na dražbi u Hrvatskoj — službeni podaci na jednom mjestu"
+        h1 = "Nekretnine na dražbi u Hrvatskoj, službeni podaci na jednom mjestu"
         meta = (
             f"{f_items(len(active))} u ovrsi i stečaju iz službenog registra "
-            f"FINA-e. Procjena, početna cijena, popust i rokovi — po županiji, "
+            f"FINA-e. Procjena, početna cijena, popust i rokovi, po županiji, "
             f"gradu i vrsti. Bez ijednog osobnog podatka. Stanje {self.snapshot}."
         )
         self._render(
             "home.html", "/",
-            page_title="Prilika — nekretnine na dražbi u Hrvatskoj",
+            page_title="Prilika: nekretnine na dražbi u Hrvatskoj",
             meta_description=meta, h1=h1,
             stats={
                 "active": len(active),
@@ -766,12 +794,12 @@ Postupak je javan i svatko tko ispunjava uvjete može sudjelovati.</p>
 <p>Svaka stranica na Liciti navodi poslovni broj spisa i ID nadmetanja.
 Prije bilo kakvog koraka provjeri stavku izravno u
 <a href="https://ponip.fina.hr/ocevidnik-web/pocetna" rel="nofollow noopener" target="_blank">Očevidniku</a>
-— tamo su i prilozi: zaključak o prodaji, procjembeni elaborat i fotografije.</p>
+gdje su i prilozi: zaključak o prodaji, procjembeni elaborat i fotografije.</p>
 
 <h2>2. Pročitaj zaključak o prodaji</h2>
 <p>Zaključak nosi uvjete koji nisu uvijek u sažetku: tereti koji ostaju na
 nekretnini, prava trećih osoba, je li nekretnina slobodna od osoba i stvari.
-Nekretnina koja nije prazna najveći je skriveni trošak — iseljenje je zaseban
+Nekretnina koja nije prazna najveći je skriveni trošak, iseljenje je zaseban
 postupak.</p>
 
 <h2>3. Uplati jamčevinu na vrijeme</h2>
@@ -781,18 +809,18 @@ znači da ne možeš sudjelovati.</p>
 
 <h2>4. Prijavi se s elektroničkim identitetom</h2>
 <p>Za sudjelovanje treba vjerodajnica prihvaćena u sustavu e-Građani
-odgovarajuće razine sigurnosti. To se ne rješava na dan dražbe — pripremi unaprijed.</p>
+odgovarajuće razine sigurnosti. To se ne rješava na dan dražbe, pripremi unaprijed.</p>
 
 <h2>5. Nadmetanje</h2>
 <p>Nadmetanje traje unaprijed određeno vrijeme. Ako netko stavi ponudu pri
-samom kraju, nadmetanje se može produljiti za dodatnih 10 minuta — na stranici
+samom kraju, nadmetanje se može produljiti za dodatnih 10 minuta, na stranici
 predmeta piše je li produljenje moguće.</p>
 
 <h2>6. Prva, druga i sljedeća dražba</h2>
 <p>Na prvoj dražbi nekretnina se u pravilu ne može prodati ispod određenog
 postotka procijenjene vrijednosti; na sljedećoj je prag niži. Zato ista
 nekretnina zna proći kroz nekoliko dražbi po sve nižoj cijeni. Upravo su te
-ponovljene dražbe najzanimljivije — Prilika ih povezuje i prikazuje redoslijed.</p>
+ponovljene dražbe najzanimljivije, Prilika ih povezuje i prikazuje redoslijed.</p>
 
 <h2>7. Nakon dosude</h2>
 <p>Kupac plaća kupovninu u roku iz zaključka. Porez na promet nekretnina i
@@ -804,7 +832,7 @@ isključivo zaključak nadležnog tijela.</p>
 """
         self._render(
             "article.html", "/kako-sudjelovati/",
-            page_title="Kako kupiti nekretninu na e-Dražbi — vodič korak po korak | Prilika",
+            page_title="Kako kupiti nekretninu na e-Dražbi, vodič korak po korak | Prilika",
             meta_description=("Kako sudjelovati na sudskoj dražbi nekretnine u Hrvatskoj: "
                               "provjera zaključka, jamčevina, e-Građani, tijek nadmetanja "
                               "i što slijedi nakon dosude."),
@@ -836,7 +864,7 @@ i označen kao skup podataka visoke vrijednosti.</p>
 
 <p>Ne koristi se nijedan privatni oglasnik. Ne zaobilazi se nikakva zaštita.
 Interaktivna tražilica Očevidnika ima reCAPTCHA-u i ograničenje rezultata i
-namjerno se <em>ne</em> dira — službeni izvoz sadrži sve što treba.</p>
+namjerno se <em>ne</em> dira, službeni izvoz sadrži sve što treba.</p>
 
 <h2>Nijedan osobni podatak</h2>
 <p>Ovo je najvažnije pravilo projekta i provodi se strojno, na svakom pokretanju.</p>
@@ -859,7 +887,7 @@ stranicu i prekida objavu ako pronađe ijedan osobni podatak.</p>
 trenutne ponude. Županija se izvodi iz opisa ili iz nadležnog općinskog suda,
 površina se čita iz teksta opisa, a status iz datuma nadmetanja.
 <strong>Trenutna ponuda tijekom nadmetanja ne postoji u izvozu i nigdje se ne
-prikazuje</strong> — ne procjenjuje se i ne izmišlja.</p>
+prikazuje</strong>: ne procjenjuje se i ne izmišlja.</p>
 <p>Sjedište trgovačkog suda ne koristi se kao lokacija nekretnine, jer stečajna
 masa može držati imovinu bilo gdje u Hrvatskoj. Takvi predmeti ostaju
 označeni kao lokacija neutvrđena.</p>
@@ -920,7 +948,7 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
         return n
 
     def _not_found_page(self) -> None:
-        """/404.html — poslužitelj ga vraća uz status 404.
+        """/404.html, poslužitelj ga vraća uz status 404.
 
         Dražbene stranice nestaju svakim danom kako nadmetanja završe (završeni
         predmeti namjerno nemaju stranicu), pa zastarjela poveznica iz
@@ -928,9 +956,9 @@ Podaci su informativni; mjerodavan je isključivo službeni registar.</p>
         sitemap i nosi noindex.
         """
         body = """
-<p>Ove stranice više nema — ili nikad nije postojala.</p>
+<p>Ove stranice više nema, ili nikad nije postojala.</p>
 <p>Najčešći razlog: <strong>dražba je završila.</strong> Završeni predmeti
-namjerno nemaju stranicu — podatak ostaje u povijesti cijena, ali stranica o
+namjerno nemaju stranicu, podatak ostaje u povijesti cijena, ali stranica o
 prodaji iz prošlosti nikome ne pomaže.</p>
 <p>Kamo dalje:</p>
 <ul>
@@ -945,7 +973,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
             file_target="404.html", in_sitemap=False,
             robots="noindex",
             page_title="Stranica ne postoji (404) | Prilika",
-            meta_description="Tražena stranica ne postoji — dražba je "
+            meta_description="Tražena stranica ne postoji, dražba je "
                              "najvjerojatnije završila.",
             h1="Ova stranica ne postoji", body_html=body,
             breadcrumbs=[{"name": "Početna", "url": "/"}],
@@ -959,7 +987,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
         posve solidnu klijentsku: indeks svih aktivnih predmeta (~300 KB)
         učita se jednom, pretraga radi trenutačno i dijakritički neosjetljivo,
         i ništa se nigdje ne šalje. Pokriva mjesto, k.o., spis, ID nadmetanja,
-        vrstu i status — upravo polja po kojima se predmet stvarno traži.
+        vrstu i status, upravo polja po kojima se predmet stvarno traži.
         """
         index = []
         for d in active:
@@ -1032,7 +1060,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
             h1="Pokretnine i prava na dražbi",
             intro=("Vozila, strojevi, stoka, roba i poslovni udjeli iz ovrha i "
                    "stečajeva. Ovi predmeti nemaju adresu po prirodi stvari, pa "
-                   "ne stoje u zemljopisnom pregledu — tko prodaje i dokle traje "
+                   "ne stoje u zemljopisnom pregledu, tko prodaje i dokle traje "
                    "nadmetanje piše na svakoj stavci."),
             cards=items[:200], stats_row=_stats_row(items),
             breadcrumbs=crumbs,
@@ -1063,7 +1091,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
             key=lambda d: d["price_per_m2"])[:60]
 
         url = "/najbolja-vrijednost/"
-        h1 = "Najbolja vrijednost — cijena po kvadratu"
+        h1 = "Najbolja vrijednost, cijena po kvadratu"
         crumbs = [{"name": "Početna", "url": "/"},
                   {"name": "Nekretnine", "url": "/nekretnine/"},
                   {"name": "Najbolja vrijednost", "url": url}]
@@ -1077,7 +1105,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
             cards_html = tmpl.render(cards=group[:24], rel=lambda p: p)
             body += f"<h2>{title}</h2>{cards_html}"
         meta = ("Aktivne dražbe rangirane po cijeni kvadrata: stanovi i kuće, "
-                "građevinska i poljoprivredna zemljišta zasebno — jer njihovi "
+                "građevinska i poljoprivredna zemljišta zasebno, jer njihovi "
                 "€/m² nisu usporedivi. Službeni podaci FINA Očevidnika.")
         self._render(
             "listing.html", url,
@@ -1095,8 +1123,8 @@ prodaji iz prošlosti nikome ne pomaže.</p>
     def _map(self, active: list[dict], by_county: dict) -> None:
         """Karta s pribadačama na razini katastarske općine.
 
-        Markeri se grade u pregledniku iz search-index.json — istog indeksa
-        koji pokreće filtre — pa karta i popis dijele jednu logiku filtriranja.
+        Markeri se grade u pregledniku iz search-index.json, istog indeksa
+        koji pokreće filtre, pa karta i popis dijele jednu logiku filtriranja.
         Bez JS-a ostaje popis županija. Koordinate su službene referentne
         točke k.o. (DGU INSPIRE, Otvorena dozvola); OSM podloga je jedini
         vanjski zahtjev na stranici."""
@@ -1111,7 +1139,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
             "map.html", "/karta/",
             page_title="Karta dražbi nekretnina po županijama | Prilika",
             meta_description=(f"Interaktivna karta s {with_coords} aktivnih "
-                              f"dražbi s filtrima po vrsti, cijeni i statusu — točke "
+                              f"dražbi s filtrima po vrsti, cijeni i statusu, točke "
                               f"katastarskih općina iz službenog DGU registra."),
             counties=counties, with_coords=with_coords, breadcrumbs=crumbs,
             jsonld=[self._jsonld_breadcrumbs(crumbs)],
@@ -1120,7 +1148,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
 
     # -- RSS ---------------------------------------------------------------
     def _feed(self, active: list[dict]) -> None:
-        """RSS 2.0 s nedavno objavljenim predmetima — preteča Phase 2
+        """RSS 2.0 s nedavno objavljenim predmetima, preteča Phase 2
         obavijesti, a radi već sada u svakom čitaču feedova."""
         recent = sorted(
             (d for d in active if d.get("publish_start")),
@@ -1129,7 +1157,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
         for d in recent:
             title = d["card_title"]
             if d.get("opening_price_eur"):
-                title += f" — {f_eur(d['opening_price_eur'])}"
+                title += f", {f_eur(d['opening_price_eur'])}"
             desc_bits = [d.get("type_label") or ""]
             if d.get("county"):
                 desc_bits.append(d["county"])
@@ -1151,7 +1179,7 @@ prodaji iz prošlosti nikome ne pomaže.</p>
         feed = (
             '<?xml version="1.0" encoding="UTF-8"?>\n'
             '<rss version="2.0"><channel>'
-            f"<title>{config.SITE_NAME} — nove dražbe nekretnina</title>"
+            f"<title>{config.SITE_NAME}, nove dražbe nekretnina</title>"
             f"<link>{self.site_url}/</link>"
             "<description>Novi predmeti prodaje u ovršnim i stečajnim postupcima, "
             "iz službenog registra FINA-e. Bez osobnih podataka.</description>"
@@ -1187,7 +1215,7 @@ u ovršnom i stečajnom postupku.</p>
 <h2>Prosječan popust</h2>
 <p>Prosječna početna cijena bila je <strong>{f_pct(_avg_discount(active))}</strong>
 ispod službeno procijenjene vrijednosti. Najveći popusti gotovo uvijek pripadaju
-ponovljenim dražbama — nekretnini koja se prodaje drugi, treći ili četvrti put,
+ponovljenim dražbama, nekretnini koja se prodaje drugi, treći ili četvrti put,
 svaki put po nižoj početnoj cijeni.</p>
 <h2>Kako čitati velike popuste</h2>
 <p>Popust od 60 % i više rijetko je "besplatan novac". Najčešći razlozi su
@@ -1198,7 +1226,7 @@ na sva tri pitanja i vrijedi ga pročitati prije nego ponudu.</p>
         posts.append({
             "slug": f"pregled-trzista-{today.year}-{today.month:02d}",
             "cover": "/static/covers/pregled.svg",
-            "h1": f"Nekretnine na dražbi — pregled za {mlabel}",
+            "h1": f"Nekretnine na dražbi, pregled za {mlabel}",
             "title": f"Nekretnine na dražbi u Hrvatskoj: pregled za {mlabel} | Prilika",
             "meta": (f"Koliko je nekretnina na dražbi u {mlabel}, u kojim županijama, "
                      f"i koliki je prosječan popust na procjenu. Podaci iz službenog "
@@ -1233,11 +1261,11 @@ iz ovršnih i stečajnih postupaka.</p>
                 "slug": f"drazbe-{slugify(county)}",
                 "cover": "/static/covers/zupanija.svg",
                 "h1": f"Dražbe nekretnina u županiji {county}",
-                "title": f"Nekretnine na dražbi — {county} | Prilika",
+                "title": f"Nekretnine na dražbi, {county} | Prilika",
                 "meta": (f"Pregled {n} aktivnih dražbi nekretnina u županiji {county}: "
                          f"gdje su, što se prodaje i koliki je prosječan popust."),
                 "body": body, "cards": citems[:6],
-                "cards_title": f"Aktualni predmeti — {county}",
+                "cards_title": f"Aktualni predmeti, {county}",
                 "published": self.snapshot,
                 "data_note": f"{n} aktivnih predmeta",
             })
@@ -1262,7 +1290,7 @@ službenog snimka.</p>
 <th>Početna cijena</th></tr></thead><tbody>{rows}</tbody></table>
 <p><strong>Prije oduševljenja brojkama:</strong> velike procjene često znače
 suvlasničke udjele, pravo građenja umjesto vlasništva, ili terete koji ostaju
-upisani. Što se točno prodaje piše u zaključku o prodaji — poveznica na
+upisani. Što se točno prodaje piše u zaključku o prodaji, poveznica na
 službeni registar stoji na svakoj stranici predmeta.</p>
 """
         rank_posts.append({
@@ -1271,7 +1299,7 @@ službeni registar stoji na svakoj stranici predmeta.</p>
             "h1": "Najskuplje na dražbi upravo sada",
             "title": "Najskuplje nekretnine i imovina na dražbi u Hrvatskoj | Prilika",
             "meta": ("Deset najvrjednijih aktivnih predmeta u službenom registru "
-                     "dražbi — s procjenama, početnim cijenama i upozorenjima na "
+                     "dražbi, s procjenama, početnim cijenama i upozorenjima na "
                      "što paziti. Osvježava se svakodnevno."),
             "body": body, "cards": priciest[:6],
             "cards_title": "Najvrjedniji aktivni predmeti",
@@ -1301,14 +1329,14 @@ službeni registar stoji na svakoj stranici predmeta.</p>
                     f'<td>{str(s["drop"]) + " %" if s["drop"] else "—"}</td></tr>'
                     for s in stubborn)
                 body = f"""
-<p>Neki se predmeti na dražbu vraćaju tri, pet, pa i devet puta — i svaki
+<p>Neki se predmeti na dražbu vraćaju tri, pet, pa i devet puta, i svaki
 povratak u pravilu znači nižu početnu cijenu. Ovo su trenutačni rekorderi po
 broju pojavljivanja u registru, izvedeno iz povezanih ponovljenih dražbi.</p>
 <table><thead><tr><th>Predmet</th><th>Pojavljivanja</th>
 <th>Pad početne cijene</th></tr></thead><tbody>{rows}</tbody></table>
 <p>Zašto se ne prodaju? Ponekad je razlog očit iz opisa (suvlasnički udio,
 specifična oprema), ponekad tek iz zaključka o prodaji. Ali upravo među
-ovakvim predmetima nastaju najveći popusti u registru — pregled po visini
+ovakvim predmetima nastaju najveći popusti u registru, pregled po visini
 popusta: <a href="/najveci-popusti/">najveći popusti</a>.</p>
 """
                 rank_posts.append({
@@ -1339,7 +1367,7 @@ popusta: <a href="/najveci-popusti/">najveći popusti</a>.</p>
             body = f"""
 <p>Nadmetanja vrijednija od 50.000 € koja završavaju u sljedećih sedam dana,
 poredana po roku. Tko želi sudjelovati, jamčevinu mora uplatiti prije
-završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
+završetka, rokovi stoje u zaključku o prodaji svakog predmeta.</p>
 <table><thead><tr><th>Predmet</th><th>Procjena</th><th>Početna cijena</th>
 <th>Završava</th></tr></thead><tbody>{rows}</tbody></table>
 <p>Cijeli pregled, uključujući manje vrijedne predmete:
@@ -1351,7 +1379,7 @@ završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
                 "h1": "Vrijedne dražbe koje završavaju ovaj tjedan",
                 "title": "Dražbe iznad 50.000 € koje završavaju ovaj tjedan | Prilika",
                 "meta": ("Nadmetanja procijenjena iznad 50.000 € koja završavaju "
-                         "u sljedećih sedam dana — s rokovima i početnim "
+                         "u sljedećih sedam dana, s rokovima i početnim "
                          "cijenama. Osvježava se svakodnevno."),
                 "body": body, "cards": ending[:6],
                 "cards_title": "Završavaju uskoro",
@@ -1411,7 +1439,7 @@ završetka — rokovi stoje u zaključku o prodaji svakog predmeta.</p>
         )
         self._render(
             "article.html", "/blog/",
-            page_title="Blog — priče i analize s hrvatskih dražbi | Prilika",
+            page_title="Blog, priče i analize s hrvatskih dražbi | Prilika",
             meta_description=("Priče iz službenog registra dražbi, rang-liste koje se "
                               "osvježavaju svakodnevno, mjesečni pregledi tržišta i "
                               "analize po županijama."),
@@ -1567,8 +1595,8 @@ def _assign_unique_titles(items: list[dict]) -> None:
     """Zajamči da svaka stranica ima svoj naslov.
 
     Predmeti bez površine, cijene i naselja (tipično pokretnine i prava)
-    inače dobiju identičan naslov — provjera je našla 964 takve stranice pod
-    86 naslova, npr. 626× "Pokretnina — Hrvatska". Za tražilice je to
+    inače dobiju identičan naslov, provjera je našla 964 takve stranice pod
+    86 naslova, npr. 626× "Pokretnina, Hrvatska". Za tražilice je to
     duplicirani sadržaj, a za čitatelja beskorisno.
 
     Razjednačuje se poslovnim brojem spisa, koji je i sam koristan podatak
@@ -1613,7 +1641,8 @@ def _card_title(item: dict, place: str | None) -> str:
     if item.get("area_m2"):
         bits.append(f"{float(item['area_m2']):,.0f} m²".replace(",", " "))
     if place:
-        bits.append(f"— {place}")
+        # zarez umjesto crtice: prirodnije se čita i u naslovu i u dijeljenju
+        return ", ".join([" ".join(bits), place])
     return " ".join(bits)
 
 
@@ -1623,7 +1652,7 @@ def _meta_description(item: dict, place: str) -> str:
     clause = [PROPERTY_TYPE_LABELS.get(item.get("property_type"), "Nekretnina")]
     if item.get("area_m2"):
         clause.append(f_area(item["area_m2"]))
-    clause.append(f"u mjestu {place}" if item.get("city") else f"— {place}")
+    clause.append(f"u mjestu {place}" if item.get("city") else place)
     if item.get("opening_price_eur"):
         clause.append(f"početna cijena {f_eur(item['opening_price_eur'])}")
     if item.get("discount_pct") is not None and not item.get("discount_suspicious"):

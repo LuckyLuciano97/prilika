@@ -6,7 +6,7 @@
 <header class="listing-head">
   <h1>Karta aktivnih dražbi</h1>
   <p class="lede">{{ with_coords }} predmeta s utvrđenom katastarskom općinom.
-    Filtri vrijede i ovdje — točke se osvježavaju odmah.</p>
+    Filtri vrijede i ovdje, točke se osvježavaju odmah.</p>
 </header>
 
 {% set filter_scope = none %}
@@ -15,11 +15,11 @@
 <div id="karta" class="karta" role="application" aria-label="Karta Hrvatske s dražbama po katastarskim općinama"></div>
 
 <p class="muted small">Točke su službene referentne točke katastarskih općina
-  (DGU, INSPIRE servis, Otvorena dozvola) — razina susjedstva, ne točna parcela.
+  (DGU, INSPIRE servis, Otvorena dozvola), razina susjedstva, ne točna parcela.
   Predmeti bez utvrđene k.o. nisu na karti; njih pokriva
   <a href="{{ rel('/nekretnine/') }}">tekstualni pregled</a>.
   Kartografska podloga: <a href="https://www.openstreetmap.org/copyright"
-  rel="noopener" target="_blank">© OpenStreetMap suradnici</a> — jedini vanjski
+  rel="noopener" target="_blank">© OpenStreetMap suradnici</a>, jedini vanjski
   zahtjev na stranici.</p>
 
 <section aria-labelledby="popis-naslov">
@@ -55,7 +55,7 @@
     if (!data) return;
     var hits = data.filter(Prilika.predicate(form))
                    .filter(function (it) { return it.lt !== null && it.lt !== undefined; });
-    /* grupiraj po točki k.o. — više predmeta na istoj točki = jedan veći krug,
+    /* grupiraj po točki k.o., više predmeta na istoj točki = jedan veći krug,
        pa karta ostaje čitljiva i bez plugina za clustering */
     var groups = {};
     hits.forEach(function (it) {
@@ -75,7 +75,7 @@
                  '<ul class="popup-list">';
       ds.slice(0, 4).forEach(function (l) {
         html += '<li><a href="' + esc(l.u) + '">' + esc(l.n) + "</a>" +
-                (l.p ? " — " + esc(l.p) : "") + "</li>";
+                (l.p ? ", " + esc(l.p) : "") + "</li>";
       });
       html += "</ul>";
       L.circleMarker([it0.lt, it0.ln], {

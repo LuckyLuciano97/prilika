@@ -58,14 +58,14 @@
       </tbody>
     </table>
     <p class="muted small">Trenutna ponuda tijekom nadmetanja nije dio službenog CSV
-      izvoza pa se ovdje ne prikazuje — vidljiva je samo u aplikaciji Očevidnika.</p>
+      izvoza pa se ovdje ne prikazuje, vidljiva je samo u aplikaciji Očevidnika.</p>
   </section>
 
   {% if repeats %}
   <section aria-labelledby="ponovljene-naslov">
     <h2 id="ponovljene-naslov">Ranije dražbe iste nekretnine</h2>
     {% if repeats_price_falls %}
-    <p>Ova se nekretnina prodaje više puta, svaki put po nižoj početnoj cijeni —
+    <p>Ova se nekretnina prodaje više puta, svaki put po nižoj početnoj cijeni:
       to je signal koji vrijedi pratiti.</p>
     {% else %}
     <p>Ova se nekretnina u registru pojavljuje više puta. Početna cijena
@@ -95,7 +95,7 @@
       <p class="muted small">Službeni izvoz nema stupac lokacije. Mjesto je
         automatski izvučeno iz slobodnog teksta opisa (jezični model) i
         prihvaćeno tek nakon potvrde u službenom registru naselja (DZS)
-        odnosno katastarskih općina (DGU) —
+        odnosno katastarskih općina (DGU):
         {{ item.location_raw.split(': ', 1)[1] }}. Točno naselje provjeri
         u izvorniku.</p>
       {% elif item.location_confidence == 'srednja' %}
@@ -105,7 +105,7 @@
         Točno naselje može odstupati.</p>
       {% elif item.location_confidence == 'niska' %}
       <p class="warn">Pokazatelji lokacije u službenom opisu <strong>proturječe
-        si</strong> — naziv katastarske općine upućuje na jednu županiju, a
+        si</strong>: naziv katastarske općine upućuje na jednu županiju, a
         zemljišnoknjižni odjel odnosno nadležni sud na drugu. Ovdje je prikazan
         onaj vezan uz nekretninu, ali lokaciju obavezno provjeri u izvoru.</p>
       {% endif %}
@@ -130,7 +130,7 @@
     <p class="muted small">Provjeri stavku u službenom registru prije prijave:
       <a href="{{ source_url }}" rel="nofollow noopener" target="_blank">ponip.fina.hr</a>{% if item.auction_id %}
       (traži ID nadmetanja <strong>{{ item.auction_id }}</strong>){% endif %}.
-      Stabilna izravna poveznica po stavci ne postoji — aplikacija Očevidnika radi
+      Stabilna izravna poveznica po stavci ne postoji, aplikacija Očevidnika radi
       sa sesijom, pa se pretraga radi ručno.</p>
   </section>
   </div>{# /property-main #}
@@ -159,14 +159,14 @@
     <div id="mini-karta" class="property-map" role="img"
          aria-label="Približna lokacija na karti ({{ item.coord_source }})"></div>
     <p class="muted small">Točka je referentna točka katastarske općine
-      ({{ item.coord_source }}) — susjedstvo, ne točna parcela.</p>
+      ({{ item.coord_source }}), susjedstvo, ne točna parcela.</p>
     {% endif %}
     <div class="aside-cta">
       <strong>Kako sudjelovati?</strong>
       <a class="btn" href="{{ rel('/kako-sudjelovati/') }}">Vodič korak po korak</a>
       <p class="muted small">Provjeri predmet u
         <a href="{{ source_url }}" rel="nofollow noopener" target="_blank">Očevidniku</a>{% if item.auction_id %}
-        — ID nadmetanja <strong>{{ item.auction_id }}</strong>{% endif %}.</p>
+       , ID nadmetanja <strong>{{ item.auction_id }}</strong>{% endif %}.</p>
     </div>
   </aside>
   </div>{# /property-grid #}

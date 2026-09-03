@@ -29,7 +29,7 @@
 <link rel="apple-touch-icon" href="{{ rel('/static/apple-touch-icon.png') }}">
 <meta name="theme-color" content="#0b6b43">
 <link rel="stylesheet" href="{{ rel('/static/style.css') }}">
-<link rel="alternate" type="application/rss+xml" title="Prilika — nove dražbe" href="{{ rel('/feed.xml') }}">
+<link rel="alternate" type="application/rss+xml" title="Prilika, nove dražbe" href="{{ rel('/feed.xml') }}">
 {% block head_extra %}{% endblock %}
 {% if jsonld %}
 {% for block in jsonld %}
@@ -97,7 +97,7 @@
 <section class="cta wrap" aria-labelledby="cta-naslov">
   <h2 id="cta-naslov">Želiš znati čim se pojavi ovakva nekretnina?</h2>
   <p>Priprema se obavijest e-poštom za nove dražbe po županiji, vrsti nekretnine i visini popusta.</p>
-  <p class="cta-note">Pretplata je u pripremi — javi se na
+  <p class="cta-note">Pretplata je u pripremi, javi se na
     <a href="mailto:{{ contact_email }}?subject=Prilika%20obavijesti">{{ contact_email }}</a>
     i javit ćemo ti kad krene.</p>
 </section>
@@ -128,7 +128,7 @@
 </footer>
 <script>
 /* Burger: JS samo prebacuje klasu (stanje); prikaz i animacija su čisti CSS.
-   Bez JS-a izbornik je uvijek vidljiv — nikad slomljen. */
+   Bez JS-a izbornik je uvijek vidljiv, nikad slomljen. */
 (function () {
   var b = document.getElementById("burger");
   if (!b) return;

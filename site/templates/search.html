@@ -3,7 +3,7 @@
 <header class="listing-head">
   <h1>Traži nekretnine na dražbi</h1>
   <p class="lede">Pretraga po mjestu, katastarskoj općini, broju spisa, ID-u
-    nadmetanja ili vrsti nekretnine — kroz svih {{ total }} aktivnih predmeta.</p>
+    nadmetanja ili vrsti nekretnine, kroz svih {{ total }} aktivnih predmeta.</p>
 </header>
 
 <form class="searchbar" role="search" onsubmit="return false">
@@ -14,7 +14,7 @@
 </form>
 
 <div id="rezultati" aria-live="polite">
-  <p class="empty">Upiši pojam — pretraga radi odmah, bez slanja ičega na
+  <p class="empty">Upiši pojam, pretraga radi odmah, bez slanja ičega na
     poslužitelj. Podaci su stanje na dan {{ snapshot_date }}.</p>
 </div>
 
@@ -73,7 +73,7 @@
     out.innerHTML = '<ul class="cards">' +
       hits.slice(0, 60).map(Prilika.card).join("") + "</ul>" +
       (hits.length > 60
-        ? '<p class="muted">Prikazano prvih 60 — suzi pretragu.</p>' : "");
+        ? '<p class="muted">Prikazano prvih 60, suzi pretragu.</p>' : "");
   }
 
   function search(q) {

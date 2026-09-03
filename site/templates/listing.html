@@ -63,7 +63,7 @@
     counter.textContent = hits.length + " od " + scopedTotal + " predmeta u ovom pregledu";
     out.innerHTML = hits.length
       ? '<ul class="cards">' + hits.slice(0, 200).map(Prilika.card).join("") + "</ul>"
-      : '<p class="empty">Nijedan predmet ne odgovara filtrima — probaj ih proširiti.</p>';
+      : '<p class="empty">Nijedan predmet ne odgovara filtrima, probaj ih proširiti.</p>';
   }
 
   function load() {

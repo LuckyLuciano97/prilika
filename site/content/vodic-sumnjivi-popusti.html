@@ -1,0 +1,36 @@
+<p>Popust od 90 % ili više izgleda kao pronalazak stoljeća. U pravilu nije.
+Prilika trenutačno ima <strong>11 aktivnih predmeta označenih kao sumnjiv
+popust</strong>, i te predmete namjerno isključujemo iz svih prosjeka na
+stranici.</p>
+
+<h2>Kada sustav podigne zastavicu</h2>
+<p>Oznaka se dodjeljuje automatski, po dva mjerila:</p>
+<ul>
+  <li>popust je <strong>99 % ili veći</strong>, ili</li>
+  <li>početna cijena je manja od jednog eura, a procjena veća od tisuću eura.</li>
+</ul>
+<p>Oba slučaja gotovo uvijek znače da brojka u izvoru ne opisuje ono što bi
+čitatelj pretpostavio. Provjeru radi <code>validate.py</code> pri svakom
+pokretanju, prije nego što se stranice objave.</p>
+
+<h2>Što se zapravo krije iza takvih brojki</h2>
+<ul>
+  <li><strong>Prodaje se pravo, ne nekretnina.</strong> Pravo građenja ili
+      služnost imaju vlastitu logiku vrednovanja. Primjer je
+      <a href="/blog/nekretnina-od-jednog-eura/">predmet procijenjen na 10,2
+      milijuna eura s početnom cijenom od jednog eura</a>.</li>
+  <li><strong>Suvlasnički udio.</strong> Procjena se odnosi na cijelu
+      nekretninu, a prodaje se tek dio.</li>
+  <li><strong>Pogreška u unosu.</strong> Izvor je javni registar koji pune
+      ljudi, pa se pojavi i zarez na krivom mjestu.</li>
+</ul>
+
+<h2>Zašto ih ne brišemo</h2>
+<p>Jer su dio službenog registra, a Prilika prikazuje ono što registar sadrži.
+Brisanje bi značilo da odlučujemo umjesto čitatelja. Umjesto toga takav
+predmet ostaje vidljiv, nosi upozorenje na svojoj stranici i ne ulazi u
+prosjeke, tako da statistika ostane iskoristiva.</p>
+
+<p>Isto načelo vrijedi i za lokaciju: kad je ne možemo utvrditi iz opisa,
+piše da nije utvrđena, a ne pogađamo prema sjedištu suda. Više o metodi:
+<a href="/o-podacima/">O podacima</a>.</p>
