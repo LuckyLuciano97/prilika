@@ -52,6 +52,8 @@ WANTED = [
     # poljoprivredno zemljište, pa slika mora prikazivati upravo to.
     ("selo",        "File:Đakovo - panoramio.jpg"),
     ("polje",       "File:Field in Brezje Varazdin.jpg"),
+    # Novozagrebački stambeni blokovi: tema su stanovi u Zagrebu.
+    ("dugave",      "File:Stambene zgrade, Dugave.JPG"),
 ]
 
 

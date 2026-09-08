@@ -78,5 +78,13 @@
     "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "izvor_url": "https://commons.wikimedia.org/wiki/File:Field_in_Brezje_Varazdin.jpg",
     "datoteka": "/static/photos/polje.jpg"
+  },
+  "dugave": {
+    "naslov": "Stambene zgrade, Dugave.JPG",
+    "autor": "Flammard",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "izvor_url": "https://commons.wikimedia.org/wiki/File:Stambene_zgrade,_Dugave.JPG",
+    "datoteka": "/static/photos/dugave.jpg"
   }
 }

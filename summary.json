@@ -1,67 +1,67 @@
 {
-  "generirano": "2026-09-03",
-  "stanje_na_dan": "2026-09-02",
-  "starost_snimka_h": 43.1,
+  "generirano": "2026-09-08",
+  "stanje_na_dan": "2026-09-08",
+  "starost_snimka_h": 21.1,
   "izvor": {
     "url": "https://ponip.fina.hr/ocevidnik-web/preuzmi/csv",
-    "bajtova": 10348352,
-    "sha256": "ed344f06373af39ae02a58c49d74356e6cb4d9a3cdaa2140ea4916853a996d71",
+    "bajtova": 10344216,
+    "sha256": "65700703c435a908abdc995a30fb48bd91f5ba7c00a1c09e287293003147df7e",
     "licenca": "Otvorena dozvola (OD)"
   },
-  "redaka_u_csv": 11099,
-  "stavki": 11097,
+  "redaka_u_csv": 11094,
+  "stavki": 11092,
   "duplikata_spojeno": 2,
-  "aktivnih": 2327,
-  "u_tijeku": 128,
+  "aktivnih": 2337,
+  "u_tijeku": 124,
   "po_statusu": {
-    "zavrseno": 8770,
-    "najavljeno": 422,
-    "u_tijeku": 128,
-    "bez_termina": 1777
+    "zavrseno": 8755,
+    "najavljeno": 447,
+    "u_tijeku": 124,
+    "bez_termina": 1766
   },
   "po_zupaniji": {
-    "Nepoznato": 890,
-    "Primorsko-goranska županija": 630,
+    "Nepoznato": 886,
+    "Primorsko-goranska županija": 633,
     "Splitsko-dalmatinska županija": 686,
-    "Šibensko-kninska županija": 166,
+    "Šibensko-kninska županija": 165,
     "Zadarska županija": 410,
     "Karlovačka županija": 207,
-    "Međimurska županija": 358,
+    "Međimurska županija": 361,
     "Grad Zagreb": 1492,
     "Vukovarsko-srijemska županija": 407,
     "Virovitičko-podravska županija": 283,
-    "Zagrebačka županija": 964,
+    "Zagrebačka županija": 965,
     "Istarska županija": 809,
     "Dubrovačko-neretvanska županija": 204,
     "Osječko-baranjska županija": 643,
-    "Sisačko-moslavačka županija": 344,
-    "Krapinsko-zagorska županija": 467,
-    "Koprivničko-križevačka županija": 394,
+    "Sisačko-moslavačka županija": 343,
+    "Krapinsko-zagorska županija": 466,
+    "Koprivničko-križevačka županija": 393,
     "Varaždinska županija": 472,
     "Bjelovarsko-bilogorska županija": 417,
-    "Požeško-slavonska županija": 158,
+    "Požeško-slavonska županija": 154,
     "Brodsko-posavska županija": 488,
     "Ličko-senjska županija": 208
   },
   "po_vrsti": {
-    "kuca": 2506,
-    "stan": 1497,
-    "poljoprivredno-zemljiste": 3415,
-    "zemljiste": 904,
-    "sumsko-zemljiste": 310,
-    "gradevinsko-zemljiste": 167,
-    "poslovni-prostor": 812,
+    "kuca": 2510,
+    "stan": 1502,
+    "poljoprivredno-zemljiste": 3410,
+    "zemljiste": 902,
+    "sumsko-zemljiste": 306,
+    "gradevinsko-zemljiste": 166,
+    "poslovni-prostor": 810,
     "garaza": 387,
     "ostalo": 329,
     "pokretnina": 712,
     "pravo": 58
   },
-  "prosjecan_popust_pct": 32.32,
-  "sumnjivih_popusta": 240,
+  "prosjecan_popust_pct": 32.31,
+  "sumnjivih_popusta": 239,
   "lokacija_pouzdanost": {
-    "nema": 890,
-    "visoka": 7433,
-    "srednja": 2459,
+    "nema": 886,
+    "visoka": 7435,
+    "srednja": 2456,
     "niska": 315
   },
   "ponovljene_drazbe": {
@@ -69,12 +69,12 @@
     "items_in_repeats": 258,
     "max_attempts": 9,
     "groups_with_ejd_progression": 8,
-    "self_declared_repeats": 4569
+    "self_declared_repeats": 4564
   },
   "uklonjeni_osobni_podaci": {
-    "person_name_gazetteer": 124,
+    "person_name_gazetteer": 125,
     "notary_name": 122,
-    "person_name": 83,
+    "person_name": 82,
     "oib_labelled": 81,
     "person_address": 10,
     "oib_bare": 1
@@ -88,13 +88,13 @@
     "Razgledavanje": "1 074 e-mailova i 2 480 telefona osobnih kontakata; zadržava se samo izvedeni obrazac termina, bez kontakt-podataka"
   },
   "stranica": {
-    "property_pages": 2327,
+    "property_pages": 2337,
     "county_pages": 22,
-    "city_pages": 498,
+    "city_pages": 505,
     "category_pages": 16,
-    "blog_posts": 20,
+    "blog_posts": 25,
     "static_pages": 10,
-    "total_pages": 2894
+    "total_pages": 2916
   },
-  "trajanje_s": 42.6
+  "trajanje_s": 36.9
 }
